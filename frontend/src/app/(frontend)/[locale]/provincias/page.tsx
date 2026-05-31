@@ -24,13 +24,30 @@ async function getProvinces() {
   }
 }
 
+async function getExportTotals(): Promise<Record<string, number>> {
+  try {
+    const { data, error } = await api.GET('/api/v2/provinces/export-summary', { cache: 'no-store' })
+    if (error || !data) return {}
+    const map: Record<string, number> = {}
+    for (const p of data.data.provinces) map[p.slug] = p.total_export_usd
+    return map
+  } catch {
+    return {}
+  }
+}
+
 export default async function ProvincesPage() {
-  const [t, provinces] = await Promise.all([getTranslations('provinces'), getProvinces()])
+  const [t, provinces, exportTotals] = await Promise.all([
+    getTranslations('provinces'),
+    getProvinces(),
+    getExportTotals(),
+  ])
   const cards: ProvinceCard[] = provinces.map((p) => ({
     slug: p.slug,
     name: p.name,
-    projectCount: p.project_count,
+    projectCount: p.combined_project_count,
     commodities: p.commodities ?? [],
+    exportUsd: exportTotals[p.slug] ?? null,
   }))
 
   return (

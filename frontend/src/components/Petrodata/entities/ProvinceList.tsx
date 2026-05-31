@@ -4,12 +4,14 @@ import { useMemo, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { commodityColor } from '@/components/Petrodata/minerals/commodityColors'
+import { formatCompact } from '@/utilities/formatNumber'
 
 export type ProvinceCard = {
   slug: string
   name: string
   projectCount: number
   commodities: string[]
+  exportUsd?: number | null
 }
 
 export function ProvinceList({ provinces }: { provinces: ProvinceCard[] }) {
@@ -58,6 +60,12 @@ export function ProvinceList({ provinces }: { provinces: ProvinceCard[] }) {
                   ))}
                 </span>
               </div>
+              {p.exportUsd != null && p.exportUsd > 0 && (
+                <span className="text-[11px] tabular-nums text-nd-text-display font-mono">
+                  ${formatCompact(p.exportUsd)}{' '}
+                  <span className="text-nd-text-disabled">{t('exportValue')}</span>
+                </span>
+              )}
             </Link>
           ))}
         </div>

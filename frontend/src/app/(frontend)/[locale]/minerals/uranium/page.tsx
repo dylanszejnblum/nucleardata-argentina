@@ -13,15 +13,13 @@ import type {
   PricePoint,
   ProjectPoint,
   StatusSlice,
-  TradeRow,
 } from '@/components/Petrodata/uranium/types'
 import { UraniumHero } from '@/components/Petrodata/uranium/UraniumHero'
 import { UraniumStats } from '@/components/Petrodata/uranium/UraniumStats'
 import { PriceChart } from '@/components/Petrodata/uranium/PriceChart'
-import { PriceMilestones } from '@/components/Petrodata/uranium/PriceMilestones'
 import { UraniumProjectsTable } from '@/components/Petrodata/uranium/UraniumProjectsTable'
 import { StatusDonut } from '@/components/Petrodata/uranium/StatusDonut'
-import { TradeChart } from '@/components/Petrodata/uranium/TradeChart'
+import { TradeFlowExplorer } from '@/components/Petrodata/entities/TradeFlowExplorer'
 import { CycleOverview } from '@/components/Petrodata/uranium/CycleOverview'
 import { ProcessScrolly } from '@/components/Petrodata/uranium/ProcessScrolly'
 import { ProcessDiagram } from '@/components/Petrodata/uranium/ProcessDiagram'
@@ -38,7 +36,7 @@ export const revalidate = 0
 type Summary = ApiSchemas['UraniumSummaryDto']
 type PricesResp = ApiSchemas['UraniumPricesResponseDto']
 type ProjectsResp = ApiSchemas['UraniumProjectsResponseDto']
-type TradeResp = ApiSchemas['UraniumTradeResponseDto']
+type TradeFlowDto = ApiSchemas['TradeFlowDto']
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('uraniumHub')
@@ -88,9 +86,9 @@ async function getProjects(): Promise<ProjectsResp | null> {
   }
 }
 
-async function getTrade(): Promise<TradeResp | null> {
+async function getTradeFlow(): Promise<TradeFlowDto | null> {
   try {
-    const { data, error } = await api.GET('/api/v2/minerals/uranium/trade', { cache: 'no-store' })
+    const { data, error } = await api.GET('/api/v2/minerals/trade/flow', { cache: 'no-store' })
     if (error || !data) return null
     return data.data
   } catch {
@@ -99,13 +97,13 @@ async function getTrade(): Promise<TradeResp | null> {
 }
 
 export default async function UraniumHubPage() {
-  const [t, locale, summary, pricesResp, projectsResp, tradeResp] = await Promise.all([
+  const [t, locale, summary, pricesResp, projectsResp, flow] = await Promise.all([
     getTranslations('uraniumHub'),
     getLocale(),
     getSummary(),
     getPrices(),
     getProjects(),
-    getTrade(),
+    getTradeFlow(),
   ])
   const loc = (locale === 'en' ? 'en' : 'es') as Locale
 
@@ -177,11 +175,6 @@ export default async function UraniumHubPage() {
     .map(([label, count]) => ({ label, count, color: uraniumStatusColor(label) }))
     .sort((a, b) => statusRank(a.label) - statusRank(b.label))
 
-  const trade: TradeRow[] = [
-    ...(tradeResp?.imports ?? []).map((r) => ({ year: r.year, type: 'import' as const, value: r.value_usd })),
-    ...(tradeResp?.exports ?? []).map((r) => ({ year: r.year, type: 'export' as const, value: r.value_usd })),
-  ]
-
   const fromYear = pricePoints[0]?.date.slice(0, 4) ?? ''
   const toYear = pricePoints[pricePoints.length - 1]?.date.slice(0, 4) ?? ''
 
@@ -210,11 +203,6 @@ export default async function UraniumHubPage() {
           </div>
         </section>
 
-        <section className="container pb-14">
-          <SectionHead eyebrow={t('milestones.eyebrow')} title={t('milestones.title')} />
-          <PriceMilestones locale={loc} />
-        </section>
-
         <section className="container pb-12">
           <SectionHead eyebrow={t('map.eyebrow')} title={t('map.title')}>
             {t('map.mapped', { n: projects.length })}
@@ -231,21 +219,22 @@ export default async function UraniumHubPage() {
           <UraniumProjectsTable projects={projects} />
         </section>
 
-        <section className="container pb-16">
-          <div className="grid grid-cols-1 gap-px bg-nd-border lg:grid-cols-2">
-            <div className="bg-nd-surface p-5 md:p-6">
-              <SectionHead eyebrow={t('donut.eyebrow')} title={t('donut.title')} compact />
-              <StatusDonut data={statusSlices} />
-            </div>
-            <div className="bg-nd-surface p-5 md:p-6">
-              <SectionHead eyebrow={t('trade.eyebrow')} title={t('trade.title')} compact />
-              {trade.length > 0 ? (
-                <TradeChart rows={trade} importsLabel={t('trade.imports')} exportsLabel={t('trade.exports')} />
-              ) : (
-                <p className="text-nd-text-disabled text-sm font-mono">{t('trade.noData')}</p>
-              )}
-            </div>
+        {/* Projects by status */}
+        <section className="container pb-12">
+          <SectionHead eyebrow={t('donut.eyebrow')} title={t('donut.title')} />
+          <div className="border border-nd-border bg-nd-surface p-5 md:p-6">
+            <StatusDonut data={statusSlices} />
           </div>
+        </section>
+
+        {/* Trade flow — Sankey embedded (uranium is the only mineral with trade data) */}
+        <section className="container pb-16">
+          <SectionHead eyebrow={t('trade.eyebrow')} title={t('trade.title')} />
+          {flow ? (
+            <TradeFlowExplorer initial={flow} minerals={['Uranio']} />
+          ) : (
+            <p className="text-nd-text-disabled text-sm font-mono">{t('trade.noData')}</p>
+          )}
         </section>
 
         {/* Educational fuel-cycle */}

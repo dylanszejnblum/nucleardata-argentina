@@ -84,11 +84,20 @@ function StockBadge({ ticker, exchange }: { ticker: string; exchange: string }) 
 │  │Pozos     │ │bbl/día   │ │Vaca M.   │ │boe/mes  │        │
 │  └──────────┘ └──────────┘ └──────────┘ └──────────┘        │
 │                                                               │
-│  [Stock price mini-chart — last 30 days]                      │
+│  [STOCK PRICE CHART — range selector]                         │
 │  ┌────────────────────────────────────────────────────┐       │
-│  │  ▁▂▃▄▅▆▇█▇▆▅▄▃▂▁▂▃▄▅▆▇█▇▆▅▄▃▂▁   $42.15           │       │
-│  │  Últimos 30 días — NYSE:YPF                      │       │
-│  └────────────────────────────────────────────────────┘       │
+│  │  1M │ 3M ● │ 6M │ 1Y │ 5Y                          │       │
+│  │                                                      │       │
+│  │  $45 ┤      ╱╲                                       │       │
+│  │  $43 ┤  ╱╲╱  ╲╲    ╱╲    ╱╲                         │       │
+│  │  $41 ┤ ╱      ╲╲  ╱  ╲  ╱  ╲                        │       │
+│  │  $39 ┤╱        ╲╲╱    ╲╱    ╲                        │       │
+│  │      └──────────────────────────────────────────────  │       │
+│  │      May  Jun  Jul  Aug  Sep  Oct                     │       │
+│  │                                                      │       │
+│  │  Open: $41.80  High: $44.20  Low: $40.50  Vol: 2.5M  │       │
+│  └────────────────────────────────────────────────────┘       │"
+        │
 │                                                               │
 │  [PRODUCTION BY PROVINCE — for O&G companies]                 │
 │  ┌────────────────────────────────────────────────────┐       │
@@ -110,6 +119,46 @@ function StockBadge({ ticker, exchange }: { ticker: string; exchange: string }) 
 │  [VM SHARE donut] — Vaca Muerta vs Conventional               │
 └──────────────────────────────────────────────────────────────┘
 ```
+
+### Stock Price Chart Component
+
+For any company with a stock ticker, a full interactive chart below the hero section. Fetches from `GET /api/v2/companies/prices/{ticker}?range=3mo&interval=1d`:
+
+```tsx
+function StockPriceChart({ ticker }: { ticker: string }) {
+  const [range, setRange] = useState<'1mo' | '3mo' | '6mo' | '1y' | '5y'>('3mo');
+  const { data } = useQuery(['stock', ticker, range], () =>
+    fetch(`/api/v2/companies/prices/${ticker}?range=${range}&interval=1d`).then(r => r.json())
+  );
+
+  // SVG chart with anime.js line drawing on mount and range change
+  useEffect(() => {
+    if (!data?.history?.length) return;
+    anime({
+      targets: '#stock-line',
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: 'easeInOutQuad',
+      duration: 2000,
+    });
+  }, [data]);
+
+  return (
+    <div className="stock-chart">
+      <div className="range-selector">
+        {['1M','3M','6M','1Y','5Y'].map(r => (
+          <button key={r} onClick={() => setRange(r)} className={r === range ? 'active' : ''}>{r}</button>
+        ))}
+      </div>
+      <svg>...anime.js animated line...</svg>
+      <div className="ohlc-summary">
+        Open: $41.80  High: $44.20  Low: $40.50  Vol: 2.5M
+      </div>
+    </div>
+  );
+}
+```
+
+**Acceptance:** SVG line draws in on mount, range selector changes animate smoothly (crossfade), hover tooltip shows date+price+volume.
 
 ## 3. Province Pages (NEW)
 

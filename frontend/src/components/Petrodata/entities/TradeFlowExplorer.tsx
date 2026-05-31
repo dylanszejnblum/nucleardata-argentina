@@ -115,39 +115,41 @@ export function TradeFlowExplorer({
     <div className="border border-nd-border bg-nd-surface">
       {/* Controls */}
       <div className="flex flex-col gap-5 border-b border-nd-border p-5 md:p-6">
-        {/* Mineral selector */}
-        <div className="flex flex-col gap-2">
-          <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-nd-text-disabled">
-            {t('mineral')}
-          </span>
-          <div className="flex flex-wrap gap-px bg-nd-border">
-            {minerals.map((m) => {
-              const active = m === selectedMineral
-              const { color } = commodityColor(m)
-              return (
-                <button
-                  key={m}
-                  type="button"
-                  onClick={() => onMineral(m)}
-                  aria-pressed={active}
-                  className={`flex items-center gap-2 bg-nd-surface px-3 py-2 font-mono text-xs transition-opacity hover:opacity-100 ${
-                    active
-                      ? 'text-nd-text-display opacity-100'
-                      : 'text-nd-text-secondary opacity-70'
-                  }`}
-                  style={active ? { boxShadow: `inset 0 -2px 0 0 ${color}` } : undefined}
-                >
-                  <span
-                    aria-hidden
-                    className="inline-block h-2 w-2"
-                    style={{ backgroundColor: color }}
-                  />
-                  {m}
-                </button>
-              )
-            })}
+        {/* Mineral selector — only shown when more than one mineral has trade data */}
+        {minerals.length > 1 && (
+          <div className="flex flex-col gap-2">
+            <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-nd-text-disabled">
+              {t('mineral')}
+            </span>
+            <div className="flex flex-wrap gap-px bg-nd-border">
+              {minerals.map((m) => {
+                const active = m === selectedMineral
+                const { color } = commodityColor(m)
+                return (
+                  <button
+                    key={m}
+                    type="button"
+                    onClick={() => onMineral(m)}
+                    aria-pressed={active}
+                    className={`flex items-center gap-2 bg-nd-surface px-3 py-2 font-mono text-xs transition-opacity hover:opacity-100 ${
+                      active
+                        ? 'text-nd-text-display opacity-100'
+                        : 'text-nd-text-secondary opacity-70'
+                    }`}
+                    style={active ? { boxShadow: `inset 0 -2px 0 0 ${color}` } : undefined}
+                  >
+                    <span
+                      aria-hidden
+                      className="inline-block h-2 w-2"
+                      style={{ backgroundColor: color }}
+                    />
+                    {m}
+                  </button>
+                )
+              })}
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           {/* Year slider + play */}

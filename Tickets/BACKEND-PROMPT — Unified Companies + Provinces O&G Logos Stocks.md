@@ -77,7 +77,7 @@ GET /api/v2/companies/public
   → Used by frontend to show stock price cards
 ```
 
-### Stock Prices
+### Stock Prices — Current + Historical
 
 ```
 GET /api/v2/companies/prices
@@ -86,15 +86,48 @@ GET /api/v2/companies/prices
       { ticker: "VIST", price: 48.30, change_pct: -0.5, exchange: "NYSE" },
       { ticker: "PAM", price: 85.20, change_pct: 3.1, exchange: "NYSE" }
     ]
+
+GET /api/v2/companies/prices/{ticker}?range=1mo&interval=1d
+  → {
+      ticker: "YPF",
+      exchange: "NYSE",
+      current_price: 42.15,
+      change_pct: 1.2,
+      history: [
+        { date: "2026-05-01", close: 41.20, volume: 2500000 },
+        { date: "2026-05-02", close: 41.50, volume: 2100000 },
+        ...
+      ],
+      range: "1mo",
+      interval: "1d"
+    }
 ```
 
-**Implementation:** Use Yahoo Finance API (free, no key needed for basic quotes):
+**Implementation:** Use Yahoo Finance v8 chart API (free, no key needed):
 ```typescript
-GET https://query1.finance.yahoo.com/v8/finance/chart/YPF
-// Returns current price + change
+// Current price + change
+GET https://query1.finance.yahoo.com/v8/finance/chart/YPF?range=1d&interval=1d
+// Returns { chart.result[0].meta.regularMarketPrice, meta.previousClose }
+
+// Historical prices for chart
+GET https://query1.finance.yahoo.com/v8/finance/chart/YPF?range=3mo&interval=1d
+// Returns { chart.result[0].timestamp[], indicators.quote[0].close[], volume[] }
+
+// Supported ranges: 1d, 5d, 1mo, 3mo, 6mo, 1y, 5y, max
+// Supported intervals: 1m (intraday), 5m, 15m, 30m, 1h, 1d, 1wk, 1mo
 ```
 
-Cache the response for 5 minutes (don't hit Yahoo on every request).
+Yahoo returns Unix timestamps for dates and arrays of OHLCV values. The backend should:
+1. Fetch from Yahoo
+2. Parse into clean `{ date, close, volume }` objects
+3. Add calculated fields: `change_pct`, `high_52w`, `low_52w` (from 1y range)
+4. Cache the response for **5 minutes** (don't hit Yahoo on every request)
+5. Return 404 with a clear message if the ticker is not found or Yahoo returns an error
+
+**Supported tickers:** YPF, VIST, PAM, SHEL, TTE, CVX, GPRK, CAPX (BCBA), BSK (TSX-V)
+- For BCBA tickers use suffix `.BA` → CAPX.BA
+- For TSX-V tickers use suffix `.V` → BSK.V
+- Keep a ticker-to-suffix map in the service
 
 ### Provinces (NEW MODULE)
 

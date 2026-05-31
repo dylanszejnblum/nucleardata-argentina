@@ -1,67 +1,137 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import {
-  MineralProjectsService,
-  NormalizedProject,
-} from '../shared/mineral-projects.service';
-import { CompanyRef, stageRank } from '../shared/mineral-entities.util';
+import { Company, Prisma } from '@prisma/client';
+import { PrismaService } from '../../prisma/prisma.service';
+import { MineralProjectsService, NormalizedProject } from '../shared/mineral-projects.service';
+import { stageRank } from '../shared/mineral-entities.util';
+import { CompanyStocksService, yahooSymbol } from './company-stocks.service';
 import { ListCompaniesQueryDto } from './companies.dto';
-
-interface CompanyBucket {
-  ref: CompanyRef;
-  projects: NormalizedProject[];
-}
 
 @Injectable()
 export class CompaniesService {
-  constructor(private readonly projectsService: MineralProjectsService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly projectsService: MineralProjectsService,
+    private readonly stocks: CompanyStocksService,
+  ) {}
 
   async list(q: ListCompaniesQueryDto) {
-    const buckets = await this.buildIndex();
+    const where: Prisma.CompanyWhereInput = {};
+    if (q.type && q.type !== 'all') where.type = q.type;
+    if (q.country) where.country = { equals: q.country, mode: 'insensitive' };
+    if (q.q) where.name = { contains: q.q, mode: 'insensitive' };
 
-    let companies = [...buckets.values()].map((b) => ({
-      slug: b.ref.slug,
-      name: b.ref.name,
-      origin_country: b.ref.origin_country,
-      project_count: b.projects.length,
-      commodities: distinct(b.projects.map((p) => p.commodity)).sort(),
-      image_url: null as string | null,
-    }));
+    const [companies, portfolios] = await Promise.all([
+      this.prisma.company.findMany({ where, orderBy: { name: 'asc' } }),
+      this.portfolioMap(),
+    ]);
 
-    if (q.q) {
-      const needle = q.q.toLowerCase();
-      companies = companies.filter((c) => c.name.toLowerCase().includes(needle));
-    }
+    let items = companies.map((c) => {
+      const portfolio = portfolios.get(c.slug) ?? [];
+      const miningCount = portfolio.length || c.projectCountMining;
+      const commodities = mergeUnique(c.commoditySlugs, portfolio.map((p) => p.commodity));
+      const provinces = mergeUnique(c.provinces, portfolio.map((p) => p.province).filter(isStr));
+      return {
+        slug: c.slug,
+        name: c.name,
+        type: c.type,
+        sector: c.sector,
+        country: c.country,
+        logo_url: emptyToNull(c.logoUrl),
+        stock_ticker: c.stockTicker,
+        stock_exchange: c.stockExchange,
+        is_public: c.isPublic,
+        project_count_oil_gas: c.projectCountOilGas,
+        project_count_mining: miningCount,
+        project_count: c.projectCountOilGas + miningCount,
+        commodities,
+        provinces,
+      };
+    });
+
     if (q.commodity) {
       const c = q.commodity.toLowerCase();
-      companies = companies.filter((co) => co.commodities.some((x) => x.toLowerCase() === c));
-    }
-    if (q.origin_country) {
-      const oc = q.origin_country.toLowerCase();
-      companies = companies.filter((co) => (co.origin_country ?? '').toLowerCase() === oc);
+      items = items.filter((it) => it.commodities.some((x) => x.toLowerCase() === c));
     }
 
-    return companies.sort(
+    return items.sort(
       (a, b) => b.project_count - a.project_count || a.name.localeCompare(b.name),
     );
   }
 
+  async publicCompanies() {
+    const companies = await this.prisma.company.findMany({
+      where: { isPublic: true, stockTicker: { not: null } },
+      orderBy: { name: 'asc' },
+    });
+    return companies.map((c) => ({
+      slug: c.slug,
+      name: c.name,
+      type: c.type,
+      sector: c.sector,
+      country: c.country,
+      logo_url: emptyToNull(c.logoUrl),
+      stock_ticker: c.stockTicker,
+      stock_exchange: c.stockExchange,
+      is_public: c.isPublic,
+      project_count_oil_gas: c.projectCountOilGas,
+      project_count_mining: c.projectCountMining,
+      project_count: c.projectCountOilGas + c.projectCountMining,
+      commodities: c.commoditySlugs,
+      provinces: c.provinces,
+    }));
+  }
+
+  async prices() {
+    const companies = await this.prisma.company.findMany({
+      where: { isPublic: true, stockTicker: { not: null } },
+      orderBy: { name: 'asc' },
+    });
+    const symbols = companies.map((c) => yahooSymbol(c.stockTicker as string, c.stockExchange));
+    const quotes = await this.stocks.quotes(symbols);
+    const bySymbol = new Map(quotes.map((qt) => [qt.ticker, qt]));
+    return companies.map((c) => {
+      const qt = bySymbol.get(yahooSymbol(c.stockTicker as string, c.stockExchange));
+      return {
+        slug: c.slug,
+        name: c.name,
+        ticker: c.stockTicker as string,
+        price: qt?.price ?? null,
+        change_pct: qt?.change_pct ?? null,
+        exchange: qt?.exchange ?? c.stockExchange ?? null,
+      };
+    });
+  }
+
   async detail(slug: string) {
-    const buckets = await this.buildIndex();
-    const bucket = buckets.get(slug.toLowerCase());
-    if (!bucket) {
+    const company = await this.prisma.company.findUnique({ where: { slug: slug.toLowerCase() } });
+    if (!company) {
       throw new NotFoundException({ code: 'NOT_FOUND', message: `Company not found: ${slug}` });
     }
 
-    const projects = [...bucket.projects].sort(
+    const portfolio = (await this.portfolioMap()).get(company.slug) ?? [];
+    const sortedProjects = [...portfolio].sort(
       (a, b) => stageRank(b.status) - stageRank(a.status) || a.name.localeCompare(b.name),
     );
 
+    const commodities = mergeUnique(company.commoditySlugs, portfolio.map((p) => p.commodity));
+    const provinces = mergeUnique(company.provinces, portfolio.map((p) => p.province).filter(isStr));
+
     return {
-      name: bucket.ref.name,
-      slug: bucket.ref.slug,
-      origin_country: bucket.ref.origin_country,
-      description: null,
-      projects: projects.map((p) => ({
+      slug: company.slug,
+      name: company.name,
+      type: company.type,
+      sector: company.sector,
+      country: company.country,
+      website: company.website,
+      logo_url: emptyToNull(company.logoUrl),
+      stock_ticker: company.stockTicker,
+      stock_exchange: company.stockExchange,
+      is_public: company.isPublic,
+      commodities_involved: commodities,
+      provinces,
+      project_count_oil_gas: company.projectCountOilGas,
+      project_count_mining: portfolio.length || company.projectCountMining,
+      projects: sortedProjects.map((p) => ({
         name: p.name,
         commodity: p.commodity,
         province: p.province,
@@ -69,45 +139,53 @@ export class CompaniesService {
         coordinates: { lat: p.latitude, lng: p.longitude },
         resources_summary: p.resources_summary,
       })),
-      total_projects: projects.length,
-      commodities_involved: distinct(projects.map((p) => p.commodity)).sort(),
-      provinces: distinct(projects.map((p) => p.province).filter((x): x is string => !!x)).sort(),
-      project_timeline: buildTimeline(projects),
+      project_timeline: buildTimeline(sortedProjects),
+      oil_gas_production_summary: this.oilGasSummary(company),
+      stock: company.isPublic && company.stockTicker
+        ? { ...(await this.stocks.quote(yahooSymbol(company.stockTicker, company.stockExchange))), ticker: company.stockTicker }
+        : null,
     };
   }
 
-  private async buildIndex(): Promise<Map<string, CompanyBucket>> {
-    const projects = await this.projectsService.getAll();
-    const buckets = new Map<string, CompanyBucket>();
+  private oilGasSummary(c: Company) {
+    if (c.type !== 'oil_and_gas' && c.type !== 'both') return null;
+    return {
+      oil_production_m3: c.oilProductionM3,
+      gas_production_m3: c.gasProductionM3,
+      boe_total: c.boeTotal,
+      well_count: c.projectCountOilGas,
+      provinces: c.provinces,
+    };
+  }
 
+  /** slug → mineral projects controlled by that company. */
+  private async portfolioMap(): Promise<Map<string, NormalizedProject[]>> {
+    const projects = await this.projectsService.getAll();
+    const map = new Map<string, NormalizedProject[]>();
     for (const p of projects) {
       for (const ref of p.controllers) {
-        let bucket = buckets.get(ref.slug);
-        if (!bucket) {
-          bucket = { ref, projects: [] };
-          buckets.set(ref.slug, bucket);
-        }
-        // Prefer a known origin country if a later reference supplies one.
-        if (!bucket.ref.origin_country && ref.origin_country) {
-          bucket.ref = { ...bucket.ref, origin_country: ref.origin_country };
-        }
-        bucket.projects.push(p);
+        const arr = map.get(ref.slug) ?? [];
+        arr.push(p);
+        map.set(ref.slug, arr);
       }
     }
-
-    return buckets;
+    return map;
   }
 }
 
-function distinct<T>(arr: T[]): T[] {
-  return [...new Set(arr)];
+function isStr(v: unknown): v is string {
+  return typeof v === 'string' && v.length > 0;
+}
+
+function emptyToNull(v: string | null): string | null {
+  return v && v.trim() !== '' ? v : null;
+}
+
+function mergeUnique(a: string[], b: string[]): string[] {
+  return [...new Set([...a, ...b])].sort();
 }
 
 function buildTimeline(projects: NormalizedProject[]): Array<{ stage: string; date: string | null }> {
-  const stages = distinct(
-    projects.map((p) => p.status_label ?? p.status).filter((s): s is string => !!s),
-  );
-  return stages
-    .sort((a, b) => stageRank(a) - stageRank(b))
-    .map((stage) => ({ stage, date: null }));
+  const stages = [...new Set(projects.map((p) => p.status_label ?? p.status).filter(isStr))];
+  return stages.sort((x, y) => stageRank(x) - stageRank(y)).map((stage) => ({ stage, date: null }));
 }

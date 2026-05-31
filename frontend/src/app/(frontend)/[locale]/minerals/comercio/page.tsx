@@ -11,7 +11,9 @@ export const revalidate = 0
 
 type TradeFlowDto = ApiSchemas['TradeFlowDto']
 
-const MINERALS = ['Uranio', 'Litio', 'Oro', 'Plata', 'Cobre', 'Plomo', 'Zinc']
+// Only uranium has SIACAM trade data in the pipeline — never offer minerals the
+// API can't back. Add more here only when their trade data is actually ingested.
+const MINERALS = ['Uranio']
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('trade')

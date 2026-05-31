@@ -57,15 +57,15 @@ export function controllersFromJson(raw: unknown): CompanyRef[] {
 
 /**
  * Mining-pipeline projects store the controlling entity as a free-text
- * `operator` / `owner_controller` string. These contain joint-venture and
- * subsidiary chains separated by " / ". We take the first (controlling) entity.
+ * `operator` / `owner_controller` string (joint-venture or subsidiary chains).
+ * We keep the full cleaned string as the company identity so its slug matches
+ * the canonical `company` table seeded from `companies_enriched.json`, which
+ * slugifies the same full string.
  */
 export function controllersFromOperator(operator: string | null, ownerController: string | null): CompanyRef[] {
   const raw = cleanName(operator ?? ownerController ?? '');
   if (isPlaceholder(raw)) return [];
-  const first = cleanName(raw.split(' / ')[0]);
-  if (isPlaceholder(first)) return [];
-  return [{ name: first, slug: slugify(first), origin_country: null, ownership_pct: null }];
+  return [{ name: raw, slug: slugify(raw), origin_country: null, ownership_pct: null }];
 }
 
 function dedupeBySlug(refs: CompanyRef[]): CompanyRef[] {

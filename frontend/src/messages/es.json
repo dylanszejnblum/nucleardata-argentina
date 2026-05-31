@@ -337,10 +337,6 @@
       "subtitle": "Mensual · {n} puntos · {from}–{to}",
       "noData": "Sin datos de precios."
     },
-    "milestones": {
-      "eyebrow": "HITOS DE PRECIO",
-      "title": "Momentos clave"
-    },
     "map": {
       "eyebrow": "MAPA DE PROYECTOS DE URANIO",
       "title": "Proyectos de uranio",
@@ -372,7 +368,8 @@
       "imports": "Importaciones",
       "exports": "Exportaciones",
       "noData": "Sin datos de comercio.",
-      "axisUsd": "USD"
+      "axisUsd": "USD",
+      "flowLink": "Ver flujo por país"
     },
     "cycle": {
       "eyebrow": "CICLO DEL COMBUSTIBLE NUCLEAR",
@@ -454,7 +451,25 @@
       }
     },
     "timeline": { "eyebrow": "PROGRESIÓN", "title": "Etapas de los proyectos" },
-    "origin": "Origen"
+    "origin": "Origen",
+    "sector": "Sector",
+    "stock": "Bolsa",
+    "website": "Web",
+    "sectorAll": "Todas",
+    "sectorMining": "Minería",
+    "sectorOil": "Petróleo & Gas",
+    "typeMining": "Minería",
+    "typeOil": "Petróleo & Gas",
+    "typeBoth": "Minería + P&G",
+    "wellsSuffix": "pozos activos",
+    "oilGasSummary": {
+      "eyebrow": "PETRÓLEO & GAS",
+      "title": "Producción",
+      "wells": "Pozos",
+      "oil": "Petróleo · m³",
+      "gas": "Gas · m³",
+      "boe": "BOE"
+    }
   },
   "provinces": {
     "listEyebrow": "PROVINCIAS",
@@ -489,7 +504,33 @@
     },
     "tradeStats": { "eyebrow": "COMERCIO", "title": "Exportaciones principales", "employment": "Empleo" },
     "operators": { "eyebrow": "EMPRESAS", "title": "Empresas que operan" },
-    "navAll": "Ver todas las provincias"
+    "navAll": "Ver todas las provincias",
+    "exportValue": "Export. · USD/año",
+    "wells": "Pozos",
+    "oilGas": "Petróleo & Gas",
+    "tabs": { "oil": "Petróleo", "gas": "Gas", "mining": "Minería", "exports": "Exportaciones" },
+    "oilProduction": "Producción de petróleo",
+    "gasProduction": "Producción de gas",
+    "vmShare": "Participación Vaca Muerta",
+    "vmShort": "Vaca Muerta",
+    "conventional": "Convencional",
+    "activeWells": "Pozos activos",
+    "topOperators": "Operadores principales",
+    "exportProfile": "Perfil exportador",
+    "exportColumns": { "sector": "Sector", "product": "Producto", "value": "Valor anual", "share": "%" },
+    "productionHistory": "Historia de producción",
+    "noSectorData": "Sin datos para este sector."
+  },
+  "exportaciones": {
+    "eyebrow": "EXPORTACIONES",
+    "title": "Exportaciones — Minería, Petróleo & Gas",
+    "blurb": "Valor exportador por sector y provincia.",
+    "total": "Total exportado",
+    "bySector": "Por sector",
+    "byProvince": "Por provincia",
+    "tabs": { "all": "Todos", "oil": "Petróleo", "gas": "Gas", "mining": "Minería" },
+    "columns": { "province": "Provincia", "value": "Valor anual", "share": "%" },
+    "noData": "Sin datos de exportaciones."
   },
   "metadata": {
     "homeTitle": "Petrodata — seguimiento de petróleo, gas, minerales y tierras raras de Argentina",

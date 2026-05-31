@@ -721,9 +721,49 @@ export interface paths {
         };
         /**
          * List companies
-         * @description Every controlling company / operator across all commodities, with project counts and the commodities they operate in. Sorted by project count. Filter by `q`, `commodity`, `origin_country`.
+         * @description All companies — mining operators and oil & gas operators in one list — with logos, stock metadata and project counts. Filter by `type` (oil_and_gas | mining | both | all), `q`, `commodity`, `country`.
          */
         get: operations["CompaniesController_list_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/companies/public": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Publicly traded companies
+         * @description Companies with a stock ticker — the set the frontend renders stock cards for.
+         */
+        get: operations["CompaniesController_publicCompanies_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/companies/prices": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Live stock prices
+         * @description Current price and daily change for every public company, sourced from Yahoo Finance and cached for 5 minutes.
+         */
+        get: operations["CompaniesController_prices_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -741,7 +781,7 @@ export interface paths {
         };
         /**
          * Company detail
-         * @description Full project portfolio for one company across commodities and provinces, with a stage timeline.
+         * @description Full profile: logo, website, stock data, mineral project portfolio (with timeline) and — for oil & gas operators — a production summary.
          */
         get: operations["CompaniesController_detail_v2"];
         put?: never;
@@ -761,9 +801,29 @@ export interface paths {
         };
         /**
          * List provinces
-         * @description Every province with mining or uranium activity, with project counts and the commodities present. Filter by `commodity`.
+         * @description Every province with oil & gas or mining activity, with combined project counts and commodities. Filter by `commodity`.
          */
         get: operations["ProvincesController_list_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/provinces/export-summary": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Province export ranking
+         * @description All provinces ranked by annual export value across petróleo / gas / minería, plus the national totals.
+         */
+        get: operations["ProvincesController_exportSummary_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -781,9 +841,49 @@ export interface paths {
         };
         /**
          * Province detail
-         * @description All projects in one province, broken down by commodity, with operating companies and exploration / active-mine counts.
+         * @description Unified province profile: live oil & gas production summary, mineral project portfolio, and export profile.
          */
         get: operations["ProvincesController_detail_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/provinces/{slug}/production": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Province O&G production time series
+         * @description Monthly oil & gas production for the province (same shape as operator production). Empty for provinces with no O&G activity. Supports `from` / `to`.
+         */
+        get: operations["ProvincesController_production_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/provinces/{slug}/exports": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Province exports by sector
+         * @description Annual export values for the province, by sector and product.
+         */
+        get: operations["ProvincesController_exports_v2"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1779,27 +1879,58 @@ export interface components {
             total_rigs: Record<string, never> | null;
         };
         CompanyListItemDto: {
-            /** @example cnea */
+            /** @example ypf */
             slug: string;
-            /** @example CNEA */
+            /** @example YPF S.A. */
             name: string;
-            /** @example Argentina */
-            origin_country: Record<string, never> | null;
-            /** @example 8 */
-            project_count: number;
             /**
-             * @example [
-             *       "Uranio"
-             *     ]
+             * @example oil_and_gas
+             * @enum {string}
              */
+            type: "mining" | "oil_and_gas" | "both";
+            /** @example petroleum */
+            sector: string;
+            /** @example Argentina */
+            country: Record<string, never> | null;
+            /** @example https://www.google.com/s2/favicons?domain=www.ypf.com&sz=64 */
+            logo_url: Record<string, never> | null;
+            /** @example YPF */
+            stock_ticker: Record<string, never> | null;
+            /** @example NYSE */
+            stock_exchange: Record<string, never> | null;
+            /** @example true */
+            is_public: boolean;
+            /** @example 5725 */
+            project_count_oil_gas: number;
+            /** @example 0 */
+            project_count_mining: number;
+            /** @example 5725 */
+            project_count: number;
+            /** @example [] */
             commodities: string[];
             /**
-             * @description Always null — logos are not scraped; the frontend renders first-letter avatars.
-             * @example null
+             * @example [
+             *       "Chubut",
+             *       "Neuquén"
+             *     ]
              */
-            image_url: Record<string, never> | null;
+            provinces: string[];
         };
-        CoordinatesDto: {
+        CompanyStockPriceRowDto: {
+            /** @example ypf */
+            slug: string;
+            /** @example YPF S.A. */
+            name: string;
+            /** @example YPF */
+            ticker: string;
+            /** @example 42.15 */
+            price: Record<string, never> | null;
+            /** @example 1.2 */
+            change_pct: Record<string, never> | null;
+            /** @example NYSE */
+            exchange: Record<string, never> | null;
+        };
+        CompanyCoordinatesDto: {
             /** @example -43.37 */
             lat: Record<string, never> | null;
             /** @example -68.688 */
@@ -1814,14 +1945,8 @@ export interface components {
             province: Record<string, never> | null;
             /** @example Exploración avanzada */
             status: Record<string, never> | null;
-            coordinates: components["schemas"]["CoordinatesDto"];
-            /**
-             * @description Headline resource figures keyed by category+unit, or null when the source has no resource table.
-             * @example {
-             *       "m_and_i_Ag_kOz": 198643,
-             *       "m_and_i_Au_kOz": 1715
-             *     }
-             */
+            coordinates: components["schemas"]["CompanyCoordinatesDto"];
+            /** @example null */
             resources_summary: {
                 [key: string]: number;
             } | null;
@@ -1829,38 +1954,83 @@ export interface components {
         TimelineStageDto: {
             /** @example Exploración avanzada */
             stage: string;
-            /**
-             * @description Source data has no stage dates; always null for now.
-             * @example null
-             */
+            /** @example null */
             date: Record<string, never> | null;
         };
-        CompanyDetailDto: {
-            /** @example CNEA */
-            name: string;
-            /** @example cnea */
-            slug: string;
-            /** @example Argentina */
-            origin_country: Record<string, never> | null;
-            /** @example null */
-            description: Record<string, never> | null;
-            projects: components["schemas"]["CompanyProjectDto"][];
-            /** @example 8 */
-            total_projects: number;
+        OilGasProductionSummaryDto: {
+            /** @example 7327905.65 */
+            oil_production_m3: Record<string, never> | null;
+            /** @example 3541711.73 */
+            gas_production_m3: Record<string, never> | null;
+            /** @example 175295959.15 */
+            boe_total: Record<string, never> | null;
+            /** @example 5725 */
+            well_count: number;
             /**
              * @example [
-             *       "Uranio"
+             *       "Chubut",
+             *       "Neuquén"
              *     ]
              */
+            provinces: string[];
+        };
+        CompanyStockDto: {
+            /** @example YPF */
+            ticker: string;
+            /** @example 42.15 */
+            price: Record<string, never> | null;
+            /** @example 1.2 */
+            change_pct: Record<string, never> | null;
+            /** @example 0.5 */
+            change: Record<string, never> | null;
+            /** @example USD */
+            currency: Record<string, never> | null;
+            /** @example NYSE */
+            exchange: Record<string, never> | null;
+            /** @example 2026-05-29T20:00:00.000Z */
+            market_time: Record<string, never> | null;
+        };
+        CompanyDetailDto: {
+            /** @example ypf */
+            slug: string;
+            /** @example YPF S.A. */
+            name: string;
+            /** @example oil_and_gas */
+            type: string;
+            /** @example petroleum */
+            sector: string;
+            /** @example Argentina */
+            country: Record<string, never> | null;
+            /** @example https://www.ypf.com */
+            website: Record<string, never> | null;
+            /** @example https://www.google.com/s2/favicons?domain=www.ypf.com&sz=64 */
+            logo_url: Record<string, never> | null;
+            /** @example YPF */
+            stock_ticker: Record<string, never> | null;
+            /** @example NYSE */
+            stock_exchange: Record<string, never> | null;
+            /** @example true */
+            is_public: boolean;
+            /** @example [] */
             commodities_involved: string[];
             /**
              * @example [
              *       "Chubut",
-             *       "Salta"
+             *       "Neuquén"
              *     ]
              */
             provinces: string[];
+            /** @example 5725 */
+            project_count_oil_gas: number;
+            /** @example 0 */
+            project_count_mining: number;
+            /** @description Mineral project portfolio (empty for pure O&G operators). */
+            projects: components["schemas"]["CompanyProjectDto"][];
             project_timeline: components["schemas"]["TimelineStageDto"][];
+            /** @description Present for oil_and_gas / both companies. */
+            oil_gas_production_summary: components["schemas"]["OilGasProductionSummaryDto"] | null;
+            /** @description Live quote for public companies, else null. */
+            stock: components["schemas"]["CompanyStockDto"] | null;
         };
         ProvinceListItemDto: {
             /** @example chubut */
@@ -1869,32 +2039,77 @@ export interface components {
             name: string;
             /** @example CT */
             iso_code: Record<string, never> | null;
+            /** @example 6714 */
+            oil_gas_wells: number;
             /** @example 8 */
-            project_count: number;
+            mining_projects: number;
+            /** @example 6722 */
+            combined_project_count: number;
             /**
              * @example [
              *       "Uranio"
              *     ]
              */
             commodities: string[];
-            /**
-             * @description Reserved for a province-level resource total; null until a comparable per-province aggregate exists.
-             * @example null
-             */
-            total_resources: Record<string, never> | null;
+            /** @example true */
+            has_oil_gas: boolean;
+            /** @example true */
+            has_mining: boolean;
         };
-        ProvinceCommodityDto: {
-            /** @example Uranio */
+        ProvinceExportSummaryRowDto: {
+            /** @example chubut */
+            slug: string;
+            /** @example Chubut */
             name: string;
-            /** @example 8 */
-            project_count: number;
+            /** @example 822502694 */
+            total_export_usd: number;
             /**
-             * @description Per-commodity resource total when derivable, else null.
-             * @example null
+             * @example {
+             *       "petróleo": 781080206,
+             *       "gas": 41422488
+             *     }
              */
-            total_resources: {
-                [key: string]: unknown;
-            } | null;
+            by_sector: {
+                [key: string]: number;
+            };
+        };
+        ProvinceExportSummaryDto: {
+            provinces: components["schemas"]["ProvinceExportSummaryRowDto"][];
+            /** @example 17050000000 */
+            national_total_usd: number;
+            /**
+             * @example {
+             *       "petróleo": 8500000000,
+             *       "gas": 3200000000
+             *     }
+             */
+            national_by_sector: {
+                [key: string]: number;
+            };
+        };
+        ProvinceTopOperatorDto: {
+            /** @example ypf */
+            operator_slug: string;
+            /** @example YPF S.A. */
+            operator_name: string;
+            /** @example 12345.6 */
+            boe: number;
+        };
+        ProvinceOilGasDto: {
+            /** @example 245678.9 */
+            production_oil_bbl_d: number;
+            /** @example 1234.5 */
+            production_gas_mmcf_d: number;
+            /** @example 6714 */
+            active_wells: number;
+            /**
+             * @description Share of BOE from Vaca Muerta (0–1).
+             * @example 0.42
+             */
+            vm_pct: number;
+            top_operators: components["schemas"]["ProvinceTopOperatorDto"][];
+            /** @example 2026-03-01 */
+            latest_month: Record<string, never> | null;
         };
         ProvinceControllerDto: {
             /** @example CNEA */
@@ -1906,31 +2121,50 @@ export interface components {
             /** @example 1.0 */
             ownership_pct: Record<string, never> | null;
         };
-        ProvinceCoordinatesDto: {
-            /** @example -43.37 */
-            lat: Record<string, never> | null;
-            /** @example -68.688 */
-            lng: Record<string, never> | null;
-        };
-        ProvinceProjectDto: {
+        ProvinceMiningProjectDto: {
             /** @example Cerro Solo */
             name: string;
-            /** @example Exploración avanzada */
-            status: Record<string, never> | null;
             /** @example Uranio */
             commodity: string;
+            /** @example Exploración avanzada */
+            status: Record<string, never> | null;
             controllers: components["schemas"]["ProvinceControllerDto"][];
-            coordinates: components["schemas"]["ProvinceCoordinatesDto"];
-            /** @example null */
+            /**
+             * @example {
+             *       "lat": -43.37,
+             *       "lng": -68.688
+             *     }
+             */
+            coordinates: Record<string, never>;
             resources_summary: {
                 [key: string]: number;
             } | null;
         };
-        ProvinceTradeStatsDto: {
-            /** @example [] */
-            major_exports: string[];
-            /** @example null */
-            employment: Record<string, never> | null;
+        ProvinceMiningDto: {
+            /** @example 8 */
+            project_count: number;
+            /**
+             * @example [
+             *       "Uranio"
+             *     ]
+             */
+            commodities: string[];
+            /**
+             * @example [
+             *       "CNEA",
+             *       "Jaguar Uranium Corp."
+             *     ]
+             */
+            controllers: string[];
+            projects: components["schemas"]["ProvinceMiningProjectDto"][];
+        };
+        ProvinceExportRowDto: {
+            /** @example petróleo */
+            sector: string;
+            /** @example Petróleo crudo */
+            product: string;
+            /** @example 781080206 */
+            value_annual_usd: number;
         };
         ProvinceDetailDto: {
             /** @example Chubut */
@@ -1939,22 +2173,27 @@ export interface components {
             slug: string;
             /** @example CT */
             iso_code: Record<string, never> | null;
-            /** @example 8 */
-            project_count: number;
-            commodities: components["schemas"]["ProvinceCommodityDto"][];
-            projects: components["schemas"]["ProvinceProjectDto"][];
-            trade_stats: components["schemas"]["ProvinceTradeStatsDto"] | null;
-            /** @example 0 */
-            active_mines: number;
-            /** @example 6 */
-            exploration_projects: number;
-            /**
-             * @example [
-             *       "CNEA",
-             *       "UrAmérica Ltd."
-             *     ]
-             */
-            companies_operating: string[];
+            oil_gas: components["schemas"]["ProvinceOilGasDto"] | null;
+            mining: components["schemas"]["ProvinceMiningDto"] | null;
+            exports: components["schemas"]["ProvinceExportRowDto"][];
+            /** @example 6722 */
+            combined_project_count: number;
+        };
+        ProvinceProductionPointDto: {
+            /** @example 2026-03-01 */
+            date_month: string;
+            /** @example 245678.9 */
+            oil_bbl_d: number;
+            /** @example 1234.5 */
+            gas_mmcf_d: number;
+            /** @example 123456.7 */
+            oil_m3: number;
+            /** @example 98765.4 */
+            gas_thousand_m3: number;
+            /** @example 567890.1 */
+            boe: number;
+            /** @example 6714 */
+            active_wells: number;
         };
     };
     responses: never;
@@ -2962,12 +3201,14 @@ export interface operations {
     CompaniesController_list_v2: {
         parameters: {
             query?: {
+                /** @description Filter by company type. `all` (default) returns every company. */
+                type?: "oil_and_gas" | "mining" | "both" | "all";
                 /** @description Case-insensitive substring search across company name. */
                 q?: string;
                 /** @description Only companies with at least one project of this commodity (case-insensitive). */
                 commodity?: string;
-                /** @description Filter by origin country (case-insensitive exact match). */
-                origin_country?: string;
+                /** @description Filter by country (case-insensitive exact match). */
+                country?: string;
             };
             header?: never;
             path?: never;
@@ -2982,6 +3223,50 @@ export interface operations {
                 content: {
                     "application/json": {
                         data: components["schemas"]["CompanyListItemDto"][];
+                        meta: components["schemas"]["MetaDto"];
+                    };
+                };
+            };
+        };
+    };
+    CompaniesController_publicCompanies_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: components["schemas"]["CompanyListItemDto"][];
+                        meta: components["schemas"]["MetaDto"];
+                    };
+                };
+            };
+        };
+    };
+    CompaniesController_prices_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: components["schemas"]["CompanyStockPriceRowDto"][];
                         meta: components["schemas"]["MetaDto"];
                     };
                 };
@@ -3024,7 +3309,7 @@ export interface operations {
     ProvincesController_list_v2: {
         parameters: {
             query?: {
-                /** @description Only provinces with at least one project of this commodity (case-insensitive). */
+                /** @description Only provinces with at least one mineral project of this commodity (case-insensitive). */
                 commodity?: string;
             };
             header?: never;
@@ -3040,6 +3325,28 @@ export interface operations {
                 content: {
                     "application/json": {
                         data: components["schemas"]["ProvinceListItemDto"][];
+                        meta: components["schemas"]["MetaDto"];
+                    };
+                };
+            };
+        };
+    };
+    ProvincesController_exportSummary_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: components["schemas"]["ProvinceExportSummaryDto"];
                         meta: components["schemas"]["MetaDto"];
                     };
                 };
@@ -3064,6 +3371,77 @@ export interface operations {
                 content: {
                     "application/json": {
                         data: components["schemas"]["ProvinceDetailDto"];
+                        meta: components["schemas"]["MetaDto"];
+                    };
+                };
+            };
+            /** @description Province slug not found. */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiErrorDto"];
+                };
+            };
+        };
+    };
+    ProvincesController_production_v2: {
+        parameters: {
+            query?: {
+                /** @description Inclusive lower bound for date_month (YYYY-MM or YYYY-MM-DD). */
+                from?: string;
+                /** @description Inclusive upper bound for date_month (YYYY-MM or YYYY-MM-DD). */
+                to?: string;
+            };
+            header?: never;
+            path: {
+                slug: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: components["schemas"]["ProvinceProductionPointDto"][];
+                        meta: components["schemas"]["MetaDto"];
+                    };
+                };
+            };
+            /** @description Province slug not found. */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiErrorDto"];
+                };
+            };
+        };
+    };
+    ProvincesController_exports_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                slug: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: components["schemas"]["ProvinceExportRowDto"][];
                         meta: components["schemas"]["MetaDto"];
                     };
                 };

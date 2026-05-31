@@ -1,45 +1,84 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { Search } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
+import { api } from '@/api/client'
 import { commodityColor } from '@/components/Petrodata/minerals/commodityColors'
+import { CompanyLogo } from './CompanyLogo'
 
 export type CompanyCard = {
   slug: string
   name: string
-  origin: string
+  type: 'mining' | 'oil_and_gas' | 'both'
+  sector: string
+  logoUrl: string | null
+  ticker: string | null
+  exchange: string | null
+  isPublic: boolean
   projectCount: number
   commodities: string[]
 }
 
+type Price = { price: number | null; changePct: number | null; exchange: string | null }
+
+const num = (v: unknown): number | null => (typeof v === 'number' && Number.isFinite(v) ? v : null)
+
 export function CompanyList({ companies }: { companies: CompanyCard[] }) {
   const t = useTranslations('companies')
   const [q, setQ] = useState('')
-  const [commodity, setCommodity] = useState('__all__')
-  const [origin, setOrigin] = useState('__all__')
+  const [sector, setSector] = useState<'all' | 'mining' | 'oil'>('all')
+  const [prices, setPrices] = useState<Record<string, Price>>({})
 
-  const allCommodities = useMemo(
-    () => [...new Set(companies.flatMap((c) => c.commodities))].sort(),
-    [companies],
-  )
-  const allOrigins = useMemo(
-    () => [...new Set(companies.map((c) => c.origin).filter(Boolean))].sort(),
-    [companies],
-  )
+  // Live stock prices — fetched client-side, refreshed every 5 min.
+  useEffect(() => {
+    let alive = true
+    const load = async () => {
+      try {
+        const { data, error } = await api.GET('/api/v2/companies/prices', { cache: 'no-store' })
+        if (!alive || error || !data) return
+        const map: Record<string, Price> = {}
+        for (const row of data.data) {
+          map[row.slug] = {
+            price: num(row.price),
+            changePct: num(row.change_pct),
+            exchange: typeof row.exchange === 'string' ? row.exchange : null,
+          }
+        }
+        setPrices(map)
+      } catch {
+        /* keep prior */
+      }
+    }
+    load()
+    const id = setInterval(load, 5 * 60 * 1000)
+    return () => {
+      alive = false
+      clearInterval(id)
+    }
+  }, [])
 
-  const filtered = companies.filter((c) => {
-    if (q && !c.name.toLowerCase().includes(q.toLowerCase())) return false
-    if (commodity !== '__all__' && !c.commodities.includes(commodity)) return false
-    if (origin !== '__all__' && c.origin !== origin) return false
-    return true
-  })
+  const filtered = useMemo(
+    () =>
+      companies.filter((c) => {
+        if (q && !c.name.toLowerCase().includes(q.toLowerCase())) return false
+        if (sector === 'mining' && c.type === 'oil_and_gas') return false
+        if (sector === 'oil' && c.type === 'mining') return false
+        return true
+      }),
+    [companies, q, sector],
+  )
 
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-3">
-        <label className="relative block max-w-md">
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-wrap items-center gap-1.5">
+          <SectorChip label={t('sectorAll')} active={sector === 'all'} onClick={() => setSector('all')} />
+          <SectorChip label={t('sectorMining')} active={sector === 'mining'} onClick={() => setSector('mining')} />
+          <SectorChip label={t('sectorOil')} active={sector === 'oil'} onClick={() => setSector('oil')} />
+        </div>
+        <label className="relative block md:w-72">
           <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-nd-text-disabled" />
           <input
             value={q}
@@ -48,96 +87,83 @@ export function CompanyList({ companies }: { companies: CompanyCard[] }) {
             className="w-full border border-nd-border bg-nd-surface py-2.5 pl-9 pr-3 text-sm text-nd-text-primary font-mono outline-none placeholder:text-nd-text-disabled focus:border-nd-border-visible"
           />
         </label>
-        <div className="flex flex-wrap gap-4">
-          <Chips label={t('filterCommodity')} allLabel={t('all')} value={commodity} onChange={setCommodity} options={allCommodities} dot />
-          <Chips label={t('filterOrigin')} allLabel={t('all')} value={origin} onChange={setOrigin} options={allOrigins} />
-        </div>
       </div>
 
       {filtered.length === 0 ? (
         <p className="text-sm text-nd-text-disabled font-mono">{t('noResults')}</p>
       ) : (
-        <div className="grid grid-cols-1 gap-px bg-nd-border sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map((c) => (
-            <Link
-              key={c.slug}
-              href={`/companies/${c.slug}`}
-              className="group flex flex-col gap-3 bg-nd-surface p-5 transition-colors hover:bg-nd-surface-raised"
-            >
-              <div className="flex items-start gap-3">
-                <span className="grid size-9 shrink-0 place-items-center border border-nd-border-visible font-display text-lg text-nd-text-display">
-                  {c.name.charAt(0).toUpperCase()}
-                </span>
-                <div className="min-w-0">
-                  <span className="block truncate font-sans text-base leading-tight text-nd-text-display" title={c.name}>
-                    {c.name}
-                  </span>
-                  {c.origin && (
-                    <span className="text-[11px] uppercase tracking-[0.06em] text-nd-text-disabled font-mono">
-                      {c.origin}
-                    </span>
-                  )}
-                </div>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] text-nd-text-secondary font-mono tabular-nums">
-                  {c.projectCount} {t('projects')}
-                </span>
-                <span className="flex items-center gap-1">
-                  {c.commodities.slice(0, 5).map((m) => (
-                    <span key={m} className="size-1.5 rounded-full" style={{ backgroundColor: commodityColor(m).color }} title={m} aria-hidden />
-                  ))}
-                </span>
-              </div>
-            </Link>
-          ))}
+        <div className="overflow-x-auto border border-nd-border bg-nd-surface">
+          <table className="w-full text-[12px] font-mono">
+            <thead>
+              <tr className="bg-nd-surface-raised text-nd-text-secondary text-[10px] uppercase tracking-[0.08em]">
+                <th className="w-px px-5 py-3 text-left">#</th>
+                <th className="px-5 py-3 text-left">{t('listEyebrow')}</th>
+                <th className="px-5 py-3 text-left">{t('sector')}</th>
+                <th className="px-5 py-3 text-right">{t('stats.projects')}</th>
+                <th className="px-5 py-3 text-right">{t('stock')}</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-nd-border">
+              {filtered.map((c, i) => (
+                <tr key={c.slug} className="transition-colors hover:bg-nd-surface-raised">
+                  <td className="px-5 py-3 text-nd-text-disabled tabular-nums">{i + 1}</td>
+                  <td className="px-5 py-3">
+                    <Link href={`/companies/${c.slug}`} className="inline-flex items-center gap-3 text-nd-text-display hover:underline">
+                      <CompanyLogo name={c.name} logoUrl={c.logoUrl} size="sm" />
+                      <span className="font-sans">{c.name}</span>
+                    </Link>
+                  </td>
+                  <td className="px-5 py-3 text-nd-text-secondary">{typeLabel(c.type, t)}</td>
+                  <td className="px-5 py-3 text-right text-nd-text-secondary tabular-nums">{c.projectCount}</td>
+                  <td className="px-5 py-3 text-right">
+                    <StockCell ticker={c.ticker} exchange={c.exchange} price={prices[c.slug]} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       )}
     </div>
   )
 }
 
-function Chips({
-  label,
-  allLabel,
-  value,
-  onChange,
-  options,
-  dot = false,
-}: {
-  label: string
-  allLabel: string
-  value: string
-  onChange: (v: string) => void
-  options: string[]
-  dot?: boolean
-}) {
-  if (options.length === 0) return null
+function typeLabel(type: CompanyCard['type'], t: ReturnType<typeof useTranslations>): string {
+  return type === 'mining' ? t('typeMining') : type === 'oil_and_gas' ? t('typeOil') : t('typeBoth')
+}
+
+function StockCell({ ticker, exchange, price }: { ticker: string | null; exchange: string | null; price?: Price }) {
+  if (!ticker) return <span className="text-nd-text-disabled">—</span>
+  if (!price || price.price == null) {
+    return <span className="text-nd-text-disabled">{exchange ?? ticker}</span>
+  }
+  const up = (price.changePct ?? 0) >= 0
   return (
-    <div className="flex flex-wrap items-center gap-1.5">
-      <span className="mr-1 text-[10px] uppercase tracking-[0.08em] text-nd-text-disabled font-mono">{label}</span>
-      <Chip label={allLabel} active={value === '__all__'} onClick={() => onChange('__all__')} />
-      {options.map((o) => (
-        <Chip key={o} label={o} active={value === o} onClick={() => onChange(o)} dotColor={dot ? commodityColor(o).color : undefined} />
-      ))}
-    </div>
+    <span className="inline-flex items-center gap-1.5 tabular-nums" style={{ color: up ? 'var(--nd-success)' : 'var(--nd-accent)' }}>
+      <span className="text-nd-text-disabled">{price.exchange ?? exchange}</span>
+      ${price.price.toFixed(2)}
+      {price.changePct != null && (
+        <>
+          {up ? '▲' : '▼'} {Math.abs(price.changePct).toFixed(1)}%
+        </>
+      )}
+    </span>
   )
 }
 
-function Chip({ label, active, onClick, dotColor }: { label: string; active: boolean; onClick: () => void; dotColor?: string }) {
+function SectorChip({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) {
   return (
     <button
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className="inline-flex items-center gap-1.5 border px-3 py-1 text-[10px] uppercase tracking-[0.08em] font-mono transition-colors"
+      className="border px-3 py-1.5 text-[10px] uppercase tracking-[0.08em] font-mono transition-colors"
       style={{
         borderColor: active ? 'var(--nd-text-display)' : 'var(--nd-border)',
         backgroundColor: active ? 'var(--nd-text-display)' : 'transparent',
         color: active ? 'var(--nd-black)' : 'var(--nd-text-secondary)',
       }}
     >
-      {dotColor && <span className="size-1.5 rounded-full" style={{ backgroundColor: dotColor }} aria-hidden />}
       {label}
     </button>
   )

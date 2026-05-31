@@ -279,3 +279,42 @@ model AggMonthlyByOperator {
   @@index([dateMonth, vmCombined])
   @@map("agg_monthly_by_operator")
 }
+
+model Company {
+  slug               String   @id
+  name               String
+  type               String // "mining" | "oil_and_gas" | "both"
+  sector             String // "mining" | "petroleum" | "both"
+  country            String?
+  website            String?
+  logoUrl            String?  @map("logo_url")
+  stockTicker        String?  @map("stock_ticker")
+  stockExchange      String?  @map("stock_exchange")
+  isPublic           Boolean  @default(false) @map("is_public")
+  commoditySlugs     String[] @map("commodities")
+  provinces          String[]
+  projectCountOilGas Int      @default(0) @map("project_count_oil_gas")
+  projectCountMining Int      @default(0) @map("project_count_mining")
+  oilProductionM3    Float?   @map("oil_production_m3")
+  gasProductionM3    Float?   @map("gas_production_m3")
+  boeTotal           Float?   @map("boe_total")
+  ingestedAt         DateTime @default(now()) @map("ingested_at")
+
+  @@index([type])
+  @@index([isPublic])
+  @@map("company")
+}
+
+model ProvinceExport {
+  id             Int      @id @default(autoincrement())
+  slug           String
+  provinceName   String   @map("province_name")
+  sector         String // "petroleo" | "gas" | "mineria" | "agro"
+  productName    String   @map("product_name")
+  valueAnnualUsd Float    @map("value_annual_usd")
+  ingestedAt     DateTime @default(now()) @map("ingested_at")
+
+  @@unique([slug, sector, productName])
+  @@index([slug])
+  @@map("province_export")
+}

@@ -60,32 +60,6 @@ export function getFuelCycle(locale: Locale): FuelCycleStep[] {
   return locale === 'en' ? STEPS_EN : STEPS_ES
 }
 
-export type PriceMilestone = { year: string; price: number; label: string }
-
-const MILESTONES_ES: PriceMilestone[] = [
-  { year: '1990', price: 9, label: 'Primeros años de producción' },
-  { year: '2000', price: 7.1, label: 'Mínimo histórico' },
-  { year: '2007', price: 136.22, label: 'Pico histórico' },
-  { year: '2011', price: 65, label: 'Fukushima' },
-  { year: '2016', price: 19, label: 'Depresión post-Fukushima' },
-  { year: '2024', price: 100, label: 'Reactivación nuclear' },
-  { year: '2026', price: 86.35, label: 'Actual' },
-]
-
-const MILESTONES_EN: PriceMilestone[] = [
-  { year: '1990', price: 9, label: 'Early production years' },
-  { year: '2000', price: 7.1, label: 'All-time low' },
-  { year: '2007', price: 136.22, label: 'All-time high' },
-  { year: '2011', price: 65, label: 'Fukushima' },
-  { year: '2016', price: 19, label: 'Post-Fukushima slump' },
-  { year: '2024', price: 100, label: 'Nuclear revival' },
-  { year: '2026', price: 86.35, label: 'Latest' },
-]
-
-export function getPriceMilestones(locale: Locale): PriceMilestone[] {
-  return locale === 'en' ? MILESTONES_EN : MILESTONES_ES
-}
-
 export type TimelineEvent = { year: string; text: string }
 
 const TIMELINE_ES: TimelineEvent[] = [

@@ -2085,16 +2085,32 @@
     },
     "/api/v2/companies": {
       "get": {
-        "description": "Every controlling company / operator across all commodities, with project counts and the commodities they operate in. Sorted by project count. Filter by `q`, `commodity`, `origin_country`.",
+        "description": "All companies — mining operators and oil & gas operators in one list — with logos, stock metadata and project counts. Filter by `type` (oil_and_gas | mining | both | all), `q`, `commodity`, `country`.",
         "operationId": "CompaniesController_list_v2",
         "parameters": [
+          {
+            "name": "type",
+            "required": false,
+            "in": "query",
+            "description": "Filter by company type. `all` (default) returns every company.",
+            "schema": {
+              "example": "oil_and_gas",
+              "type": "string",
+              "enum": [
+                "oil_and_gas",
+                "mining",
+                "both",
+                "all"
+              ]
+            }
+          },
           {
             "name": "q",
             "required": false,
             "in": "query",
             "description": "Case-insensitive substring search across company name.",
             "schema": {
-              "example": "cnea",
+              "example": "ypf",
               "type": "string"
             }
           },
@@ -2109,12 +2125,12 @@
             }
           },
           {
-            "name": "origin_country",
+            "name": "country",
             "required": false,
             "in": "query",
-            "description": "Filter by origin country (case-insensitive exact match).",
+            "description": "Filter by country (case-insensitive exact match).",
             "schema": {
-              "example": "Canadá",
+              "example": "Argentina",
               "type": "string"
             }
           }
@@ -2152,9 +2168,85 @@
         ]
       }
     },
+    "/api/v2/companies/public": {
+      "get": {
+        "description": "Companies with a stock ticker — the set the frontend renders stock cards for.",
+        "operationId": "CompaniesController_publicCompanies_v2",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/CompanyListItemDto"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/MetaDto"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "meta"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "summary": "Publicly traded companies",
+        "tags": [
+          "companies"
+        ]
+      }
+    },
+    "/api/v2/companies/prices": {
+      "get": {
+        "description": "Current price and daily change for every public company, sourced from Yahoo Finance and cached for 5 minutes.",
+        "operationId": "CompaniesController_prices_v2",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/CompanyStockPriceRowDto"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/MetaDto"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "meta"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "summary": "Live stock prices",
+        "tags": [
+          "companies"
+        ]
+      }
+    },
     "/api/v2/companies/{slug}": {
       "get": {
-        "description": "Full project portfolio for one company across commodities and provinces, with a stage timeline.",
+        "description": "Full profile: logo, website, stock data, mineral project portfolio (with timeline) and — for oil & gas operators — a production summary.",
         "operationId": "CompaniesController_detail_v2",
         "parameters": [
           {
@@ -2162,7 +2254,7 @@
             "required": true,
             "in": "path",
             "schema": {
-              "example": "cnea",
+              "example": "ypf",
               "type": "string"
             }
           }
@@ -2209,14 +2301,14 @@
     },
     "/api/v2/provinces": {
       "get": {
-        "description": "Every province with mining or uranium activity, with project counts and the commodities present. Filter by `commodity`.",
+        "description": "Every province with oil & gas or mining activity, with combined project counts and commodities. Filter by `commodity`.",
         "operationId": "ProvincesController_list_v2",
         "parameters": [
           {
             "name": "commodity",
             "required": false,
             "in": "query",
-            "description": "Only provinces with at least one project of this commodity (case-insensitive).",
+            "description": "Only provinces with at least one mineral project of this commodity (case-insensitive).",
             "schema": {
               "example": "Uranio",
               "type": "string"
@@ -2256,9 +2348,44 @@
         ]
       }
     },
+    "/api/v2/provinces/export-summary": {
+      "get": {
+        "description": "All provinces ranked by annual export value across petróleo / gas / minería, plus the national totals.",
+        "operationId": "ProvincesController_exportSummary_v2",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/ProvinceExportSummaryDto"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/MetaDto"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "meta"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "summary": "Province export ranking",
+        "tags": [
+          "provinces"
+        ]
+      }
+    },
     "/api/v2/provinces/{slug}": {
       "get": {
-        "description": "All projects in one province, broken down by commodity, with operating companies and exploration / active-mine counts.",
+        "description": "Unified province profile: live oil & gas production summary, mineral project portfolio, and export profile.",
         "operationId": "ProvincesController_detail_v2",
         "parameters": [
           {
@@ -2306,6 +2433,142 @@
           }
         },
         "summary": "Province detail",
+        "tags": [
+          "provinces"
+        ]
+      }
+    },
+    "/api/v2/provinces/{slug}/production": {
+      "get": {
+        "description": "Monthly oil & gas production for the province (same shape as operator production). Empty for provinces with no O&G activity. Supports `from` / `to`.",
+        "operationId": "ProvincesController_production_v2",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "example": "neuquen",
+              "type": "string"
+            }
+          },
+          {
+            "name": "from",
+            "required": false,
+            "in": "query",
+            "description": "Inclusive lower bound for date_month (YYYY-MM or YYYY-MM-DD).",
+            "schema": {
+              "example": "2024-01",
+              "type": "string"
+            }
+          },
+          {
+            "name": "to",
+            "required": false,
+            "in": "query",
+            "description": "Inclusive upper bound for date_month (YYYY-MM or YYYY-MM-DD).",
+            "schema": {
+              "example": "2026-03",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ProvinceProductionPointDto"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/MetaDto"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "meta"
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Province slug not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorDto"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Province O&G production time series",
+        "tags": [
+          "provinces"
+        ]
+      }
+    },
+    "/api/v2/provinces/{slug}/exports": {
+      "get": {
+        "description": "Annual export values for the province, by sector and product.",
+        "operationId": "ProvincesController_exports_v2",
+        "parameters": [
+          {
+            "name": "slug",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "example": "chubut",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/ProvinceExportRowDto"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/MetaDto"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "meta"
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Province slug not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorDto"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Province exports by sector",
         "tags": [
           "provinces"
         ]
@@ -4863,47 +5126,137 @@
         "properties": {
           "slug": {
             "type": "string",
-            "example": "cnea"
+            "example": "ypf"
           },
           "name": {
             "type": "string",
-            "example": "CNEA"
+            "example": "YPF S.A."
           },
-          "origin_country": {
+          "type": {
+            "type": "string",
+            "example": "oil_and_gas",
+            "enum": [
+              "mining",
+              "oil_and_gas",
+              "both"
+            ]
+          },
+          "sector": {
+            "type": "string",
+            "example": "petroleum"
+          },
+          "country": {
             "type": "object",
             "example": "Argentina",
             "nullable": true
           },
+          "logo_url": {
+            "type": "object",
+            "example": "https://www.google.com/s2/favicons?domain=www.ypf.com&sz=64",
+            "nullable": true
+          },
+          "stock_ticker": {
+            "type": "object",
+            "example": "YPF",
+            "nullable": true
+          },
+          "stock_exchange": {
+            "type": "object",
+            "example": "NYSE",
+            "nullable": true
+          },
+          "is_public": {
+            "type": "boolean",
+            "example": true
+          },
+          "project_count_oil_gas": {
+            "type": "number",
+            "example": 5725
+          },
+          "project_count_mining": {
+            "type": "number",
+            "example": 0
+          },
           "project_count": {
             "type": "number",
-            "example": 8
+            "example": 5725
           },
           "commodities": {
-            "example": [
-              "Uranio"
-            ],
+            "example": [],
             "type": "array",
             "items": {
               "type": "string"
             }
           },
-          "image_url": {
-            "type": "object",
-            "example": null,
-            "nullable": true,
-            "description": "Always null — logos are not scraped; the frontend renders first-letter avatars."
+          "provinces": {
+            "example": [
+              "Chubut",
+              "Neuquén"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "required": [
           "slug",
           "name",
-          "origin_country",
+          "type",
+          "sector",
+          "country",
+          "logo_url",
+          "stock_ticker",
+          "stock_exchange",
+          "is_public",
+          "project_count_oil_gas",
+          "project_count_mining",
           "project_count",
           "commodities",
-          "image_url"
+          "provinces"
         ]
       },
-      "CoordinatesDto": {
+      "CompanyStockPriceRowDto": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "example": "ypf"
+          },
+          "name": {
+            "type": "string",
+            "example": "YPF S.A."
+          },
+          "ticker": {
+            "type": "string",
+            "example": "YPF"
+          },
+          "price": {
+            "type": "object",
+            "example": 42.15,
+            "nullable": true
+          },
+          "change_pct": {
+            "type": "object",
+            "example": 1.2,
+            "nullable": true
+          },
+          "exchange": {
+            "type": "object",
+            "example": "NYSE",
+            "nullable": true
+          }
+        },
+        "required": [
+          "slug",
+          "name",
+          "ticker",
+          "price",
+          "change_pct",
+          "exchange"
+        ]
+      },
+      "CompanyCoordinatesDto": {
         "type": "object",
         "properties": {
           "lat": {
@@ -4944,7 +5297,7 @@
             "nullable": true
           },
           "coordinates": {
-            "$ref": "#/components/schemas/CoordinatesDto"
+            "$ref": "#/components/schemas/CompanyCoordinatesDto"
           },
           "resources_summary": {
             "type": "object",
@@ -4952,11 +5305,7 @@
               "type": "number"
             },
             "nullable": true,
-            "example": {
-              "m_and_i_Ag_kOz": 198643,
-              "m_and_i_Au_kOz": 1715
-            },
-            "description": "Headline resource figures keyed by category+unit, or null when the source has no resource table."
+            "example": null
           }
         },
         "required": [
@@ -4978,8 +5327,7 @@
           "date": {
             "type": "object",
             "example": null,
-            "nullable": true,
-            "description": "Source data has no stage dates; always null for now."
+            "nullable": true
           }
         },
         "required": [
@@ -4987,41 +5335,145 @@
           "date"
         ]
       },
+      "OilGasProductionSummaryDto": {
+        "type": "object",
+        "properties": {
+          "oil_production_m3": {
+            "type": "object",
+            "example": 7327905.65,
+            "nullable": true
+          },
+          "gas_production_m3": {
+            "type": "object",
+            "example": 3541711.73,
+            "nullable": true
+          },
+          "boe_total": {
+            "type": "object",
+            "example": 175295959.15,
+            "nullable": true
+          },
+          "well_count": {
+            "type": "number",
+            "example": 5725
+          },
+          "provinces": {
+            "example": [
+              "Chubut",
+              "Neuquén"
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "oil_production_m3",
+          "gas_production_m3",
+          "boe_total",
+          "well_count",
+          "provinces"
+        ]
+      },
+      "CompanyStockDto": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string",
+            "example": "YPF"
+          },
+          "price": {
+            "type": "object",
+            "example": 42.15,
+            "nullable": true
+          },
+          "change_pct": {
+            "type": "object",
+            "example": 1.2,
+            "nullable": true
+          },
+          "change": {
+            "type": "object",
+            "example": 0.5,
+            "nullable": true
+          },
+          "currency": {
+            "type": "object",
+            "example": "USD",
+            "nullable": true
+          },
+          "exchange": {
+            "type": "object",
+            "example": "NYSE",
+            "nullable": true
+          },
+          "market_time": {
+            "type": "object",
+            "example": "2026-05-29T20:00:00.000Z",
+            "nullable": true
+          }
+        },
+        "required": [
+          "ticker",
+          "price",
+          "change_pct",
+          "change",
+          "currency",
+          "exchange",
+          "market_time"
+        ]
+      },
       "CompanyDetailDto": {
         "type": "object",
         "properties": {
-          "name": {
-            "type": "string",
-            "example": "CNEA"
-          },
           "slug": {
             "type": "string",
-            "example": "cnea"
+            "example": "ypf"
           },
-          "origin_country": {
+          "name": {
+            "type": "string",
+            "example": "YPF S.A."
+          },
+          "type": {
+            "type": "string",
+            "example": "oil_and_gas"
+          },
+          "sector": {
+            "type": "string",
+            "example": "petroleum"
+          },
+          "country": {
             "type": "object",
             "example": "Argentina",
             "nullable": true
           },
-          "description": {
+          "website": {
             "type": "object",
-            "example": null,
+            "example": "https://www.ypf.com",
             "nullable": true
           },
-          "projects": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CompanyProjectDto"
-            }
+          "logo_url": {
+            "type": "object",
+            "example": "https://www.google.com/s2/favicons?domain=www.ypf.com&sz=64",
+            "nullable": true
           },
-          "total_projects": {
-            "type": "number",
-            "example": 8
+          "stock_ticker": {
+            "type": "object",
+            "example": "YPF",
+            "nullable": true
+          },
+          "stock_exchange": {
+            "type": "object",
+            "example": "NYSE",
+            "nullable": true
+          },
+          "is_public": {
+            "type": "boolean",
+            "example": true
           },
           "commodities_involved": {
-            "example": [
-              "Uranio"
-            ],
+            "example": [],
             "type": "array",
             "items": {
               "type": "string"
@@ -5030,11 +5482,26 @@
           "provinces": {
             "example": [
               "Chubut",
-              "Salta"
+              "Neuquén"
             ],
             "type": "array",
             "items": {
               "type": "string"
+            }
+          },
+          "project_count_oil_gas": {
+            "type": "number",
+            "example": 5725
+          },
+          "project_count_mining": {
+            "type": "number",
+            "example": 0
+          },
+          "projects": {
+            "description": "Mineral project portfolio (empty for pure O&G operators).",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CompanyProjectDto"
             }
           },
           "project_timeline": {
@@ -5042,18 +5509,47 @@
             "items": {
               "$ref": "#/components/schemas/TimelineStageDto"
             }
+          },
+          "oil_gas_production_summary": {
+            "nullable": true,
+            "description": "Present for oil_and_gas / both companies.",
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/OilGasProductionSummaryDto"
+              }
+            ]
+          },
+          "stock": {
+            "nullable": true,
+            "description": "Live quote for public companies, else null.",
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CompanyStockDto"
+              }
+            ]
           }
         },
         "required": [
-          "name",
           "slug",
-          "origin_country",
-          "description",
-          "projects",
-          "total_projects",
+          "name",
+          "type",
+          "sector",
+          "country",
+          "website",
+          "logo_url",
+          "stock_ticker",
+          "stock_exchange",
+          "is_public",
           "commodities_involved",
           "provinces",
-          "project_timeline"
+          "project_count_oil_gas",
+          "project_count_mining",
+          "projects",
+          "project_timeline",
+          "oil_gas_production_summary",
+          "stock"
         ]
       },
       "ProvinceListItemDto": {
@@ -5072,9 +5568,17 @@
             "example": "CT",
             "nullable": true
           },
-          "project_count": {
+          "oil_gas_wells": {
+            "type": "number",
+            "example": 6714
+          },
+          "mining_projects": {
             "type": "number",
             "example": 8
+          },
+          "combined_project_count": {
+            "type": "number",
+            "example": 6722
           },
           "commodities": {
             "example": [
@@ -5085,45 +5589,151 @@
               "type": "string"
             }
           },
-          "total_resources": {
-            "type": "object",
-            "example": null,
-            "nullable": true,
-            "description": "Reserved for a province-level resource total; null until a comparable per-province aggregate exists."
+          "has_oil_gas": {
+            "type": "boolean",
+            "example": true
+          },
+          "has_mining": {
+            "type": "boolean",
+            "example": true
           }
         },
         "required": [
           "slug",
           "name",
           "iso_code",
-          "project_count",
+          "oil_gas_wells",
+          "mining_projects",
+          "combined_project_count",
           "commodities",
-          "total_resources"
+          "has_oil_gas",
+          "has_mining"
         ]
       },
-      "ProvinceCommodityDto": {
+      "ProvinceExportSummaryRowDto": {
         "type": "object",
         "properties": {
+          "slug": {
+            "type": "string",
+            "example": "chubut"
+          },
           "name": {
             "type": "string",
-            "example": "Uranio"
+            "example": "Chubut"
           },
-          "project_count": {
+          "total_export_usd": {
             "type": "number",
-            "example": 8
+            "example": 822502694
           },
-          "total_resources": {
+          "by_sector": {
             "type": "object",
-            "nullable": true,
-            "additionalProperties": true,
-            "description": "Per-commodity resource total when derivable, else null.",
-            "example": null
+            "additionalProperties": {
+              "type": "number"
+            },
+            "example": {
+              "petróleo": 781080206,
+              "gas": 41422488
+            }
           }
         },
         "required": [
+          "slug",
           "name",
-          "project_count",
-          "total_resources"
+          "total_export_usd",
+          "by_sector"
+        ]
+      },
+      "ProvinceExportSummaryDto": {
+        "type": "object",
+        "properties": {
+          "provinces": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProvinceExportSummaryRowDto"
+            }
+          },
+          "national_total_usd": {
+            "type": "number",
+            "example": 17050000000
+          },
+          "national_by_sector": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            },
+            "example": {
+              "petróleo": 8500000000,
+              "gas": 3200000000
+            }
+          }
+        },
+        "required": [
+          "provinces",
+          "national_total_usd",
+          "national_by_sector"
+        ]
+      },
+      "ProvinceTopOperatorDto": {
+        "type": "object",
+        "properties": {
+          "operator_slug": {
+            "type": "string",
+            "example": "ypf"
+          },
+          "operator_name": {
+            "type": "string",
+            "example": "YPF S.A."
+          },
+          "boe": {
+            "type": "number",
+            "example": 12345.6
+          }
+        },
+        "required": [
+          "operator_slug",
+          "operator_name",
+          "boe"
+        ]
+      },
+      "ProvinceOilGasDto": {
+        "type": "object",
+        "properties": {
+          "production_oil_bbl_d": {
+            "type": "number",
+            "example": 245678.9
+          },
+          "production_gas_mmcf_d": {
+            "type": "number",
+            "example": 1234.5
+          },
+          "active_wells": {
+            "type": "number",
+            "example": 6714
+          },
+          "vm_pct": {
+            "type": "number",
+            "example": 0.42,
+            "description": "Share of BOE from Vaca Muerta (0–1)."
+          },
+          "top_operators": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProvinceTopOperatorDto"
+            }
+          },
+          "latest_month": {
+            "type": "object",
+            "example": "2026-03-01",
+            "nullable": true
+          }
+        },
+        "required": [
+          "production_oil_bbl_d",
+          "production_gas_mmcf_d",
+          "active_wells",
+          "vm_pct",
+          "top_operators",
+          "latest_month"
         ]
       },
       "ProvinceControllerDto": {
@@ -5155,40 +5765,21 @@
           "ownership_pct"
         ]
       },
-      "ProvinceCoordinatesDto": {
-        "type": "object",
-        "properties": {
-          "lat": {
-            "type": "object",
-            "example": -43.37,
-            "nullable": true
-          },
-          "lng": {
-            "type": "object",
-            "example": -68.688,
-            "nullable": true
-          }
-        },
-        "required": [
-          "lat",
-          "lng"
-        ]
-      },
-      "ProvinceProjectDto": {
+      "ProvinceMiningProjectDto": {
         "type": "object",
         "properties": {
           "name": {
             "type": "string",
             "example": "Cerro Solo"
           },
+          "commodity": {
+            "type": "string",
+            "example": "Uranio"
+          },
           "status": {
             "type": "object",
             "example": "Exploración avanzada",
             "nullable": true
-          },
-          "commodity": {
-            "type": "string",
-            "example": "Uranio"
           },
           "controllers": {
             "type": "array",
@@ -5197,45 +5788,90 @@
             }
           },
           "coordinates": {
-            "$ref": "#/components/schemas/ProvinceCoordinatesDto"
+            "type": "object",
+            "additionalProperties": false,
+            "example": {
+              "lat": -43.37,
+              "lng": -68.688
+            }
           },
           "resources_summary": {
             "type": "object",
             "additionalProperties": {
               "type": "number"
             },
-            "nullable": true,
-            "example": null
+            "nullable": true
           }
         },
         "required": [
           "name",
-          "status",
           "commodity",
+          "status",
           "controllers",
           "coordinates",
           "resources_summary"
         ]
       },
-      "ProvinceTradeStatsDto": {
+      "ProvinceMiningDto": {
         "type": "object",
         "properties": {
-          "major_exports": {
-            "example": [],
+          "project_count": {
+            "type": "number",
+            "example": 8
+          },
+          "commodities": {
+            "example": [
+              "Uranio"
+            ],
             "type": "array",
             "items": {
               "type": "string"
             }
           },
-          "employment": {
-            "type": "object",
-            "example": null,
-            "nullable": true
+          "controllers": {
+            "example": [
+              "CNEA",
+              "Jaguar Uranium Corp."
+            ],
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "projects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProvinceMiningProjectDto"
+            }
           }
         },
         "required": [
-          "major_exports",
-          "employment"
+          "project_count",
+          "commodities",
+          "controllers",
+          "projects"
+        ]
+      },
+      "ProvinceExportRowDto": {
+        "type": "object",
+        "properties": {
+          "sector": {
+            "type": "string",
+            "example": "petróleo"
+          },
+          "product": {
+            "type": "string",
+            "example": "Petróleo crudo"
+          },
+          "value_annual_usd": {
+            "type": "number",
+            "example": 781080206
+          }
+        },
+        "required": [
+          "sector",
+          "product",
+          "value_annual_usd"
         ]
       },
       "ProvinceDetailDto": {
@@ -5254,61 +5890,85 @@
             "example": "CT",
             "nullable": true
           },
-          "project_count": {
-            "type": "number",
-            "example": 8
-          },
-          "commodities": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ProvinceCommodityDto"
-            }
-          },
-          "projects": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ProvinceProjectDto"
-            }
-          },
-          "trade_stats": {
+          "oil_gas": {
             "nullable": true,
             "type": "object",
             "allOf": [
               {
-                "$ref": "#/components/schemas/ProvinceTradeStatsDto"
+                "$ref": "#/components/schemas/ProvinceOilGasDto"
               }
             ]
           },
-          "active_mines": {
-            "type": "number",
-            "example": 0
+          "mining": {
+            "nullable": true,
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ProvinceMiningDto"
+              }
+            ]
           },
-          "exploration_projects": {
-            "type": "number",
-            "example": 6
-          },
-          "companies_operating": {
-            "example": [
-              "CNEA",
-              "UrAmérica Ltd."
-            ],
+          "exports": {
             "type": "array",
             "items": {
-              "type": "string"
+              "$ref": "#/components/schemas/ProvinceExportRowDto"
             }
+          },
+          "combined_project_count": {
+            "type": "number",
+            "example": 6722
           }
         },
         "required": [
           "name",
           "slug",
           "iso_code",
-          "project_count",
-          "commodities",
-          "projects",
-          "trade_stats",
-          "active_mines",
-          "exploration_projects",
-          "companies_operating"
+          "oil_gas",
+          "mining",
+          "exports",
+          "combined_project_count"
+        ]
+      },
+      "ProvinceProductionPointDto": {
+        "type": "object",
+        "properties": {
+          "date_month": {
+            "type": "string",
+            "example": "2026-03-01"
+          },
+          "oil_bbl_d": {
+            "type": "number",
+            "example": 245678.9
+          },
+          "gas_mmcf_d": {
+            "type": "number",
+            "example": 1234.5
+          },
+          "oil_m3": {
+            "type": "number",
+            "example": 123456.7
+          },
+          "gas_thousand_m3": {
+            "type": "number",
+            "example": 98765.4
+          },
+          "boe": {
+            "type": "number",
+            "example": 567890.1
+          },
+          "active_wells": {
+            "type": "number",
+            "example": 6714
+          }
+        },
+        "required": [
+          "date_month",
+          "oil_bbl_d",
+          "gas_mmcf_d",
+          "oil_m3",
+          "gas_thousand_m3",
+          "boe",
+          "active_wells"
         ]
       }
     }

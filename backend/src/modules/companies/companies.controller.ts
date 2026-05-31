@@ -2,7 +2,11 @@ import { Controller, Get, Param, Query } from '@nestjs/common';
 import { ApiNotFoundResponse, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { ApiErrorDto, ApiOkEnvelope } from '../../common/swagger';
 import { ListCompaniesQueryDto } from './companies.dto';
-import { CompanyDetailDto, CompanyListItemDto } from './companies.response';
+import {
+  CompanyDetailDto,
+  CompanyListItemDto,
+  CompanyStockPriceRowDto,
+} from './companies.response';
 import { CompaniesService } from './companies.service';
 
 @ApiTags('companies')
@@ -14,19 +18,40 @@ export class CompaniesController {
   @ApiOperation({
     summary: 'List companies',
     description:
-      'Every controlling company / operator across all commodities, with project counts and the commodities they operate in. Sorted by project count. Filter by `q`, `commodity`, `origin_country`.',
+      'All companies — mining operators and oil & gas operators in one list — with logos, stock metadata and project counts. Filter by `type` (oil_and_gas | mining | both | all), `q`, `commodity`, `country`.',
   })
   @ApiOkEnvelope(CompanyListItemDto, { isArray: true })
   list(@Query() q: ListCompaniesQueryDto) {
     return this.service.list(q);
   }
 
+  @Get('public')
+  @ApiOperation({
+    summary: 'Publicly traded companies',
+    description: 'Companies with a stock ticker — the set the frontend renders stock cards for.',
+  })
+  @ApiOkEnvelope(CompanyListItemDto, { isArray: true })
+  publicCompanies() {
+    return this.service.publicCompanies();
+  }
+
+  @Get('prices')
+  @ApiOperation({
+    summary: 'Live stock prices',
+    description: 'Current price and daily change for every public company, sourced from Yahoo Finance and cached for 5 minutes.',
+  })
+  @ApiOkEnvelope(CompanyStockPriceRowDto, { isArray: true })
+  prices() {
+    return this.service.prices();
+  }
+
   @Get(':slug')
   @ApiOperation({
     summary: 'Company detail',
-    description: 'Full project portfolio for one company across commodities and provinces, with a stage timeline.',
+    description:
+      'Full profile: logo, website, stock data, mineral project portfolio (with timeline) and — for oil & gas operators — a production summary.',
   })
-  @ApiParam({ name: 'slug', example: 'cnea' })
+  @ApiParam({ name: 'slug', example: 'ypf' })
   @ApiOkEnvelope(CompanyDetailDto)
   @ApiNotFoundResponse({ type: ApiErrorDto, description: 'Company slug not found.' })
   detail(@Param('slug') slug: string) {

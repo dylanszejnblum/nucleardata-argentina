@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import nextDynamic from 'next/dynamic'
 import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { Link } from '@/i18n/navigation'
 import { NothingHeader } from '@/components/Nothing/Header'
 import { NothingFooter } from '@/components/Nothing/Footer'
@@ -10,6 +10,7 @@ import { api, type ApiSchemas } from '@/api/client'
 import { buildAlternates } from '@/i18n/alternates'
 import { formatCompact } from '@/utilities/formatNumber'
 import { commodityColor } from '@/components/Petrodata/minerals/commodityColors'
+import { CompanyLogo } from '@/components/Petrodata/entities/CompanyLogo'
 import { StatCounters } from '@/components/Petrodata/entities/StatCounters'
 import { EntityTimeline } from '@/components/Petrodata/entities/EntityTimeline'
 import { SortableProjectsTable } from '@/components/Petrodata/entities/SortableProjectsTable'
@@ -28,11 +29,7 @@ type Detail = ApiSchemas['CompanyDetailDto']
 const str = (v: unknown): string => (typeof v === 'string' ? v : '')
 const num = (v: unknown): number | null =>
   typeof v === 'number' && Number.isFinite(v) ? v : typeof v === 'string' && v.trim() !== '' && Number.isFinite(Number(v)) ? Number(v) : null
-
-function isAdvanced(s: string): boolean {
-  const x = s.toLowerCase()
-  return /avanz|factib|feasib|eep|constru|producc|operac/.test(x)
-}
+const isAdvanced = (s: string) => /avanz|factib|feasib|eep|constru|producc|operac/.test(s.toLowerCase())
 
 function resourceHeadline(rs: Record<string, number> | null | undefined): { value: number; unit: string } | null {
   if (!rs) return null
@@ -45,10 +42,7 @@ function resourceHeadline(rs: Record<string, number> | null | undefined): { valu
 
 async function getCompany(slug: string): Promise<Detail | null> {
   try {
-    const { data, error } = await api.GET('/api/v2/companies/{slug}', {
-      params: { path: { slug } },
-      cache: 'no-store',
-    })
+    const { data, error } = await api.GET('/api/v2/companies/{slug}', { params: { path: { slug } }, cache: 'no-store' })
     if (error || !data) return null
     return data.data
   } catch {
@@ -56,46 +50,50 @@ async function getCompany(slug: string): Promise<Detail | null> {
   }
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   const company = await getCompany(slug)
-  return {
-    title: company?.name ?? 'Empresa',
-    alternates: buildAlternates(`/companies/${slug}`),
-  }
+  return { title: company?.name ?? 'Empresa', alternates: buildAlternates(`/companies/${slug}`) }
 }
 
-export default async function CompanyDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
+export default async function CompanyDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const [t, company] = await Promise.all([getTranslations('companies'), getCompany(slug)])
   if (!company) notFound()
 
   const projects = company.projects ?? []
-  const advanced = projects.filter((p) => isAdvanced(str(p.status))).length
+  const og = company.oil_gas_production_summary
+  const website = str(company.website)
+  const country = str(company.country)
+  const sectorLabel =
+    company.type === 'mining' ? t('typeMining') : company.type === 'oil_and_gas' ? t('typeOil') : t('typeBoth')
 
-  const stats: StatItem[] = [
-    { label: t('stats.projects'), value: company.total_projects },
-    { label: t('stats.advanced'), value: advanced },
-    { label: t('stats.provinces'), value: company.provinces?.length ?? 0 },
-    { label: t('stats.commodities'), value: company.commodities_involved?.length ?? 0 },
-  ]
+  // Type-aware counters: O&G companies surface production, miners surface portfolio.
+  const stats: StatItem[] = og
+    ? [
+        { label: t('oilGasSummary.wells'), value: og.well_count },
+        { label: t('oilGasSummary.oil'), value: num(og.oil_production_m3) ?? 0, format: 'compact' },
+        { label: t('oilGasSummary.gas'), value: num(og.gas_production_m3) ?? 0, format: 'compact' },
+        { label: t('oilGasSummary.boe'), value: num(og.boe_total) ?? 0, format: 'compact' },
+      ]
+    : [
+        { label: t('stats.projects'), value: company.project_count_mining || projects.length },
+        { label: t('stats.advanced'), value: projects.filter((p) => isAdvanced(str(p.status))).length },
+        { label: t('stats.provinces'), value: company.provinces?.length ?? 0 },
+        { label: t('stats.commodities'), value: company.commodities_involved?.length ?? 0 },
+      ]
 
-  const mapPoints: MapPoint[] = projects.map((p) => ({
-    name: p.name,
-    lat: num(p.coordinates?.lat) ?? 0,
-    lng: num(p.coordinates?.lng) ?? 0,
-    color: commodityColor(p.commodity).color,
-    line1: str(p.province),
-    line2: str(p.status),
-  }))
+  const mapPoints: MapPoint[] = projects.map((p) => {
+    const c = p.coordinates as { lat?: unknown; lng?: unknown } | null
+    return {
+      name: p.name,
+      lat: num(c?.lat) ?? 0,
+      lng: num(c?.lng) ?? 0,
+      color: commodityColor(p.commodity).color,
+      line1: str(p.province),
+      line2: str(p.status),
+    }
+  })
   const legendItems = [...new Set((company.commodities_involved ?? []).filter(Boolean))].map((m) => ({
     label: m,
     color: commodityColor(m).color,
@@ -144,10 +142,7 @@ export default async function CompanyDetailPage({
           ),
         },
         status: { sort: str(p.status), node: str(p.status) || '—' },
-        resource: {
-          sort: headline?.value ?? 0,
-          node: headline ? `${formatCompact(headline.value)} ${headline.unit}` : '—',
-        },
+        resource: { sort: headline?.value ?? 0, node: headline ? `${formatCompact(headline.value)} ${headline.unit}` : '—' },
       },
     }
   })
@@ -165,31 +160,36 @@ export default async function CompanyDetailPage({
             <ArrowLeft size={13} />
             {t('backToList')}
           </Link>
-          <h1 className="mt-4 text-balance text-5xl leading-none text-nd-text-display md:text-7xl font-display">
-            {company.name}
-          </h1>
-          <p className="mt-4 text-sm text-nd-text-secondary font-mono">
-            {[str(company.origin_country), t('summary', {
-              projects: company.total_projects,
-              provinces: company.provinces?.length ?? 0,
-              commodities: (company.commodities_involved ?? []).join(', '),
-            })]
-              .filter(Boolean)
-              .join(' · ')}
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-4">
+              <CompanyLogo name={company.name} logoUrl={str(company.logo_url) || null} website={website || null} size="lg" />
+              <h1 className="text-balance text-4xl leading-none text-nd-text-display md:text-6xl font-display">
+                {company.name}
+              </h1>
+            </div>
+            {company.stock && <StockBadge stock={company.stock} />}
+          </div>
+          <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-nd-text-secondary font-mono">
+            <span>{sectorLabel}</span>
+            {country && <span className="text-nd-text-disabled">· {country}</span>}
+            {website && (
+              <a
+                href={website.startsWith('http') ? website : `https://${website}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-nd-text-secondary transition-colors hover:text-nd-text-display"
+              >
+                · {website.replace(/^https?:\/\//, '')}
+                <ExternalLink size={11} />
+              </a>
+            )}
           </p>
-          {str(company.description) && (
-            <p className="mt-4 max-w-2xl text-pretty text-base leading-relaxed text-nd-text-secondary font-sans">
-              {str(company.description)}
-            </p>
-          )}
         </section>
 
-        {/* Stat counters */}
         <section className="container pb-12">
           <StatCounters items={stats} />
         </section>
 
-        {/* Portfolio map */}
         {mapPoints.some((p) => p.lat !== 0 || p.lng !== 0) && (
           <section className="container pb-12">
             <SectionHead eyebrow={t('portfolio.eyebrow')} title={t('portfolio.title')}>
@@ -201,13 +201,13 @@ export default async function CompanyDetailPage({
           </section>
         )}
 
-        {/* Project table */}
-        <section className="container pb-12">
-          <SectionHead eyebrow={t('table.eyebrow')} title={t('table.title')} />
-          <SortableProjectsTable columns={columns} rows={rows} initialSort="project" emptyLabel={t('table.noResults')} />
-        </section>
+        {projects.length > 0 && (
+          <section className="container pb-12">
+            <SectionHead eyebrow={t('table.eyebrow')} title={t('table.title')} />
+            <SortableProjectsTable columns={columns} rows={rows} initialSort="project" emptyLabel={t('table.noResults')} />
+          </section>
+        )}
 
-        {/* Timeline */}
         {company.project_timeline && company.project_timeline.length > 0 && (
           <section className="container pb-20">
             <SectionHead eyebrow={t('timeline.eyebrow')} title={t('timeline.title')} />
@@ -219,6 +219,29 @@ export default async function CompanyDetailPage({
       </main>
       <NothingFooter />
     </>
+  )
+}
+
+function StockBadge({ stock }: { stock: ApiSchemas['CompanyStockDto'] }) {
+  const price = num(stock.price)
+  const changePct = num(stock.change_pct)
+  const exchange = str(stock.exchange) || stock.ticker
+  if (price == null) {
+    return <span className="text-[11px] uppercase tracking-[0.08em] text-nd-text-disabled font-mono">{exchange}</span>
+  }
+  const up = (changePct ?? 0) >= 0
+  return (
+    <span
+      className="inline-flex items-center gap-2 border border-nd-border px-3 py-1.5 text-sm tabular-nums font-mono"
+      style={{ color: up ? 'var(--nd-success)' : 'var(--nd-accent)' }}
+    >
+      <span className="text-nd-text-disabled text-[11px] uppercase tracking-[0.08em]">{exchange}</span>${price.toFixed(2)}
+      {changePct != null && (
+        <>
+          {up ? '▲' : '▼'} {Math.abs(changePct).toFixed(1)}%
+        </>
+      )}
+    </span>
   )
 }
 

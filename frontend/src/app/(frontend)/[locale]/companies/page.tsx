@@ -9,7 +9,7 @@ import { CompanyList, type CompanyCard } from '@/components/Petrodata/entities/C
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
-const str = (v: unknown): string => (typeof v === 'string' ? v : '')
+const str = (v: unknown): string | null => (typeof v === 'string' ? v : null)
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('companies')
@@ -31,7 +31,12 @@ export default async function CompaniesPage() {
   const cards: CompanyCard[] = companies.map((c) => ({
     slug: c.slug,
     name: c.name,
-    origin: str(c.origin_country),
+    type: c.type,
+    sector: c.sector,
+    logoUrl: str(c.logo_url),
+    ticker: str(c.stock_ticker),
+    exchange: str(c.stock_exchange),
+    isPublic: c.is_public,
     projectCount: c.project_count,
     commodities: c.commodities ?? [],
   }))

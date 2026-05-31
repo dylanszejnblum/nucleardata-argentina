@@ -4,66 +4,91 @@ export class ProvinceListItemDto {
   @ApiProperty({ example: 'chubut' }) slug!: string;
   @ApiProperty({ example: 'Chubut' }) name!: string;
   @ApiProperty({ example: 'CT', nullable: true }) iso_code!: string | null;
-  @ApiProperty({ example: 8 }) project_count!: number;
+  @ApiProperty({ example: 6714 }) oil_gas_wells!: number;
+  @ApiProperty({ example: 8 }) mining_projects!: number;
+  @ApiProperty({ example: 6722 }) combined_project_count!: number;
   @ApiProperty({ type: [String], example: ['Uranio'] }) commodities!: string[];
-  @ApiProperty({ example: null, nullable: true, description: 'Reserved for a province-level resource total; null until a comparable per-province aggregate exists.' })
-  total_resources!: number | null;
+  @ApiProperty({ example: true }) has_oil_gas!: boolean;
+  @ApiProperty({ example: true }) has_mining!: boolean;
 }
 
-export class ProvinceCommodityDto {
-  @ApiProperty({ example: 'Uranio' }) name!: string;
-  @ApiProperty({ example: 8 }) project_count!: number;
-  @ApiProperty({
-    type: 'object',
-    nullable: true,
-    additionalProperties: true,
-    description: 'Per-commodity resource total when derivable, else null.',
-    example: null,
-  })
-  total_resources!: { value: number; unit: string } | null;
+export class ProvinceTopOperatorDto {
+  @ApiProperty({ example: 'ypf' }) operator_slug!: string;
+  @ApiProperty({ example: 'YPF S.A.' }) operator_name!: string;
+  @ApiProperty({ example: 12345.6 }) boe!: number;
 }
 
-export class ProvinceCoordinatesDto {
-  @ApiProperty({ example: -43.37, nullable: true }) lat!: number | null;
-  @ApiProperty({ example: -68.688, nullable: true }) lng!: number | null;
+export class ProvinceOilGasDto {
+  @ApiProperty({ example: 245678.9 }) production_oil_bbl_d!: number;
+  @ApiProperty({ example: 1234.5 }) production_gas_mmcf_d!: number;
+  @ApiProperty({ example: 6714 }) active_wells!: number;
+  @ApiProperty({ example: 0.42, description: 'Share of BOE from Vaca Muerta (0–1).' }) vm_pct!: number;
+  @ApiProperty({ type: [ProvinceTopOperatorDto] }) top_operators!: ProvinceTopOperatorDto[];
+  @ApiProperty({ example: '2026-03-01', nullable: true }) latest_month!: string | null;
 }
 
-export class ProvinceControllerDto {
+class ProvinceControllerDto {
   @ApiProperty({ example: 'CNEA' }) name!: string;
   @ApiProperty({ example: 'cnea' }) slug!: string;
   @ApiProperty({ example: 'Argentina', nullable: true }) origin_country!: string | null;
   @ApiProperty({ example: '1.0', nullable: true }) ownership_pct!: string | null;
 }
 
-export class ProvinceProjectDto {
+class ProvinceMiningProjectDto {
   @ApiProperty({ example: 'Cerro Solo' }) name!: string;
-  @ApiProperty({ example: 'Exploración avanzada', nullable: true }) status!: string | null;
   @ApiProperty({ example: 'Uranio' }) commodity!: string;
+  @ApiProperty({ example: 'Exploración avanzada', nullable: true }) status!: string | null;
   @ApiProperty({ type: [ProvinceControllerDto] }) controllers!: ProvinceControllerDto[];
-  @ApiProperty({ type: ProvinceCoordinatesDto }) coordinates!: ProvinceCoordinatesDto;
-  @ApiProperty({
-    type: 'object',
-    additionalProperties: { type: 'number' },
-    nullable: true,
-    example: null,
-  })
+  @ApiProperty({ type: 'object', additionalProperties: false, example: { lat: -43.37, lng: -68.688 } })
+  coordinates!: { lat: number | null; lng: number | null };
+  @ApiProperty({ type: 'object', additionalProperties: { type: 'number' }, nullable: true })
   resources_summary!: Record<string, number> | null;
 }
 
-export class ProvinceTradeStatsDto {
-  @ApiProperty({ type: [String], example: [] }) major_exports!: string[];
-  @ApiProperty({ example: null, nullable: true }) employment!: number | null;
+export class ProvinceMiningDto {
+  @ApiProperty({ example: 8 }) project_count!: number;
+  @ApiProperty({ type: [String], example: ['Uranio'] }) commodities!: string[];
+  @ApiProperty({ type: [String], example: ['CNEA', 'Jaguar Uranium Corp.'] }) controllers!: string[];
+  @ApiProperty({ type: [ProvinceMiningProjectDto] }) projects!: ProvinceMiningProjectDto[];
+}
+
+export class ProvinceExportRowDto {
+  @ApiProperty({ example: 'petróleo' }) sector!: string;
+  @ApiProperty({ example: 'Petróleo crudo' }) product!: string;
+  @ApiProperty({ example: 781080206 }) value_annual_usd!: number;
 }
 
 export class ProvinceDetailDto {
   @ApiProperty({ example: 'Chubut' }) name!: string;
   @ApiProperty({ example: 'chubut' }) slug!: string;
   @ApiProperty({ example: 'CT', nullable: true }) iso_code!: string | null;
-  @ApiProperty({ example: 8 }) project_count!: number;
-  @ApiProperty({ type: [ProvinceCommodityDto] }) commodities!: ProvinceCommodityDto[];
-  @ApiProperty({ type: [ProvinceProjectDto] }) projects!: ProvinceProjectDto[];
-  @ApiProperty({ type: ProvinceTradeStatsDto, nullable: true }) trade_stats!: ProvinceTradeStatsDto | null;
-  @ApiProperty({ example: 0 }) active_mines!: number;
-  @ApiProperty({ example: 6 }) exploration_projects!: number;
-  @ApiProperty({ type: [String], example: ['CNEA', 'UrAmérica Ltd.'] }) companies_operating!: string[];
+  @ApiProperty({ type: ProvinceOilGasDto, nullable: true }) oil_gas!: ProvinceOilGasDto | null;
+  @ApiProperty({ type: ProvinceMiningDto, nullable: true }) mining!: ProvinceMiningDto | null;
+  @ApiProperty({ type: [ProvinceExportRowDto] }) exports!: ProvinceExportRowDto[];
+  @ApiProperty({ example: 6722 }) combined_project_count!: number;
+}
+
+export class ProvinceProductionPointDto {
+  @ApiProperty({ example: '2026-03-01' }) date_month!: string;
+  @ApiProperty({ example: 245678.9 }) oil_bbl_d!: number;
+  @ApiProperty({ example: 1234.5 }) gas_mmcf_d!: number;
+  @ApiProperty({ example: 123456.7 }) oil_m3!: number;
+  @ApiProperty({ example: 98765.4 }) gas_thousand_m3!: number;
+  @ApiProperty({ example: 567890.1 }) boe!: number;
+  @ApiProperty({ example: 6714 }) active_wells!: number;
+}
+
+export class ProvinceExportSummaryRowDto {
+  @ApiProperty({ example: 'chubut' }) slug!: string;
+  @ApiProperty({ example: 'Chubut' }) name!: string;
+  @ApiProperty({ example: 822502694 }) total_export_usd!: number;
+  @ApiProperty({ type: 'object', additionalProperties: { type: 'number' }, example: { 'petróleo': 781080206, gas: 41422488 } })
+  by_sector!: Record<string, number>;
+}
+
+export class ProvinceExportSummaryDto {
+  @ApiProperty({ type: [ProvinceExportSummaryRowDto] }) provinces!: ProvinceExportSummaryRowDto[];
+  @ApiProperty({ example: 17050000000 }) national_total_usd!: number;
+  @ApiProperty({ type: 'object', additionalProperties: { type: 'number' }, example: { 'petróleo': 8500000000, gas: 3200000000 } })
+  national_by_sector!: Record<string, number>;
 }

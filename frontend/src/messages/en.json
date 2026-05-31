@@ -337,10 +337,6 @@
       "subtitle": "Monthly · {n} points · {from}–{to}",
       "noData": "No price data."
     },
-    "milestones": {
-      "eyebrow": "PRICE MILESTONES",
-      "title": "Key moments"
-    },
     "map": {
       "eyebrow": "URANIUM PROJECTS MAP",
       "title": "Uranium projects",
@@ -372,7 +368,8 @@
       "imports": "Imports",
       "exports": "Exports",
       "noData": "No trade data.",
-      "axisUsd": "USD"
+      "axisUsd": "USD",
+      "flowLink": "View flow by country"
     },
     "cycle": {
       "eyebrow": "NUCLEAR FUEL CYCLE",
@@ -454,7 +451,25 @@
       }
     },
     "timeline": { "eyebrow": "PROGRESSION", "title": "Project stages" },
-    "origin": "Origin"
+    "origin": "Origin",
+    "sector": "Sector",
+    "stock": "Stock",
+    "website": "Web",
+    "sectorAll": "All",
+    "sectorMining": "Mining",
+    "sectorOil": "Oil & Gas",
+    "typeMining": "Mining",
+    "typeOil": "Oil & Gas",
+    "typeBoth": "Mining + O&G",
+    "wellsSuffix": "active wells",
+    "oilGasSummary": {
+      "eyebrow": "OIL & GAS",
+      "title": "Production",
+      "wells": "Wells",
+      "oil": "Oil · m³",
+      "gas": "Gas · m³",
+      "boe": "BOE"
+    }
   },
   "provinces": {
     "listEyebrow": "PROVINCES",
@@ -489,7 +504,33 @@
     },
     "tradeStats": { "eyebrow": "TRADE", "title": "Top exports", "employment": "Employment" },
     "operators": { "eyebrow": "COMPANIES", "title": "Operating companies" },
-    "navAll": "See all provinces"
+    "navAll": "See all provinces",
+    "exportValue": "Exports · USD/yr",
+    "wells": "Wells",
+    "oilGas": "Oil & Gas",
+    "tabs": { "oil": "Oil", "gas": "Gas", "mining": "Mining", "exports": "Exports" },
+    "oilProduction": "Oil production",
+    "gasProduction": "Gas production",
+    "vmShare": "Vaca Muerta share",
+    "vmShort": "Vaca Muerta",
+    "conventional": "Conventional",
+    "activeWells": "Active wells",
+    "topOperators": "Top operators",
+    "exportProfile": "Export profile",
+    "exportColumns": { "sector": "Sector", "product": "Product", "value": "Annual value", "share": "%" },
+    "productionHistory": "Production history",
+    "noSectorData": "No data for this sector."
+  },
+  "exportaciones": {
+    "eyebrow": "EXPORTS",
+    "title": "Exports — Mining, Oil & Gas",
+    "blurb": "Export value by sector and province.",
+    "total": "Total exports",
+    "bySector": "By sector",
+    "byProvince": "By province",
+    "tabs": { "all": "All", "oil": "Oil", "gas": "Gas", "mining": "Mining" },
+    "columns": { "province": "Province", "value": "Annual value", "share": "%" },
+    "noData": "No export data."
   },
   "metadata": {
     "homeTitle": "Petrodata — Argentina oil, gas, minerals & rare-earths tracker",
