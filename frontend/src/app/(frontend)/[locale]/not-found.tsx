@@ -20,30 +20,26 @@ export default function NotFound() {
           </div>
 
           <span
-            className="mb-4 block text-[11px] uppercase tracking-[0.08em] text-nd-text-secondary"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="mb-4 block text-[11px] uppercase tracking-[0.08em] text-nd-text-secondary font-mono"
           >
             [404]
           </span>
 
           <h1
-            className="mb-3 text-center text-5xl leading-none text-nd-text-display md:text-7xl"
-            style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+            className="mb-3 text-center text-5xl leading-none text-nd-text-display md:text-7xl font-display"
           >
             Not found
           </h1>
 
           <p
-            className="mb-8 max-w-sm text-center text-sm leading-6 text-nd-text-secondary"
-            style={{ fontFamily: 'var(--font-space-grotesk)' }}
+            className="mb-8 max-w-sm text-center text-sm leading-6 text-nd-text-secondary font-sans"
           >
             This page does not exist or has been moved.
           </p>
 
           <Link
             href="/"
-            className="rounded-full border border-nd-border-visible px-6 py-3 text-[11px] uppercase tracking-[0.08em] text-nd-text-primary transition-colors hover:border-nd-text-display hover:text-nd-text-display"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="rounded-full border border-nd-border-visible px-6 py-3 text-[11px] uppercase tracking-[0.08em] text-nd-text-primary transition-colors hover:border-nd-text-display hover:text-nd-text-display font-mono"
           >
             Back to home
           </Link>

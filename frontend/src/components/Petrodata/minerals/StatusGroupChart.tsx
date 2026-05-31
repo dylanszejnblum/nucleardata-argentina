@@ -53,14 +53,12 @@ export async function StatusGroupChart({ byStatus }: { byStatus: Record<string, 
   return (
     <div className="bg-nd-surface p-5 flex flex-col h-full">
       <span
-        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block font-mono"
       >
         {t('status.eyebrow')}
       </span>
       <h3
-        className="mt-1 mb-4 text-nd-text-display text-lg leading-tight"
-        style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+        className="mt-1 mb-4 text-nd-text-display text-lg leading-tight font-display"
       >
         {t('status.title')}
       </h3>
@@ -91,15 +89,13 @@ export async function StatusGroupChart({ byStatus }: { byStatus: Record<string, 
                 aria-hidden
               />
               <span
-                className="text-nd-text-display truncate"
-                style={{ fontFamily: 'var(--font-space-grotesk)' }}
+                className="text-nd-text-display truncate font-sans"
               >
                 {row.label}
               </span>
             </span>
             <span
-              className="text-nd-text-secondary tabular-nums"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
+              className="text-nd-text-secondary tabular-nums font-mono"
             >
               {row.count}
             </span>

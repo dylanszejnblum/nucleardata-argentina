@@ -25,8 +25,7 @@ export const PostHero: React.FC<{
               return (
                 <span
                   key={`${titleToUse}-${index}`}
-                  className="border border-nd-border px-2 py-1 text-[10px] uppercase text-nd-text-secondary"
-                  style={{ fontFamily: 'var(--font-space-mono)' }}
+                  className="border border-nd-border px-2 py-1 text-[10px] uppercase text-nd-text-secondary font-mono"
                 >
                   {titleToUse}
                 </span>
@@ -37,8 +36,7 @@ export const PostHero: React.FC<{
         </div>
 
         <h1
-          className="mb-6 text-balance text-4xl leading-none text-nd-text-display md:text-6xl"
-          style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+          className="mb-6 text-balance text-4xl leading-none text-nd-text-display md:text-6xl font-display"
         >
           {title}
         </h1>
@@ -47,14 +45,12 @@ export const PostHero: React.FC<{
           {hasAuthors && (
             <div className="flex flex-col gap-1">
               <p
-                className="text-[11px] uppercase text-nd-text-disabled"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="text-[11px] uppercase text-nd-text-disabled font-mono"
               >
                 Author
               </p>
               <p
-                className="text-nd-text-secondary"
-                style={{ fontFamily: 'var(--font-space-grotesk)' }}
+                className="text-nd-text-secondary font-sans"
               >
                 {formatAuthors(populatedAuthors)}
               </p>
@@ -63,15 +59,13 @@ export const PostHero: React.FC<{
           {publishedAt && (
             <div className="flex flex-col gap-1">
               <p
-                className="text-[11px] uppercase text-nd-text-disabled"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="text-[11px] uppercase text-nd-text-disabled font-mono"
               >
                 Published
               </p>
               <time
-                className="text-nd-text-secondary tabular-nums"
+                className="text-nd-text-secondary tabular-nums font-sans"
                 dateTime={publishedAt}
-                style={{ fontFamily: 'var(--font-space-grotesk)' }}
               >
                 {formatDateTime(publishedAt)}
               </time>

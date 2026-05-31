@@ -59,70 +59,51 @@ export function NothingFooter() {
           <div className="flex flex-col gap-3">
             <Link href="/" className="flex items-center gap-3">
               <NonUsdMark />
-              <span
-                className="text-nd-text-display text-sm tracking-tight"
-                style={{ fontFamily: 'var(--font-space-grotesk)' }}
-              >
+              <span className="text-nd-text-display text-sm tracking-tight font-sans">
                 petrodata
               </span>
             </Link>
-            <p
-              className="text-nd-text-disabled text-xs max-w-xs"
-              style={{ fontFamily: 'var(--font-space-grotesk)' }}
-            >
+            <p className="text-nd-text-disabled text-xs max-w-xs font-sans">
               {t('tagline')}
             </p>
           </div>
 
           <div className="flex gap-16">
             <div className="flex flex-col gap-2">
-              <span
-                className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
-              >
+              <span className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase font-mono">
                 {t('resources')}
               </span>
               <Link
                 href="/"
-                className="text-nd-text-secondary hover:text-nd-text-display text-sm transition-colors"
-                style={{ fontFamily: 'var(--font-space-grotesk)' }}
+                className="text-nd-text-secondary hover:text-nd-text-display text-sm transition-colors font-sans"
               >
                 {tNav('dashboardFull')}
               </Link>
               <Link
                 href="/map"
-                className="text-nd-text-secondary hover:text-nd-text-display text-sm transition-colors"
-                style={{ fontFamily: 'var(--font-space-grotesk)' }}
+                className="text-nd-text-secondary hover:text-nd-text-display text-sm transition-colors font-sans"
               >
                 {tNav('oilGasFull')}
               </Link>
               <Link
                 href="/minerals"
-                className="text-nd-text-secondary hover:text-nd-text-display text-sm transition-colors"
-                style={{ fontFamily: 'var(--font-space-grotesk)' }}
+                className="text-nd-text-secondary hover:text-nd-text-display text-sm transition-colors font-sans"
               >
                 {tNav('mineralsFull')}
               </Link>
               <Link
                 href="/research"
-                className="text-nd-text-secondary hover:text-nd-text-display text-sm transition-colors"
-                style={{ fontFamily: 'var(--font-space-grotesk)' }}
+                className="text-nd-text-secondary hover:text-nd-text-display text-sm transition-colors font-sans"
               >
                 {tNav('researchFull')}
               </Link>
             </div>
 
             <div className="flex flex-col gap-2">
-              <span
-                className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
-              >
+              <span className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase font-mono">
                 {t('newsletter')}
               </span>
-              <p
-                className="text-nd-text-disabled text-xs max-w-[220px]"
-                style={{ fontFamily: 'var(--font-space-grotesk)' }}
-              >
+              <p className="text-nd-text-disabled text-xs max-w-[220px] font-sans">
                 {t('newsletterBlurb')}
               </p>
               <div className="mt-1">
@@ -131,18 +112,12 @@ export function NothingFooter() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <span
-                className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
-              >
+              <span className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase font-mono">
                 {t('status')}
               </span>
               <div className="flex items-center gap-2">
                 <div className="h-1.5 w-1.5 rounded-full bg-nd-success" />
-                <span
-                  className="text-nd-text-secondary text-sm"
-                  style={{ fontFamily: 'var(--font-space-mono)' }}
-                >
+                <span className="text-nd-text-secondary text-sm font-mono">
                   {t('allSystemsOperational')}
                 </span>
               </div>
@@ -152,16 +127,10 @@ export function NothingFooter() {
 
         <div className="mt-12 pt-6 border-t border-nd-border flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div className="flex items-center gap-4">
-            <span
-              className="text-nd-text-disabled text-[11px] tracking-[0.08em] uppercase"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
-            >
+            <span className="text-nd-text-disabled text-[11px] tracking-[0.08em] uppercase font-mono">
               &copy; {new Date().getFullYear()} petrodata
             </span>
-            <span
-              className="text-nd-text-disabled text-[11px] tracking-[0.04em]"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
-            >
+            <span className="text-nd-text-disabled text-[11px] tracking-[0.04em] font-mono">
               Made by{' '}
               <a
                 href="https://x.com/dylansz_"
@@ -182,10 +151,7 @@ export function NothingFooter() {
               </a>
             </span>
           </div>
-          <span
-            className="text-nd-text-disabled text-[11px]"
-            style={{ fontFamily: 'var(--font-space-grotesk)' }}
-          >
+          <span className="text-nd-text-disabled text-[11px] font-sans">
             {t('contactTagline')}{' '}
             <a
               href="mailto:info@petrodata.ar"

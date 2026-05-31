@@ -163,8 +163,7 @@ export default async function ProjectDetailPage({
         <section className="container pt-10 pb-2">
           <Link
             href={`/minerals/${slug}`}
-            className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase hover:text-nd-text-display transition-colors inline-flex items-center gap-2"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase hover:text-nd-text-display transition-colors inline-flex items-center gap-2 font-mono"
           >
             <span
               className="inline-block size-2 rounded-full"
@@ -178,9 +177,8 @@ export default async function ProjectDetailPage({
         {/* Hero + map */}
         <section className="container pb-10 md:pb-14">
           <h1
-            className="mt-2 max-w-4xl text-balance text-4xl leading-none md:text-6xl"
+            className="mt-2 max-w-4xl text-balance text-4xl leading-none md:text-6xl font-display"
             style={{
-              fontFamily: 'Doto, var(--font-space-grotesk)',
               color: 'var(--nd-text-display)',
             }}
           >
@@ -195,8 +193,7 @@ export default async function ProjectDetailPage({
           <div className="mt-8 grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-px bg-nd-border">
             <div className="flex flex-col bg-nd-surface">
               <dl
-                className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-3 px-5 py-5 text-[11px]"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-3 px-5 py-5 text-[11px] font-mono"
               >
                 <MetaRow label={t('meta.operator')} value={operator} />
                 <MetaRow label={t('meta.owner')} value={owner} />
@@ -227,8 +224,7 @@ export default async function ProjectDetailPage({
                     color={color}
                   />
                   <div
-                    className="pointer-events-none absolute top-3 left-3 inline-flex items-center gap-2 rounded-full border border-nd-border bg-nd-surface/85 backdrop-blur-md px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] text-nd-text-secondary"
-                    style={{ fontFamily: 'var(--font-space-mono)' }}
+                    className="pointer-events-none absolute top-3 left-3 inline-flex items-center gap-2 rounded-full border border-nd-border bg-nd-surface/85 backdrop-blur-md px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] text-nd-text-secondary font-mono"
                   >
                     <span
                       className="inline-block size-1.5 rounded-full"
@@ -240,8 +236,7 @@ export default async function ProjectDetailPage({
                 </>
               ) : (
                 <div
-                  className="flex h-full w-full items-center justify-center text-nd-text-disabled text-xs uppercase tracking-[0.08em]"
-                  style={{ fontFamily: 'var(--font-space-mono)' }}
+                  className="flex h-full w-full items-center justify-center text-nd-text-disabled text-xs uppercase tracking-[0.08em] font-mono"
                 >
                   {t('noCoords')}
                 </div>
@@ -254,8 +249,7 @@ export default async function ProjectDetailPage({
         {(project.stock || project.commodity_prices.length > 0) && (
           <section className="container pb-12">
             <span
-              className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block mb-4"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
+              className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block mb-4 font-mono"
             >
               {t('market')}
             </span>
@@ -341,14 +335,12 @@ export default async function ProjectDetailPage({
                 return (
                   <div key={heading} className="bg-nd-surface px-5 py-5">
                     <span
-                      className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block mb-3"
-                      style={{ fontFamily: 'var(--font-space-mono)' }}
+                      className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block mb-3 font-mono"
                     >
                       {heading.replace(/_/g, ' ')}
                     </span>
                     <p
-                      className="text-nd-text-secondary text-sm leading-7 whitespace-pre-wrap"
-                      style={{ fontFamily: 'var(--font-space-grotesk)' }}
+                      className="text-nd-text-secondary text-sm leading-7 whitespace-pre-wrap font-sans"
                     >
                       {text}
                     </p>
@@ -383,8 +375,7 @@ export default async function ProjectDetailPage({
 
         {/* Provenance */}
         <section className="container pb-20">
-          <div className="border border-nd-border bg-nd-surface px-5 py-4 flex flex-wrap items-center justify-between gap-3 text-[11px] uppercase tracking-[0.08em] text-nd-text-disabled"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+          <div className="border border-nd-border bg-nd-surface px-5 py-4 flex flex-wrap items-center justify-between gap-3 text-[11px] uppercase tracking-[0.08em] text-nd-text-disabled font-mono"
           >
             <span>
               {t('provenance.source', {
@@ -412,8 +403,7 @@ export default async function ProjectDetailPage({
 function Chip({ children }: { children: React.ReactNode }) {
   return (
     <span
-      className="rounded-full border border-nd-border px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] text-nd-text-secondary"
-      style={{ fontFamily: 'var(--font-space-mono)' }}
+      className="rounded-full border border-nd-border px-2.5 py-1 text-[10px] uppercase tracking-[0.08em] text-nd-text-secondary font-mono"
     >
       {children}
     </span>
@@ -435,14 +425,12 @@ function KpiTile({ label, value }: { label: string; value: string }) {
   return (
     <div className="bg-nd-surface p-5">
       <span
-        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block font-mono"
       >
         {label}
       </span>
       <span
-        className="mt-2 block text-nd-text-display text-2xl tabular-nums leading-none"
-        style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+        className="mt-2 block text-nd-text-display text-2xl tabular-nums leading-none font-display"
       >
         {value}
       </span>
@@ -454,14 +442,12 @@ function KvCard({ label, value }: { label: string; value: string | null }) {
   return (
     <div className="bg-nd-surface px-5 py-4">
       <span
-        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block font-mono"
       >
         {label}
       </span>
       <span
-        className="mt-1.5 block text-nd-text-display text-sm"
-        style={{ fontFamily: 'var(--font-space-grotesk)' }}
+        className="mt-1.5 block text-nd-text-display text-sm font-sans"
       >
         {value ?? '—'}
       </span>
@@ -482,22 +468,19 @@ function SectionHeader({
     <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
       <div>
         <span
-          className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block font-mono"
         >
           {eyebrow}
         </span>
         <h2
-          className="mt-2 text-balance text-2xl leading-none text-nd-text-display md:text-3xl"
-          style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+          className="mt-2 text-balance text-2xl leading-none text-nd-text-display md:text-3xl font-display"
         >
           {title}
         </h2>
       </div>
       {right && (
         <span
-          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
         >
           {right}
         </span>
@@ -519,8 +502,7 @@ function EntriesTable({
   if (valueKeys.length === 0) {
     return (
       <div
-        className="border border-nd-border bg-nd-surface px-5 py-6 text-nd-text-disabled text-sm"
-        style={{ fontFamily: 'var(--font-space-grotesk)' }}
+        className="border border-nd-border bg-nd-surface px-5 py-6 text-nd-text-disabled text-sm font-sans"
       >
         {labels.noNumeric}
       </div>
@@ -528,7 +510,7 @@ function EntriesTable({
   }
   return (
     <div className="border border-nd-border bg-nd-surface overflow-x-auto">
-      <table className="w-full text-[12px]" style={{ fontFamily: 'var(--font-space-mono)' }}>
+      <table className="w-full text-[12px] font-mono">
         <thead>
           <tr className="bg-nd-surface-raised text-nd-text-secondary text-[10px] uppercase tracking-[0.08em]">
             <th className="px-5 py-3 text-left">{labels.category}</th>
@@ -544,8 +526,7 @@ function EntriesTable({
             <tr key={`${e.category}-${i}`}>
               <td className="px-5 py-3">
                 <span
-                  className="inline-flex items-center gap-2 text-nd-text-display"
-                  style={{ fontFamily: 'var(--font-space-grotesk)' }}
+                  className="inline-flex items-center gap-2 text-nd-text-display font-sans"
                 >
                   <span
                     className="inline-block size-1.5 rounded-full"
@@ -592,36 +573,32 @@ function StockCard({ stock, fallbackName }: { stock: Stock; fallbackName: string
     <div className="bg-nd-surface p-4 flex flex-col gap-2">
       <div className="flex items-center justify-between">
         <span
-          className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase truncate"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase truncate font-mono"
           title={stock.operator_match}
         >
           {stock.operator_match || fallbackName || 'Stock'}
         </span>
         <span
-          className="text-[9px] uppercase text-nd-text-disabled border border-nd-border rounded-full px-1.5 py-0.5"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-[9px] uppercase text-nd-text-disabled border border-nd-border rounded-full px-1.5 py-0.5 font-mono"
         >
           {stock.exchange_label}
         </span>
       </div>
       <div className="flex items-baseline gap-2">
         <span
-          className="text-nd-text-display text-2xl tabular-nums leading-none"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-display text-2xl tabular-nums leading-none font-mono"
         >
           {price != null ? price.toFixed(2) : '—'}
         </span>
         <span
-          className="text-nd-text-disabled text-[10px] uppercase"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-disabled text-[10px] uppercase font-mono"
         >
           {(stock.currency as string | null) ?? 'USD'} · {stock.ticker}
         </span>
       </div>
       <span
-        className="text-[11px] tabular-nums"
-        style={{ fontFamily: 'var(--font-space-mono)', color: trendColor }}
+        className="text-[11px] tabular-nums font-mono"
+        style={{ color: trendColor }}
       >
         {change != null ? `${change > 0 ? '+' : ''}${change.toFixed(2)}` : '—'}{' '}
         {changePct != null ? `· ${changePct > 0 ? '+' : ''}${changePct.toFixed(2)}%` : ''}

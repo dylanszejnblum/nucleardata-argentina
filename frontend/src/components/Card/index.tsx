@@ -71,8 +71,7 @@ export const Card: React.FC<{
           ) : (
             <div className="flex size-full items-end justify-start bg-nd-surface-raised p-5">
               <span
-                className="text-nd-text-disabled text-[11px] uppercase"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="text-nd-text-disabled text-[11px] uppercase font-mono"
               >
                 No cover available
               </span>
@@ -87,8 +86,7 @@ export const Card: React.FC<{
                 {categoriesToShow.map((category, index) => (
                   <span
                     key={`${category.title || 'category'}-${index}`}
-                    className="border border-nd-border px-2 py-1 text-[10px] uppercase text-nd-text-secondary"
-                    style={{ fontFamily: 'var(--font-space-mono)' }}
+                    className="border border-nd-border px-2 py-1 text-[10px] uppercase text-nd-text-secondary font-mono"
                   >
                     {category.title || 'Uncategorized'}
                   </span>
@@ -97,9 +95,8 @@ export const Card: React.FC<{
             )}
             {publishedLabel && (
               <time
-                className="text-[11px] text-nd-text-disabled tabular-nums"
+                className="text-[11px] text-nd-text-disabled tabular-nums font-mono"
                 dateTime={publishedAt || undefined}
-                style={{ fontFamily: 'var(--font-space-mono)' }}
               >
                 {publishedLabel}
               </time>
@@ -108,10 +105,7 @@ export const Card: React.FC<{
 
           {titleToUse && (
             <h3
-              className="mb-3 text-balance text-2xl leading-tight text-nd-text-display md:text-[2rem]"
-              style={{
-                fontFamily: 'Doto, var(--font-space-grotesk)',
-              }}
+              className="mb-3 text-balance text-2xl leading-tight text-nd-text-display md:text-[2rem] font-display"
             >
               {titleToUse}
             </h3>
@@ -119,8 +113,7 @@ export const Card: React.FC<{
 
           {description && (
             <p
-              className="line-clamp-2 text-pretty text-sm leading-6 text-nd-text-secondary"
-              style={{ fontFamily: 'var(--font-space-grotesk)' }}
+              className="line-clamp-2 text-pretty text-sm leading-6 text-nd-text-secondary font-sans"
             >
               {sanitizedDescription}
             </p>

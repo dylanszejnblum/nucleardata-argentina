@@ -1,0 +1,3507 @@
+{
+  "count": 436,
+  "mineral": "Uranio",
+  "unit": "USD/lb",
+  "source": "SIACAM (FRED → Cameco)",
+  "prices": [
+    {
+      "date": "1990-01-01",
+      "year": "1990",
+      "month": "1",
+      "price_usd": 9.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1990-02-01",
+      "year": "1990",
+      "month": "2",
+      "price_usd": 8.8,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1990-03-01",
+      "year": "1990",
+      "month": "3",
+      "price_usd": 8.8,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1990-04-01",
+      "year": "1990",
+      "month": "4",
+      "price_usd": 8.65,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1990-05-01",
+      "year": "1990",
+      "month": "5",
+      "price_usd": 9.35,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1990-06-01",
+      "year": "1990",
+      "month": "6",
+      "price_usd": 11.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1990-07-01",
+      "year": "1990",
+      "month": "7",
+      "price_usd": 11.6,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1990-08-01",
+      "year": "1990",
+      "month": "8",
+      "price_usd": 11.45,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1990-09-01",
+      "year": "1990",
+      "month": "9",
+      "price_usd": 10.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1990-10-01",
+      "year": "1990",
+      "month": "10",
+      "price_usd": 8.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1990-11-01",
+      "year": "1990",
+      "month": "11",
+      "price_usd": 9.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1990-12-01",
+      "year": "1990",
+      "month": "12",
+      "price_usd": 9.7,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1991-01-01",
+      "year": "1991",
+      "month": "1",
+      "price_usd": 9.1,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1991-02-01",
+      "year": "1991",
+      "month": "2",
+      "price_usd": 9.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1991-03-01",
+      "year": "1991",
+      "month": "3",
+      "price_usd": 9.4,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1991-04-01",
+      "year": "1991",
+      "month": "4",
+      "price_usd": 9.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1991-05-01",
+      "year": "1991",
+      "month": "5",
+      "price_usd": 9.2,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1991-06-01",
+      "year": "1991",
+      "month": "6",
+      "price_usd": 9.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1991-07-01",
+      "year": "1991",
+      "month": "7",
+      "price_usd": 8.55,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1991-08-01",
+      "year": "1991",
+      "month": "8",
+      "price_usd": 8.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1991-09-01",
+      "year": "1991",
+      "month": "9",
+      "price_usd": 7.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1991-10-01",
+      "year": "1991",
+      "month": "10",
+      "price_usd": 7.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1991-11-01",
+      "year": "1991",
+      "month": "11",
+      "price_usd": 7.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1991-12-01",
+      "year": "1991",
+      "month": "12",
+      "price_usd": 7.4,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1992-01-01",
+      "year": "1992",
+      "month": "1",
+      "price_usd": 8.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1992-02-01",
+      "year": "1992",
+      "month": "2",
+      "price_usd": 7.9,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1992-03-01",
+      "year": "1992",
+      "month": "3",
+      "price_usd": 7.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1992-04-01",
+      "year": "1992",
+      "month": "4",
+      "price_usd": 7.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1992-05-01",
+      "year": "1992",
+      "month": "5",
+      "price_usd": 7.55,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1992-06-01",
+      "year": "1992",
+      "month": "6",
+      "price_usd": 7.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1992-07-01",
+      "year": "1992",
+      "month": "7",
+      "price_usd": 7.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1992-08-01",
+      "year": "1992",
+      "month": "8",
+      "price_usd": 8.05,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1992-09-01",
+      "year": "1992",
+      "month": "9",
+      "price_usd": 8.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1992-10-01",
+      "year": "1992",
+      "month": "10",
+      "price_usd": 10.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1992-11-01",
+      "year": "1992",
+      "month": "11",
+      "price_usd": 10.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1992-12-01",
+      "year": "1992",
+      "month": "12",
+      "price_usd": 10.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1993-01-01",
+      "year": "1993",
+      "month": "1",
+      "price_usd": 9.8,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1993-02-01",
+      "year": "1993",
+      "month": "2",
+      "price_usd": 10.1,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1993-03-01",
+      "year": "1993",
+      "month": "3",
+      "price_usd": 10.2,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1993-04-01",
+      "year": "1993",
+      "month": "4",
+      "price_usd": 10.35,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1993-05-01",
+      "year": "1993",
+      "month": "5",
+      "price_usd": 10.1,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1993-06-01",
+      "year": "1993",
+      "month": "6",
+      "price_usd": 10.3,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1993-07-01",
+      "year": "1993",
+      "month": "7",
+      "price_usd": 9.9,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1993-08-01",
+      "year": "1993",
+      "month": "8",
+      "price_usd": 10.05,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1993-09-01",
+      "year": "1993",
+      "month": "9",
+      "price_usd": 10.2,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1993-10-01",
+      "year": "1993",
+      "month": "10",
+      "price_usd": 10.18,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1993-11-01",
+      "year": "1993",
+      "month": "11",
+      "price_usd": 9.9,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1993-12-01",
+      "year": "1993",
+      "month": "12",
+      "price_usd": 9.85,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1994-01-01",
+      "year": "1994",
+      "month": "1",
+      "price_usd": 9.45,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1994-02-01",
+      "year": "1994",
+      "month": "2",
+      "price_usd": 9.45,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1994-03-01",
+      "year": "1994",
+      "month": "3",
+      "price_usd": 9.3,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1994-04-01",
+      "year": "1994",
+      "month": "4",
+      "price_usd": 9.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1994-05-01",
+      "year": "1994",
+      "month": "5",
+      "price_usd": 9.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1994-06-01",
+      "year": "1994",
+      "month": "6",
+      "price_usd": 9.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1994-07-01",
+      "year": "1994",
+      "month": "7",
+      "price_usd": 9.1,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1994-08-01",
+      "year": "1994",
+      "month": "8",
+      "price_usd": 9.05,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1994-09-01",
+      "year": "1994",
+      "month": "9",
+      "price_usd": 9.45,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1994-10-01",
+      "year": "1994",
+      "month": "10",
+      "price_usd": 9.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1994-11-01",
+      "year": "1994",
+      "month": "11",
+      "price_usd": 9.6,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1994-12-01",
+      "year": "1994",
+      "month": "12",
+      "price_usd": 10.4,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1995-01-01",
+      "year": "1995",
+      "month": "1",
+      "price_usd": 10.78,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1995-02-01",
+      "year": "1995",
+      "month": "2",
+      "price_usd": 11.15,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1995-03-01",
+      "year": "1995",
+      "month": "3",
+      "price_usd": 11.8,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1995-04-01",
+      "year": "1995",
+      "month": "4",
+      "price_usd": 11.85,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1995-05-01",
+      "year": "1995",
+      "month": "5",
+      "price_usd": 11.9,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1995-06-01",
+      "year": "1995",
+      "month": "6",
+      "price_usd": 11.7,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1995-07-01",
+      "year": "1995",
+      "month": "7",
+      "price_usd": 11.7,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1995-08-01",
+      "year": "1995",
+      "month": "8",
+      "price_usd": 11.7,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1995-09-01",
+      "year": "1995",
+      "month": "9",
+      "price_usd": 11.85,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1995-10-01",
+      "year": "1995",
+      "month": "10",
+      "price_usd": 11.85,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1995-11-01",
+      "year": "1995",
+      "month": "11",
+      "price_usd": 11.85,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1995-12-01",
+      "year": "1995",
+      "month": "12",
+      "price_usd": 11.85,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1996-01-01",
+      "year": "1996",
+      "month": "1",
+      "price_usd": 12.2,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1996-02-01",
+      "year": "1996",
+      "month": "2",
+      "price_usd": 15.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1996-03-01",
+      "year": "1996",
+      "month": "3",
+      "price_usd": 15.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1996-04-01",
+      "year": "1996",
+      "month": "4",
+      "price_usd": 15.99,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1996-05-01",
+      "year": "1996",
+      "month": "5",
+      "price_usd": 16.38,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1996-06-01",
+      "year": "1996",
+      "month": "6",
+      "price_usd": 16.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1996-07-01",
+      "year": "1996",
+      "month": "7",
+      "price_usd": 16.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1996-08-01",
+      "year": "1996",
+      "month": "8",
+      "price_usd": 16.46,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1996-09-01",
+      "year": "1996",
+      "month": "9",
+      "price_usd": 16.15,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1996-10-01",
+      "year": "1996",
+      "month": "10",
+      "price_usd": 15.74,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1996-11-01",
+      "year": "1996",
+      "month": "11",
+      "price_usd": 15.07,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1996-12-01",
+      "year": "1996",
+      "month": "12",
+      "price_usd": 14.76,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1997-01-01",
+      "year": "1997",
+      "month": "1",
+      "price_usd": 14.49,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1997-02-01",
+      "year": "1997",
+      "month": "2",
+      "price_usd": 13.81,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1997-03-01",
+      "year": "1997",
+      "month": "3",
+      "price_usd": 13.62,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1997-04-01",
+      "year": "1997",
+      "month": "4",
+      "price_usd": 12.82,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1997-05-01",
+      "year": "1997",
+      "month": "5",
+      "price_usd": 11.83,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1997-06-01",
+      "year": "1997",
+      "month": "6",
+      "price_usd": 10.94,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1997-07-01",
+      "year": "1997",
+      "month": "7",
+      "price_usd": 10.48,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1997-08-01",
+      "year": "1997",
+      "month": "8",
+      "price_usd": 10.39,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1997-09-01",
+      "year": "1997",
+      "month": "9",
+      "price_usd": 10.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1997-10-01",
+      "year": "1997",
+      "month": "10",
+      "price_usd": 11.28,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1997-11-01",
+      "year": "1997",
+      "month": "11",
+      "price_usd": 12.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1997-12-01",
+      "year": "1997",
+      "month": "12",
+      "price_usd": 12.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1998-01-01",
+      "year": "1998",
+      "month": "1",
+      "price_usd": 12.04,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1998-02-01",
+      "year": "1998",
+      "month": "2",
+      "price_usd": 11.38,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1998-03-01",
+      "year": "1998",
+      "month": "3",
+      "price_usd": 10.66,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1998-04-01",
+      "year": "1998",
+      "month": "4",
+      "price_usd": 10.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1998-05-01",
+      "year": "1998",
+      "month": "5",
+      "price_usd": 10.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1998-06-01",
+      "year": "1998",
+      "month": "6",
+      "price_usd": 10.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1998-07-01",
+      "year": "1998",
+      "month": "7",
+      "price_usd": 10.61,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1998-08-01",
+      "year": "1998",
+      "month": "8",
+      "price_usd": 10.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1998-09-01",
+      "year": "1998",
+      "month": "9",
+      "price_usd": 10.23,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1998-10-01",
+      "year": "1998",
+      "month": "10",
+      "price_usd": 9.61,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1998-11-01",
+      "year": "1998",
+      "month": "11",
+      "price_usd": 8.88,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1998-12-01",
+      "year": "1998",
+      "month": "12",
+      "price_usd": 8.49,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1999-01-01",
+      "year": "1999",
+      "month": "1",
+      "price_usd": 9.01,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1999-02-01",
+      "year": "1999",
+      "month": "2",
+      "price_usd": 9.2,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1999-03-01",
+      "year": "1999",
+      "month": "3",
+      "price_usd": 10.44,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1999-04-01",
+      "year": "1999",
+      "month": "4",
+      "price_usd": 10.85,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1999-05-01",
+      "year": "1999",
+      "month": "5",
+      "price_usd": 10.72,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1999-06-01",
+      "year": "1999",
+      "month": "6",
+      "price_usd": 10.56,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1999-07-01",
+      "year": "1999",
+      "month": "7",
+      "price_usd": 10.26,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1999-08-01",
+      "year": "1999",
+      "month": "8",
+      "price_usd": 10.11,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1999-09-01",
+      "year": "1999",
+      "month": "9",
+      "price_usd": 9.92,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1999-10-01",
+      "year": "1999",
+      "month": "10",
+      "price_usd": 9.76,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1999-11-01",
+      "year": "1999",
+      "month": "11",
+      "price_usd": 9.71,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "1999-12-01",
+      "year": "1999",
+      "month": "12",
+      "price_usd": 9.64,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2000-01-01",
+      "year": "2000",
+      "month": "1",
+      "price_usd": 9.55,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2000-02-01",
+      "year": "2000",
+      "month": "2",
+      "price_usd": 9.39,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2000-03-01",
+      "year": "2000",
+      "month": "3",
+      "price_usd": 9.31,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2000-04-01",
+      "year": "2000",
+      "month": "4",
+      "price_usd": 9.14,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2000-05-01",
+      "year": "2000",
+      "month": "5",
+      "price_usd": 8.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2000-06-01",
+      "year": "2000",
+      "month": "6",
+      "price_usd": 8.23,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2000-07-01",
+      "year": "2000",
+      "month": "7",
+      "price_usd": 8.1,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2000-08-01",
+      "year": "2000",
+      "month": "8",
+      "price_usd": 7.96,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2000-09-01",
+      "year": "2000",
+      "month": "9",
+      "price_usd": 7.57,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2000-10-01",
+      "year": "2000",
+      "month": "10",
+      "price_usd": 7.4,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2000-11-01",
+      "year": "2000",
+      "month": "11",
+      "price_usd": 7.13,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2000-12-01",
+      "year": "2000",
+      "month": "12",
+      "price_usd": 7.14,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2001-01-01",
+      "year": "2001",
+      "month": "1",
+      "price_usd": 7.1,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2001-02-01",
+      "year": "2001",
+      "month": "2",
+      "price_usd": 7.39,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2001-03-01",
+      "year": "2001",
+      "month": "3",
+      "price_usd": 7.69,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2001-04-01",
+      "year": "2001",
+      "month": "4",
+      "price_usd": 8.23,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2001-05-01",
+      "year": "2001",
+      "month": "5",
+      "price_usd": 9.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2001-06-01",
+      "year": "2001",
+      "month": "6",
+      "price_usd": 8.78,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2001-07-01",
+      "year": "2001",
+      "month": "7",
+      "price_usd": 8.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2001-08-01",
+      "year": "2001",
+      "month": "8",
+      "price_usd": 8.95,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2001-09-01",
+      "year": "2001",
+      "month": "9",
+      "price_usd": 9.15,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2001-10-01",
+      "year": "2001",
+      "month": "10",
+      "price_usd": 9.47,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2001-11-01",
+      "year": "2001",
+      "month": "11",
+      "price_usd": 9.43,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2001-12-01",
+      "year": "2001",
+      "month": "12",
+      "price_usd": 9.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2002-01-01",
+      "year": "2002",
+      "month": "1",
+      "price_usd": 9.59,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2002-02-01",
+      "year": "2002",
+      "month": "2",
+      "price_usd": 9.72,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2002-03-01",
+      "year": "2002",
+      "month": "3",
+      "price_usd": 9.95,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2002-04-01",
+      "year": "2002",
+      "month": "4",
+      "price_usd": 9.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2002-05-01",
+      "year": "2002",
+      "month": "5",
+      "price_usd": 9.9,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2002-06-01",
+      "year": "2002",
+      "month": "6",
+      "price_usd": 9.9,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2002-07-01",
+      "year": "2002",
+      "month": "7",
+      "price_usd": 9.89,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2002-08-01",
+      "year": "2002",
+      "month": "8",
+      "price_usd": 9.85,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2002-09-01",
+      "year": "2002",
+      "month": "9",
+      "price_usd": 9.8,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2002-10-01",
+      "year": "2002",
+      "month": "10",
+      "price_usd": 9.84,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2002-11-01",
+      "year": "2002",
+      "month": "11",
+      "price_usd": 9.86,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2002-12-01",
+      "year": "2002",
+      "month": "12",
+      "price_usd": 9.88,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2003-01-01",
+      "year": "2003",
+      "month": "1",
+      "price_usd": 10.16,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2003-02-01",
+      "year": "2003",
+      "month": "2",
+      "price_usd": 10.1,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2003-03-01",
+      "year": "2003",
+      "month": "3",
+      "price_usd": 10.1,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2003-04-01",
+      "year": "2003",
+      "month": "4",
+      "price_usd": 10.1,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2003-05-01",
+      "year": "2003",
+      "month": "5",
+      "price_usd": 10.9,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2003-06-01",
+      "year": "2003",
+      "month": "6",
+      "price_usd": 10.9,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2003-07-01",
+      "year": "2003",
+      "month": "7",
+      "price_usd": 10.95,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2003-08-01",
+      "year": "2003",
+      "month": "8",
+      "price_usd": 11.24,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2003-09-01",
+      "year": "2003",
+      "month": "9",
+      "price_usd": 11.49,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2003-10-01",
+      "year": "2003",
+      "month": "10",
+      "price_usd": 12.37,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2003-11-01",
+      "year": "2003",
+      "month": "11",
+      "price_usd": 13.18,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2003-12-01",
+      "year": "2003",
+      "month": "12",
+      "price_usd": 13.35,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2004-01-01",
+      "year": "2004",
+      "month": "1",
+      "price_usd": 14.8,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2004-02-01",
+      "year": "2004",
+      "month": "2",
+      "price_usd": 16.05,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2004-03-01",
+      "year": "2004",
+      "month": "3",
+      "price_usd": 17.14,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2004-04-01",
+      "year": "2004",
+      "month": "4",
+      "price_usd": 17.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2004-05-01",
+      "year": "2004",
+      "month": "5",
+      "price_usd": 17.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2004-06-01",
+      "year": "2004",
+      "month": "6",
+      "price_usd": 17.88,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2004-07-01",
+      "year": "2004",
+      "month": "7",
+      "price_usd": 17.9,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2004-08-01",
+      "year": "2004",
+      "month": "8",
+      "price_usd": 17.9,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2004-09-01",
+      "year": "2004",
+      "month": "9",
+      "price_usd": 18.6,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2004-10-01",
+      "year": "2004",
+      "month": "10",
+      "price_usd": 20.08,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2004-11-01",
+      "year": "2004",
+      "month": "11",
+      "price_usd": 20.2,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2004-12-01",
+      "year": "2004",
+      "month": "12",
+      "price_usd": 20.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2005-01-01",
+      "year": "2005",
+      "month": "1",
+      "price_usd": 20.54,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2005-02-01",
+      "year": "2005",
+      "month": "2",
+      "price_usd": 21.2,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2005-03-01",
+      "year": "2005",
+      "month": "3",
+      "price_usd": 21.84,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2005-04-01",
+      "year": "2005",
+      "month": "4",
+      "price_usd": 23.14,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2005-05-01",
+      "year": "2005",
+      "month": "5",
+      "price_usd": 28.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2005-06-01",
+      "year": "2005",
+      "month": "6",
+      "price_usd": 29.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2005-07-01",
+      "year": "2005",
+      "month": "7",
+      "price_usd": 29.28,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2005-08-01",
+      "year": "2005",
+      "month": "8",
+      "price_usd": 29.65,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2005-09-01",
+      "year": "2005",
+      "month": "9",
+      "price_usd": 30.43,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2005-10-01",
+      "year": "2005",
+      "month": "10",
+      "price_usd": 32.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2005-11-01",
+      "year": "2005",
+      "month": "11",
+      "price_usd": 33.56,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2005-12-01",
+      "year": "2005",
+      "month": "12",
+      "price_usd": 35.53,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2006-01-01",
+      "year": "2006",
+      "month": "1",
+      "price_usd": 36.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2006-02-01",
+      "year": "2006",
+      "month": "2",
+      "price_usd": 37.69,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2006-03-01",
+      "year": "2006",
+      "month": "3",
+      "price_usd": 39.77,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2006-04-01",
+      "year": "2006",
+      "month": "4",
+      "price_usd": 41.1,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2006-05-01",
+      "year": "2006",
+      "month": "5",
+      "price_usd": 42.28,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2006-06-01",
+      "year": "2006",
+      "month": "6",
+      "price_usd": 44.17,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2006-07-01",
+      "year": "2006",
+      "month": "7",
+      "price_usd": 46.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2006-08-01",
+      "year": "2006",
+      "month": "8",
+      "price_usd": 47.44,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2006-09-01",
+      "year": "2006",
+      "month": "9",
+      "price_usd": 52.44,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2006-10-01",
+      "year": "2006",
+      "month": "10",
+      "price_usd": 56.06,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2006-11-01",
+      "year": "2006",
+      "month": "11",
+      "price_usd": 61.44,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2006-12-01",
+      "year": "2006",
+      "month": "12",
+      "price_usd": 66.57,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2007-01-01",
+      "year": "2007",
+      "month": "1",
+      "price_usd": 72.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2007-02-01",
+      "year": "2007",
+      "month": "2",
+      "price_usd": 76.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2007-03-01",
+      "year": "2007",
+      "month": "3",
+      "price_usd": 89.44,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2007-04-01",
+      "year": "2007",
+      "month": "4",
+      "price_usd": 110.43,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2007-05-01",
+      "year": "2007",
+      "month": "5",
+      "price_usd": 119.11,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2007-06-01",
+      "year": "2007",
+      "month": "6",
+      "price_usd": 136.22,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2007-07-01",
+      "year": "2007",
+      "month": "7",
+      "price_usd": 131.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2007-08-01",
+      "year": "2007",
+      "month": "8",
+      "price_usd": 109.6,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2007-09-01",
+      "year": "2007",
+      "month": "9",
+      "price_usd": 85.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2007-10-01",
+      "year": "2007",
+      "month": "10",
+      "price_usd": 77.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2007-11-01",
+      "year": "2007",
+      "month": "11",
+      "price_usd": 92.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2007-12-01",
+      "year": "2007",
+      "month": "12",
+      "price_usd": 91.8,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2008-01-01",
+      "year": "2008",
+      "month": "1",
+      "price_usd": 87.56,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2008-02-01",
+      "year": "2008",
+      "month": "2",
+      "price_usd": 76.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2008-03-01",
+      "year": "2008",
+      "month": "3",
+      "price_usd": 73.71,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2008-04-01",
+      "year": "2008",
+      "month": "4",
+      "price_usd": 69.44,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2008-05-01",
+      "year": "2008",
+      "month": "5",
+      "price_usd": 61.67,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2008-06-01",
+      "year": "2008",
+      "month": "6",
+      "price_usd": 59.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2008-07-01",
+      "year": "2008",
+      "month": "7",
+      "price_usd": 61.84,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2008-08-01",
+      "year": "2008",
+      "month": "8",
+      "price_usd": 64.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2008-09-01",
+      "year": "2008",
+      "month": "9",
+      "price_usd": 63.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2008-10-01",
+      "year": "2008",
+      "month": "10",
+      "price_usd": 48.6,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2008-11-01",
+      "year": "2008",
+      "month": "11",
+      "price_usd": 50.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2008-12-01",
+      "year": "2008",
+      "month": "12",
+      "price_usd": 54.33,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2009-01-01",
+      "year": "2009",
+      "month": "1",
+      "price_usd": 51.44,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2009-02-01",
+      "year": "2009",
+      "month": "2",
+      "price_usd": 47.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2009-03-01",
+      "year": "2009",
+      "month": "3",
+      "price_usd": 43.38,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2009-04-01",
+      "year": "2009",
+      "month": "4",
+      "price_usd": 41.72,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2009-05-01",
+      "year": "2009",
+      "month": "5",
+      "price_usd": 48.56,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2009-06-01",
+      "year": "2009",
+      "month": "6",
+      "price_usd": 51.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2009-07-01",
+      "year": "2009",
+      "month": "7",
+      "price_usd": 49.7,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2009-08-01",
+      "year": "2009",
+      "month": "8",
+      "price_usd": 47.19,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2009-09-01",
+      "year": "2009",
+      "month": "9",
+      "price_usd": 44.28,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2009-10-01",
+      "year": "2009",
+      "month": "10",
+      "price_usd": 46.11,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2009-11-01",
+      "year": "2009",
+      "month": "11",
+      "price_usd": 44.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2009-12-01",
+      "year": "2009",
+      "month": "12",
+      "price_usd": 44.44,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2010-01-01",
+      "year": "2010",
+      "month": "1",
+      "price_usd": 43.83,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2010-02-01",
+      "year": "2010",
+      "month": "2",
+      "price_usd": 42.1,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2010-03-01",
+      "year": "2010",
+      "month": "3",
+      "price_usd": 40.91,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2010-04-01",
+      "year": "2010",
+      "month": "4",
+      "price_usd": 41.33,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2010-05-01",
+      "year": "2010",
+      "month": "5",
+      "price_usd": 41.3,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2010-06-01",
+      "year": "2010",
+      "month": "6",
+      "price_usd": 40.78,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2010-07-01",
+      "year": "2010",
+      "month": "7",
+      "price_usd": 41.94,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2010-08-01",
+      "year": "2010",
+      "month": "8",
+      "price_usd": 46.06,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2010-09-01",
+      "year": "2010",
+      "month": "9",
+      "price_usd": 46.67,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2010-10-01",
+      "year": "2010",
+      "month": "10",
+      "price_usd": 48.83,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2010-11-01",
+      "year": "2010",
+      "month": "11",
+      "price_usd": 57.16,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2010-12-01",
+      "year": "2010",
+      "month": "12",
+      "price_usd": 60.62,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2011-01-01",
+      "year": "2011",
+      "month": "1",
+      "price_usd": 63.88,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2011-02-01",
+      "year": "2011",
+      "month": "2",
+      "price_usd": 65.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2011-03-01",
+      "year": "2011",
+      "month": "3",
+      "price_usd": 63.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2011-04-01",
+      "year": "2011",
+      "month": "4",
+      "price_usd": 57.82,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2011-05-01",
+      "year": "2011",
+      "month": "5",
+      "price_usd": 56.06,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2011-06-01",
+      "year": "2011",
+      "month": "6",
+      "price_usd": 55.4,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2011-07-01",
+      "year": "2011",
+      "month": "7",
+      "price_usd": 52.79,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2011-08-01",
+      "year": "2011",
+      "month": "8",
+      "price_usd": 50.68,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2011-09-01",
+      "year": "2011",
+      "month": "9",
+      "price_usd": 51.98,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2011-10-01",
+      "year": "2011",
+      "month": "10",
+      "price_usd": 52.34,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2011-11-01",
+      "year": "2011",
+      "month": "11",
+      "price_usd": 53.19,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2011-12-01",
+      "year": "2011",
+      "month": "12",
+      "price_usd": 52.18,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2012-01-01",
+      "year": "2012",
+      "month": "1",
+      "price_usd": 52.31,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2012-02-01",
+      "year": "2012",
+      "month": "2",
+      "price_usd": 52.06,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2012-03-01",
+      "year": "2012",
+      "month": "3",
+      "price_usd": 51.29,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2012-04-01",
+      "year": "2012",
+      "month": "4",
+      "price_usd": 51.3,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2012-05-01",
+      "year": "2012",
+      "month": "5",
+      "price_usd": 51.89,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2012-06-01",
+      "year": "2012",
+      "month": "6",
+      "price_usd": 50.83,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2012-07-01",
+      "year": "2012",
+      "month": "7",
+      "price_usd": 50.36,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2012-08-01",
+      "year": "2012",
+      "month": "8",
+      "price_usd": 49.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2012-09-01",
+      "year": "2012",
+      "month": "9",
+      "price_usd": 47.73,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2012-10-01",
+      "year": "2012",
+      "month": "10",
+      "price_usd": 44.61,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2012-11-01",
+      "year": "2012",
+      "month": "11",
+      "price_usd": 41.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2012-12-01",
+      "year": "2012",
+      "month": "12",
+      "price_usd": 43.67,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2013-01-01",
+      "year": "2013",
+      "month": "1",
+      "price_usd": 42.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2013-02-01",
+      "year": "2013",
+      "month": "2",
+      "price_usd": 43.41,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2013-03-01",
+      "year": "2013",
+      "month": "3",
+      "price_usd": 42.28,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2013-04-01",
+      "year": "2013",
+      "month": "4",
+      "price_usd": 41.41,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2013-05-01",
+      "year": "2013",
+      "month": "5",
+      "price_usd": 40.6,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2013-06-01",
+      "year": "2013",
+      "month": "6",
+      "price_usd": 39.94,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2013-07-01",
+      "year": "2013",
+      "month": "7",
+      "price_usd": 38.02,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2013-08-01",
+      "year": "2013",
+      "month": "8",
+      "price_usd": 34.99,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2013-09-01",
+      "year": "2013",
+      "month": "9",
+      "price_usd": 34.45,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2013-10-01",
+      "year": "2013",
+      "month": "10",
+      "price_usd": 34.85,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2013-11-01",
+      "year": "2013",
+      "month": "11",
+      "price_usd": 35.59,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2013-12-01",
+      "year": "2013",
+      "month": "12",
+      "price_usd": 34.59,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2014-01-01",
+      "year": "2014",
+      "month": "1",
+      "price_usd": 35.21,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2014-02-01",
+      "year": "2014",
+      "month": "2",
+      "price_usd": 35.55,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2014-03-01",
+      "year": "2014",
+      "month": "3",
+      "price_usd": 34.7,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2014-04-01",
+      "year": "2014",
+      "month": "4",
+      "price_usd": 32.74,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2014-05-01",
+      "year": "2014",
+      "month": "5",
+      "price_usd": 28.54,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2014-06-01",
+      "year": "2014",
+      "month": "6",
+      "price_usd": 28.23,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2014-07-01",
+      "year": "2014",
+      "month": "7",
+      "price_usd": 28.4,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2014-08-01",
+      "year": "2014",
+      "month": "8",
+      "price_usd": 30.83,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2014-09-01",
+      "year": "2014",
+      "month": "9",
+      "price_usd": 34.37,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2014-10-01",
+      "year": "2014",
+      "month": "10",
+      "price_usd": 35.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2014-11-01",
+      "year": "2014",
+      "month": "11",
+      "price_usd": 40.6,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2014-12-01",
+      "year": "2014",
+      "month": "12",
+      "price_usd": 36.95,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2015-01-01",
+      "year": "2015",
+      "month": "1",
+      "price_usd": 35.9,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2015-02-01",
+      "year": "2015",
+      "month": "2",
+      "price_usd": 38.19,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2015-03-01",
+      "year": "2015",
+      "month": "3",
+      "price_usd": 39.32,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2015-04-01",
+      "year": "2015",
+      "month": "4",
+      "price_usd": 38.84,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2015-05-01",
+      "year": "2015",
+      "month": "5",
+      "price_usd": 35.69,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2015-06-01",
+      "year": "2015",
+      "month": "6",
+      "price_usd": 36.05,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2015-07-01",
+      "year": "2015",
+      "month": "7",
+      "price_usd": 36.28,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2015-08-01",
+      "year": "2015",
+      "month": "8",
+      "price_usd": 36.1,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2015-09-01",
+      "year": "2015",
+      "month": "9",
+      "price_usd": 37.06,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2015-10-01",
+      "year": "2015",
+      "month": "10",
+      "price_usd": 37.24,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2015-11-01",
+      "year": "2015",
+      "month": "11",
+      "price_usd": 35.96,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2015-12-01",
+      "year": "2015",
+      "month": "12",
+      "price_usd": 35.16,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2016-01-01",
+      "year": "2016",
+      "month": "1",
+      "price_usd": 34.69,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2016-02-01",
+      "year": "2016",
+      "month": "2",
+      "price_usd": 34.01,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2016-03-01",
+      "year": "2016",
+      "month": "3",
+      "price_usd": 30.11,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2016-04-01",
+      "year": "2016",
+      "month": "4",
+      "price_usd": 27.82,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2016-05-01",
+      "year": "2016",
+      "month": "5",
+      "price_usd": 27.95,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2016-06-01",
+      "year": "2016",
+      "month": "6",
+      "price_usd": 27.35,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2016-07-01",
+      "year": "2016",
+      "month": "7",
+      "price_usd": 25.85,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2016-08-01",
+      "year": "2016",
+      "month": "8",
+      "price_usd": 25.9,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2016-09-01",
+      "year": "2016",
+      "month": "9",
+      "price_usd": 24.88,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2016-10-01",
+      "year": "2016",
+      "month": "10",
+      "price_usd": 21.49,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2016-11-01",
+      "year": "2016",
+      "month": "11",
+      "price_usd": 18.57,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2016-12-01",
+      "year": "2016",
+      "month": "12",
+      "price_usd": 19.22,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2017-01-01",
+      "year": "2017",
+      "month": "1",
+      "price_usd": 22.17,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2017-02-01",
+      "year": "2017",
+      "month": "2",
+      "price_usd": 25.15,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2017-03-01",
+      "year": "2017",
+      "month": "3",
+      "price_usd": 24.64,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2017-04-01",
+      "year": "2017",
+      "month": "4",
+      "price_usd": 23.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2017-05-01",
+      "year": "2017",
+      "month": "5",
+      "price_usd": 21.64,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2017-06-01",
+      "year": "2017",
+      "month": "6",
+      "price_usd": 19.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2017-07-01",
+      "year": "2017",
+      "month": "7",
+      "price_usd": 20.36,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2017-08-01",
+      "year": "2017",
+      "month": "8",
+      "price_usd": 20.41,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2017-09-01",
+      "year": "2017",
+      "month": "9",
+      "price_usd": 20.43,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2017-10-01",
+      "year": "2017",
+      "month": "10",
+      "price_usd": 20.23,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2017-11-01",
+      "year": "2017",
+      "month": "11",
+      "price_usd": 22.35,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2017-12-01",
+      "year": "2017",
+      "month": "12",
+      "price_usd": 24.69,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2018-01-01",
+      "year": "2018",
+      "month": "1",
+      "price_usd": 23.37,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2018-02-01",
+      "year": "2018",
+      "month": "2",
+      "price_usd": 21.76,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2018-03-01",
+      "year": "2018",
+      "month": "3",
+      "price_usd": 21.73,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2018-04-01",
+      "year": "2018",
+      "month": "4",
+      "price_usd": 20.85,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2018-05-01",
+      "year": "2018",
+      "month": "5",
+      "price_usd": 21.98,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2018-06-01",
+      "year": "2018",
+      "month": "6",
+      "price_usd": 23.07,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2018-07-01",
+      "year": "2018",
+      "month": "7",
+      "price_usd": 23.42,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2018-08-01",
+      "year": "2018",
+      "month": "8",
+      "price_usd": 26.05,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2018-09-01",
+      "year": "2018",
+      "month": "9",
+      "price_usd": 27.11,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2018-10-01",
+      "year": "2018",
+      "month": "10",
+      "price_usd": 27.51,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2018-11-01",
+      "year": "2018",
+      "month": "11",
+      "price_usd": 28.93,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2018-12-01",
+      "year": "2018",
+      "month": "12",
+      "price_usd": 28.76,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2019-01-01",
+      "year": "2019",
+      "month": "1",
+      "price_usd": 28.71,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2019-02-01",
+      "year": "2019",
+      "month": "2",
+      "price_usd": 28.64,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2019-03-01",
+      "year": "2019",
+      "month": "3",
+      "price_usd": 27.2,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2019-04-01",
+      "year": "2019",
+      "month": "4",
+      "price_usd": 25.7,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2019-05-01",
+      "year": "2019",
+      "month": "5",
+      "price_usd": 24.68,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2019-06-01",
+      "year": "2019",
+      "month": "6",
+      "price_usd": 24.48,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2019-07-01",
+      "year": "2019",
+      "month": "7",
+      "price_usd": 25.23,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2019-08-01",
+      "year": "2019",
+      "month": "8",
+      "price_usd": 25.28,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2019-09-01",
+      "year": "2019",
+      "month": "9",
+      "price_usd": 25.41,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2019-10-01",
+      "year": "2019",
+      "month": "10",
+      "price_usd": 24.92,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2019-11-01",
+      "year": "2019",
+      "month": "11",
+      "price_usd": 24.99,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2019-12-01",
+      "year": "2019",
+      "month": "12",
+      "price_usd": 25.62,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2020-01-01",
+      "year": "2020",
+      "month": "1",
+      "price_usd": 24.64,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2020-02-01",
+      "year": "2020",
+      "month": "2",
+      "price_usd": 24.69,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2020-03-01",
+      "year": "2020",
+      "month": "3",
+      "price_usd": 24.66,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2020-04-01",
+      "year": "2020",
+      "month": "4",
+      "price_usd": 29.96,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2020-05-01",
+      "year": "2020",
+      "month": "5",
+      "price_usd": 33.51,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2020-06-01",
+      "year": "2020",
+      "month": "6",
+      "price_usd": 33.09,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2020-07-01",
+      "year": "2020",
+      "month": "7",
+      "price_usd": 32.36,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2020-08-01",
+      "year": "2020",
+      "month": "8",
+      "price_usd": 31.38,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2020-09-01",
+      "year": "2020",
+      "month": "9",
+      "price_usd": 29.98,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2020-10-01",
+      "year": "2020",
+      "month": "10",
+      "price_usd": 29.64,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2020-11-01",
+      "year": "2020",
+      "month": "11",
+      "price_usd": 29.49,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2020-12-01",
+      "year": "2020",
+      "month": "12",
+      "price_usd": 29.77,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2021-01-01",
+      "year": "2021",
+      "month": "1",
+      "price_usd": 29.86,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2021-02-01",
+      "year": "2021",
+      "month": "2",
+      "price_usd": 28.66,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2021-03-01",
+      "year": "2021",
+      "month": "3",
+      "price_usd": 28.33,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2021-04-01",
+      "year": "2021",
+      "month": "4",
+      "price_usd": 29.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2021-05-01",
+      "year": "2021",
+      "month": "5",
+      "price_usd": 30.26,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2021-06-01",
+      "year": "2021",
+      "month": "6",
+      "price_usd": 32.14,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2021-07-01",
+      "year": "2021",
+      "month": "7",
+      "price_usd": 32.34,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2021-08-01",
+      "year": "2021",
+      "month": "8",
+      "price_usd": 32.15,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2021-09-01",
+      "year": "2021",
+      "month": "9",
+      "price_usd": 45.08,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2021-10-01",
+      "year": "2021",
+      "month": "10",
+      "price_usd": 38.48,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2021-11-01",
+      "year": "2021",
+      "month": "11",
+      "price_usd": 31.1,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2021-12-01",
+      "year": "2021",
+      "month": "12",
+      "price_usd": 36.13,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2022-01-01",
+      "year": "2022",
+      "month": "1",
+      "price_usd": 36.87,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2022-02-01",
+      "year": "2022",
+      "month": "2",
+      "price_usd": 35.83,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2022-03-01",
+      "year": "2022",
+      "month": "3",
+      "price_usd": 45.51,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2022-04-01",
+      "year": "2022",
+      "month": "4",
+      "price_usd": 48.7,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2022-05-01",
+      "year": "2022",
+      "month": "5",
+      "price_usd": 40.89,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2022-06-01",
+      "year": "2022",
+      "month": "6",
+      "price_usd": 40.33,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2022-07-01",
+      "year": "2022",
+      "month": "7",
+      "price_usd": 38.94,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2022-08-01",
+      "year": "2022",
+      "month": "8",
+      "price_usd": 39.8,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2022-09-01",
+      "year": "2022",
+      "month": "9",
+      "price_usd": 40.95,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2022-10-01",
+      "year": "2022",
+      "month": "10",
+      "price_usd": 41.3,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2022-11-01",
+      "year": "2022",
+      "month": "11",
+      "price_usd": 40.95,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2022-12-01",
+      "year": "2022",
+      "month": "12",
+      "price_usd": 47.68,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2023-01-01",
+      "year": "2023",
+      "month": "1",
+      "price_usd": 50.63,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2023-02-01",
+      "year": "2023",
+      "month": "2",
+      "price_usd": 50.93,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2023-03-01",
+      "year": "2023",
+      "month": "3",
+      "price_usd": 50.48,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2023-04-01",
+      "year": "2023",
+      "month": "4",
+      "price_usd": 52.93,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2023-05-01",
+      "year": "2023",
+      "month": "5",
+      "price_usd": 54.55,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2023-06-01",
+      "year": "2023",
+      "month": "6",
+      "price_usd": 56.1,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2023-07-01",
+      "year": "2023",
+      "month": "7",
+      "price_usd": 56.38,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2023-08-01",
+      "year": "2023",
+      "month": "8",
+      "price_usd": 59.93,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2023-09-01",
+      "year": "2023",
+      "month": "9",
+      "price_usd": 71.58,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2023-10-01",
+      "year": "2023",
+      "month": "10",
+      "price_usd": 74.38,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2023-11-01",
+      "year": "2023",
+      "month": "11",
+      "price_usd": 81.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2023-12-01",
+      "year": "2023",
+      "month": "12",
+      "price_usd": 91.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2024-01-01",
+      "year": "2024",
+      "month": "1",
+      "price_usd": 100.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2024-02-01",
+      "year": "2024",
+      "month": "2",
+      "price_usd": 95.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2024-03-01",
+      "year": "2024",
+      "month": "3",
+      "price_usd": 87.75,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2024-04-01",
+      "year": "2024",
+      "month": "4",
+      "price_usd": 89.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2024-05-01",
+      "year": "2024",
+      "month": "5",
+      "price_usd": 90.38,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2024-06-01",
+      "year": "2024",
+      "month": "6",
+      "price_usd": 84.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2024-07-01",
+      "year": "2024",
+      "month": "7",
+      "price_usd": 84.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2024-08-01",
+      "year": "2024",
+      "month": "8",
+      "price_usd": 78.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2024-09-01",
+      "year": "2024",
+      "month": "9",
+      "price_usd": 82.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2024-10-01",
+      "year": "2024",
+      "month": "10",
+      "price_usd": 80.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2024-11-01",
+      "year": "2024",
+      "month": "11",
+      "price_usd": 77.13,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2024-12-01",
+      "year": "2024",
+      "month": "12",
+      "price_usd": 72.63,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2025-01-01",
+      "year": "2025",
+      "month": "1",
+      "price_usd": 69.28,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2025-02-01",
+      "year": "2025",
+      "month": "2",
+      "price_usd": 65.03,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2025-03-01",
+      "year": "2025",
+      "month": "3",
+      "price_usd": 64.23,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2025-04-01",
+      "year": "2025",
+      "month": "4",
+      "price_usd": 67.73,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2025-05-01",
+      "year": "2025",
+      "month": "5",
+      "price_usd": 71.55,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2025-06-01",
+      "year": "2025",
+      "month": "6",
+      "price_usd": 78.5,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2025-07-01",
+      "year": "2025",
+      "month": "7",
+      "price_usd": 71.1,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2025-08-01",
+      "year": "2025",
+      "month": "8",
+      "price_usd": 75.13,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2025-09-01",
+      "year": "2025",
+      "month": "9",
+      "price_usd": 82.63,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2025-10-01",
+      "year": "2025",
+      "month": "10",
+      "price_usd": 80.0,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2025-11-01",
+      "year": "2025",
+      "month": "11",
+      "price_usd": 75.8,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2025-12-01",
+      "year": "2025",
+      "month": "12",
+      "price_usd": 81.55,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2026-01-01",
+      "year": "2026",
+      "month": "1",
+      "price_usd": 94.28,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2026-02-01",
+      "year": "2026",
+      "month": "2",
+      "price_usd": 86.95,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2026-03-01",
+      "year": "2026",
+      "month": "3",
+      "price_usd": 84.25,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    },
+    {
+      "date": "2026-04-01",
+      "year": "2026",
+      "month": "4",
+      "price_usd": 86.35,
+      "unit": "Dólar por Libra (USD/lb)",
+      "mineral": "Uranio (U)"
+    }
+  ],
+  "stats": {
+    "min": 7.1,
+    "min_date": "2001-01-01",
+    "max": 136.22,
+    "max_date": "2007-06-01",
+    "current": 86.35,
+    "current_date": "2026-04-01",
+    "all_time_high": 136.22,
+    "all_time_low": 7.1
+  },
+  "generated_at": "2026-05-31T02:30:05.717782"
+}

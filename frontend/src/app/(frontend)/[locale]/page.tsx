@@ -209,10 +209,7 @@ export default async function DashboardPage() {
     return (
       <>
         <NothingHeader />
-        <main
-          className="flex-1 flex items-center justify-center text-nd-text-disabled text-sm"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
-        >
+        <main className="flex-1 flex items-center justify-center text-nd-text-disabled text-sm font-mono">
           {tCommon('backendOffline', {
             url: process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3001',
           })}
@@ -264,7 +261,7 @@ export default async function DashboardPage() {
       mom: oilMoM,
       momSuffix: t('kpi.momSuffix'),
       sparkline: toSparkPoints(oilSeries.slice(-4)),
-      accent: '#f59e0b',
+      accent: 'var(--nd-accent)',
     },
     {
       label: t('kpi.gasLatest'),
@@ -274,7 +271,7 @@ export default async function DashboardPage() {
       mom: gasMoM,
       momSuffix: t('kpi.momSuffix'),
       sparkline: toSparkPoints(gasSeries.slice(-4)),
-      accent: '#3b82f6',
+      accent: 'var(--nd-accent)',
     },
     {
       label: t('kpi.vmShare'),
@@ -283,7 +280,7 @@ export default async function DashboardPage() {
       mom: null,
       momSuffix: t('kpi.momSuffix'),
       sparkline: boeSpark,
-      accent: '#10b981',
+      accent: 'var(--nd-accent)',
     },
     {
       label: t('kpi.activeWells'),
@@ -292,7 +289,7 @@ export default async function DashboardPage() {
       mom: wellsMoM,
       momSuffix: t('kpi.momSuffix'),
       sparkline: toSparkPoints(wellsSeries.slice(-4)),
-      accent: '#8b5cf6',
+      accent: 'var(--nd-accent)',
     },
   ]
 
@@ -308,29 +305,25 @@ export default async function DashboardPage() {
         <section className="container pt-12 md:pt-20 pb-8 md:pb-10">
           <div className="flex flex-col gap-2">
             <span
-              className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
+              className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase font-mono"
             >
               {t('eyebrow', { month: monthLabel.toUpperCase() })}
             </span>
             <h1
-              className="mt-2 text-balance text-5xl md:text-7xl lg:text-8xl leading-none tabular-nums"
+              className="mt-2 text-balance text-5xl md:text-7xl lg:text-8xl leading-none tabular-nums font-display"
               style={{
-                fontFamily: 'Doto, var(--font-space-grotesk)',
                 color: 'var(--nd-text-display)',
               }}
             >
               <AnimatedCounter to={headlineBoe} kind="integer" duration={1600} />{' '}
               <span
-                className="text-nd-text-disabled text-2xl md:text-3xl"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="text-nd-text-disabled text-2xl md:text-3xl font-mono"
               >
                 {t('boeSuffix')}
               </span>
             </h1>
             <p
-              className="mt-4 max-w-2xl text-pretty text-base leading-relaxed text-nd-text-secondary"
-              style={{ fontFamily: 'var(--font-space-grotesk)' }}
+              className="mt-4 max-w-2xl text-pretty text-base leading-relaxed text-nd-text-secondary font-sans"
             >
               {t('tagline')}
             </p>
@@ -347,21 +340,18 @@ export default async function DashboardPage() {
             <div className="mb-5 flex flex-col gap-1 md:flex-row md:items-end md:justify-between">
               <div>
                 <span
-                  className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block"
-                  style={{ fontFamily: 'var(--font-space-mono)' }}
+                  className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block font-mono"
                 >
                   {t('chart.eyebrow')}
                 </span>
                 <h2
-                  className="mt-2 text-balance text-2xl md:text-3xl leading-none text-nd-text-display"
-                  style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+                  className="mt-2 text-balance text-2xl md:text-3xl leading-none text-nd-text-display font-display"
                 >
                   {t('chart.title')}
                 </h2>
               </div>
               <span
-                className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
               >
                 {t('chart.topStacked', { n: topOperators.length })}
               </span>
@@ -388,8 +378,7 @@ export default async function DashboardPage() {
         {/* DATA FRESHNESS BAR */}
         <section className="container pb-10">
           <div
-            className="border border-nd-border bg-nd-surface px-5 py-3 flex flex-wrap items-center justify-between gap-3 text-[11px] uppercase tracking-[0.08em] text-nd-text-disabled"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="border border-nd-border bg-nd-surface px-5 py-3 flex flex-wrap items-center justify-between gap-3 text-[11px] uppercase tracking-[0.08em] text-nd-text-disabled font-mono"
           >
             <span className="inline-flex items-center gap-2">
               <RefreshCw size={11} />
@@ -409,14 +398,12 @@ export default async function DashboardPage() {
               <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                 <div>
                   <span
-                    className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-                    style={{ fontFamily: 'var(--font-space-mono)' }}
+                    className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
                   >
                     {t('minerals.eyebrow')}
                   </span>
                   <h2
-                    className="mt-2 text-balance text-2xl md:text-3xl leading-none text-nd-text-display"
-                    style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+                    className="mt-2 text-balance text-2xl md:text-3xl leading-none text-nd-text-display font-display"
                   >
                     {t('minerals.summary', {
                       projects: mineralsSummary.total_projects,
@@ -426,8 +413,7 @@ export default async function DashboardPage() {
                   </h2>
                 </div>
                 <span
-                  className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.08em] text-nd-text-secondary group-hover:text-nd-text-display transition-colors"
-                  style={{ fontFamily: 'var(--font-space-mono)' }}
+                  className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.08em] text-nd-text-secondary group-hover:text-nd-text-display transition-colors font-mono"
                 >
                   {t('minerals.explore')}
                   <ArrowRight size={11} />
@@ -455,8 +441,7 @@ function CommodityBars({ byCommodity }: { byCommodity: Record<string, number> })
           <div key={name} className="flex flex-col gap-1.5">
             <div className="flex items-baseline justify-between gap-2">
               <span
-                className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.04em] text-nd-text-secondary"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-[0.04em] text-nd-text-secondary font-mono"
               >
                 <span
                   className="inline-block size-1.5 rounded-full"
@@ -466,8 +451,7 @@ function CommodityBars({ byCommodity }: { byCommodity: Record<string, number> })
                 {name}
               </span>
               <span
-                className="text-nd-text-display text-[11px] tabular-nums"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="text-nd-text-display text-[11px] tabular-nums font-mono"
               >
                 {count}
               </span>

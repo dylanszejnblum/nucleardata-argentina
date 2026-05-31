@@ -175,24 +175,21 @@ export default async function CommodityPage({
             />
             <Link
               href="/minerals"
-              className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase hover:text-nd-text-display transition-colors"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
+              className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase hover:text-nd-text-display transition-colors font-mono"
             >
               {t('breadcrumb', { commodity: label.toUpperCase() })}
             </Link>
           </div>
           <h1
-            className="mt-3 max-w-3xl text-balance text-5xl leading-none md:text-7xl"
+            className="mt-3 max-w-3xl text-balance text-5xl leading-none md:text-7xl font-display"
             style={{
-              fontFamily: 'Doto, var(--font-space-grotesk)',
               color: 'var(--nd-text-display)',
             }}
           >
             {label}
           </h1>
           <p
-            className="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-nd-text-secondary"
-            style={{ fontFamily: 'var(--font-space-grotesk)' }}
+            className="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-nd-text-secondary font-sans"
           >
             {t('blurb', {
               projects: rollup.projects,
@@ -267,21 +264,18 @@ export default async function CommodityPage({
           <div className="mb-6 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
             <div>
               <span
-                className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block font-mono"
               >
                 {t('mapSection.eyebrow', { commodity: label.toUpperCase() })}
               </span>
               <h2
-                className="mt-2 text-balance text-3xl leading-none text-nd-text-display md:text-4xl"
-                style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+                className="mt-2 text-balance text-3xl leading-none text-nd-text-display md:text-4xl font-display"
               >
                 {t('mapSection.title')}
               </h2>
             </div>
             <span
-              className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
+              className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
             >
               {t('mapSection.mapped', { n: geojson.features.length })}
             </span>
@@ -295,8 +289,7 @@ export default async function CommodityPage({
         {topProvinces.length > 0 && (
           <section className="container pb-12">
             <span
-              className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block mb-4"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
+              className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block mb-4 font-mono"
             >
               {t('byProvince')}
             </span>
@@ -307,14 +300,12 @@ export default async function CommodityPage({
                   className="bg-nd-surface p-4 flex flex-col gap-1"
                 >
                   <span
-                    className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-                    style={{ fontFamily: 'var(--font-space-mono)' }}
+                    className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
                   >
                     {prov}
                   </span>
                   <span
-                    className="text-nd-text-display text-2xl tabular-nums leading-none"
-                    style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+                    className="text-nd-text-display text-2xl tabular-nums leading-none font-display"
                   >
                     {count}
                   </span>
@@ -329,21 +320,18 @@ export default async function CommodityPage({
           <div className="mb-6 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
             <div>
               <span
-                className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block font-mono"
               >
                 {t('projectsSection.eyebrow')}
               </span>
               <h2
-                className="mt-2 text-balance text-3xl leading-none text-nd-text-display md:text-4xl"
-                style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+                className="mt-2 text-balance text-3xl leading-none text-nd-text-display md:text-4xl font-display"
               >
                 {t('projectsSection.title', { commodity: label })}
               </h2>
             </div>
             <span
-              className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
+              className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
             >
               {t('projectsSection.subtitle', { n: projects.length })}
             </span>
@@ -373,14 +361,12 @@ function TotalsCard({
     return (
       <div className="bg-nd-surface p-6">
         <span
-          className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block mb-3"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block mb-3 font-mono"
         >
           {title}
         </span>
         <span
-          className="text-nd-text-disabled text-sm"
-          style={{ fontFamily: 'var(--font-space-grotesk)' }}
+          className="text-nd-text-disabled text-sm font-sans"
         >
           {emptyMessage}
         </span>
@@ -390,8 +376,7 @@ function TotalsCard({
   return (
     <div className="bg-nd-surface p-6">
       <span
-        className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block mb-4"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block mb-4 font-mono"
       >
         {title}
       </span>
@@ -403,22 +388,19 @@ function TotalsCard({
             style={{ borderColor: accent }}
           >
             <dt
-              className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
+              className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
             >
               {r.label}
             </dt>
             <dd className="mt-1 flex items-baseline gap-1">
               <span
-                className="text-nd-text-display text-2xl tabular-nums leading-none"
-                style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+                className="text-nd-text-display text-2xl tabular-nums leading-none font-display"
               >
                 {formatCompact(r.value)}
               </span>
               {r.unit && (
                 <span
-                  className="text-nd-text-disabled text-[10px] uppercase"
-                  style={{ fontFamily: 'var(--font-space-mono)' }}
+                  className="text-nd-text-disabled text-[10px] uppercase font-mono"
                 >
                   {r.unit}
                 </span>

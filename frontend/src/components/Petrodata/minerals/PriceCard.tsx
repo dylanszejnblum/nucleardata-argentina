@@ -39,8 +39,7 @@ export function PriceCard({ quote, compact = false }: { quote: Quote; compact?: 
             aria-hidden
           />
           <span
-            className="text-nd-text-secondary text-[10px] uppercase tracking-[0.08em] truncate"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-nd-text-secondary text-[10px] uppercase tracking-[0.08em] truncate font-mono"
             title={quote.display}
           >
             {quote.commodity}
@@ -48,8 +47,7 @@ export function PriceCard({ quote, compact = false }: { quote: Quote; compact?: 
         </div>
         {quote.proxy && (
           <span
-            className="text-[9px] uppercase text-nd-text-disabled border border-nd-border rounded-full px-1.5 py-0.5"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-[9px] uppercase text-nd-text-disabled border border-nd-border rounded-full px-1.5 py-0.5 font-mono"
             title="Sector ETF proxy — not a direct commodity feed"
           >
             ETF
@@ -59,14 +57,12 @@ export function PriceCard({ quote, compact = false }: { quote: Quote; compact?: 
 
       <div className="mt-2 flex items-baseline gap-1.5">
         <span
-          className={`text-nd-text-display ${compact ? 'text-xl' : 'text-2xl'} tabular-nums leading-none`}
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className={`text-nd-text-display ${compact ? 'text-xl' : 'text-2xl'} tabular-nums leading-none font-mono`}
         >
           {formatPrice(price)}
         </span>
         <span
-          className="text-nd-text-disabled text-[10px] uppercase"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-disabled text-[10px] uppercase font-mono"
         >
           {quote.unit}
         </span>
@@ -75,8 +71,8 @@ export function PriceCard({ quote, compact = false }: { quote: Quote; compact?: 
       <div className="mt-1.5 flex items-center gap-1.5">
         <TrendArrow direction={isUp ? 'up' : isDown ? 'down' : 'flat'} color={trendColor} />
         <span
-          className="text-[11px] tabular-nums"
-          style={{ fontFamily: 'var(--font-space-mono)', color: trendColor }}
+          className="text-[11px] tabular-nums font-mono"
+          style={{ color: trendColor }}
         >
           {formatChangePct(changePct)}
         </span>
@@ -119,14 +115,12 @@ export function LivePrices({ quotes }: { quotes: Quote[] }) {
     <section className="container pb-8">
       <div className="mb-3 flex items-center justify-between">
         <span
-          className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase font-mono"
         >
           LIVE PRICES
         </span>
         <span
-          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
           title="Sourced from Yahoo Finance · cached 5 min server-side"
         >
           Yahoo Finance · 5-min cache
@@ -177,8 +171,7 @@ export function PriceDetailCard({ quote }: { quote: Quote }) {
             aria-hidden
           />
           <span
-            className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase truncate"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase truncate font-mono"
             title={quote.display}
           >
             {quote.display}
@@ -186,8 +179,7 @@ export function PriceDetailCard({ quote }: { quote: Quote }) {
         </div>
         {quote.proxy && (
           <span
-            className="text-[9px] uppercase text-nd-text-disabled border border-nd-border rounded-full px-1.5 py-0.5"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-[9px] uppercase text-nd-text-disabled border border-nd-border rounded-full px-1.5 py-0.5 font-mono"
             title="Sector ETF proxy — not a direct commodity feed"
           >
             ETF PROXY
@@ -197,14 +189,12 @@ export function PriceDetailCard({ quote }: { quote: Quote }) {
 
       <div className="flex items-baseline gap-2">
         <span
-          className="text-nd-text-display text-4xl tabular-nums leading-none"
-          style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+          className="text-nd-text-display text-4xl tabular-nums leading-none font-display"
         >
           {formatPrice(price)}
         </span>
         <span
-          className="text-nd-text-disabled text-[11px] uppercase"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-disabled text-[11px] uppercase font-mono"
         >
           {quote.unit}
         </span>
@@ -213,8 +203,8 @@ export function PriceDetailCard({ quote }: { quote: Quote }) {
       <div className="flex items-center gap-2">
         <TrendArrow direction={isUp ? 'up' : isDown ? 'down' : 'flat'} color={trendColor} />
         <span
-          className="text-sm tabular-nums"
-          style={{ fontFamily: 'var(--font-space-mono)', color: trendColor }}
+          className="text-sm tabular-nums font-mono"
+          style={{ color: trendColor }}
         >
           {change != null ? `${change > 0 ? '+' : ''}${change.toFixed(2)}` : '—'} ·{' '}
           {formatChangePct(changePct)}
@@ -223,8 +213,7 @@ export function PriceDetailCard({ quote }: { quote: Quote }) {
 
       {rangePosition !== null && low52 !== null && high52 !== null && (
         <div className="flex flex-col gap-1.5">
-          <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.08em] text-nd-text-disabled"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+          <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.08em] text-nd-text-disabled font-mono"
           >
             <span>52w low · {formatPrice(low52)}</span>
             <span>52w high · {formatPrice(high52)}</span>
@@ -254,14 +243,12 @@ function Meta({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex flex-col gap-0.5">
       <span
-        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
       >
         {label}
       </span>
       <span
-        className="text-nd-text-secondary tabular-nums"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="text-nd-text-secondary tabular-nums font-mono"
       >
         {value}
       </span>

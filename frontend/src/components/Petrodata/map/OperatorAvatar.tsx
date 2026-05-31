@@ -107,11 +107,11 @@ export function OperatorAvatar({
       aria-label={name}
       className={cn(
         box,
-        'inline-flex items-center justify-center rounded-full border border-nd-border bg-nd-surface-raised tabular-nums',
+        'inline-flex items-center justify-center rounded-full border border-nd-border bg-nd-surface-raised tabular-nums font-mono',
         text,
         className,
       )}
-      style={{ fontFamily: 'var(--font-space-mono)', color: 'var(--nd-text-display)' }}
+      style={{ color: 'var(--nd-text-display)' }}
     >
       {initials(name)}
     </span>

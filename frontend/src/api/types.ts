@@ -412,6 +412,106 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v2/minerals/uranium/projects": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Uranium projects (SIACAM)
+         * @description Argentine uranium projects from SIACAM / CNEA, with controllers, status and coordinates. Filter by `province` and / or normalized `status` slug.
+         */
+        get: operations["UraniumController_projects_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/minerals/uranium/prices": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Uranium price history (SIACAM)
+         * @description Monthly U3O8 spot price series (USD/lb), 1990 → present. Supports `from` / `to` date range filtering (YYYY-MM or YYYY-MM-DD).
+         */
+        get: operations["UraniumController_prices_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/minerals/uranium/prices/stats": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Uranium price statistics
+         * @description Current price, all-time high / low, and decade averages computed from the full monthly series.
+         */
+        get: operations["UraniumController_priceStats_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/minerals/uranium/trade": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Uranium imports & exports (SIACAM)
+         * @description Monthly uranium trade records split into `imports` and `exports`. Optionally filter by `year`.
+         */
+        get: operations["UraniumController_trade_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/minerals/uranium/summary": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Uranium dashboard summary
+         * @description Combined snapshot: current price, total resources / historical production (CNEA), project breakdowns by status and province, and price statistics.
+         */
+        get: operations["UraniumController_summary_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/prices/commodities": {
         parameters: {
             query?: never;
@@ -1297,6 +1397,148 @@ export interface components {
              */
             data_sources: string[];
         };
+        UraniumControllerDto: {
+            /** @example Blue Sky Uranium Corp. */
+            name: string;
+            /** @example 1.0 */
+            ownership_pct: Record<string, never> | null;
+            /** @example Canadá */
+            origin_country: string;
+        };
+        UraniumProjectDto: {
+            /** @example Cerro Solo */
+            name: string;
+            /** @example -43.37 */
+            latitude: Record<string, never> | null;
+            /** @example -68.688 */
+            longitude: Record<string, never> | null;
+            /** @example Chubut */
+            province: Record<string, never> | null;
+            /** @example CT */
+            province_code: Record<string, never> | null;
+            /** @example advanced_exploration */
+            status: Record<string, never> | null;
+            /** @example Exploración avanzada */
+            status_label: Record<string, never> | null;
+            /** @example Uranio */
+            mineral: string;
+            controllers: components["schemas"]["UraniumControllerDto"][];
+        };
+        UraniumProjectsResponseDto: {
+            /** @example 21 */
+            count: number;
+            projects: components["schemas"]["UraniumProjectDto"][];
+        };
+        UraniumPriceDto: {
+            /** @example 2026-04-01 */
+            date: string;
+            /** @example 86.35 */
+            price_usd: number;
+            /** @example USD/lb */
+            unit: string;
+            /** @example 2026 */
+            year: Record<string, never> | null;
+            /** @example 4 */
+            month: Record<string, never> | null;
+            /** @example siacam */
+            source: string;
+        };
+        UraniumPricesResponseDto: {
+            /** @example 436 */
+            count: number;
+            prices: components["schemas"]["UraniumPriceDto"][];
+        };
+        UraniumPriceExtremeDto: {
+            /** @example 136.22 */
+            value: number;
+            /** @example 2007-06-01 */
+            date: string;
+        };
+        UraniumPriceStatsDto: {
+            /** @example 86.35 */
+            current: Record<string, never> | null;
+            /** @example 2026-04-01 */
+            current_date: Record<string, never> | null;
+            allTimeHigh: components["schemas"]["UraniumPriceExtremeDto"] | null;
+            allTimeLow: components["schemas"]["UraniumPriceExtremeDto"] | null;
+            /**
+             * @example {
+             *       "1990s": 10.6,
+             *       "2000s": 34.17,
+             *       "2010s": 35.9,
+             *       "2020s": 55.94
+             *     }
+             */
+            decadeAverages: {
+                [key: string]: number;
+            };
+            /** @example USD/lb */
+            unit: string;
+            /** @example 436 */
+            total_data_points: number;
+        };
+        UraniumTradeRowDto: {
+            /** @example 1995 */
+            year: number;
+            /** @example 1 */
+            month: number;
+            /** @example import */
+            trade_type: string;
+            /** @example Canada */
+            country: string;
+            /** @example 29747 */
+            value_usd: number;
+            /** @example siacam */
+            source: string;
+        };
+        UraniumTradeResponseDto: {
+            imports: components["schemas"]["UraniumTradeRowDto"][];
+            exports: components["schemas"]["UraniumTradeRowDto"][];
+        };
+        UraniumSummaryDto: {
+            /** @example 86.35 */
+            currentPrice: Record<string, never> | null;
+            /** @example 2026-04-01 */
+            currentDate: Record<string, never> | null;
+            /** @example 2.49 */
+            priceChangePct: Record<string, never> | null;
+            /** @example 33650 */
+            totalResources: Record<string, never> | null;
+            /** @example 2600 */
+            historicalProduction: Record<string, never> | null;
+            /** @example 21 */
+            activeProjects: number;
+            /** @example 6 */
+            provincesWithProjects: number;
+            /** @example 8 */
+            advancedProjects: number;
+            /**
+             * @example {
+             *       "Exploración avanzada": 4,
+             *       "Exploración inicial": 7,
+             *       "Prospección": 6,
+             *       "Factibilidad": 2,
+             *       "Evaluación Económica Preliminar": 2
+             *     }
+             */
+            projectsByStatus: {
+                [key: string]: number;
+            };
+            /**
+             * @example {
+             *       "Río Negro": 5,
+             *       "Chubut": 8,
+             *       "Neuquén": 2,
+             *       "Mendoza": 3,
+             *       "Salta": 1,
+             *       "Santa Cruz": 2
+             *     }
+             */
+            projectsByProvince: {
+                [key: string]: number;
+            };
+            priceStats: components["schemas"]["UraniumPriceStatsDto"];
+        };
         CommodityLatestDto: {
             /** @example gold */
             commodity: string;
@@ -1997,6 +2239,129 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["ApiErrorDto"];
+                };
+            };
+        };
+    };
+    UraniumController_projects_v2: {
+        parameters: {
+            query?: {
+                /** @description Filter by province (case-insensitive exact match). */
+                province?: string;
+                /** @description Filter by normalized status slug (case-insensitive): prospection | early_exploration | advanced_exploration | preliminary_economic_assessment | feasibility. */
+                status?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: components["schemas"]["UraniumProjectsResponseDto"];
+                        meta: components["schemas"]["MetaDto"];
+                    };
+                };
+            };
+        };
+    };
+    UraniumController_prices_v2: {
+        parameters: {
+            query?: {
+                /** @description Inclusive lower bound on price date (YYYY-MM or YYYY-MM-DD). */
+                from?: string;
+                /** @description Inclusive upper bound on price date (YYYY-MM or YYYY-MM-DD). */
+                to?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: components["schemas"]["UraniumPricesResponseDto"];
+                        meta: components["schemas"]["MetaDto"];
+                    };
+                };
+            };
+        };
+    };
+    UraniumController_priceStats_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: components["schemas"]["UraniumPriceStatsDto"];
+                        meta: components["schemas"]["MetaDto"];
+                    };
+                };
+            };
+        };
+    };
+    UraniumController_trade_v2: {
+        parameters: {
+            query?: {
+                /** @description Filter both imports and exports to a single year. */
+                year?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: components["schemas"]["UraniumTradeResponseDto"];
+                        meta: components["schemas"]["MetaDto"];
+                    };
+                };
+            };
+        };
+    };
+    UraniumController_summary_v2: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: components["schemas"]["UraniumSummaryDto"];
+                        meta: components["schemas"]["MetaDto"];
+                    };
                 };
             };
         };

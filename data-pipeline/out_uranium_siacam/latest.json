@@ -1,0 +1,44 @@
+{
+  "mineral": "Uranio",
+  "current_price_usd": 86.35,
+  "current_date": "2026-04-01",
+  "price_change_pct": 2.49,
+  "total_resources_tU": 33650,
+  "historical_production_tU": 2600,
+  "active_projects": 21,
+  "provinces_with_projects": 6,
+  "advanced_projects": 8,
+  "projects_by_status": {
+    "Exploración avanzada": 4,
+    "Exploración inicial": 7,
+    "Prospección": 6,
+    "Factibilidad": 2,
+    "Evaluación Económica Preliminar": 2
+  },
+  "projects_by_province": {
+    "Río Negro": 5,
+    "Chubut": 8,
+    "Neuquén": 2,
+    "Mendoza": 3,
+    "Salta": 1,
+    "Santa Cruz": 2
+  },
+  "price_stats": {
+    "total_data_points": 436,
+    "unit": "USD/lb",
+    "source": "SIACAM (FRED → Cameco)",
+    "current_price_usd": 86.35,
+    "current_date": "2026-04-01",
+    "all_time_high_usd": 136.22,
+    "all_time_high_date": "2007-06-01",
+    "all_time_low_usd": 7.1,
+    "all_time_low_date": "2001-01-01",
+    "decade_averages": {
+      "1990s": 10.6,
+      "2000s": 34.17,
+      "2010s": 35.9,
+      "2020s": 55.94
+    }
+  },
+  "generated_at": "2026-05-31T02:30:05.723353"
+}

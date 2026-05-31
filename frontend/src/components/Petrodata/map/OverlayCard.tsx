@@ -26,8 +26,7 @@ export function OverlayCard({
 export function OverlayLabel({ children }: { children: ReactNode }) {
   return (
     <span
-      className="text-nd-text-secondary text-[10px] tracking-[0.08em] uppercase"
-      style={{ fontFamily: 'var(--font-space-mono)' }}
+      className="text-nd-text-secondary text-[10px] tracking-[0.08em] uppercase font-mono"
     >
       {children}
     </span>

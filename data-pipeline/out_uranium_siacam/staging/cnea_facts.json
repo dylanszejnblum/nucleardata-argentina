@@ -1,0 +1,31 @@
+{
+  "total_resources_tU": 33650,
+  "historical_production_tU": 2600,
+  "production_years": "1952-1997",
+  "last_production_year": 1997,
+  "first_deposit_year": 1946,
+  "first_deposit_location": "Las Heras, Mendoza",
+  "first_yellowcake_year": 1952,
+  "first_yellowcake_location": "Córdoba",
+  "first_yellowcake_amount_t": 4.5,
+  "identified_deposits": 13,
+  "production_centers": 7,
+  "remediation_sites": 7,
+  "remediation_provinces": [
+    "Mendoza",
+    "Córdoba",
+    "San Luis",
+    "La Rioja",
+    "Salta",
+    "Chubut"
+  ],
+  "producing_provinces": [
+    "Río Negro",
+    "Chubut",
+    "Neuquén",
+    "Mendoza",
+    "Salta",
+    "Santa Cruz"
+  ],
+  "active_projects_count": 21
+}

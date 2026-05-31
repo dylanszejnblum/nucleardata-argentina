@@ -18,36 +18,26 @@ const statusColorMap = {
 export function StatCard({ label, value, unit, statusColor = 'neutral', subValue }: StatCardProps) {
   return (
     <div className="p-6 border border-nd-border bg-nd-surface rounded-none">
-      <span
-        className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block mb-3"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
-      >
+      <span className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block mb-3 font-mono">
         {label}
       </span>
       <div className="flex items-baseline gap-2">
         <span
-          className="text-4xl md:text-5xl tracking-tight leading-none"
+          className="text-4xl md:text-5xl tracking-tight leading-none font-display"
           style={{
-            fontFamily: 'Doto, var(--font-space-mono)',
             color: statusColorMap[statusColor],
           }}
         >
           {value}
         </span>
         {unit && (
-          <span
-            className="text-nd-text-secondary text-[11px] tracking-[0.06em] uppercase"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
-          >
+          <span className="text-nd-text-secondary text-[11px] tracking-[0.06em] uppercase font-mono">
             {unit}
           </span>
         )}
       </div>
       {subValue && (
-        <span
-          className="text-nd-text-disabled text-xs mt-2 block"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
-        >
+        <span className="text-nd-text-disabled text-xs mt-2 block font-mono">
           {subValue}
         </span>
       )}

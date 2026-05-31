@@ -197,6 +197,64 @@ model FactFuelPrice {
   @@map("fact_fuel_price")
 }
 
+model UraniumProject {
+  id           Int      @id @default(autoincrement())
+  projectName  String   @unique @map("project_name")
+  latitude     Float?
+  longitude    Float?
+  province     String?
+  provinceCode String?  @map("province_code")
+  status       String?
+  statusLabel  String?  @map("status_label")
+  mineral      String   @default("Uranio")
+  controllers  Json?
+  ingestedAt   DateTime @default(now()) @map("ingested_at")
+
+  @@index([province])
+  @@index([status])
+  @@map("uranium_project")
+}
+
+model UraniumPrice {
+  id        Int      @id @default(autoincrement())
+  date      DateTime @db.Date
+  priceUsd  Float    @map("price_usd")
+  unit      String   @default("USD/lb")
+  year      Int?
+  month     Int?
+  source    String   @default("siacam")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@unique([source, date], name: "uranium_price_source_date")
+  @@index([date])
+  @@map("uranium_price")
+}
+
+model UraniumTrade {
+  id        Int      @id @default(autoincrement())
+  year      Int
+  month     Int
+  tradeType String   @map("trade_type")
+  country   String
+  valueUsd  Float    @map("value_usd")
+  source    String   @default("siacam")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([year, tradeType])
+  @@map("uranium_trade")
+}
+
+model UraniumFact {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique
+  value     Json
+  label     String
+  unit      String?
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@map("uranium_fact")
+}
+
 model AggMonthlyByOperator {
   id            Int      @id @default(autoincrement())
   dateMonth     DateTime @map("date_month") @db.Date

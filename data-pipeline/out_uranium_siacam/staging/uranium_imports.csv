@@ -1,0 +1,215 @@
+year,month,country,procedence,value_cif_usd,trade_type,sector
+1994,1,Estados Unidos,Estados Unidos,3278.0,import,Metaliferos
+1995,1,Canada,Canada,29747.0,import,Metaliferos
+1995,2,Alemania,Alemania,592.0,import,Metaliferos
+1995,3,Alemania,Alemania,373.0,import,Metaliferos
+1995,3,Canada,Canada,7880.0,import,Metaliferos
+1995,4,Alemania,Alemania,287.0,import,Metaliferos
+1995,4,Canada,Canada,14773.0,import,Metaliferos
+1995,5,Alemania,Alemania,238.0,import,Metaliferos
+1995,7,Canada,Canada,11962.0,import,Metaliferos
+1995,8,Canada,Canada,16515.0,import,Metaliferos
+1995,10,Canada,Canada,7415.0,import,Metaliferos
+1995,10,Reino Unido,Reino Unido,6229.0,import,Metaliferos
+1995,11,Alemania,Alemania,124.0,import,Metaliferos
+1995,11,Belgica,Belgica,4125.0,import,Metaliferos
+1995,11,Canada,Canada,11336.0,import,Metaliferos
+1995,12,Belgica,Belgica,16536.0,import,Metaliferos
+1995,12,Canada,Canada,13956.0,import,Metaliferos
+1996,1,Canada,Canada,4195.0,import,Metaliferos
+1996,3,Estados Unidos,Estados Unidos,5124.0,import,Metaliferos
+1996,7,Alemania,Alemania,284.0,import,Metaliferos
+1996,7,Reino Unido,Reino Unido,24077.0,import,Metaliferos
+1996,7,Rusia,Rusia,921559.0,import,Metaliferos
+1996,8,Francia,Francia,65247.0,import,Metaliferos
+1996,9,Alemania,Alemania,337.0,import,Metaliferos
+1996,11,Alemania,Alemania,775.0,import,Metaliferos
+1996,12,Alemania,Alemania,257.0,import,Metaliferos
+1997,1,Alemania,Alemania,402.0,import,Metaliferos
+1997,6,Canada,Canada,134.0,import,Metaliferos
+1997,8,Alemania,Alemania,1019.0,import,Metaliferos
+1997,9,Alemania,Alemania,147.0,import,Metaliferos
+1997,10,Canada,Estados Unidos,1378000.0,import,Metaliferos
+1997,10,Estados Unidos,Estados Unidos,38.0,import,Metaliferos
+1997,12,Alemania,Alemania,459.0,import,Metaliferos
+1997,12,Estados Unidos,Estados Unidos,394.0,import,Metaliferos
+1998,1,Alemania,Alemania,88.55,import,Metaliferos
+1998,2,Alemania,Alemania,420.4,import,Metaliferos
+1998,4,Estados Unidos,Estados Unidos,1640.78,import,Metaliferos
+1998,4,Uzbekistan,Estados Unidos,3069426.17,import,Metaliferos
+1998,6,Alemania,Alemania,59.04,import,Metaliferos
+1998,8,Alemania,Alemania,108.93,import,Metaliferos
+1998,9,Alemania,Alemania,365.79,import,Metaliferos
+1998,9,Belgica,Belgica,5874.8,import,Metaliferos
+1998,9,Canada,Canada,1043125.51,import,Metaliferos
+1998,10,Alemania,Alemania,252.26,import,Metaliferos
+1998,11,Alemania,Alemania,235.97,import,Metaliferos
+1998,12,Alemania,Alemania,264.45,import,Metaliferos
+1998,12,Canada,Canada,27018.25,import,Metaliferos
+1998,12,Rusia,Estados Unidos,1347091.0,import,Metaliferos
+1999,1,Alemania,Alemania,13.96,import,Metaliferos
+1999,1,Estados Unidos,Estados Unidos,11499.71,import,Metaliferos
+1999,3,Alemania,Alemania,12.24,import,Metaliferos
+1999,3,Belgica,Belgica,518.37,import,Metaliferos
+1999,4,Suecia,Suecia,55.66,import,Metaliferos
+1999,6,Alemania,Brasil,564265.24,import,Metaliferos
+1999,6,"Corea, Republica de","Corea, Republica de",410.0,import,Metaliferos
+1999,8,Alemania,Brasil,565100.0,import,Metaliferos
+1999,8,Suecia,Brasil,15700.0,import,Metaliferos
+1999,11,Rusia,Alemania,2185000.0,import,Metaliferos
+2000,1,Estados Unidos,Alemania,17.75,import,Metaliferos
+2000,3,Suecia,Alemania,2298493.15,import,Metaliferos
+2000,4,Reino Unido,Alemania,32.58,import,Metaliferos
+2000,5,Rusia,Alemania,2385381.6,import,Metaliferos
+2000,6,Francia,Alemania,47.22,import,Metaliferos
+2000,8,Canada,Canada,8969.55,import,Metaliferos
+2000,8,Francia,Alemania,30.92,import,Metaliferos
+2000,10,Brasil,Brasil,46000.0,import,Metaliferos
+2000,11,Suiza,Suiza,215.8,import,Metaliferos
+2000,12,Canada,Canada,39625.08,import,Metaliferos
+2000,12,España,España,57595.79,import,Metaliferos
+2000,12,Reino Unido,Reino Unido,179.62,import,Metaliferos
+2001,1,Reino Unido,Reino Unido,841.5,import,Metaliferos
+2001,2,Estados Unidos,Estados Unidos,476.72,import,Metaliferos
+2001,2,Rusia,Alemania,2012400.0,import,Metaliferos
+2001,4,Suecia,Alemania,1303553.66,import,Metaliferos
+2001,5,Estados Unidos,Estados Unidos,692.86,import,Metaliferos
+2001,11,Argentina,Luxemburgo,1020.1,import,Metaliferos
+2002,6,Canada,Canada,249795.44,import,Metaliferos
+2002,9,Brasil,Brasil,420945.0,import,Metaliferos
+2002,11,Estados Unidos,Estados Unidos,2805.22,import,Metaliferos
+2003,2,Canada,Canada,565986.3,import,Metaliferos
+2003,2,Uzbekistan,Alemania,1538711.72,import,Metaliferos
+2003,6,Canada,Canada,390035.1,import,Metaliferos
+2003,9,Estados Unidos,Estados Unidos,559731.97,import,Metaliferos
+2003,9,Uzbekistan,Alemania,523841.4,import,Metaliferos
+2003,10,Uzbekistan,Alemania,2834000.0,import,Metaliferos
+2004,6,Brasil,Brasil,908651.36,import,Metaliferos
+2004,8,Estados Unidos,Estados Unidos,1826.79,import,Metaliferos
+2004,11,Estados Unidos,Estados Unidos,505914.1,import,Metaliferos
+2004,11,Republica Checa,Alemania,4181711.64,import,Metaliferos
+2004,12,Alemania,Alemania,1376076.93,import,Metaliferos
+2005,1,Alemania,Alemania,16.58,import,Metaliferos
+2005,3,Canada,Estados Unidos,2339389.95,import,Metaliferos
+2005,5,Brasil,Brasil,515296.25,import,Metaliferos
+2005,5,Estados Unidos,Estados Unidos,889.79,import,Metaliferos
+2005,5,Republica Checa,Alemania,2232080.18,import,Metaliferos
+2005,7,Estados Unidos,Estados Unidos,134404.09,import,Metaliferos
+2006,1,Brasil,Brasil,273011.72,import,Metaliferos
+2006,1,Suecia,Alemania,1687527.01,import,Metaliferos
+2006,2,Brasil,Brasil,398681.14,import,Metaliferos
+2006,2,Republica Checa,Alemania,6087070.75,import,Metaliferos
+2006,3,Estados Unidos,Estados Unidos,2804.91,import,Metaliferos
+2006,4,Canada,Canada,551.98,import,Metaliferos
+2006,5,Estados Unidos,Estados Unidos,1900.58,import,Metaliferos
+2006,6,Canada,Estados Unidos,7575438.53,import,Metaliferos
+2006,6,Estados Unidos,Estados Unidos,437883.31,import,Metaliferos
+2006,8,Estados Unidos,Estados Unidos,439.35,import,Metaliferos
+2006,9,Suecia,Alemania,2949708.28,import,Metaliferos
+2006,11,Republica Checa,Alemania,6534158.41,import,Metaliferos
+2007,1,Canada,Canada,358.72,import,Metaliferos
+2007,3,Canada,Alemania,4568570.91,import,Metaliferos
+2007,8,Republica Checa,Alemania,2649211.5,import,Metaliferos
+2007,12,Canada,Canada,1333.5,import,Metaliferos
+2008,2,Canada,Alemania,6790021.76,import,Metaliferos
+2008,2,Reino Unido,Estados Unidos,2031.96,import,Metaliferos
+2008,9,Estados Unidos,Estados Unidos,4800.05,import,Metaliferos
+2008,12,Estados Unidos,Estados Unidos,7603.91,import,Metaliferos
+2009,1,Canada,Canada,872786.34,import,Metaliferos
+2009,4,Kazajstan,Alemania,10282774.25,import,Metaliferos
+2009,6,Canada,Brasil,1950.0,import,Metaliferos
+2009,7,Canada,Brasil,3900.0,import,Metaliferos
+2009,7,Estados Unidos,Estados Unidos,14809.0,import,Metaliferos
+2009,8,Canada,Brasil,1950.0,import,Metaliferos
+2009,8,Estados Unidos,Estados Unidos,3358.25,import,Metaliferos
+2009,9,Canada,Brasil,1950.0,import,Metaliferos
+2009,10,Canada,Brasil,3900.0,import,Metaliferos
+2009,10,Estados Unidos,Estados Unidos,465592.81,import,Metaliferos
+2009,10,Kazajstan,Alemania,10381929.96,import,Metaliferos
+2009,12,Canada,Brasil,2145.0,import,Metaliferos
+2010,1,Canada,Brasil,1950.0,import,Metaliferos
+2010,1,Estados Unidos,Estados Unidos,17987.09,import,Metaliferos
+2010,2,Canada,Canada,7381.29,import,Metaliferos
+2010,3,Canada,Brasil,3650.0,import,Metaliferos
+2010,4,Canada,Brasil,3900.0,import,Metaliferos
+2010,5,Canada,Brasil,3900.0,import,Metaliferos
+2010,5,Kazajstan,Alemania,6913193.33,import,Metaliferos
+2010,6,Canada,Brasil,1950.0,import,Metaliferos
+2010,8,Canada,Canada,1266.14,import,Metaliferos
+2010,8,Kazajstan,Alemania,6912106.8,import,Metaliferos
+2011,2,Canada,Canada,1331.1,import,Metaliferos
+2011,5,Kazajstan,Alemania,9427842.19,import,Metaliferos
+2011,7,Suecia,Estados Unidos,3428233.53,import,Metaliferos
+2011,9,Estados Unidos,Estados Unidos,7196.84,import,Metaliferos
+2011,10,Estados Unidos,Estados Unidos,325.23,import,Metaliferos
+2011,11,Estados Unidos,Estados Unidos,443910.44,import,Metaliferos
+2011,11,Estados Unidos,Alemania,28.68,import,Metaliferos
+2011,12,Canada,Alemania,7317188.45,import,Metaliferos
+2012,4,Suecia,Estados Unidos,3200580.53,import,Metaliferos
+2012,8,Canada,Alemania,15482186.46,import,Metaliferos
+2012,10,Estados Unidos,Estados Unidos,948088.0,import,Metaliferos
+2012,12,Canada,Alemania,16007160.0,import,Metaliferos
+2013,1,Estados Unidos,Estados Unidos,4383.47,import,Metaliferos
+2013,5,Canada,Canada,2088.0,import,Metaliferos
+2013,5,Canada,Alemania,17234536.8,import,Metaliferos
+2013,6,Suecia,Estados Unidos,2908097.45,import,Metaliferos
+2013,7,Austria,Austria,299.31,import,Metaliferos
+2013,8,Estados Unidos,Estados Unidos,8994.42,import,Metaliferos
+2013,11,Estados Unidos,Estados Unidos,1003553.64,import,Metaliferos
+2013,12,Canada,Alemania,16295063.0,import,Metaliferos
+2014,5,Canada,Alemania,8748048.4,import,Metaliferos
+2014,9,Canada,Estados Unidos,12446444.4,import,Metaliferos
+2014,9,Suecia,Estados Unidos,2239223.43,import,Metaliferos
+2014,11,Estados Unidos,Estados Unidos,21409.88,import,Metaliferos
+2014,12,Estados Unidos,Estados Unidos,846097.72,import,Metaliferos
+2015,2,Canada,Estados Unidos,12842867.7,import,Metaliferos
+2015,5,Canada,Estados Unidos,8832432.96,import,Metaliferos
+2015,5,Suecia,Estados Unidos,2532717.4,import,Metaliferos
+2015,9,Canada,Estados Unidos,20175779.52,import,Metaliferos
+2015,9,Estados Unidos,Estados Unidos,834385.07,import,Metaliferos
+2015,11,Estados Unidos,Estados Unidos,2292.65,import,Metaliferos
+2015,12,Canada,Estados Unidos,20011797.51,import,Metaliferos
+2016,5,Estados Unidos,Estados Unidos,963784.49,import,Metaliferos
+2016,5,Suecia,Suecia,4608726.96,import,Metaliferos
+2016,6,Canada,Estados Unidos,10979766.0,import,Metaliferos
+2016,7,Estados Unidos,Estados Unidos,2372979.44,import,Metaliferos
+2016,11,Brasil,Brasil,4377236.71,import,Metaliferos
+2016,12,Canada,Estados Unidos,2797494.5,import,Metaliferos
+2017,2,Canada,Estados Unidos,1435738.51,import,Metaliferos
+2017,3,India,India,3838.0,import,Metaliferos
+2017,4,Canada,Estados Unidos,4279166.03,import,Metaliferos
+2017,4,Suecia,Alemania,3711443.27,import,Metaliferos
+2017,5,Canada,Estados Unidos,1418298.63,import,Metaliferos
+2017,8,India,India,7171.0,import,Metaliferos
+2017,9,Reino Unido,Estados Unidos,2198.78,import,Metaliferos
+2017,12,Francia,Francia,31945.45,import,Metaliferos
+2018,6,España,España,12648.76,import,Metaliferos
+2018,7,Argelia,Argelia,1666.37,import,Metaliferos
+2018,8,Brasil,Brasil,3478433.96,import,Metaliferos
+2019,7,Estados Unidos,Estados Unidos,535.31,import,Metaliferos
+2019,9,Australia,Canada,60.17,import,Metaliferos
+2019,9,Canada,Canada,60.17,import,Metaliferos
+2019,9,Estados Unidos,Canada,60.18,import,Metaliferos
+2019,9,Nigeria,Suecia,1876473.0,import,Metaliferos
+2020,4,Estados Unidos,Estados Unidos,7709.98,import,Metaliferos
+2020,5,Brasil,Brasil,1756561.61,import,Metaliferos
+2020,8,Kazajstan,Estados Unidos,9842373.7,import,Metaliferos
+2021,1,Nigeria,Suecia,2556316.59,import,Metaliferos
+2021,6,Kazajstan,Estados Unidos,18548574.77,import,Metaliferos
+2021,10,Canada,Suecia,2483375.97,import,Metaliferos
+2022,4,Estados Unidos,Estados Unidos,694710.37,import,Metaliferos
+2022,4,Kazajstan,Estados Unidos,27004777.23,import,Metaliferos
+2022,7,Austria,Austria,2532.65,import,Metaliferos
+2022,10,Canada,Suecia,3136368.68,import,Metaliferos
+2022,12,Estados Unidos,Estados Unidos,5265.0,import,Metaliferos
+2023,12,Estados Unidos,Estados Unidos,3642.73,import,Metaliferos
+2023,12,Kazajstan,Estados Unidos,33204944.24,import,Metaliferos
+2024,12,Austria,Austria,55.55,import,Metaliferos
+2025,3,Namibia,Estados Unidos,48.88,import,Metaliferos
+2025,6,Namibia,Estados Unidos,40.0,import,Metaliferos
+2025,7,Estados Unidos,Estados Unidos,13958495.6,import,Metaliferos
+2025,8,Estados Unidos,Estados Unidos,23797172.0,import,Metaliferos
+2025,11,Namibia,Belgica,3259424.08,import,Metaliferos
+2025,12,Namibia,Estados Unidos,21793534.2,import,Metaliferos
+2026,2,Namibia,Alemania,16898346.17,import,Metaliferos
+2026,3,Namibia,Estados Unidos,19191842.55,import,Metaliferos

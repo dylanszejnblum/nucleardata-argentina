@@ -109,7 +109,7 @@
       "operatorOilBblD": "{operator} · bbl/d petróleo"
     },
     "topOperators": {
-      "title": "Top operadores · BOE",
+      "title": "Operadores principales · BOE",
       "clickToFilter": "Haz clic para filtrar el mapa"
     }
   },
@@ -152,7 +152,7 @@
     "common": { "noData": "Sin datos" },
     "provinces": {
       "eyebrow": "PROYECTOS POR PROVINCIA",
-      "title": "Top provincias"
+      "title": "Provincias principales"
     },
     "capex": {
       "eyebrow": "CAPEX · TOP 10",
@@ -160,20 +160,20 @@
     },
     "status": {
       "eyebrow": "ETAPA DEL PROYECTO",
-      "title": "Avance del portfolio",
+      "title": "Avance de la cartera",
       "operating": "En operación",
       "advanced": "Avanzado (Factibilidad + Construcción)",
       "early": "Etapa temprana (PEA + Pre-factibilidad)",
       "exploration": "Exploración"
     },
     "freshness": {
-      "label": "Datos del pipeline {sources} · Última actualización {date}"
+      "label": "Datos de {sources} flujos de datos · Última actualización {date}"
     }
   },
   "mineralsPage": {
     "eyebrow": "MINERALES · ARGENTINA",
     "heroTitle": "Proyectos mineros de Argentina",
-    "heroBlurb": "{total} proyectos en {commodities} commodities, extraídos de {sources} pipelines. Explora por commodity o abre un tracker dedicado.",
+    "heroBlurb": "{total} proyectos en {commodities} commodities, extraídos de {sources} flujos de datos. Explora por commodity o abre un panel dedicado.",
     "kpi": {
       "totalProjects": "PROYECTOS TOTALES",
       "commodities": "COMMODITIES",
@@ -183,7 +183,7 @@
     "commoditiesSection": {
       "eyebrow": "COMMODITIES",
       "title": "Explorar por mineral",
-      "blurb": "Selecciona un commodity para ver un tracker dedicado con el catálogo completo de proyectos y los números principales de recursos."
+      "blurb": "Selecciona un commodity para ver un panel dedicado con el catálogo completo de proyectos y las cifras principales de recursos."
     },
     "mapSection": {
       "eyebrow": "MAPA",
@@ -268,7 +268,7 @@
     },
     "meta": {
       "operator": "Operador",
-      "owner": "Dueño",
+      "owner": "Propietario",
       "location": "Ubicación",
       "area": "Área"
     },
@@ -307,13 +307,96 @@
     "noCoords": "Sin coordenadas reportadas",
     "provenance": {
       "source": "Fuente · {pipeline}",
-      "sourceUnknown": "pipeline desconocido",
-      "ingested": "Ingerido · {date}",
+      "sourceUnknown": "fuente desconocida",
+      "ingested": "Incorporado · {date}",
       "resourcesYear": "Año de recursos · {year}"
     }
   },
+  "uraniumHub": {
+    "eyebrow": "URANIO · ARGENTINA",
+    "title": "Uranio",
+    "priceUnit": "USD/lb",
+    "historicalRange": "Rango histórico: {low} ({lowDate}) — {high} ({highDate})",
+    "resourcesLine": "Recursos identificados: {resources} tU · Producción histórica: {production} tU",
+    "ctaChart": "Ver gráfico completo",
+    "ctaCycle": "Ver ciclo del combustible",
+    "stats": {
+      "projects": "Proyectos",
+      "provinces": "Provincias",
+      "companies": "Empresas",
+      "advanced": "Avanzados",
+      "resources": "Recursos · tU"
+    },
+    "priceChart": {
+      "eyebrow": "PRECIO DEL URANIO · USD/LB",
+      "title": "35 años de precio",
+      "subtitle": "Mensual · {n} puntos · {from}–{to}",
+      "noData": "Sin datos de precios."
+    },
+    "milestones": {
+      "eyebrow": "HITOS DE PRECIO",
+      "title": "Momentos clave"
+    },
+    "map": {
+      "eyebrow": "MAPA DE PROYECTOS DE URANIO",
+      "title": "Proyectos de uranio",
+      "mapped": "{n} proyectos",
+      "legend": "Leyenda"
+    },
+    "table": {
+      "eyebrow": "PROYECTOS",
+      "title": "Catálogo de proyectos",
+      "subtitle": "{n} proyectos",
+      "noResults": "Ningún proyecto coincide con este filtro.",
+      "filterAll": "Todos los estados",
+      "columns": {
+        "index": "#",
+        "project": "Proyecto",
+        "province": "Provincia",
+        "status": "Estado",
+        "company": "Empresa",
+        "origin": "Origen"
+      }
+    },
+    "donut": {
+      "eyebrow": "ETAPA DEL PROYECTO",
+      "title": "Proyectos por estado"
+    },
+    "trade": {
+      "eyebrow": "COMERCIO EXTERIOR",
+      "title": "Importaciones vs exportaciones",
+      "imports": "Importaciones",
+      "exports": "Exportaciones",
+      "noData": "Sin datos de comercio.",
+      "axisUsd": "USD"
+    },
+    "cycle": {
+      "eyebrow": "CICLO DEL COMBUSTIBLE NUCLEAR",
+      "title": "Del yacimiento a la generación eléctrica",
+      "intro": "Una molécula de uranio viaja por todo el ciclo: del yacimiento a la mina, a la planta, a la conversión, al combustible y al reactor.",
+      "argentinaIntro": "Argentina produjo 2.600 tU entre 1952 y 1997. Hoy el uranio para sus centrales nucleares (Atucha I, Atucha II, Embalse) se importa, mientras se mantienen 33.650 tU en recursos identificados.",
+      "startTour": "Iniciar recorrido",
+      "exploreProjects": "Explorar proyectos",
+      "stepLabel": "PASO {n} · {total}",
+      "prev": "Anterior",
+      "next": "Siguiente",
+      "keyFact": "DATO CLAVE",
+      "argentinaNote": "EN ARGENTINA",
+      "diagram": {
+        "eyebrow": "DIAGRAMA DEL PROCESO",
+        "title": "Las 12 etapas",
+        "hint": "Pasá el cursor por una etapa · hacé clic para saltar"
+      }
+    },
+    "context": {
+      "eyebrow": "URANIO EN ARGENTINA",
+      "title": "Hitos históricos",
+      "today": "Hoy Argentina importa uranio para sus tres centrales nucleares mientras desarrolla nuevos proyectos.",
+      "exploreProjects": "Ver proyectos activos"
+    }
+  },
   "metadata": {
-    "homeTitle": "Petrodata — tracker de petróleo, gas, minerales y tierras raras de Argentina",
+    "homeTitle": "Petrodata — seguimiento de petróleo, gas, minerales y tierras raras de Argentina",
     "homeDescription": "Inteligencia en tiempo real para el petróleo, gas, minerales y tierras raras de Argentina. Producción, reservas, operadores y geografía en un solo lugar."
   }
 }

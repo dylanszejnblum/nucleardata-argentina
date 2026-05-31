@@ -19,14 +19,12 @@ export function TopOperatorsMini({ rows }: { rows: TopOperatorRow[] }) {
     <div className="bg-nd-surface p-5 flex flex-col">
       <div className="flex items-baseline justify-between">
         <span
-          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
         >
           {t('title')}
         </span>
         <span
-          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
         >
           {t('boeColumn')}
         </span>
@@ -39,16 +37,14 @@ export function TopOperatorsMini({ rows }: { rows: TopOperatorRow[] }) {
             className="grid grid-cols-[1.25rem_auto_minmax(0,1fr)_auto] items-center gap-3 py-2.5"
           >
             <span
-              className="text-nd-text-disabled text-[10px] tabular-nums"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
+              className="text-nd-text-disabled text-[10px] tabular-nums font-mono"
             >
               0{i + 1}
             </span>
             <OperatorAvatar slug={row.slug} name={row.name} size="sm" />
             <div className="min-w-0">
               <span
-                className="block text-nd-text-display text-[13px] truncate"
-                style={{ fontFamily: 'var(--font-space-grotesk)' }}
+                className="block text-nd-text-display text-[13px] truncate font-sans"
                 title={row.name}
               >
                 {row.name}
@@ -66,8 +62,7 @@ export function TopOperatorsMini({ rows }: { rows: TopOperatorRow[] }) {
               </div>
             </div>
             <span
-              className="text-nd-text-secondary text-[11px] tabular-nums"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
+              className="text-nd-text-secondary text-[11px] tabular-nums font-mono"
             >
               {formatCompact(row.boe)}
             </span>
@@ -77,8 +72,7 @@ export function TopOperatorsMini({ rows }: { rows: TopOperatorRow[] }) {
 
       <Link
         href="/map"
-        className="mt-4 inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.08em] text-nd-text-secondary hover:text-nd-text-display transition-colors"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="mt-4 inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.08em] text-nd-text-secondary hover:text-nd-text-display transition-colors font-mono"
       >
         {t('fullRanking')}
         <ArrowRight size={11} />

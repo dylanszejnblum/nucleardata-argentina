@@ -18,10 +18,9 @@ export const Logo = (props: Props) => {
     <span
       aria-label="Petrodata"
       className={clsx(
-        'inline-flex items-center text-nd-text-display text-base tracking-tight',
+        'inline-flex items-center text-nd-text-display text-base tracking-tight font-display',
         className,
       )}
-      style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
       data-loading={loading}
       data-fetch-priority={priority}
     >

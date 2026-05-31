@@ -42,15 +42,14 @@ function HeroCard({ card }: { card: StatCardData }) {
     <div className="bg-nd-surface p-5 flex flex-col gap-3">
       <div className="flex items-center justify-between">
         <span
-          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
         >
           {card.label}
         </span>
         {momLabel && (
           <span
-            className="inline-flex items-center gap-1 text-[11px] tabular-nums"
-            style={{ fontFamily: 'var(--font-space-mono)', color: trendColor }}
+            className="inline-flex items-center gap-1 text-[11px] tabular-nums font-mono"
+            style={{ color: trendColor }}
           >
             {isUp ? <TrendingUp size={11} /> : isDown ? <TrendingDown size={11} /> : null}
             {momLabel}
@@ -61,13 +60,11 @@ function HeroCard({ card }: { card: StatCardData }) {
         <AnimatedCounter
           to={card.value}
           kind={card.format}
-          className="text-nd-text-display text-3xl md:text-4xl leading-none tabular-nums"
-          style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+          className="text-nd-text-display text-3xl md:text-4xl leading-none tabular-nums font-display"
         />
         {card.unit && (
           <span
-            className="text-nd-text-disabled text-[10px] uppercase"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-nd-text-disabled text-[10px] uppercase font-mono"
           >
             {card.unit}
           </span>

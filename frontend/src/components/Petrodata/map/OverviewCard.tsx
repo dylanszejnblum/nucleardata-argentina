@@ -36,33 +36,31 @@ function OverviewCardImpl({
         </OverlayLabel>
         <div className="mt-3 flex items-baseline gap-2">
           <span
-            className="text-nd-text-display tabular-nums leading-none"
-            style={{ fontFamily: 'Doto, var(--font-space-grotesk)', fontSize: '2rem' }}
+            className="text-nd-text-display tabular-nums leading-none font-display"
+            style={{ fontSize: '2rem' }}
           >
             {formatCompact(latest.boe)}
           </span>
           <abbr
             title="Barrels of Oil Equivalent — energy-equivalent unit combining oil and gas at 6 Mcf gas ≈ 1 bbl oil"
-            className="text-nd-text-disabled text-[10px] uppercase cursor-help no-underline border-b border-dotted border-nd-text-disabled"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-nd-text-disabled text-[10px] uppercase cursor-help no-underline border-b border-dotted border-nd-text-disabled font-mono"
           >
             BOE
           </abbr>
         </div>
         <div className="mt-1 flex items-center gap-3 text-[11px] text-nd-text-secondary">
-          <span style={{ fontFamily: 'var(--font-space-mono)' }} className="tabular-nums">
+          <span className="tabular-nums font-mono">
             {t('oilUnit', { value: formatCompact(latest.oil_bbl_d) })}
           </span>
           <span className="text-nd-text-disabled">·</span>
-          <span style={{ fontFamily: 'var(--font-space-mono)' }} className="tabular-nums">
+          <span className="tabular-nums font-mono">
             {t('gasUnit', { value: formatCompact(latest.gas_mmcf_d) })}
           </span>
         </div>
         <div className="mt-3 flex items-center gap-2">
           <span
-            className="rounded-full px-2 py-0.5 text-[10px] uppercase"
+            className="rounded-full px-2 py-0.5 text-[10px] uppercase font-mono"
             style={{
-              fontFamily: 'var(--font-space-mono)',
               color: 'var(--nd-black)',
               backgroundColor: 'var(--nd-success)',
             }}
@@ -70,8 +68,7 @@ function OverviewCardImpl({
             VM
           </span>
           <span
-            className="text-nd-text-secondary text-[11px] tabular-nums"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-nd-text-secondary text-[11px] tabular-nums font-mono"
           >
             {t('vmShareOfBoe', { pct: formatPercent(latest.vm_share.boe) })}
           </span>
@@ -92,8 +89,7 @@ function OverviewCardImpl({
               </OverlayLabel>
             </div>
             <span
-              className="text-nd-text-disabled text-[10px] tabular-nums shrink-0"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
+              className="text-nd-text-disabled text-[10px] tabular-nums shrink-0 font-mono"
             >
               {timeSeries.length}M
             </span>

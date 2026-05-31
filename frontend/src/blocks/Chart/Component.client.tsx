@@ -240,8 +240,7 @@ export const ChartClient: React.FC<Props> = ({
     >
       {title ? (
         <figcaption
-          className="mb-4 text-[11px] uppercase tracking-wider text-nd-text-secondary"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="mb-4 text-[11px] uppercase tracking-wider text-nd-text-secondary font-mono"
         >
           {title}
         </figcaption>
@@ -261,8 +260,7 @@ export const ChartClient: React.FC<Props> = ({
       ) : null}
       {caption ? (
         <p
-          className="mt-4 text-xs leading-5 text-nd-text-secondary"
-          style={{ fontFamily: 'var(--font-space-grotesk)' }}
+          className="mt-4 text-xs leading-5 text-nd-text-secondary font-sans"
         >
           {caption}
         </p>

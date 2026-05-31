@@ -1,0 +1,24 @@
+{
+  "total_projects": 21,
+  "projects_by_status": {
+    "Exploración avanzada": 4,
+    "Exploración inicial": 7,
+    "Prospección": 6,
+    "Factibilidad": 2,
+    "Evaluación Económica Preliminar": 2
+  },
+  "projects_by_province": {
+    "Río Negro": 5,
+    "Chubut": 8,
+    "Neuquén": 2,
+    "Mendoza": 3,
+    "Salta": 1,
+    "Santa Cruz": 2
+  },
+  "projects_by_origin": {
+    "-": 21
+  },
+  "projects_by_company": {
+    "-": 21
+  }
+}

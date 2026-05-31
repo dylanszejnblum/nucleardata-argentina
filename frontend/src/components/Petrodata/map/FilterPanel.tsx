@@ -111,8 +111,7 @@ export function FilterPanel({
         <button
           type="button"
           onClick={reset}
-          className="text-nd-text-secondary text-[10px] uppercase tracking-[0.08em] hover:text-nd-text-display transition-colors"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-secondary text-[10px] uppercase tracking-[0.08em] hover:text-nd-text-display transition-colors font-mono"
         >
           {t('reset')}
         </button>
@@ -162,8 +161,7 @@ export function FilterPanel({
         />
         <label className="flex items-center justify-between gap-3 pt-1">
           <span
-            className="text-nd-text-secondary text-[11px]"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-nd-text-secondary text-[11px] font-mono"
           >
             {t('hideAbandoned')}
           </span>
@@ -188,8 +186,7 @@ export function FilterPanel({
       </div>
       <div className="flex items-center justify-between border-t border-nd-border px-5 py-3">
         <span
-          className="text-nd-text-secondary text-[11px] tabular-nums"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-secondary text-[11px] tabular-nums font-mono"
         >
           {t('wellsCount', { count: resultCount.toLocaleString('en-US') })}
           {isCapped && (
@@ -197,8 +194,7 @@ export function FilterPanel({
           )}
         </span>
         <span
-          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
         >
           {loading ? t('loading') : t('live')}
         </span>
@@ -225,9 +221,8 @@ function Segmented<T extends string | null>({
             key={opt.label}
             type="button"
             onClick={() => onChange(opt.value)}
-            className="h-8 text-[11px] uppercase tracking-[0.08em] transition-colors"
+            className="h-8 text-[11px] uppercase tracking-[0.08em] transition-colors font-mono"
             style={{
-              fontFamily: 'var(--font-space-mono)',
               backgroundColor: isActive ? 'var(--nd-success)' : 'transparent',
               color: isActive ? 'var(--nd-black)' : 'var(--nd-text-secondary)',
             }}
@@ -256,8 +251,7 @@ function FilterRow({
       <OverlayLabel>{label}</OverlayLabel>
       <Select value={value ?? ANY} onValueChange={onChange}>
         <SelectTrigger
-          className="h-9 rounded-none border-nd-border bg-nd-surface-raised text-nd-text-display"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="h-9 rounded-none border-nd-border bg-nd-surface-raised text-nd-text-display font-mono"
         >
           <SelectValue />
         </SelectTrigger>

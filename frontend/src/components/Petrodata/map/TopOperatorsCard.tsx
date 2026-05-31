@@ -38,8 +38,7 @@ function TopOperatorsCardImpl({
                 className="group flex w-full items-center gap-3 px-5 py-3 text-left transition-colors hover:bg-nd-surface-raised"
               >
                 <span
-                  className="text-nd-text-disabled text-[11px] tabular-nums w-4"
-                  style={{ fontFamily: 'var(--font-space-mono)' }}
+                  className="text-nd-text-disabled text-[11px] tabular-nums w-4 font-mono"
                 >
                   0{i + 1}
                 </span>
@@ -47,14 +46,12 @@ function TopOperatorsCardImpl({
                 <div className="min-w-0 flex-1">
                   <div className="flex items-baseline justify-between gap-2">
                     <span
-                      className={`truncate text-sm ${isActive ? 'text-nd-success' : 'text-nd-text-display'}`}
-                      style={{ fontFamily: 'var(--font-space-grotesk)' }}
+                      className={`truncate text-sm ${isActive ? 'text-nd-success' : 'text-nd-text-display'} font-sans`}
                     >
                       {op.operator_name}
                     </span>
                     <span
-                      className="text-nd-text-secondary text-[11px] tabular-nums"
-                      style={{ fontFamily: 'var(--font-space-mono)' }}
+                      className="text-nd-text-secondary text-[11px] tabular-nums font-mono"
                     >
                       {formatCompact(op.boe)}
                     </span>
@@ -77,8 +74,7 @@ function TopOperatorsCardImpl({
       </ul>
       <div className="border-t border-nd-border px-5 py-2.5">
         <span
-          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
         >
           {t('clickToFilter')}
         </span>

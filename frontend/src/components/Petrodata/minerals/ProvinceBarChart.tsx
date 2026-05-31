@@ -21,21 +21,18 @@ export async function ProvinceBarChart({
   return (
     <div className="bg-nd-surface p-5 flex flex-col h-full">
       <span
-        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block font-mono"
       >
         {t('provinces.eyebrow')}
       </span>
       <h3
-        className="mt-1 mb-4 text-nd-text-display text-lg leading-tight"
-        style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+        className="mt-1 mb-4 text-nd-text-display text-lg leading-tight font-display"
       >
         {t('provinces.title')}
       </h3>
       {rows.length === 0 ? (
         <p
-          className="text-nd-text-disabled text-sm"
-          style={{ fontFamily: 'var(--font-space-grotesk)' }}
+          className="text-nd-text-disabled text-sm font-sans"
         >
           {t('common.noData')}
         </p>
@@ -45,15 +42,13 @@ export async function ProvinceBarChart({
             <li key={name} className="flex flex-col gap-1">
               <div className="flex items-baseline justify-between gap-2 text-[12px]">
                 <span
-                  className="text-nd-text-display truncate"
-                  style={{ fontFamily: 'var(--font-space-grotesk)' }}
+                  className="text-nd-text-display truncate font-sans"
                   title={name}
                 >
                   {name}
                 </span>
                 <span
-                  className="text-nd-text-secondary tabular-nums"
-                  style={{ fontFamily: 'var(--font-space-mono)' }}
+                  className="text-nd-text-secondary tabular-nums font-mono"
                 >
                   {count}
                 </span>

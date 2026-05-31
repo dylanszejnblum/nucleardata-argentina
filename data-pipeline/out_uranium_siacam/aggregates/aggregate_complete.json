@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-05-31T02:30:05.722222",
+  "files": [
+    {
+      "name": "project_aggregates.json",
+      "rows": 1
+    },
+    {
+      "name": "price_statistics.json",
+      "rows": 1
+    }
+  ]
+}

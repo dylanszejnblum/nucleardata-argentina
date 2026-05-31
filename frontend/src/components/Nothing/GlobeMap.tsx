@@ -78,9 +78,8 @@ function FilterChip({
   return (
     <button
       onClick={onClick}
-      className="px-2 py-1 border text-[10px] tracking-[0.06em] uppercase transition-all duration-150"
+      className="px-2 py-1 border text-[10px] tracking-[0.06em] uppercase transition-all duration-150 font-mono"
       style={{
-        fontFamily: 'var(--font-space-mono)',
         borderColor: active ? 'var(--nd-text-display)' : 'var(--nd-border-visible)',
         color: active ? 'var(--nd-text-display)' : 'var(--nd-text-disabled)',
         backgroundColor: active ? 'var(--nd-surface-raised)' : 'transparent',
@@ -169,10 +168,7 @@ function MapMarkerDot({
 
 function PanelHeading({ children }: { children: React.ReactNode }) {
   return (
-    <span
-      className="text-nd-text-secondary block text-[10px] uppercase"
-      style={{ fontFamily: 'var(--font-space-mono)' }}
-    >
+    <span className="text-nd-text-secondary block text-[10px] uppercase font-mono">
       {children}
     </span>
   )
@@ -198,10 +194,7 @@ function CoinSidebarItem({ coin }: { coin: CoinData }) {
               {getCountryFlag(coin.country, coin.flag)}
             </span>
           )}
-          <span
-            className="text-nd-text-display text-base truncate group-hover:text-nd-accent transition-colors"
-            style={{ fontFamily: 'var(--font-space-grotesk)' }}
-          >
+          <span className="text-nd-text-display text-base truncate group-hover:text-nd-accent transition-colors font-sans">
             {coin.name}
           </span>
         </div>
@@ -212,23 +205,14 @@ function CoinSidebarItem({ coin }: { coin: CoinData }) {
       </Link>
 
       <div className="flex items-center gap-3 mb-2">
-        <span
-          className="text-nd-text-secondary text-[11px] tracking-[0.06em] uppercase"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
-        >
+        <span className="text-nd-text-secondary text-[11px] tracking-[0.06em] uppercase font-mono">
           {coin.ticker}
         </span>
-        <span
-          className="text-nd-text-disabled text-[10px] px-1.5 py-0.5 border border-nd-border"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
-        >
+        <span className="text-nd-text-disabled text-[10px] px-1.5 py-0.5 border border-nd-border font-mono">
           {coin.pegCurrency}
         </span>
         {coin.backingType && (
-          <span
-            className="text-nd-text-disabled text-[10px] px-1.5 py-0.5 border border-nd-border"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
-          >
+          <span className="text-nd-text-disabled text-[10px] px-1.5 py-0.5 border border-nd-border font-mono">
             {coin.backingType.toUpperCase()}
           </span>
         )}
@@ -236,45 +220,27 @@ function CoinSidebarItem({ coin }: { coin: CoinData }) {
 
       <div className="grid grid-cols-2 gap-x-4 gap-y-1">
         <div>
-          <span
-            className="text-nd-text-disabled text-[10px] tracking-[0.06em] uppercase block"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
-          >
+          <span className="text-nd-text-disabled text-[10px] tracking-[0.06em] uppercase block font-mono">
             PRICE
           </span>
-          <span
-            className="text-nd-text-primary text-sm"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
-          >
+          <span className="text-nd-text-primary text-sm font-mono">
             {coin.price?.toFixed(4) ?? '--'}
           </span>
         </div>
         <div>
-          <span
-            className="text-nd-text-disabled text-[10px] tracking-[0.06em] uppercase block"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
-          >
+          <span className="text-nd-text-disabled text-[10px] tracking-[0.06em] uppercase block font-mono">
             MKT CAP
           </span>
-          <span
-            className="text-nd-text-primary text-sm"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
-          >
+          <span className="text-nd-text-primary text-sm font-mono">
             {coin.marketCap ? formatCompactUSD(coin.marketCap) : '--'}
           </span>
         </div>
         {coin.chain && coin.chain.length > 0 && (
           <div>
-            <span
-              className="text-nd-text-disabled text-[10px] tracking-[0.06em] uppercase block"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
-            >
+            <span className="text-nd-text-disabled text-[10px] tracking-[0.06em] uppercase block font-mono">
               CHAINS
             </span>
-            <span
-              className="text-nd-text-secondary text-[11px]"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
-            >
+            <span className="text-nd-text-secondary text-[11px] font-mono">
               {coin.chain.length}
             </span>
           </div>
@@ -283,8 +249,7 @@ function CoinSidebarItem({ coin }: { coin: CoinData }) {
 
       <Link
         href={`/coins/${coin.ticker}`}
-        className="inline-block mt-3 text-[10px] tracking-[0.06em] uppercase text-nd-text-disabled hover:text-nd-accent transition-colors"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="inline-block mt-3 text-[10px] tracking-[0.06em] uppercase text-nd-text-disabled hover:text-nd-accent transition-colors font-mono"
       >
         View more &rarr;
       </Link>
@@ -444,18 +409,12 @@ export function GlobeMap({ coins }: { coins: CoinData[] }) {
   const sidebarContent =
     !selectedRegion && !selectedCountry ? (
       <div className="p-4 md:p-6">
-        <span
-          className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block mb-4"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
-        >
+        <span className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block mb-4 font-mono">
           REGIONS
         </span>
         {regionGroups.length === 0 ? (
           <div className="py-12 text-center">
-            <span
-              className="text-nd-text-disabled text-[11px] tracking-[0.06em] uppercase"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
-            >
+            <span className="text-nd-text-disabled text-[11px] tracking-[0.06em] uppercase font-mono">
               [NO GEOLOCATED DATA]
             </span>
           </div>
@@ -476,17 +435,11 @@ export function GlobeMap({ coins }: { coins: CoinData[] }) {
                     className="h-2 w-2 rounded-full"
                     style={{ backgroundColor: 'var(--nd-text-display)' }}
                   />
-                  <span
-                    className="text-nd-text-primary text-sm"
-                    style={{ fontFamily: 'var(--font-space-grotesk)' }}
-                  >
+                  <span className="text-nd-text-primary text-sm font-sans">
                     {label}
                   </span>
                 </div>
-                <span
-                  className="text-nd-text-disabled text-[11px]"
-                  style={{ fontFamily: 'var(--font-space-mono)' }}
-                >
+                <span className="text-nd-text-disabled text-[11px] font-mono">
                   {regionCoins.length}
                 </span>
               </button>
@@ -510,24 +463,15 @@ export function GlobeMap({ coins }: { coins: CoinData[] }) {
           >
             <path d="M8 1L3 6L8 11" />
           </svg>
-          <span
-            className="text-[11px] tracking-[0.06em] uppercase"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
-          >
+          <span className="text-[11px] tracking-[0.06em] uppercase font-mono">
             ALL REGIONS
           </span>
         </button>
 
-        <span
-          className="text-nd-text-display text-xl md:text-2xl tracking-tight block mb-1"
-          style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
-        >
+        <span className="text-nd-text-display text-xl md:text-2xl tracking-tight block mb-1 font-display">
           {selectedCountryData?.flag} {selectedCountry}
         </span>
-        <span
-          className="text-nd-text-secondary text-[11px] tracking-[0.06em] uppercase block mb-6"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
-        >
+        <span className="text-nd-text-secondary text-[11px] tracking-[0.06em] uppercase block mb-6 font-mono">
           {selectedCountryCoins.length} STABLECOIN{selectedCountryCoins.length !== 1 ? 'S' : ''}
         </span>
 
@@ -553,24 +497,15 @@ export function GlobeMap({ coins }: { coins: CoinData[] }) {
           >
             <path d="M8 1L3 6L8 11" />
           </svg>
-          <span
-            className="text-[11px] tracking-[0.06em] uppercase"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
-          >
+          <span className="text-[11px] tracking-[0.06em] uppercase font-mono">
             ALL REGIONS
           </span>
         </button>
 
-        <span
-          className="text-nd-text-display text-xl md:text-2xl tracking-tight block mb-1"
-          style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
-        >
+        <span className="text-nd-text-display text-xl md:text-2xl tracking-tight block mb-1 font-display">
           {REGION_LABELS[selectedRegion!] || selectedRegion}
         </span>
-        <span
-          className="text-nd-text-secondary text-[11px] tracking-[0.06em] uppercase block mb-6"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
-        >
+        <span className="text-nd-text-secondary text-[11px] tracking-[0.06em] uppercase block mb-6 font-mono">
           {selectedRegionCoins.length} STABLECOIN{selectedRegionCoins.length !== 1 ? 'S' : ''}
         </span>
 
@@ -584,43 +519,31 @@ export function GlobeMap({ coins }: { coins: CoinData[] }) {
 
   const summaryPanel = (
     <div className="border border-nd-border bg-nd-surface p-4">
-      <span
-        className="text-nd-text-secondary block text-[11px] uppercase"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
-      >
+      <span className="text-nd-text-secondary block text-[11px] uppercase font-mono">
         Global Distribution
       </span>
       <div className="mt-3 flex items-center gap-4">
         <div className="flex items-center gap-1.5">
           <div className="h-2 w-2 rounded-full" style={{ backgroundColor: 'var(--nd-text-display)' }} />
-          <span
-            className="text-nd-text-disabled text-[10px]"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
-          >
+          <span className="text-nd-text-disabled text-[10px] font-mono">
             ACTIVE
           </span>
         </div>
         <div className="flex items-center gap-1.5">
           <div className="h-2 w-2 rounded-full" style={{ backgroundColor: 'var(--nd-accent)' }} />
-          <span
-            className="text-nd-text-disabled text-[10px]"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
-          >
+          <span className="text-nd-text-disabled text-[10px] font-mono">
             SELECTED
           </span>
         </div>
       </div>
       <div className="mt-3 flex items-center justify-between border-t border-nd-border pt-3">
-        <span
-          className="text-nd-text-disabled text-[11px]"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
-        >
+        <span className="text-nd-text-disabled text-[11px] font-mono">
           {regionGroups.length} REGIONS
         </span>
         {hasActiveFilters && (
           <span
-            className="text-[10px]"
-            style={{ fontFamily: 'var(--font-space-mono)', color: 'var(--nd-accent)' }}
+            className="text-[10px] font-mono"
+            style={{ color: 'var(--nd-accent)' }}
           >
             FILTERED
           </span>
@@ -652,9 +575,8 @@ export function GlobeMap({ coins }: { coins: CoinData[] }) {
             <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" />
           </svg>
           <span
-            className="text-[11px] uppercase"
+            className="text-[11px] uppercase font-mono"
             style={{
-              fontFamily: 'var(--font-space-mono)',
               color: hasActiveFilters ? 'var(--nd-text-display)' : 'var(--nd-text-secondary)',
             }}
           >
@@ -662,8 +584,8 @@ export function GlobeMap({ coins }: { coins: CoinData[] }) {
           </span>
           {hasActiveFilters && (
             <span
-              className="text-[10px]"
-              style={{ fontFamily: 'var(--font-space-mono)', color: 'var(--nd-accent)' }}
+              className="text-[10px] font-mono"
+              style={{ color: 'var(--nd-accent)' }}
             >
               [{filteredCoins.length}]
             </span>
@@ -728,8 +650,7 @@ export function GlobeMap({ coins }: { coins: CoinData[] }) {
             {hasActiveFilters && (
               <button
                 onClick={clearFilters}
-                className="self-start text-[10px] uppercase text-nd-accent transition-colors hover:text-nd-text-display"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="self-start text-[10px] uppercase text-nd-accent transition-colors hover:text-nd-text-display font-mono"
               >
                 [CLEAR ALL]
               </button>
@@ -828,8 +749,8 @@ export function GlobeMap({ coins }: { coins: CoinData[] }) {
               className="lg:hidden absolute bottom-4 left-1/2 -translate-x-1/2 z-20 bg-nd-surface border border-nd-border px-4 py-2 flex items-center gap-2 hover:bg-nd-surface-raised transition-colors"
             >
               <span
-                className="text-[11px] tracking-[0.06em] uppercase"
-                style={{ fontFamily: 'var(--font-space-mono)', color: 'var(--nd-text-display)' }}
+                className="text-[11px] tracking-[0.06em] uppercase font-mono"
+                style={{ color: 'var(--nd-text-display)' }}
               >
                 {selectedCountry || REGION_LABELS[selectedRegion!] || 'Details'}
               </span>

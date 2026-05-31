@@ -69,14 +69,12 @@ export function MapPreview({ wells, totalWells }: { wells: WellFC; totalWells: n
     <div className="bg-nd-surface p-5 flex flex-col">
       <div className="flex items-baseline justify-between">
         <span
-          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
         >
           {t('title')}
         </span>
         <span
-          className="text-nd-text-disabled text-[10px] tabular-nums"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-disabled text-[10px] tabular-nums font-mono"
         >
           {t('sampled', { n: fc.features.length })}
         </span>
@@ -107,23 +105,20 @@ export function MapPreview({ wells, totalWells }: { wells: WellFC; totalWells: n
 
       <div className="mt-4 flex items-baseline justify-between border-t border-nd-border pt-3">
         <span
-          className="text-nd-text-display text-2xl tabular-nums leading-none"
-          style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+          className="text-nd-text-display text-2xl tabular-nums leading-none font-display"
         >
           {totalWells != null ? formatCompact(totalWells) : '—'}
         </span>
         <Link
           href="/map"
-          className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.08em] text-nd-text-secondary hover:text-nd-text-display transition-colors"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.08em] text-nd-text-secondary hover:text-nd-text-display transition-colors font-mono"
         >
           {t('openFullMap')}
           <ArrowRight size={11} />
         </Link>
       </div>
       <span
-        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
       >
         {t('wellsInCatalog')}
       </span>

@@ -164,8 +164,7 @@ export function MineralsMap({
 function MapLegend({ commodities }: { commodities: string[] }) {
   return (
     <div
-      className="pointer-events-none absolute top-3 left-3 z-10 inline-flex flex-col gap-1.5 border border-nd-border bg-nd-surface/85 backdrop-blur-md px-3 py-2.5"
-      style={{ fontFamily: 'var(--font-space-mono)' }}
+      className="pointer-events-none absolute top-3 left-3 z-10 inline-flex flex-col gap-1.5 border border-nd-border bg-nd-surface/85 backdrop-blur-md px-3 py-2.5 font-mono"
     >
       {commodities.map((c) => {
         const { color } = commodityColor(c)
@@ -199,14 +198,12 @@ function ProjectPopupBody({ properties }: { properties: ProjectFeatureProps }) {
         />
         <div className="min-w-0">
           <span
-            className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block font-mono"
           >
             Project · {properties.primary_commodity ?? '—'}
           </span>
           <span
-            className="mt-0.5 text-nd-text-display text-base leading-tight block truncate"
-            style={{ fontFamily: 'var(--font-space-grotesk)' }}
+            className="mt-0.5 text-nd-text-display text-base leading-tight block truncate font-sans"
             title={properties.project_name}
           >
             {properties.project_name}
@@ -214,8 +211,7 @@ function ProjectPopupBody({ properties }: { properties: ProjectFeatureProps }) {
         </div>
       </div>
       <dl
-        className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 px-4 py-3 text-[11px]"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 px-4 py-3 text-[11px] font-mono"
       >
         <MetaRow label="Status" value={properties.status} />
         <MetaRow label="Province" value={properties.province} />

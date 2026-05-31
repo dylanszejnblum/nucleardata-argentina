@@ -26,15 +26,13 @@ export function CommodityRollupCard({ rollup }: { rollup: Rollup }) {
             aria-hidden
           />
           <span
-            className="text-nd-text-display text-base"
-            style={{ fontFamily: 'var(--font-space-grotesk)' }}
+            className="text-nd-text-display text-base font-sans"
           >
             {rollup.commodity}
           </span>
         </div>
         <span
-          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] group-hover:text-nd-text-display transition-colors"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] group-hover:text-nd-text-display transition-colors font-mono"
         >
           View →
         </span>
@@ -48,19 +46,16 @@ export function CommodityRollupCard({ rollup }: { rollup: Rollup }) {
       {topResource && (
         <div className="border-t border-nd-border pt-3">
           <span
-            className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block font-mono"
           >
             {topResource.label}
           </span>
           <span
-            className="mt-1 text-nd-text-display text-2xl tabular-nums leading-none block"
-            style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+            className="mt-1 text-nd-text-display text-2xl tabular-nums leading-none block font-display"
           >
             {formatCompact(topResource.value)}{' '}
             <span
-              className="text-nd-text-disabled text-[10px] uppercase"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
+              className="text-nd-text-disabled text-[10px] uppercase font-mono"
             >
               {topResource.unit}
             </span>
@@ -75,15 +70,13 @@ function Stat({ label, value, accent }: { label: string; value: string; accent?:
   return (
     <div>
       <span
-        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block font-mono"
       >
         {label}
       </span>
       <span
-        className="mt-1 block text-xl tabular-nums leading-none"
+        className="mt-1 block text-xl tabular-nums leading-none font-mono"
         style={{
-          fontFamily: 'var(--font-space-mono)',
           color: accent ?? 'var(--nd-text-display)',
         }}
       >

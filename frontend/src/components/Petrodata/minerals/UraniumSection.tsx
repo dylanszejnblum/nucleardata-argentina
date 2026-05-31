@@ -28,28 +28,24 @@ export async function UraniumSection({ projects }: { projects: Project[] }) {
         <div className="border border-nd-border bg-nd-surface p-6 md:p-8 flex flex-col md:flex-row gap-6">
           <div className="md:w-1/3 flex flex-col gap-2">
             <span
-              className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
+              className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
             >
               {t('vanadium.eyebrow')}
             </span>
             <span
-              className="text-nd-text-display text-5xl leading-none tabular-nums"
-              style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+              className="text-nd-text-display text-5xl leading-none tabular-nums font-display"
             >
               {vanadiumCount}/{projects.length}
             </span>
             <span
-              className="mt-1 text-nd-text-display text-sm"
-              style={{ fontFamily: 'var(--font-space-grotesk)' }}
+              className="mt-1 text-nd-text-display text-sm font-sans"
             >
               {t('vanadium.headline', { count: vanadiumCount, total: projects.length })}
             </span>
           </div>
           <div className="md:w-2/3 md:border-l md:border-nd-border md:pl-6 flex flex-col gap-3">
             <p
-              className="text-nd-text-secondary text-sm leading-7"
-              style={{ fontFamily: 'var(--font-space-grotesk)' }}
+              className="text-nd-text-secondary text-sm leading-7 font-sans"
             >
               {t('vanadium.blurb')}
             </p>
@@ -57,8 +53,7 @@ export async function UraniumSection({ projects }: { projects: Project[] }) {
               {vanadiumProjects.map((p) => (
                 <li
                   key={p.project_name}
-                  className="inline-flex items-center gap-2 rounded-full border border-nd-border px-3 py-1 text-[11px] text-nd-text-secondary"
-                  style={{ fontFamily: 'var(--font-space-mono)' }}
+                  className="inline-flex items-center gap-2 rounded-full border border-nd-border px-3 py-1 text-[11px] text-nd-text-secondary font-mono"
                 >
                   <span
                     className="inline-block size-1.5 rounded-full"
@@ -77,22 +72,19 @@ export async function UraniumSection({ projects }: { projects: Project[] }) {
       <section className="container pb-12">
         <div className="mb-4 flex flex-col gap-1">
           <span
-            className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
           >
             {t('comparison.eyebrow')}
           </span>
           <h2
-            className="text-balance text-2xl md:text-3xl leading-none text-nd-text-display"
-            style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+            className="text-balance text-2xl md:text-3xl leading-none text-nd-text-display font-display"
           >
             {t('comparison.title')}
           </h2>
         </div>
         <div className="border border-nd-border bg-nd-surface overflow-x-auto">
           <table
-            className="w-full text-[12px]"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="w-full text-[12px] font-mono"
           >
             <thead>
               <tr className="bg-nd-surface-raised text-nd-text-secondary text-[10px] uppercase tracking-[0.08em]">
@@ -119,8 +111,7 @@ export async function UraniumSection({ projects }: { projects: Project[] }) {
                   <tr key={p.project_name}>
                     <td className="px-5 py-3">
                       <span
-                        className="inline-flex items-center gap-2 text-nd-text-display"
-                        style={{ fontFamily: 'var(--font-space-grotesk)' }}
+                        className="inline-flex items-center gap-2 text-nd-text-display font-sans"
                       >
                         <span
                           className="inline-block size-1.5 rounded-full"

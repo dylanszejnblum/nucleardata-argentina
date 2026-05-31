@@ -96,10 +96,7 @@ export default async function MapPage() {
     return (
       <div className="flex h-dvh flex-col overflow-hidden">
         <NothingHeader />
-        <main
-          className="flex flex-1 min-h-0 items-center justify-center text-nd-text-disabled text-sm"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
-        >
+        <main className="flex flex-1 min-h-0 items-center justify-center text-nd-text-disabled text-sm font-mono">
           {tCommon('backendOffline', {
             url: process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3001',
           })}

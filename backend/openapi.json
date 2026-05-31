@@ -1287,6 +1287,234 @@
         ]
       }
     },
+    "/api/v2/minerals/uranium/projects": {
+      "get": {
+        "description": "Argentine uranium projects from SIACAM / CNEA, with controllers, status and coordinates. Filter by `province` and / or normalized `status` slug.",
+        "operationId": "UraniumController_projects_v2",
+        "parameters": [
+          {
+            "name": "province",
+            "required": false,
+            "in": "query",
+            "description": "Filter by province (case-insensitive exact match).",
+            "schema": {
+              "example": "Chubut",
+              "type": "string"
+            }
+          },
+          {
+            "name": "status",
+            "required": false,
+            "in": "query",
+            "description": "Filter by normalized status slug (case-insensitive): prospection | early_exploration | advanced_exploration | preliminary_economic_assessment | feasibility.",
+            "schema": {
+              "example": "advanced_exploration",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/UraniumProjectsResponseDto"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/MetaDto"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "meta"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "summary": "Uranium projects (SIACAM)",
+        "tags": [
+          "minerals"
+        ]
+      }
+    },
+    "/api/v2/minerals/uranium/prices": {
+      "get": {
+        "description": "Monthly U3O8 spot price series (USD/lb), 1990 → present. Supports `from` / `to` date range filtering (YYYY-MM or YYYY-MM-DD).",
+        "operationId": "UraniumController_prices_v2",
+        "parameters": [
+          {
+            "name": "from",
+            "required": false,
+            "in": "query",
+            "description": "Inclusive lower bound on price date (YYYY-MM or YYYY-MM-DD).",
+            "schema": {
+              "example": "2020-01-01",
+              "type": "string"
+            }
+          },
+          {
+            "name": "to",
+            "required": false,
+            "in": "query",
+            "description": "Inclusive upper bound on price date (YYYY-MM or YYYY-MM-DD).",
+            "schema": {
+              "example": "2025-12-01",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/UraniumPricesResponseDto"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/MetaDto"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "meta"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "summary": "Uranium price history (SIACAM)",
+        "tags": [
+          "minerals"
+        ]
+      }
+    },
+    "/api/v2/minerals/uranium/prices/stats": {
+      "get": {
+        "description": "Current price, all-time high / low, and decade averages computed from the full monthly series.",
+        "operationId": "UraniumController_priceStats_v2",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/UraniumPriceStatsDto"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/MetaDto"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "meta"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "summary": "Uranium price statistics",
+        "tags": [
+          "minerals"
+        ]
+      }
+    },
+    "/api/v2/minerals/uranium/trade": {
+      "get": {
+        "description": "Monthly uranium trade records split into `imports` and `exports`. Optionally filter by `year`.",
+        "operationId": "UraniumController_trade_v2",
+        "parameters": [
+          {
+            "name": "year",
+            "required": false,
+            "in": "query",
+            "description": "Filter both imports and exports to a single year.",
+            "schema": {
+              "example": 2023,
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/UraniumTradeResponseDto"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/MetaDto"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "meta"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "summary": "Uranium imports & exports (SIACAM)",
+        "tags": [
+          "minerals"
+        ]
+      }
+    },
+    "/api/v2/minerals/uranium/summary": {
+      "get": {
+        "description": "Combined snapshot: current price, total resources / historical production (CNEA), project breakdowns by status and province, and price statistics.",
+        "operationId": "UraniumController_summary_v2",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/UraniumSummaryDto"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/MetaDto"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "meta"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "summary": "Uranium dashboard summary",
+        "tags": [
+          "minerals"
+        ]
+      }
+    },
     "/api/v1/prices/commodities": {
       "get": {
         "description": "One row per tracked commodity series (gold, silver, copper, lithium_etf, uranium_etf) with the most recent monthly value. Sourced from Yahoo Finance (monthly snapshot fetched upstream).",
@@ -3588,6 +3816,388 @@
           "by_status",
           "by_province",
           "data_sources"
+        ]
+      },
+      "UraniumControllerDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Blue Sky Uranium Corp."
+          },
+          "ownership_pct": {
+            "type": "object",
+            "example": "1.0",
+            "nullable": true
+          },
+          "origin_country": {
+            "type": "string",
+            "example": "Canadá"
+          }
+        },
+        "required": [
+          "name",
+          "ownership_pct",
+          "origin_country"
+        ]
+      },
+      "UraniumProjectDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Cerro Solo"
+          },
+          "latitude": {
+            "type": "object",
+            "example": -43.37,
+            "nullable": true
+          },
+          "longitude": {
+            "type": "object",
+            "example": -68.688,
+            "nullable": true
+          },
+          "province": {
+            "type": "object",
+            "example": "Chubut",
+            "nullable": true
+          },
+          "province_code": {
+            "type": "object",
+            "example": "CT",
+            "nullable": true
+          },
+          "status": {
+            "type": "object",
+            "example": "advanced_exploration",
+            "nullable": true
+          },
+          "status_label": {
+            "type": "object",
+            "example": "Exploración avanzada",
+            "nullable": true
+          },
+          "mineral": {
+            "type": "string",
+            "example": "Uranio"
+          },
+          "controllers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UraniumControllerDto"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "latitude",
+          "longitude",
+          "province",
+          "province_code",
+          "status",
+          "status_label",
+          "mineral",
+          "controllers"
+        ]
+      },
+      "UraniumProjectsResponseDto": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "number",
+            "example": 21
+          },
+          "projects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UraniumProjectDto"
+            }
+          }
+        },
+        "required": [
+          "count",
+          "projects"
+        ]
+      },
+      "UraniumPriceDto": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "example": "2026-04-01"
+          },
+          "price_usd": {
+            "type": "number",
+            "example": 86.35
+          },
+          "unit": {
+            "type": "string",
+            "example": "USD/lb"
+          },
+          "year": {
+            "type": "object",
+            "example": 2026,
+            "nullable": true
+          },
+          "month": {
+            "type": "object",
+            "example": 4,
+            "nullable": true
+          },
+          "source": {
+            "type": "string",
+            "example": "siacam"
+          }
+        },
+        "required": [
+          "date",
+          "price_usd",
+          "unit",
+          "year",
+          "month",
+          "source"
+        ]
+      },
+      "UraniumPricesResponseDto": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "number",
+            "example": 436
+          },
+          "prices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UraniumPriceDto"
+            }
+          }
+        },
+        "required": [
+          "count",
+          "prices"
+        ]
+      },
+      "UraniumPriceExtremeDto": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "number",
+            "example": 136.22
+          },
+          "date": {
+            "type": "string",
+            "example": "2007-06-01"
+          }
+        },
+        "required": [
+          "value",
+          "date"
+        ]
+      },
+      "UraniumPriceStatsDto": {
+        "type": "object",
+        "properties": {
+          "current": {
+            "type": "object",
+            "example": 86.35,
+            "nullable": true
+          },
+          "current_date": {
+            "type": "object",
+            "example": "2026-04-01",
+            "nullable": true
+          },
+          "allTimeHigh": {
+            "nullable": true,
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UraniumPriceExtremeDto"
+              }
+            ]
+          },
+          "allTimeLow": {
+            "nullable": true,
+            "type": "object",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UraniumPriceExtremeDto"
+              }
+            ]
+          },
+          "decadeAverages": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            },
+            "example": {
+              "1990s": 10.6,
+              "2000s": 34.17,
+              "2010s": 35.9,
+              "2020s": 55.94
+            }
+          },
+          "unit": {
+            "type": "string",
+            "example": "USD/lb"
+          },
+          "total_data_points": {
+            "type": "number",
+            "example": 436
+          }
+        },
+        "required": [
+          "current",
+          "current_date",
+          "allTimeHigh",
+          "allTimeLow",
+          "decadeAverages",
+          "unit",
+          "total_data_points"
+        ]
+      },
+      "UraniumTradeRowDto": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "number",
+            "example": 1995
+          },
+          "month": {
+            "type": "number",
+            "example": 1
+          },
+          "trade_type": {
+            "type": "string",
+            "example": "import"
+          },
+          "country": {
+            "type": "string",
+            "example": "Canada"
+          },
+          "value_usd": {
+            "type": "number",
+            "example": 29747
+          },
+          "source": {
+            "type": "string",
+            "example": "siacam"
+          }
+        },
+        "required": [
+          "year",
+          "month",
+          "trade_type",
+          "country",
+          "value_usd",
+          "source"
+        ]
+      },
+      "UraniumTradeResponseDto": {
+        "type": "object",
+        "properties": {
+          "imports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UraniumTradeRowDto"
+            }
+          },
+          "exports": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UraniumTradeRowDto"
+            }
+          }
+        },
+        "required": [
+          "imports",
+          "exports"
+        ]
+      },
+      "UraniumSummaryDto": {
+        "type": "object",
+        "properties": {
+          "currentPrice": {
+            "type": "object",
+            "example": 86.35,
+            "nullable": true
+          },
+          "currentDate": {
+            "type": "object",
+            "example": "2026-04-01",
+            "nullable": true
+          },
+          "priceChangePct": {
+            "type": "object",
+            "example": 2.49,
+            "nullable": true
+          },
+          "totalResources": {
+            "type": "object",
+            "example": 33650,
+            "nullable": true
+          },
+          "historicalProduction": {
+            "type": "object",
+            "example": 2600,
+            "nullable": true
+          },
+          "activeProjects": {
+            "type": "number",
+            "example": 21
+          },
+          "provincesWithProjects": {
+            "type": "number",
+            "example": 6
+          },
+          "advancedProjects": {
+            "type": "number",
+            "example": 8
+          },
+          "projectsByStatus": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            },
+            "example": {
+              "Exploración avanzada": 4,
+              "Exploración inicial": 7,
+              "Prospección": 6,
+              "Factibilidad": 2,
+              "Evaluación Económica Preliminar": 2
+            }
+          },
+          "projectsByProvince": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            },
+            "example": {
+              "Río Negro": 5,
+              "Chubut": 8,
+              "Neuquén": 2,
+              "Mendoza": 3,
+              "Salta": 1,
+              "Santa Cruz": 2
+            }
+          },
+          "priceStats": {
+            "$ref": "#/components/schemas/UraniumPriceStatsDto"
+          }
+        },
+        "required": [
+          "currentPrice",
+          "currentDate",
+          "priceChangePct",
+          "totalResources",
+          "historicalProduction",
+          "activeProjects",
+          "provincesWithProjects",
+          "advancedProjects",
+          "projectsByStatus",
+          "projectsByProvince",
+          "priceStats"
         ]
       },
       "CommodityLatestDto": {

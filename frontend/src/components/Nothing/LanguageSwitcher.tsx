@@ -23,8 +23,7 @@ export function LanguageSwitcher() {
     <div
       role="group"
       aria-label={t('switchLanguage')}
-      className="inline-flex items-center border border-nd-border rounded-full overflow-hidden"
-      style={{ fontFamily: 'var(--font-space-mono)' }}
+      className="inline-flex items-center border border-nd-border rounded-full overflow-hidden font-mono"
     >
       {routing.locales.map((l) => {
         const isActive = l === locale

@@ -15,8 +15,7 @@ export function ProductionChart({
   if (rows.length === 0 || operators.length === 0) {
     return (
       <div
-        className="h-[280px] md:h-[400px] flex items-center justify-center text-nd-text-disabled text-sm"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="h-[280px] md:h-[400px] flex items-center justify-center text-nd-text-disabled text-sm font-mono"
       >
         No production data available.
       </div>
@@ -87,8 +86,7 @@ function Legend({ operators }: { operators: OperatorSeriesMeta[] }) {
             aria-hidden
           />
           <span
-            className="text-nd-text-secondary text-[11px]"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-nd-text-secondary text-[11px] font-mono"
           >
             {op.name}
           </span>
@@ -121,8 +119,7 @@ function ChartTooltip({
   const total = payload.reduce((acc, p) => acc + (Number(p.value) || 0), 0)
   return (
     <div
-      className="rounded-none border border-nd-border bg-nd-surface/95 backdrop-blur-md px-3 py-2 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.4)]"
-      style={{ fontFamily: 'var(--font-space-mono)' }}
+      className="rounded-none border border-nd-border bg-nd-surface/95 backdrop-blur-md px-3 py-2 shadow-[0_8px_24px_-12px_rgba(0,0,0,0.4)] font-mono"
     >
       <div className="flex items-baseline justify-between gap-4 border-b border-nd-border pb-1.5 mb-1.5">
         <span className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]">

@@ -1,0 +1,1933 @@
+{
+  "count": 214,
+  "mineral": "Uranio",
+  "records": [
+    {
+      "year": "1994",
+      "month": "1",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "3278.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1995",
+      "month": "1",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "29747.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1995",
+      "month": "2",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "592.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1995",
+      "month": "3",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "373.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1995",
+      "month": "3",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "7880.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1995",
+      "month": "4",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "287.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1995",
+      "month": "4",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "14773.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1995",
+      "month": "5",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "238.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1995",
+      "month": "7",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "11962.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1995",
+      "month": "8",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "16515.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1995",
+      "month": "10",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "7415.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1995",
+      "month": "10",
+      "country": "Reino Unido",
+      "procedence": "Reino Unido",
+      "value_cif_usd": "6229.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1995",
+      "month": "11",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "124.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1995",
+      "month": "11",
+      "country": "Belgica",
+      "procedence": "Belgica",
+      "value_cif_usd": "4125.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1995",
+      "month": "11",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "11336.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1995",
+      "month": "12",
+      "country": "Belgica",
+      "procedence": "Belgica",
+      "value_cif_usd": "16536.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1995",
+      "month": "12",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "13956.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1996",
+      "month": "1",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "4195.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1996",
+      "month": "3",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "5124.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1996",
+      "month": "7",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "284.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1996",
+      "month": "7",
+      "country": "Reino Unido",
+      "procedence": "Reino Unido",
+      "value_cif_usd": "24077.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1996",
+      "month": "7",
+      "country": "Rusia",
+      "procedence": "Rusia",
+      "value_cif_usd": "921559.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1996",
+      "month": "8",
+      "country": "Francia",
+      "procedence": "Francia",
+      "value_cif_usd": "65247.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1996",
+      "month": "9",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "337.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1996",
+      "month": "11",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "775.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1996",
+      "month": "12",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "257.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1997",
+      "month": "1",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "402.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1997",
+      "month": "6",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "134.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1997",
+      "month": "8",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "1019.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1997",
+      "month": "9",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "147.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1997",
+      "month": "10",
+      "country": "Canada",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "1378000.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1997",
+      "month": "10",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "38.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1997",
+      "month": "12",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "459.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1997",
+      "month": "12",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "394.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1998",
+      "month": "1",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "88.55",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1998",
+      "month": "2",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "420.4",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1998",
+      "month": "4",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "1640.78",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1998",
+      "month": "4",
+      "country": "Uzbekistan",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "3069426.17",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1998",
+      "month": "6",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "59.04",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1998",
+      "month": "8",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "108.93",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1998",
+      "month": "9",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "365.79",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1998",
+      "month": "9",
+      "country": "Belgica",
+      "procedence": "Belgica",
+      "value_cif_usd": "5874.8",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1998",
+      "month": "9",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "1043125.51",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1998",
+      "month": "10",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "252.26",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1998",
+      "month": "11",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "235.97",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1998",
+      "month": "12",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "264.45",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1998",
+      "month": "12",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "27018.25",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1998",
+      "month": "12",
+      "country": "Rusia",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "1347091.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1999",
+      "month": "1",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "13.96",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1999",
+      "month": "1",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "11499.71",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1999",
+      "month": "3",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "12.24",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1999",
+      "month": "3",
+      "country": "Belgica",
+      "procedence": "Belgica",
+      "value_cif_usd": "518.37",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1999",
+      "month": "4",
+      "country": "Suecia",
+      "procedence": "Suecia",
+      "value_cif_usd": "55.66",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1999",
+      "month": "6",
+      "country": "Alemania",
+      "procedence": "Brasil",
+      "value_cif_usd": "564265.24",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1999",
+      "month": "6",
+      "country": "Corea, Republica de",
+      "procedence": "Corea, Republica de",
+      "value_cif_usd": "410.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1999",
+      "month": "8",
+      "country": "Alemania",
+      "procedence": "Brasil",
+      "value_cif_usd": "565100.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1999",
+      "month": "8",
+      "country": "Suecia",
+      "procedence": "Brasil",
+      "value_cif_usd": "15700.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "1999",
+      "month": "11",
+      "country": "Rusia",
+      "procedence": "Alemania",
+      "value_cif_usd": "2185000.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2000",
+      "month": "1",
+      "country": "Estados Unidos",
+      "procedence": "Alemania",
+      "value_cif_usd": "17.75",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2000",
+      "month": "3",
+      "country": "Suecia",
+      "procedence": "Alemania",
+      "value_cif_usd": "2298493.15",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2000",
+      "month": "4",
+      "country": "Reino Unido",
+      "procedence": "Alemania",
+      "value_cif_usd": "32.58",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2000",
+      "month": "5",
+      "country": "Rusia",
+      "procedence": "Alemania",
+      "value_cif_usd": "2385381.6",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2000",
+      "month": "6",
+      "country": "Francia",
+      "procedence": "Alemania",
+      "value_cif_usd": "47.22",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2000",
+      "month": "8",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "8969.55",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2000",
+      "month": "8",
+      "country": "Francia",
+      "procedence": "Alemania",
+      "value_cif_usd": "30.92",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2000",
+      "month": "10",
+      "country": "Brasil",
+      "procedence": "Brasil",
+      "value_cif_usd": "46000.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2000",
+      "month": "11",
+      "country": "Suiza",
+      "procedence": "Suiza",
+      "value_cif_usd": "215.8",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2000",
+      "month": "12",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "39625.08",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2000",
+      "month": "12",
+      "country": "España",
+      "procedence": "España",
+      "value_cif_usd": "57595.79",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2000",
+      "month": "12",
+      "country": "Reino Unido",
+      "procedence": "Reino Unido",
+      "value_cif_usd": "179.62",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2001",
+      "month": "1",
+      "country": "Reino Unido",
+      "procedence": "Reino Unido",
+      "value_cif_usd": "841.5",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2001",
+      "month": "2",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "476.72",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2001",
+      "month": "2",
+      "country": "Rusia",
+      "procedence": "Alemania",
+      "value_cif_usd": "2012400.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2001",
+      "month": "4",
+      "country": "Suecia",
+      "procedence": "Alemania",
+      "value_cif_usd": "1303553.66",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2001",
+      "month": "5",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "692.86",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2001",
+      "month": "11",
+      "country": "Argentina",
+      "procedence": "Luxemburgo",
+      "value_cif_usd": "1020.1",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2002",
+      "month": "6",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "249795.44",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2002",
+      "month": "9",
+      "country": "Brasil",
+      "procedence": "Brasil",
+      "value_cif_usd": "420945.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2002",
+      "month": "11",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "2805.22",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2003",
+      "month": "2",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "565986.3",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2003",
+      "month": "2",
+      "country": "Uzbekistan",
+      "procedence": "Alemania",
+      "value_cif_usd": "1538711.72",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2003",
+      "month": "6",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "390035.1",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2003",
+      "month": "9",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "559731.97",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2003",
+      "month": "9",
+      "country": "Uzbekistan",
+      "procedence": "Alemania",
+      "value_cif_usd": "523841.4",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2003",
+      "month": "10",
+      "country": "Uzbekistan",
+      "procedence": "Alemania",
+      "value_cif_usd": "2834000.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2004",
+      "month": "6",
+      "country": "Brasil",
+      "procedence": "Brasil",
+      "value_cif_usd": "908651.36",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2004",
+      "month": "8",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "1826.79",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2004",
+      "month": "11",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "505914.1",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2004",
+      "month": "11",
+      "country": "Republica Checa",
+      "procedence": "Alemania",
+      "value_cif_usd": "4181711.64",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2004",
+      "month": "12",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "1376076.93",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2005",
+      "month": "1",
+      "country": "Alemania",
+      "procedence": "Alemania",
+      "value_cif_usd": "16.58",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2005",
+      "month": "3",
+      "country": "Canada",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "2339389.95",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2005",
+      "month": "5",
+      "country": "Brasil",
+      "procedence": "Brasil",
+      "value_cif_usd": "515296.25",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2005",
+      "month": "5",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "889.79",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2005",
+      "month": "5",
+      "country": "Republica Checa",
+      "procedence": "Alemania",
+      "value_cif_usd": "2232080.18",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2005",
+      "month": "7",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "134404.09",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2006",
+      "month": "1",
+      "country": "Brasil",
+      "procedence": "Brasil",
+      "value_cif_usd": "273011.72",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2006",
+      "month": "1",
+      "country": "Suecia",
+      "procedence": "Alemania",
+      "value_cif_usd": "1687527.01",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2006",
+      "month": "2",
+      "country": "Brasil",
+      "procedence": "Brasil",
+      "value_cif_usd": "398681.14",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2006",
+      "month": "2",
+      "country": "Republica Checa",
+      "procedence": "Alemania",
+      "value_cif_usd": "6087070.75",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2006",
+      "month": "3",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "2804.91",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2006",
+      "month": "4",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "551.98",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2006",
+      "month": "5",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "1900.58",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2006",
+      "month": "6",
+      "country": "Canada",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "7575438.53",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2006",
+      "month": "6",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "437883.31",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2006",
+      "month": "8",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "439.35",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2006",
+      "month": "9",
+      "country": "Suecia",
+      "procedence": "Alemania",
+      "value_cif_usd": "2949708.28",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2006",
+      "month": "11",
+      "country": "Republica Checa",
+      "procedence": "Alemania",
+      "value_cif_usd": "6534158.41",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2007",
+      "month": "1",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "358.72",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2007",
+      "month": "3",
+      "country": "Canada",
+      "procedence": "Alemania",
+      "value_cif_usd": "4568570.91",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2007",
+      "month": "8",
+      "country": "Republica Checa",
+      "procedence": "Alemania",
+      "value_cif_usd": "2649211.5",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2007",
+      "month": "12",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "1333.5",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2008",
+      "month": "2",
+      "country": "Canada",
+      "procedence": "Alemania",
+      "value_cif_usd": "6790021.76",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2008",
+      "month": "2",
+      "country": "Reino Unido",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "2031.96",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2008",
+      "month": "9",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "4800.05",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2008",
+      "month": "12",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "7603.91",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2009",
+      "month": "1",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "872786.34",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2009",
+      "month": "4",
+      "country": "Kazajstan",
+      "procedence": "Alemania",
+      "value_cif_usd": "10282774.25",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2009",
+      "month": "6",
+      "country": "Canada",
+      "procedence": "Brasil",
+      "value_cif_usd": "1950.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2009",
+      "month": "7",
+      "country": "Canada",
+      "procedence": "Brasil",
+      "value_cif_usd": "3900.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2009",
+      "month": "7",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "14809.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2009",
+      "month": "8",
+      "country": "Canada",
+      "procedence": "Brasil",
+      "value_cif_usd": "1950.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2009",
+      "month": "8",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "3358.25",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2009",
+      "month": "9",
+      "country": "Canada",
+      "procedence": "Brasil",
+      "value_cif_usd": "1950.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2009",
+      "month": "10",
+      "country": "Canada",
+      "procedence": "Brasil",
+      "value_cif_usd": "3900.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2009",
+      "month": "10",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "465592.81",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2009",
+      "month": "10",
+      "country": "Kazajstan",
+      "procedence": "Alemania",
+      "value_cif_usd": "10381929.96",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2009",
+      "month": "12",
+      "country": "Canada",
+      "procedence": "Brasil",
+      "value_cif_usd": "2145.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2010",
+      "month": "1",
+      "country": "Canada",
+      "procedence": "Brasil",
+      "value_cif_usd": "1950.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2010",
+      "month": "1",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "17987.09",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2010",
+      "month": "2",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "7381.29",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2010",
+      "month": "3",
+      "country": "Canada",
+      "procedence": "Brasil",
+      "value_cif_usd": "3650.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2010",
+      "month": "4",
+      "country": "Canada",
+      "procedence": "Brasil",
+      "value_cif_usd": "3900.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2010",
+      "month": "5",
+      "country": "Canada",
+      "procedence": "Brasil",
+      "value_cif_usd": "3900.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2010",
+      "month": "5",
+      "country": "Kazajstan",
+      "procedence": "Alemania",
+      "value_cif_usd": "6913193.33",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2010",
+      "month": "6",
+      "country": "Canada",
+      "procedence": "Brasil",
+      "value_cif_usd": "1950.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2010",
+      "month": "8",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "1266.14",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2010",
+      "month": "8",
+      "country": "Kazajstan",
+      "procedence": "Alemania",
+      "value_cif_usd": "6912106.8",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2011",
+      "month": "2",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "1331.1",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2011",
+      "month": "5",
+      "country": "Kazajstan",
+      "procedence": "Alemania",
+      "value_cif_usd": "9427842.19",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2011",
+      "month": "7",
+      "country": "Suecia",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "3428233.53",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2011",
+      "month": "9",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "7196.84",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2011",
+      "month": "10",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "325.23",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2011",
+      "month": "11",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "443910.44",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2011",
+      "month": "11",
+      "country": "Estados Unidos",
+      "procedence": "Alemania",
+      "value_cif_usd": "28.68",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2011",
+      "month": "12",
+      "country": "Canada",
+      "procedence": "Alemania",
+      "value_cif_usd": "7317188.45",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2012",
+      "month": "4",
+      "country": "Suecia",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "3200580.53",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2012",
+      "month": "8",
+      "country": "Canada",
+      "procedence": "Alemania",
+      "value_cif_usd": "15482186.46",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2012",
+      "month": "10",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "948088.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2012",
+      "month": "12",
+      "country": "Canada",
+      "procedence": "Alemania",
+      "value_cif_usd": "16007160.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2013",
+      "month": "1",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "4383.47",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2013",
+      "month": "5",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "2088.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2013",
+      "month": "5",
+      "country": "Canada",
+      "procedence": "Alemania",
+      "value_cif_usd": "17234536.8",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2013",
+      "month": "6",
+      "country": "Suecia",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "2908097.45",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2013",
+      "month": "7",
+      "country": "Austria",
+      "procedence": "Austria",
+      "value_cif_usd": "299.31",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2013",
+      "month": "8",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "8994.42",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2013",
+      "month": "11",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "1003553.64",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2013",
+      "month": "12",
+      "country": "Canada",
+      "procedence": "Alemania",
+      "value_cif_usd": "16295063.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2014",
+      "month": "5",
+      "country": "Canada",
+      "procedence": "Alemania",
+      "value_cif_usd": "8748048.4",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2014",
+      "month": "9",
+      "country": "Canada",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "12446444.4",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2014",
+      "month": "9",
+      "country": "Suecia",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "2239223.43",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2014",
+      "month": "11",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "21409.88",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2014",
+      "month": "12",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "846097.72",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2015",
+      "month": "2",
+      "country": "Canada",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "12842867.7",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2015",
+      "month": "5",
+      "country": "Canada",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "8832432.96",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2015",
+      "month": "5",
+      "country": "Suecia",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "2532717.4",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2015",
+      "month": "9",
+      "country": "Canada",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "20175779.52",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2015",
+      "month": "9",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "834385.07",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2015",
+      "month": "11",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "2292.65",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2015",
+      "month": "12",
+      "country": "Canada",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "20011797.51",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2016",
+      "month": "5",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "963784.49",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2016",
+      "month": "5",
+      "country": "Suecia",
+      "procedence": "Suecia",
+      "value_cif_usd": "4608726.96",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2016",
+      "month": "6",
+      "country": "Canada",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "10979766.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2016",
+      "month": "7",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "2372979.44",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2016",
+      "month": "11",
+      "country": "Brasil",
+      "procedence": "Brasil",
+      "value_cif_usd": "4377236.71",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2016",
+      "month": "12",
+      "country": "Canada",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "2797494.5",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2017",
+      "month": "2",
+      "country": "Canada",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "1435738.51",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2017",
+      "month": "3",
+      "country": "India",
+      "procedence": "India",
+      "value_cif_usd": "3838.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2017",
+      "month": "4",
+      "country": "Canada",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "4279166.03",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2017",
+      "month": "4",
+      "country": "Suecia",
+      "procedence": "Alemania",
+      "value_cif_usd": "3711443.27",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2017",
+      "month": "5",
+      "country": "Canada",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "1418298.63",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2017",
+      "month": "8",
+      "country": "India",
+      "procedence": "India",
+      "value_cif_usd": "7171.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2017",
+      "month": "9",
+      "country": "Reino Unido",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "2198.78",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2017",
+      "month": "12",
+      "country": "Francia",
+      "procedence": "Francia",
+      "value_cif_usd": "31945.45",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2018",
+      "month": "6",
+      "country": "España",
+      "procedence": "España",
+      "value_cif_usd": "12648.76",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2018",
+      "month": "7",
+      "country": "Argelia",
+      "procedence": "Argelia",
+      "value_cif_usd": "1666.37",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2018",
+      "month": "8",
+      "country": "Brasil",
+      "procedence": "Brasil",
+      "value_cif_usd": "3478433.96",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2019",
+      "month": "7",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "535.31",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2019",
+      "month": "9",
+      "country": "Australia",
+      "procedence": "Canada",
+      "value_cif_usd": "60.17",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2019",
+      "month": "9",
+      "country": "Canada",
+      "procedence": "Canada",
+      "value_cif_usd": "60.17",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2019",
+      "month": "9",
+      "country": "Estados Unidos",
+      "procedence": "Canada",
+      "value_cif_usd": "60.18",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2019",
+      "month": "9",
+      "country": "Nigeria",
+      "procedence": "Suecia",
+      "value_cif_usd": "1876473.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2020",
+      "month": "4",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "7709.98",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2020",
+      "month": "5",
+      "country": "Brasil",
+      "procedence": "Brasil",
+      "value_cif_usd": "1756561.61",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2020",
+      "month": "8",
+      "country": "Kazajstan",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "9842373.7",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2021",
+      "month": "1",
+      "country": "Nigeria",
+      "procedence": "Suecia",
+      "value_cif_usd": "2556316.59",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2021",
+      "month": "6",
+      "country": "Kazajstan",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "18548574.77",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2021",
+      "month": "10",
+      "country": "Canada",
+      "procedence": "Suecia",
+      "value_cif_usd": "2483375.97",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2022",
+      "month": "4",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "694710.37",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2022",
+      "month": "4",
+      "country": "Kazajstan",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "27004777.23",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2022",
+      "month": "7",
+      "country": "Austria",
+      "procedence": "Austria",
+      "value_cif_usd": "2532.65",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2022",
+      "month": "10",
+      "country": "Canada",
+      "procedence": "Suecia",
+      "value_cif_usd": "3136368.68",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2022",
+      "month": "12",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "5265.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2023",
+      "month": "12",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "3642.73",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2023",
+      "month": "12",
+      "country": "Kazajstan",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "33204944.24",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2024",
+      "month": "12",
+      "country": "Austria",
+      "procedence": "Austria",
+      "value_cif_usd": "55.55",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2025",
+      "month": "3",
+      "country": "Namibia",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "48.88",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2025",
+      "month": "6",
+      "country": "Namibia",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "40.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2025",
+      "month": "7",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "13958495.6",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2025",
+      "month": "8",
+      "country": "Estados Unidos",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "23797172.0",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2025",
+      "month": "11",
+      "country": "Namibia",
+      "procedence": "Belgica",
+      "value_cif_usd": "3259424.08",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2025",
+      "month": "12",
+      "country": "Namibia",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "21793534.2",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2026",
+      "month": "2",
+      "country": "Namibia",
+      "procedence": "Alemania",
+      "value_cif_usd": "16898346.17",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    },
+    {
+      "year": "2026",
+      "month": "3",
+      "country": "Namibia",
+      "procedence": "Estados Unidos",
+      "value_cif_usd": "19191842.55",
+      "trade_type": "import",
+      "sector": "Metaliferos"
+    }
+  ],
+  "generated_at": "2026-05-31T02:30:05.720070"
+}

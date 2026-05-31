@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-05-31T02:30:05.319156",
+  "files": [
+    {
+      "name": "uranium_projects.csv",
+      "rows": 21
+    },
+    {
+      "name": "uranium_prices.csv",
+      "rows": 436
+    },
+    {
+      "name": "uranium_imports.csv",
+      "rows": 214
+    },
+    {
+      "name": "uranium_exports.csv",
+      "rows": 167
+    },
+    {
+      "name": "cnea_facts.json",
+      "rows": 1
+    }
+  ]
+}

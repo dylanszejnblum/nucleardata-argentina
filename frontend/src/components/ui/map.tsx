@@ -957,58 +957,55 @@ function MapPopup({
   ...popupOptions
 }: MapPopupProps) {
   const { map } = useMap()
-  const popupOptionsRef = useRef(popupOptions)
   const onCloseRef = useRef(onClose)
   onCloseRef.current = onClose
   const container = useMemo(() => document.createElement('div'), [])
 
   const popup = useMemo(() => {
-    const popupInstance = new MapLibreGL.Popup({
+    return new MapLibreGL.Popup({
       offset: 16,
+      // Controlled popup: React state owns open/close. The map's built-in
+      // close-on-click MUST stay off here — otherwise a single map click both
+      // removes the popup imperatively (firing `close` → onClose) and lets a
+      // marker click select a new point, racing the two state updates and
+      // eventually stranding the popup detached from the map. Callers can still
+      // opt back in by passing `closeOnClick` explicitly.
+      closeOnClick: false,
       ...popupOptions,
       closeButton: false,
     })
       .setMaxWidth('none')
+      .setDOMContent(container)
       .setLngLat([longitude, latitude])
-
-    return popupInstance
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  // Register the close handler once and tear the popup down on unmount. The
+  // listener is detached before removal so unmounting never re-fires onClose.
   useEffect(() => {
     if (!map) return
 
-    const onCloseProp = () => onCloseRef.current?.()
-
-    popup.on('close', onCloseProp)
-
-    popup.setDOMContent(container)
-    popup.addTo(map)
+    const handleCloseEvent = () => onCloseRef.current?.()
+    popup.on('close', handleCloseEvent)
 
     return () => {
-      popup.off('close', onCloseProp)
-      if (popup.isOpen()) {
-        popup.remove()
-      }
+      popup.off('close', handleCloseEvent)
+      if (popup.isOpen()) popup.remove()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [map])
 
-  if (popup.isOpen()) {
-    const prev = popupOptionsRef.current
-
-    if (popup.getLngLat().lng !== longitude || popup.getLngLat().lat !== latitude) {
-      popup.setLngLat([longitude, latitude])
-    }
-
-    if (prev.offset !== popupOptions.offset) {
-      popup.setOffset(popupOptions.offset ?? 16)
-    }
-    if (prev.maxWidth !== popupOptions.maxWidth && popupOptions.maxWidth) {
-      popup.setMaxWidth(popupOptions.maxWidth ?? 'none')
-    }
-    popupOptionsRef.current = popupOptions
-  }
+  // Keep the popup attached and positioned for the current selection. This is
+  // idempotent and re-add-safe: re-selecting a marker or any external removal
+  // can never leave the popup stranded off the map.
+  useEffect(() => {
+    if (!map) return
+    popup.setLngLat([longitude, latitude])
+    if (!popup.isOpen()) popup.setDOMContent(container).addTo(map)
+    if (popupOptions.offset !== undefined) popup.setOffset(popupOptions.offset)
+    if (popupOptions.maxWidth) popup.setMaxWidth(popupOptions.maxWidth)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [map, longitude, latitude])
 
   const handleClose = () => {
     popup.remove()

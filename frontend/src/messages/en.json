@@ -312,6 +312,89 @@
       "resourcesYear": "Resources year · {year}"
     }
   },
+  "uraniumHub": {
+    "eyebrow": "URANIUM · ARGENTINA",
+    "title": "Uranium",
+    "priceUnit": "USD/lb",
+    "historicalRange": "Historical range: {low} ({lowDate}) — {high} ({highDate})",
+    "resourcesLine": "Identified resources: {resources} tU · Historical production: {production} tU",
+    "ctaChart": "See full chart",
+    "ctaCycle": "See the fuel cycle",
+    "stats": {
+      "projects": "Projects",
+      "provinces": "Provinces",
+      "companies": "Companies",
+      "advanced": "Advanced",
+      "resources": "Resources · tU"
+    },
+    "priceChart": {
+      "eyebrow": "URANIUM PRICE · USD/LB",
+      "title": "35 years of price",
+      "subtitle": "Monthly · {n} points · {from}–{to}",
+      "noData": "No price data."
+    },
+    "milestones": {
+      "eyebrow": "PRICE MILESTONES",
+      "title": "Key moments"
+    },
+    "map": {
+      "eyebrow": "URANIUM PROJECTS MAP",
+      "title": "Uranium projects",
+      "mapped": "{n} projects",
+      "legend": "Legend"
+    },
+    "table": {
+      "eyebrow": "PROJECTS",
+      "title": "Project catalogue",
+      "subtitle": "{n} projects",
+      "noResults": "No project matches this filter.",
+      "filterAll": "All statuses",
+      "columns": {
+        "index": "#",
+        "project": "Project",
+        "province": "Province",
+        "status": "Status",
+        "company": "Company",
+        "origin": "Origin"
+      }
+    },
+    "donut": {
+      "eyebrow": "PROJECT STAGE",
+      "title": "Projects by status"
+    },
+    "trade": {
+      "eyebrow": "FOREIGN TRADE",
+      "title": "Imports vs exports",
+      "imports": "Imports",
+      "exports": "Exports",
+      "noData": "No trade data.",
+      "axisUsd": "USD"
+    },
+    "cycle": {
+      "eyebrow": "NUCLEAR FUEL CYCLE",
+      "title": "From deposit to power generation",
+      "intro": "A uranium molecule travels the whole cycle: from deposit to mine, to mill, to conversion, to fuel and to the reactor.",
+      "argentinaIntro": "Argentina produced 2,600 tU between 1952 and 1997. Today the uranium for its nuclear plants (Atucha I, Atucha II, Embalse) is imported, while 33,650 tU remain in identified resources.",
+      "startTour": "Start the tour",
+      "exploreProjects": "Explore projects",
+      "stepLabel": "STEP {n} · {total}",
+      "prev": "Previous",
+      "next": "Next",
+      "keyFact": "KEY FACT",
+      "argentinaNote": "IN ARGENTINA",
+      "diagram": {
+        "eyebrow": "PROCESS DIAGRAM",
+        "title": "The 12 stages",
+        "hint": "Hover a stage · click to jump"
+      }
+    },
+    "context": {
+      "eyebrow": "URANIUM IN ARGENTINA",
+      "title": "Historical milestones",
+      "today": "Today Argentina imports uranium for its three nuclear plants while developing new projects.",
+      "exploreProjects": "See active projects"
+    }
+  },
   "metadata": {
     "homeTitle": "Petrodata — Argentina oil, gas, minerals & rare-earths tracker",
     "homeDescription": "Real-time intelligence for Argentina's oil, gas, minerals and rare-earths. Production, reserves, operators, and geography in one place."

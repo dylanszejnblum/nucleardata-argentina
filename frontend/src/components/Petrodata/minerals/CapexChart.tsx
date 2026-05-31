@@ -32,21 +32,18 @@ export async function CapexChart({
   return (
     <div className="bg-nd-surface p-5 flex flex-col h-full">
       <span
-        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block font-mono"
       >
         {t('capex.eyebrow')}
       </span>
       <h3
-        className="mt-1 mb-4 text-nd-text-display text-lg leading-tight"
-        style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+        className="mt-1 mb-4 text-nd-text-display text-lg leading-tight font-display"
       >
         {t('capex.title')}
       </h3>
       {parsed.length === 0 ? (
         <p
-          className="text-nd-text-disabled text-sm"
-          style={{ fontFamily: 'var(--font-space-grotesk)' }}
+          className="text-nd-text-disabled text-sm font-sans"
         >
           {t('common.noData')}
         </p>
@@ -58,8 +55,7 @@ export async function CapexChart({
               <li key={p.name} className="flex flex-col gap-1">
                 <div className="flex items-baseline justify-between gap-2 text-[12px]">
                   <span
-                    className="flex items-center gap-2 min-w-0 text-nd-text-display"
-                    style={{ fontFamily: 'var(--font-space-grotesk)' }}
+                    className="flex items-center gap-2 min-w-0 text-nd-text-display font-sans"
                     title={p.name}
                   >
                     <span
@@ -70,8 +66,7 @@ export async function CapexChart({
                     <span className="truncate">{p.name}</span>
                   </span>
                   <span
-                    className="text-nd-text-secondary tabular-nums shrink-0"
-                    style={{ fontFamily: 'var(--font-space-mono)' }}
+                    className="text-nd-text-secondary tabular-nums shrink-0 font-mono"
                   >
                     {formatCapex(p.capexUsdM)}
                   </span>

@@ -12,8 +12,7 @@ export async function ProjectsTable({ projects }: { projects: Project[] }) {
   if (projects.length === 0) {
     return (
       <div
-        className="border border-nd-border bg-nd-surface px-5 py-10 text-center text-nd-text-disabled text-sm"
-        style={{ fontFamily: 'var(--font-space-grotesk)' }}
+        className="border border-nd-border bg-nd-surface px-5 py-10 text-center text-nd-text-disabled text-sm font-sans"
       >
         {t('noResults')}
       </div>
@@ -33,8 +32,7 @@ export async function ProjectsTable({ projects }: { projects: Project[] }) {
   return (
     <div className="border border-nd-border bg-nd-surface overflow-hidden">
       <div
-        className="hidden lg:grid grid-cols-[1.8fr_0.9fr_0.9fr_0.9fr_1.1fr_0.9fr_1fr] gap-4 border-b border-nd-border bg-nd-surface-raised px-5 py-3 text-[10px] uppercase tracking-[0.08em] text-nd-text-secondary"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="hidden lg:grid grid-cols-[1.8fr_0.9fr_0.9fr_0.9fr_1.1fr_0.9fr_1fr] gap-4 border-b border-nd-border bg-nd-surface-raised px-5 py-3 text-[10px] uppercase tracking-[0.08em] text-nd-text-secondary font-mono"
       >
         <span>{columns.project}</span>
         <span>{columns.commodity}</span>
@@ -82,16 +80,14 @@ function ProjectRow({ project, labels }: { project: Project; labels: ColumnLabel
           />
           <div className="min-w-0">
             <span
-              className="block text-nd-text-display text-sm truncate"
-              style={{ fontFamily: 'var(--font-space-grotesk)' }}
+              className="block text-nd-text-display text-sm truncate font-sans"
               title={project.project_name}
             >
               {project.project_name}
             </span>
             {project.deposit_type ? (
               <span
-                className="block text-nd-text-disabled text-[11px] truncate"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="block text-nd-text-disabled text-[11px] truncate font-mono"
                 title={String(project.deposit_type)}
               >
                 {String(project.deposit_type)}
@@ -114,14 +110,12 @@ function Cell({ label, children }: { label: string; children: React.ReactNode })
   return (
     <div className="flex flex-col gap-0.5">
       <span
-        className="lg:hidden text-nd-text-disabled text-[9px] uppercase tracking-[0.08em]"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="lg:hidden text-nd-text-disabled text-[9px] uppercase tracking-[0.08em] font-mono"
       >
         {label}
       </span>
       <span
-        className="text-nd-text-secondary text-[12px] tabular-nums"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="text-nd-text-secondary text-[12px] tabular-nums font-mono"
       >
         {children}
       </span>

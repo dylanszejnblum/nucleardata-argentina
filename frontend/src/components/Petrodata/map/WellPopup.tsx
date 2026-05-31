@@ -96,9 +96,8 @@ function StatusBadge({ status }: { status: string | null | undefined }) {
   const p = palette[kind]
   return (
     <span
-      className="inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[10px] uppercase"
+      className="inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[10px] uppercase font-mono"
       style={{
-        fontFamily: 'var(--font-space-mono)',
         backgroundColor: p.bg,
         color: p.fg,
         boxShadow: p.ring === 'transparent' ? undefined : `inset 0 0 0 1px ${p.ring}`,
@@ -119,8 +118,8 @@ function ResourceChip({ wellType }: { wellType: string | null | undefined }) {
   const dotColor = isOil ? 'var(--nd-success)' : isGas ? 'var(--nd-accent)' : 'var(--nd-text-disabled)'
   return (
     <span
-      className="inline-flex items-center gap-1.5 rounded-full border border-nd-border px-2 py-0.5 text-[10px] uppercase"
-      style={{ fontFamily: 'var(--font-space-mono)', color: 'var(--nd-text-secondary)' }}
+      className="inline-flex items-center gap-1.5 rounded-full border border-nd-border px-2 py-0.5 text-[10px] uppercase font-mono"
+      style={{ color: 'var(--nd-text-secondary)' }}
     >
       <span
         className="inline-block size-1.5 rounded-full"
@@ -134,9 +133,8 @@ function ResourceChip({ wellType }: { wellType: string | null | undefined }) {
 function VmBadge() {
   return (
     <span
-      className="rounded-full px-2 py-0.5 text-[10px] uppercase"
+      className="rounded-full px-2 py-0.5 text-[10px] uppercase font-mono"
       style={{
-        fontFamily: 'var(--font-space-mono)',
         backgroundColor: 'var(--nd-success)',
         color: 'var(--nd-black)',
       }}
@@ -172,14 +170,12 @@ export function WellPopup({ well }: { well: WellProps }) {
         <OperatorAvatar slug={well.operator_slug} name={well.operator_name} size="lg" />
         <div className="min-w-0 flex-1">
           <span
-            className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] block font-mono"
           >
             {t('wellPrefix')} · {well.well_id}
           </span>
           <span
-            className="mt-0.5 text-nd-text-display text-base leading-tight block truncate"
-            style={{ fontFamily: 'var(--font-space-grotesk)' }}
+            className="mt-0.5 text-nd-text-display text-base leading-tight block truncate font-sans"
             title={well.sigla}
           >
             {well.sigla}
@@ -198,15 +194,13 @@ export function WellPopup({ well }: { well: WellProps }) {
       <div className="border-b border-nd-border px-4 py-3">
         <div className="flex items-center justify-between">
           <span
-            className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
           >
             {t('latest')} · {latest ? formatMonth(latest.date_month) : loading ? '…' : t('noData')}
           </span>
           {loading && (
             <span
-              className="text-nd-text-disabled text-[10px] uppercase"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
+              className="text-nd-text-disabled text-[10px] uppercase font-mono"
             >
               {t('loading')}
             </span>
@@ -232,8 +226,7 @@ export function WellPopup({ well }: { well: WellProps }) {
           </div>
         ) : (
           <p
-            className="mt-2 text-nd-text-disabled text-[11px]"
-            style={{ fontFamily: 'var(--font-space-grotesk)' }}
+            className="mt-2 text-nd-text-disabled text-[11px] font-sans"
           >
             {loading ? t('fetchingProduction') : t('noProduction')}
           </p>
@@ -242,8 +235,7 @@ export function WellPopup({ well }: { well: WellProps }) {
 
       {/* Meta grid */}
       <dl
-        className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 px-4 py-3 text-[11px]"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 px-4 py-3 text-[11px] font-mono"
       >
         <MetaRow label={t('fields.operator')} value={well.operator_name} />
         <MetaRow label={t('fields.basin')} value={well.basin} />
@@ -261,8 +253,7 @@ export function WellPopup({ well }: { well: WellProps }) {
 
       {/* Footer */}
       <div
-        className="border-t border-nd-border px-4 py-2 text-[10px] uppercase tracking-[0.08em] text-nd-text-disabled"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="border-t border-nd-border px-4 py-2 text-[10px] uppercase tracking-[0.08em] text-nd-text-disabled font-mono"
       >
         {t('source')}
       </div>
@@ -282,22 +273,19 @@ function ProductionTile({
   return (
     <div className="border border-nd-border bg-nd-surface-raised px-2 py-2">
       <span
-        className="text-nd-text-disabled text-[9px] uppercase tracking-[0.08em] block"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="text-nd-text-disabled text-[9px] uppercase tracking-[0.08em] block font-mono"
       >
         {label}
       </span>
       <div className="mt-1 flex items-baseline gap-1">
         <span
-          className="text-nd-text-display text-base tabular-nums leading-none"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
+          className="text-nd-text-display text-base tabular-nums leading-none font-mono"
         >
           {value}
         </span>
         {unit && (
           <span
-            className="text-nd-text-disabled text-[9px] uppercase"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-nd-text-disabled text-[9px] uppercase font-mono"
           >
             {unit}
           </span>

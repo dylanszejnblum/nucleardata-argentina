@@ -131,71 +131,6 @@ function CloseIcon() {
   )
 }
 
-function NonUsdMark({ small = false }: { small?: boolean }) {
-  const strokeWidth = small ? 1.7 : 1.9
-
-  return (
-    <div
-      className="relative flex items-center justify-center rounded-full border border-nd-border-visible bg-nd-surface-raised"
-      style={{
-        width: small ? '1.5rem' : '2rem',
-        height: small ? '1.5rem' : '2rem',
-      }}
-      aria-hidden="true"
-    >
-      <div
-        className="absolute rounded-full border border-nd-border"
-        style={{
-          inset: small ? '0.18rem' : '0.22rem',
-        }}
-      />
-      <svg
-        aria-hidden="true"
-        className="text-nd-text-display"
-        viewBox="0 0 24 24"
-        style={{
-          width: small ? '0.95rem' : '1.05rem',
-          height: small ? '0.95rem' : '1.05rem',
-        }}
-      >
-        <path
-          d="M14.8 7.2c-.7-.8-1.8-1.2-3.1-1.2-2.3 0-3.8 1.1-3.8 2.9 0 4.3 7.1 1.8 7.1 5.3 0 1.4-1.2 2.4-3.2 2.4-1.5 0-2.8-.5-3.9-1.5"
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={strokeWidth}
-        />
-        <path
-          d="M12 4.8v14.4"
-          fill="none"
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeWidth={strokeWidth}
-        />
-      </svg>
-      <span
-        className="absolute bg-nd-text-display"
-        style={{
-          width: small ? '0.9rem' : '1.1rem',
-          height: small ? '1.5px' : '2px',
-          transform: 'rotate(-34deg)',
-          borderRadius: '999px',
-        }}
-      />
-      <span
-        className="absolute rounded-full bg-nd-accent"
-        style={{
-          width: small ? '0.16rem' : '0.18rem',
-          height: small ? '0.16rem' : '0.18rem',
-          right: small ? '0.22rem' : '0.28rem',
-          top: small ? '0.26rem' : '0.3rem',
-        }}
-      />
-    </div>
-  )
-}
-
 export function NothingHeader() {
   const pathname = usePathname()
   const { theme, setTheme } = useTheme()
@@ -254,12 +189,8 @@ export function NothingHeader() {
       `}</style>
       <div className="container py-4">
         <div className="flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-3">
-            <NonUsdMark />
-            <span
-              className="text-nd-text-display font-sans text-lg tracking-tight"
-              style={{ fontFamily: 'var(--font-space-grotesk)' }}
-            >
+          <Link href="/" className="flex items-center">
+            <span className="text-nd-text-display font-sans text-lg tracking-tight">
               petrodata
             </span>
           </Link>
@@ -294,7 +225,6 @@ export function NothingHeader() {
                 href={item.href}
                 className="relative font-mono text-[11px] tracking-[0.08em] uppercase transition-colors"
                 style={{
-                  fontFamily: 'var(--font-space-mono)',
                   color: isActive ? 'var(--nd-text-display)' : 'var(--nd-text-disabled)',
                   animation: `header-nav-item 400ms cubic-bezier(0.16, 1, 0.3, 1) ${200 + i * 80}ms both`,
                 }}
@@ -327,10 +257,7 @@ export function NothingHeader() {
             style={{ animation: 'mobile-menu-in 350ms cubic-bezier(0.16, 1, 0.3, 1) both' }}
           >
             <div className="flex items-center justify-between border-b border-nd-border px-5 py-4">
-              <span
-                className="text-sm uppercase text-nd-text-secondary"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
-              >
+              <span className="text-sm uppercase text-nd-text-secondary font-mono">
                 {t('menu')}
               </span>
               <button
@@ -355,9 +282,8 @@ export function NothingHeader() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="border-b border-nd-border py-4 text-sm uppercase"
+                    className="border-b border-nd-border py-4 text-sm uppercase font-mono"
                     style={{
-                      fontFamily: 'var(--font-space-mono)',
                       color: isActive ? 'var(--nd-text-display)' : 'var(--nd-text-secondary)',
                     }}
                   >

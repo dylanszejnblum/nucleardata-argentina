@@ -16,8 +16,7 @@ export function VmShareDonut({ shareBoe }: { shareBoe: number }) {
   return (
     <div className="bg-nd-surface p-5 flex flex-col">
       <span
-        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
       >
         {t('title')}
       </span>
@@ -48,12 +47,10 @@ export function VmShareDonut({ shareBoe }: { shareBoe: number }) {
             <AnimatedCounter
               to={pct * 100}
               kind="percent"
-              className="text-nd-text-display text-3xl tabular-nums leading-none"
-              style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+              className="text-nd-text-display text-3xl tabular-nums leading-none font-display"
             />
             <span
-              className="mt-1 text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
+              className="mt-1 text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
             >
               {t('centerLabel')}
             </span>
@@ -96,14 +93,12 @@ function LegendDot({
         aria-hidden
       />
       <span
-        className="text-nd-text-secondary"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="text-nd-text-secondary font-mono"
       >
         {label}
       </span>
       <span
-        className="text-nd-text-display tabular-nums"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="text-nd-text-display tabular-nums font-mono"
       >
         {value}
       </span>

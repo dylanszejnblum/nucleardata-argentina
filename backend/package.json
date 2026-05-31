@@ -21,6 +21,7 @@
     "db:migrate": "prisma migrate dev",
     "db:seed": "prisma db seed",
     "db:reset": "prisma migrate reset --force",
+    "db:seed:uranium": "ts-node --transpile-only prisma/seed-uranium-siacam.ts",
     "openapi:export": "ts-node --transpile-only scripts/export-openapi.ts"
   },
   "prisma": {

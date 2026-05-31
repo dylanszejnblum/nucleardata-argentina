@@ -298,16 +298,12 @@ export function NewsletterModal() {
               </svg>
             </div>
 
-            <h3
-              className="mb-2 text-xl text-nd-text-display nd-modal-fade-up"
-              style={{ fontFamily: 'var(--font-space-grotesk)' }}
-            >
+            <h3 className="mb-2 text-xl text-nd-text-display nd-modal-fade-up font-sans">
               You are on the list
             </h3>
             <p
-              className="text-sm text-nd-text-secondary nd-modal-fade-up"
+              className="text-sm text-nd-text-secondary nd-modal-fade-up font-sans"
               style={{
-                fontFamily: 'var(--font-space-grotesk)',
                 animationDelay: '100ms',
               }}
             >
@@ -343,26 +339,17 @@ export function NewsletterModal() {
             </div>
 
             {/* Label */}
-            <span
-              className="mb-3 block text-[11px] uppercase tracking-[0.08em] text-nd-text-secondary"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
-            >
+            <span className="mb-3 block text-[11px] uppercase tracking-[0.08em] text-nd-text-secondary font-mono">
               NEWSLETTER
             </span>
 
             {/* Title */}
-            <h2
-              className="mb-2 text-2xl leading-tight text-nd-text-display"
-              style={{ fontFamily: 'var(--font-space-grotesk)' }}
-            >
+            <h2 className="mb-2 text-2xl leading-tight text-nd-text-display font-sans">
               Stay up to date with new research & stats
             </h2>
 
             {/* Description */}
-            <p
-              className="mb-6 text-sm leading-relaxed text-nd-text-secondary"
-              style={{ fontFamily: 'var(--font-space-grotesk)' }}
-            >
+            <p className="mb-6 text-sm leading-relaxed text-nd-text-secondary font-sans">
               Weekly briefings on Argentina’s oil, gas, minerals and rare-earths projects —
               production, reserves, operators. No noise.
             </p>
@@ -378,8 +365,7 @@ export function NewsletterModal() {
                     if (error) setError('')
                   }}
                   placeholder="your@email.com"
-                  className="w-full border-b border-nd-border-visible bg-transparent py-3 pr-4 text-sm text-nd-text-primary placeholder:text-nd-text-disabled focus:border-nd-text-display focus:outline-none transition-colors"
-                  style={{ fontFamily: 'var(--font-space-mono)' }}
+                  className="w-full border-b border-nd-border-visible bg-transparent py-3 pr-4 text-sm text-nd-text-primary placeholder:text-nd-text-disabled focus:border-nd-text-display focus:outline-none transition-colors font-mono"
                   autoFocus={isVisible}
                   required
                 />
@@ -387,8 +373,8 @@ export function NewsletterModal() {
 
               {error && (
                 <span
-                  className="text-[11px] uppercase tracking-[0.06em]"
-                  style={{ fontFamily: 'var(--font-space-mono)', color: 'var(--nd-accent)' }}
+                  className="text-[11px] uppercase tracking-[0.06em] font-mono"
+                  style={{ color: 'var(--nd-accent)' }}
                 >
                   [ERROR: {error.toUpperCase()}]
                 </span>
@@ -396,18 +382,14 @@ export function NewsletterModal() {
 
               <button
                 type="submit"
-                className="mt-1 w-full rounded-full border border-nd-border-visible bg-nd-text-display px-5 py-3 text-[11px] uppercase tracking-[0.08em] text-nd-black transition-colors hover:bg-transparent hover:text-nd-text-display"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="mt-1 w-full rounded-full border border-nd-border-visible bg-nd-text-display px-5 py-3 text-[11px] uppercase tracking-[0.08em] text-nd-black transition-colors hover:bg-transparent hover:text-nd-text-display font-mono"
               >
                 Subscribe
               </button>
             </form>
 
             {/* Footer */}
-            <p
-              className="mt-5 text-center text-[10px] text-nd-text-disabled"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
-            >
+            <p className="mt-5 text-center text-[10px] text-nd-text-disabled font-mono">
               No spam. Unsubscribe anytime.
             </p>
           </div>

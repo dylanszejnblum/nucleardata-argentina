@@ -130,10 +130,7 @@ export default async function MineralsOverviewPage() {
     return (
       <>
         <NothingHeader />
-        <main
-          className="flex-1 flex items-center justify-center text-nd-text-disabled text-sm"
-          style={{ fontFamily: 'var(--font-space-mono)' }}
-        >
+        <main className="flex-1 flex items-center justify-center text-nd-text-disabled text-sm font-mono">
           {tCommon('backendOffline', {
             url: process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:3001',
           })}
@@ -167,23 +164,20 @@ export default async function MineralsOverviewPage() {
         {/* Hero */}
         <section className="container pt-12 pb-8 md:pt-20 md:pb-10">
           <span
-            className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase font-mono"
           >
             {t('eyebrow')}
           </span>
           <h1
-            className="mt-3 max-w-3xl text-balance text-4xl leading-none md:text-6xl"
+            className="mt-3 max-w-3xl text-balance text-4xl leading-none md:text-6xl font-display"
             style={{
-              fontFamily: 'Doto, var(--font-space-grotesk)',
               color: 'var(--nd-text-display)',
             }}
           >
             {t('heroTitle')}
           </h1>
           <p
-            className="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-nd-text-secondary"
-            style={{ fontFamily: 'var(--font-space-grotesk)' }}
+            className="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-nd-text-secondary font-sans"
           >
             {t('heroBlurb', {
               total: summary.total_projects,
@@ -227,21 +221,18 @@ export default async function MineralsOverviewPage() {
           <div className="mb-6 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
             <div>
               <span
-                className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block font-mono"
               >
                 {t('commoditiesSection.eyebrow')}
               </span>
               <h2
-                className="mt-2 text-balance text-3xl leading-none text-nd-text-display md:text-4xl"
-                style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+                className="mt-2 text-balance text-3xl leading-none text-nd-text-display md:text-4xl font-display"
               >
                 {t('commoditiesSection.title')}
               </h2>
             </div>
             <p
-              className="text-pretty text-sm leading-6 text-nd-text-secondary max-w-md"
-              style={{ fontFamily: 'var(--font-space-grotesk)' }}
+              className="text-pretty text-sm leading-6 text-nd-text-secondary max-w-md font-sans"
             >
               {t('commoditiesSection.blurb')}
             </p>
@@ -258,14 +249,12 @@ export default async function MineralsOverviewPage() {
           <div className="mb-6 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
             <div>
               <span
-                className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block font-mono"
               >
                 {t('mapSection.eyebrow')}
               </span>
               <h2
-                className="mt-2 text-balance text-3xl leading-none text-nd-text-display md:text-4xl"
-                style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+                className="mt-2 text-balance text-3xl leading-none text-nd-text-display md:text-4xl font-display"
               >
                 {t('mapSection.title')}
               </h2>
@@ -302,21 +291,18 @@ export default async function MineralsOverviewPage() {
           <div className="mb-6 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
             <div>
               <span
-                className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block font-mono"
               >
                 {t('projectsSection.eyebrow')}
               </span>
               <h2
-                className="mt-2 text-balance text-3xl leading-none text-nd-text-display md:text-4xl"
-                style={{ fontFamily: 'Doto, var(--font-space-grotesk)' }}
+                className="mt-2 text-balance text-3xl leading-none text-nd-text-display md:text-4xl font-display"
               >
                 {t('projectsSection.title')}
               </h2>
             </div>
             <span
-              className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em]"
-              style={{ fontFamily: 'var(--font-space-mono)' }}
+              className="text-nd-text-disabled text-[10px] uppercase tracking-[0.08em] font-mono"
             >
               {t('projectsSection.subtitle', { n: projects.length })}
             </span>
@@ -327,8 +313,7 @@ export default async function MineralsOverviewPage() {
         {/* Data freshness bar */}
         <section className="container pb-20">
           <div
-            className="border border-nd-border bg-nd-surface px-5 py-3 flex flex-wrap items-center justify-between gap-3 text-[11px] uppercase tracking-[0.08em] text-nd-text-disabled"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="border border-nd-border bg-nd-surface px-5 py-3 flex flex-wrap items-center justify-between gap-3 text-[11px] uppercase tracking-[0.08em] text-nd-text-disabled font-mono"
           >
             <span>{summary.data_sources.join(' · ')}</span>
             <span>datos.energia.gob.ar · CC-BY 4.0</span>
@@ -349,8 +334,7 @@ function Legend({ commodities }: { commodities: string[] }) {
         return (
           <span
             key={c}
-            className="inline-flex items-center gap-1.5 text-nd-text-secondary text-[11px]"
-            style={{ fontFamily: 'var(--font-space-mono)' }}
+            className="inline-flex items-center gap-1.5 text-nd-text-secondary text-[11px] font-mono"
           >
             <span
               className="inline-block size-2.5 rounded-full"
@@ -370,8 +354,7 @@ function BreakdownCard({ title, rows }: { title: string; rows: [string, number][
   return (
     <div className="bg-nd-surface p-6">
       <span
-        className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block mb-4"
-        style={{ fontFamily: 'var(--font-space-mono)' }}
+        className="text-nd-text-secondary text-[11px] tracking-[0.08em] uppercase block mb-4 font-mono"
       >
         {title}
       </span>
@@ -380,14 +363,12 @@ function BreakdownCard({ title, rows }: { title: string; rows: [string, number][
           <li key={label} className="flex flex-col gap-1.5">
             <div className="flex items-baseline justify-between gap-2 text-[12px]">
               <span
-                className="text-nd-text-display truncate"
-                style={{ fontFamily: 'var(--font-space-grotesk)' }}
+                className="text-nd-text-display truncate font-sans"
               >
                 {label}
               </span>
               <span
-                className="text-nd-text-secondary tabular-nums"
-                style={{ fontFamily: 'var(--font-space-mono)' }}
+                className="text-nd-text-secondary tabular-nums font-mono"
               >
                 {value}
               </span>

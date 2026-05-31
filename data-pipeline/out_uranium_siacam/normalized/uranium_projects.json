@@ -1,0 +1,238 @@
+{
+  "count": 21,
+  "mineral": "Uranio",
+  "projects": [
+    {
+      "project_name": "Amarillo Grande (Anit, Sta. Bárbara)",
+      "latitude": "-39.61437",
+      "longitude": "-67.22486",
+      "province": "Río Negro",
+      "province_code": "RN",
+      "status": "advanced_exploration",
+      "status_label": "Exploración avanzada",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'Blue Sky Uranium Corp.', 'ownership_pct': '1.0', 'origin_country': 'Canadá'}]"
+    },
+    {
+      "project_name": "Arroyo Perdido",
+      "latitude": "-43.4094444",
+      "longitude": "-68.5305555555555",
+      "province": "Chubut",
+      "province_code": "CT",
+      "status": "early_exploration",
+      "status_label": "Exploración inicial",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'CNEA', 'ownership_pct': '1.0', 'origin_country': 'Argentina'}]"
+    },
+    {
+      "project_name": "Cateos",
+      "latitude": "-38.257306",
+      "longitude": "-69.32361",
+      "province": "Neuquén",
+      "province_code": "NQ",
+      "status": "prospection",
+      "status_label": "Prospección",
+      "mineral": "Uranio",
+      "controllers": "[{'name': '-', 'ownership_pct': '', 'origin_country': '-'}]"
+    },
+    {
+      "project_name": "Catriel (Mari)",
+      "latitude": "-37.7936111",
+      "longitude": "-67.9633333333333",
+      "province": "Río Negro",
+      "province_code": "RN",
+      "status": "early_exploration",
+      "status_label": "Exploración inicial",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'CNEA', 'ownership_pct': '1.0', 'origin_country': 'Argentina'}]"
+    },
+    {
+      "project_name": "Cerro Solo",
+      "latitude": "-43.37",
+      "longitude": "-68.688",
+      "province": "Chubut",
+      "province_code": "CT",
+      "status": "advanced_exploration",
+      "status_label": "Exploración avanzada",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'CNEA', 'ownership_pct': '1.0', 'origin_country': 'Argentina'}]"
+    },
+    {
+      "project_name": "Chihuidos",
+      "latitude": "-37.8417",
+      "longitude": "-69.45",
+      "province": "Neuquén",
+      "province_code": "NQ",
+      "status": "early_exploration",
+      "status_label": "Exploración inicial",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'Blue Sky Uranium Corp.', 'ownership_pct': '1.0', 'origin_country': 'Canadá'}]"
+    },
+    {
+      "project_name": "Corcovo",
+      "latitude": "-35.5",
+      "longitude": "-69.75",
+      "province": "Mendoza",
+      "province_code": "MZ",
+      "status": "early_exploration",
+      "status_label": "Exploración inicial",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'Blue Sky Uranium Corp.', 'ownership_pct': '1.0', 'origin_country': 'Canadá'}]"
+    },
+    {
+      "project_name": "Don Otto",
+      "latitude": "-25.611",
+      "longitude": "-65.927",
+      "province": "Salta",
+      "province_code": "SA",
+      "status": "feasibility",
+      "status_label": "Factibilidad",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'CNEA', 'ownership_pct': '1.0', 'origin_country': 'Argentina'}]"
+    },
+    {
+      "project_name": "Hope",
+      "latitude": "-44.275",
+      "longitude": "-67.0475",
+      "province": "Chubut",
+      "province_code": "CT",
+      "status": "prospection",
+      "status_label": "Prospección",
+      "mineral": "Uranio",
+      "controllers": "[{'name': '-', 'ownership_pct': '', 'origin_country': '-'}]"
+    },
+    {
+      "project_name": "Huemules",
+      "latitude": "-36.1539145",
+      "longitude": "-69.2049679",
+      "province": "Mendoza",
+      "province_code": "MZ",
+      "status": "early_exploration",
+      "status_label": "Exploración inicial",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'Jaguar Uranium Corp.', 'ownership_pct': '1.0', 'origin_country': 'Canadá'}]"
+    },
+    {
+      "project_name": "Ivana (Amarillo Grande)",
+      "latitude": "-39.61437",
+      "longitude": "-67.22486",
+      "province": "Río Negro",
+      "province_code": "RN",
+      "status": "preliminary_economic_assessment",
+      "status_label": "Evaluación Económica Preliminar",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'Blue Sky Uranium Corp.', 'ownership_pct': '1.0', 'origin_country': 'Canadá'}]"
+    },
+    {
+      "project_name": "Kaia",
+      "latitude": "-41.39638889",
+      "longitude": "-69.41694444",
+      "province": "Río Negro",
+      "province_code": "RN",
+      "status": "prospection",
+      "status_label": "Prospección",
+      "mineral": "Uranio",
+      "controllers": "[{'name': '-', 'ownership_pct': '', 'origin_country': '-'}]"
+    },
+    {
+      "project_name": "Lago Seco",
+      "latitude": "-44.3777778",
+      "longitude": "-67.3202777777777",
+      "province": "Chubut",
+      "province_code": "CT",
+      "status": "prospection",
+      "status_label": "Prospección",
+      "mineral": "Uranio",
+      "controllers": "[{'name': '-', 'ownership_pct': '', 'origin_country': '-'}]"
+    },
+    {
+      "project_name": "Laguna Colorada",
+      "latitude": "-43.91",
+      "longitude": "-68.67",
+      "province": "Chubut",
+      "province_code": "CT",
+      "status": "advanced_exploration",
+      "status_label": "Exploración avanzada",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'CNEA', 'ownership_pct': '1.0', 'origin_country': 'Argentina'}]"
+    },
+    {
+      "project_name": "Laguna Salada",
+      "latitude": "-44.29626",
+      "longitude": "-67.21681",
+      "province": "Chubut",
+      "province_code": "CT",
+      "status": "preliminary_economic_assessment",
+      "status_label": "Evaluación Económica Preliminar",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'Jaguar Uranium Corp.', 'ownership_pct': '1.0', 'origin_country': 'Canadá'}]"
+    },
+    {
+      "project_name": "Lucho U",
+      "latitude": "-40.51",
+      "longitude": "-66.252",
+      "province": "Río Negro",
+      "province_code": "RN",
+      "status": "prospection",
+      "status_label": "Prospección",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'Lucero Claudio Guillermo-Unipersonal', 'ownership_pct': '', 'origin_country': '-'}]"
+    },
+    {
+      "project_name": "Meseta Central",
+      "latitude": "-43.41",
+      "longitude": "-68.69",
+      "province": "Chubut",
+      "province_code": "CT",
+      "status": "advanced_exploration",
+      "status_label": "Exploración avanzada",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'UrAmérica Ltd.', 'ownership_pct': '1.0', 'origin_country': 'Reino Unido'}]"
+    },
+    {
+      "project_name": "Meseta Sirven (Laguna Sirve)",
+      "latitude": "-46.8810783",
+      "longitude": "-69.0676926",
+      "province": "Santa Cruz",
+      "province_code": "SC",
+      "status": "early_exploration",
+      "status_label": "Exploración inicial",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'CNEA', 'ownership_pct': '', 'origin_country': 'Argentina'}]"
+    },
+    {
+      "project_name": "Sierra Cuadrada",
+      "latitude": "-44.609",
+      "longitude": "-67.992",
+      "province": "Chubut",
+      "province_code": "CT",
+      "status": "prospection",
+      "status_label": "Prospección",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'CNEA', 'ownership_pct': '1.0', 'origin_country': 'Argentina'}]"
+    },
+    {
+      "project_name": "Sierra Pintada",
+      "latitude": "-34.9563",
+      "longitude": "-68.6119",
+      "province": "Mendoza",
+      "province_code": "MZ",
+      "status": "feasibility",
+      "status_label": "Factibilidad",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'CNEA', 'ownership_pct': '1.0', 'origin_country': 'Argentina'}]"
+    },
+    {
+      "project_name": "Sofia",
+      "latitude": "-46.86444",
+      "longitude": "-68.84583",
+      "province": "Santa Cruz",
+      "province_code": "SC",
+      "status": "early_exploration",
+      "status_label": "Exploración inicial",
+      "mineral": "Uranio",
+      "controllers": "[{'name': 'Fomicruz S.E', 'ownership_pct': '', 'origin_country': 'Argentina'}]"
+    }
+  ],
+  "generated_at": "2026-05-31T02:30:05.715828"
+}
