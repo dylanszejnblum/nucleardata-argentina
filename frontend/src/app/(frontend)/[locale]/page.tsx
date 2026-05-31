@@ -300,7 +300,7 @@ export default async function DashboardPage() {
   return (
     <>
       <NothingHeader />
-      <main className="flex-1 w-full">
+      <main className="flex-1 w-full overflow-x-clip">
         {/* HERO */}
         <section className="container pt-12 md:pt-20 pb-8 md:pb-10">
           <div className="flex flex-col gap-2">
@@ -310,14 +310,14 @@ export default async function DashboardPage() {
               {t('eyebrow', { month: monthLabel.toUpperCase() })}
             </span>
             <h1
-              className="mt-2 text-balance text-5xl md:text-7xl lg:text-8xl leading-none tabular-nums font-display"
+              className="mt-2 text-balance text-[2rem] sm:text-5xl md:text-7xl lg:text-8xl leading-none tabular-nums font-display break-words"
               style={{
                 color: 'var(--nd-text-display)',
               }}
             >
               <AnimatedCounter to={headlineBoe} kind="integer" duration={1600} />{' '}
               <span
-                className="text-nd-text-disabled text-2xl md:text-3xl font-mono"
+                className="text-nd-text-disabled text-lg sm:text-2xl md:text-3xl font-mono"
               >
                 {t('boeSuffix')}
               </span>
@@ -331,6 +331,21 @@ export default async function DashboardPage() {
 
           <div className="mt-10">
             <HeroCards cards={heroCards} />
+          </div>
+        </section>
+
+        {/* THREE-PANEL */}
+        <section className="container pb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-nd-border">
+            <VmShareDonut shareBoe={latest.vm_share.boe} />
+            <TopOperatorsMini
+              rows={topOperators.map((op) => ({
+                slug: op.operator_slug,
+                name: op.operator_name,
+                boe: op.boe,
+              }))}
+            />
+            <MapPreview wells={wells} totalWells={totalWellsCount} />
           </div>
         </section>
 
@@ -357,21 +372,6 @@ export default async function DashboardPage() {
               </span>
             </div>
             <ProductionChart rows={chartRows} operators={operatorMeta} />
-          </div>
-        </section>
-
-        {/* THREE-PANEL */}
-        <section className="container pb-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-nd-border">
-            <VmShareDonut shareBoe={latest.vm_share.boe} />
-            <TopOperatorsMini
-              rows={topOperators.map((op) => ({
-                slug: op.operator_slug,
-                name: op.operator_name,
-                boe: op.boe,
-              }))}
-            />
-            <MapPreview wells={wells} totalWells={totalWellsCount} />
           </div>
         </section>
 

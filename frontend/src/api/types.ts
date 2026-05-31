@@ -772,6 +772,26 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v2/companies/prices/{ticker}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Stock price history (OHLCV)
+         * @description Daily (or finer) price history for one ticker over a range, plus current price, daily change and 52-week high/low. Sourced from Yahoo Finance v8 chart API, cached 5 minutes. Non-US tickers are resolved automatically (CAPX→CAPX.BA, BSK→BSK.V).
+         */
+        get: operations["CompaniesController_priceHistory_v2"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v2/companies/{slug}": {
         parameters: {
             query?: never;
@@ -1929,6 +1949,41 @@ export interface components {
             change_pct: Record<string, never> | null;
             /** @example NYSE */
             exchange: Record<string, never> | null;
+        };
+        StockHistoryPointDto: {
+            /** @example 2026-05-01 */
+            date: string;
+            /** @example 41.1 */
+            open: Record<string, never> | null;
+            /** @example 41.8 */
+            high: Record<string, never> | null;
+            /** @example 40.9 */
+            low: Record<string, never> | null;
+            /** @example 41.2 */
+            close: Record<string, never> | null;
+            /** @example 2500000 */
+            volume: Record<string, never> | null;
+        };
+        StockHistoryDto: {
+            /** @example YPF */
+            ticker: string;
+            /** @example USD */
+            currency: Record<string, never> | null;
+            /** @example NYQ */
+            exchange: Record<string, never> | null;
+            /** @example 42.15 */
+            current_price: Record<string, never> | null;
+            /** @example 1.2 */
+            change_pct: Record<string, never> | null;
+            /** @example 53.4 */
+            high_52w: Record<string, never> | null;
+            /** @example 18.7 */
+            low_52w: Record<string, never> | null;
+            /** @example 1mo */
+            range: string;
+            /** @example 1d */
+            interval: string;
+            history: components["schemas"]["StockHistoryPointDto"][];
         };
         CompanyCoordinatesDto: {
             /** @example -43.37 */
@@ -3269,6 +3324,44 @@ export interface operations {
                         data: components["schemas"]["CompanyStockPriceRowDto"][];
                         meta: components["schemas"]["MetaDto"];
                     };
+                };
+            };
+        };
+    };
+    CompaniesController_priceHistory_v2: {
+        parameters: {
+            query?: {
+                /** @description Lookback window. */
+                range?: "1d" | "5d" | "1mo" | "3mo" | "6mo" | "1y" | "5y" | "max";
+                /** @description Sampling interval. */
+                interval?: "1m" | "5m" | "15m" | "30m" | "1h" | "1d" | "1wk" | "1mo";
+            };
+            header?: never;
+            path: {
+                ticker: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        data: components["schemas"]["StockHistoryDto"];
+                        meta: components["schemas"]["MetaDto"];
+                    };
+                };
+            };
+            /** @description Ticker not found or no history from Yahoo. */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiErrorDto"];
                 };
             };
         };

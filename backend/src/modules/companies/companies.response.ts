@@ -36,6 +36,28 @@ export class CompanyStockPriceRowDto {
   @ApiProperty({ example: 'NYSE', nullable: true }) exchange!: string | null;
 }
 
+export class StockHistoryPointDto {
+  @ApiProperty({ example: '2026-05-01' }) date!: string;
+  @ApiProperty({ example: 41.1, nullable: true }) open!: number | null;
+  @ApiProperty({ example: 41.8, nullable: true }) high!: number | null;
+  @ApiProperty({ example: 40.9, nullable: true }) low!: number | null;
+  @ApiProperty({ example: 41.2, nullable: true }) close!: number | null;
+  @ApiProperty({ example: 2500000, nullable: true }) volume!: number | null;
+}
+
+export class StockHistoryDto {
+  @ApiProperty({ example: 'YPF' }) ticker!: string;
+  @ApiProperty({ example: 'USD', nullable: true }) currency!: string | null;
+  @ApiProperty({ example: 'NYQ', nullable: true }) exchange!: string | null;
+  @ApiProperty({ example: 42.15, nullable: true }) current_price!: number | null;
+  @ApiProperty({ example: 1.2, nullable: true }) change_pct!: number | null;
+  @ApiProperty({ example: 53.4, nullable: true }) high_52w!: number | null;
+  @ApiProperty({ example: 18.7, nullable: true }) low_52w!: number | null;
+  @ApiProperty({ example: '1mo' }) range!: string;
+  @ApiProperty({ example: '1d' }) interval!: string;
+  @ApiProperty({ type: [StockHistoryPointDto] }) history!: StockHistoryPointDto[];
+}
+
 class CompanyCoordinatesDto {
   @ApiProperty({ example: -43.37, nullable: true }) lat!: number | null;
   @ApiProperty({ example: -68.688, nullable: true }) lng!: number | null;

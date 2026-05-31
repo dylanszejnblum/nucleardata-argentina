@@ -1,11 +1,12 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
 import { ApiNotFoundResponse, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { ApiErrorDto, ApiOkEnvelope } from '../../common/swagger';
-import { ListCompaniesQueryDto } from './companies.dto';
+import { ListCompaniesQueryDto, StockHistoryQueryDto } from './companies.dto';
 import {
   CompanyDetailDto,
   CompanyListItemDto,
   CompanyStockPriceRowDto,
+  StockHistoryDto,
 } from './companies.response';
 import { CompaniesService } from './companies.service';
 
@@ -43,6 +44,19 @@ export class CompaniesController {
   @ApiOkEnvelope(CompanyStockPriceRowDto, { isArray: true })
   prices() {
     return this.service.prices();
+  }
+
+  @Get('prices/:ticker')
+  @ApiOperation({
+    summary: 'Stock price history (OHLCV)',
+    description:
+      'Daily (or finer) price history for one ticker over a range, plus current price, daily change and 52-week high/low. Sourced from Yahoo Finance v8 chart API, cached 5 minutes. Non-US tickers are resolved automatically (CAPX→CAPX.BA, BSK→BSK.V).',
+  })
+  @ApiParam({ name: 'ticker', example: 'YPF' })
+  @ApiOkEnvelope(StockHistoryDto)
+  @ApiNotFoundResponse({ type: ApiErrorDto, description: 'Ticker not found or no history from Yahoo.' })
+  priceHistory(@Param('ticker') ticker: string, @Query() q: StockHistoryQueryDto) {
+    return this.service.priceHistory(ticker, q.range ?? '1mo', q.interval ?? '1d');
   }
 
   @Get(':slug')

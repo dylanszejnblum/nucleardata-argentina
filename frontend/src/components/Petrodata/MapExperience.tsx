@@ -1,6 +1,8 @@
 'use client'
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { useTranslations } from 'next-intl'
+import { BarChart3, SlidersHorizontal } from 'lucide-react'
 import { useTheme } from '@/providers/Theme'
 import {
   Map,
@@ -112,6 +114,9 @@ export function MapExperience({
   const [bbox, setBbox] = useState<[number, number, number, number] | null>(null)
   const [loading, setLoading] = useState(false)
   const [selected, setSelected] = useState<Selected | null>(null)
+  const [mobilePanel, setMobilePanel] = useState<'none' | 'info' | 'filters'>('none')
+
+  const t = useTranslations('mapPage')
 
   const operatorOptions = useMemo<FilterOption[]>(
     () =>
@@ -312,7 +317,8 @@ export function MapExperience({
         )}
       </Map>
 
-      <div className="pointer-events-none absolute inset-0 flex justify-between gap-4 p-4">
+      {/* Desktop overlay: two columns */}
+      <div className="pointer-events-none absolute inset-0 hidden justify-between gap-4 p-4 md:flex">
         <div className="flex w-[20rem] flex-col gap-4">
           <OverviewCard
             latest={latest}
@@ -338,7 +344,82 @@ export function MapExperience({
           />
         </div>
       </div>
+
+      {/* Mobile: top toggle bar + drop-down panel */}
+      <div className="md:hidden">
+        <div className="absolute inset-x-0 top-0 z-20 flex border-b border-nd-border bg-nd-surface/95 backdrop-blur">
+          <MobileToggle
+            active={mobilePanel === 'info'}
+            onClick={() => setMobilePanel((p) => (p === 'info' ? 'none' : 'info'))}
+            icon={<BarChart3 size={14} />}
+            label={t('summary')}
+          />
+          <MobileToggle
+            active={mobilePanel === 'filters'}
+            onClick={() => setMobilePanel((p) => (p === 'filters' ? 'none' : 'filters'))}
+            icon={<SlidersHorizontal size={14} />}
+            label={`${t('filters.title')} · ${featureCount}`}
+          />
+        </div>
+        {mobilePanel !== 'none' && (
+          <div className="absolute inset-x-0 top-[2.6rem] z-10 flex max-h-[72vh] flex-col gap-3 overflow-y-auto border-b border-nd-border bg-nd-surface/95 p-3 backdrop-blur">
+            {mobilePanel === 'info' ? (
+              <>
+                <OverviewCard
+                  latest={latest}
+                  topOperatorSlug={operators[0]?.operator_slug ?? null}
+                  topOperatorName={operators[0]?.operator_name ?? null}
+                  timeSeries={topOperatorTimeSeries}
+                />
+                <TopOperatorsCard
+                  operators={operators}
+                  selectedSlug={filters.operator}
+                  onSelect={handleSelectOperator}
+                />
+              </>
+            ) : (
+              <FilterPanel
+                filters={filters}
+                setFilters={setFilters}
+                operatorOptions={operatorOptions}
+                resultCount={featureCount}
+                rawCount={rawCount}
+                resultCap={WELL_LIMIT}
+                loading={loading}
+              />
+            )}
+          </div>
+        )}
+      </div>
     </div>
+  )
+}
+
+function MobileToggle({
+  active,
+  onClick,
+  icon,
+  label,
+}: {
+  active: boolean
+  onClick: () => void
+  icon: ReactNode
+  label: string
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={active}
+      className="flex flex-1 items-center justify-center gap-2 px-3 py-2.5 text-[11px] uppercase tracking-[0.08em] font-mono transition-colors"
+      style={{
+        color: active ? 'var(--nd-text-display)' : 'var(--nd-text-secondary)',
+        boxShadow: active ? 'inset 0 -2px 0 0 var(--nd-accent)' : undefined,
+      }}
+    >
+      {icon}
+      {label}
+    </button>
   )
 }
 

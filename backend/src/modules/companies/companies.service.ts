@@ -102,6 +102,25 @@ export class CompaniesService {
     });
   }
 
+  async priceHistory(ticker: string, range: string, interval: string) {
+    // Resolve the exchange from our company table (for the Yahoo suffix); fall
+    // back to the bare ticker so arbitrary symbols still work.
+    const company = await this.prisma.company.findFirst({
+      where: { stockTicker: { equals: ticker, mode: 'insensitive' } },
+    });
+    const symbol = yahooSymbol(ticker.toUpperCase(), company?.stockExchange ?? null);
+
+    const data = await this.stocks.history(symbol, range, interval);
+    if (!data || data.history.length === 0) {
+      throw new NotFoundException({
+        code: 'NOT_FOUND',
+        message: `No price history for ticker "${ticker}" (range=${range}, interval=${interval}).`,
+      });
+    }
+    // Echo back the caller's display ticker rather than the suffixed symbol.
+    return { ...data, ticker: company?.stockTicker ?? ticker.toUpperCase() };
+  }
+
   async detail(slug: string) {
     const company = await this.prisma.company.findUnique({ where: { slug: slug.toLowerCase() } });
     if (!company) {

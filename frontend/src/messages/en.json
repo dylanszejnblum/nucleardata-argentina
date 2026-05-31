@@ -87,6 +87,7 @@
     }
   },
   "mapPage": {
+    "summary": "Overview",
     "filters": {
       "title": "Filters",
       "reset": "Reset",
@@ -369,7 +370,7 @@
       "exports": "Exports",
       "noData": "No trade data.",
       "axisUsd": "USD",
-      "flowLink": "View flow by country"
+      "flowTitle": "Flow by country"
     },
     "cycle": {
       "eyebrow": "NUCLEAR FUEL CYCLE",
@@ -469,7 +470,8 @@
       "oil": "Oil · m³",
       "gas": "Gas · m³",
       "boe": "BOE"
-    }
+    },
+    "priceChart": { "eyebrow": "STOCK PRICE", "high52w": "52w high", "low52w": "52w low" }
   },
   "provinces": {
     "listEyebrow": "PROVINCES",

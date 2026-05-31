@@ -8,8 +8,8 @@ import { cn } from '@/utilities/ui'
 // Falls back to Google favicons, then first-letter avatar.
 const LOGO_FILES: Record<string, string> = {
   ypf: '/logos/ypf.png',
-  totalenergies: '/logos/totalenergies.svg',
-  'total-austral': '/logos/totalenergies.svg',
+  totalenergies: '/logos/totalenergies.png',
+  'total-austral': '/logos/totalenergies.png',
   pae: '/logos/pae.png',
   'pan-american-energy': '/logos/pae.png',
   'pan-american': '/logos/pae.png',
@@ -24,7 +24,7 @@ const LOGO_FILES: Record<string, string> = {
   'shell-argentina': '/logos/shell.png',
   qatarenergy: '/logos/qatarenergy.png',
   qp: '/logos/qatarenergy.png',
-  equinor: '/logos/equinor.svg',
+  equinor: '/logos/equinor.png',
   petrobras: '/logos/petrobras.png',
 }
 

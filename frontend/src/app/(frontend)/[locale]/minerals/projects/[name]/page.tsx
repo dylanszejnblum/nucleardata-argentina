@@ -187,7 +187,7 @@ export default async function ProjectDetailPage({
   return (
     <>
       <NothingHeader />
-      <main className="flex-1 w-full">
+      <main className="flex-1 w-full overflow-x-clip">
         {/* Breadcrumb */}
         <section className="container pt-10 pb-2">
           <Link
@@ -206,7 +206,7 @@ export default async function ProjectDetailPage({
         {/* Hero + map */}
         <section className="container pb-10 md:pb-14">
           <h1
-            className="mt-2 max-w-4xl text-balance text-4xl leading-none md:text-6xl font-display"
+            className="mt-2 max-w-4xl text-balance text-4xl leading-none md:text-6xl font-display break-words"
             style={{
               color: 'var(--nd-text-display)',
             }}

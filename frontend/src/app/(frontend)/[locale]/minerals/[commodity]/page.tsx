@@ -164,7 +164,7 @@ export default async function CommodityPage({
   return (
     <>
       <NothingHeader />
-      <main className="flex-1 w-full">
+      <main className="flex-1 w-full overflow-x-clip">
         {/* Hero */}
         <section className="container pt-12 pb-8 md:pt-20 md:pb-10">
           <div className="flex items-center gap-3">
@@ -181,7 +181,7 @@ export default async function CommodityPage({
             </Link>
           </div>
           <h1
-            className="mt-3 max-w-3xl text-balance text-5xl leading-none md:text-7xl font-display"
+            className="mt-3 max-w-3xl text-balance text-4xl sm:text-5xl leading-none md:text-7xl font-display break-words"
             style={{
               color: 'var(--nd-text-display)',
             }}

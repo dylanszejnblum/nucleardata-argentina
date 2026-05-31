@@ -105,7 +105,7 @@ export function FilterPanel({
   const isCapped = rawCount >= resultCap
 
   return (
-    <OverlayCard className="w-[20rem] rounded-none">
+    <OverlayCard className="w-full rounded-none">
       <div className="flex items-center justify-between border-b border-nd-border px-5 py-3">
         <OverlayLabel>{t('title')}</OverlayLabel>
         <button

@@ -23,7 +23,7 @@ function TopOperatorsCardImpl({
   const max = top[0]?.boe || 1
 
   return (
-    <OverlayCard className="w-[20rem] rounded-none">
+    <OverlayCard className="w-full rounded-none">
       <div className="border-b border-nd-border px-5 py-3">
         <OverlayLabel>{t('title')}</OverlayLabel>
       </div>

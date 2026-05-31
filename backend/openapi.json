@@ -2244,6 +2244,101 @@
         ]
       }
     },
+    "/api/v2/companies/prices/{ticker}": {
+      "get": {
+        "description": "Daily (or finer) price history for one ticker over a range, plus current price, daily change and 52-week high/low. Sourced from Yahoo Finance v8 chart API, cached 5 minutes. Non-US tickers are resolved automatically (CAPX→CAPX.BA, BSK→BSK.V).",
+        "operationId": "CompaniesController_priceHistory_v2",
+        "parameters": [
+          {
+            "name": "ticker",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "example": "YPF",
+              "type": "string"
+            }
+          },
+          {
+            "name": "range",
+            "required": false,
+            "in": "query",
+            "description": "Lookback window.",
+            "schema": {
+              "default": "1mo",
+              "type": "string",
+              "enum": [
+                "1d",
+                "5d",
+                "1mo",
+                "3mo",
+                "6mo",
+                "1y",
+                "5y",
+                "max"
+              ]
+            }
+          },
+          {
+            "name": "interval",
+            "required": false,
+            "in": "query",
+            "description": "Sampling interval.",
+            "schema": {
+              "default": "1d",
+              "type": "string",
+              "enum": [
+                "1m",
+                "5m",
+                "15m",
+                "30m",
+                "1h",
+                "1d",
+                "1wk",
+                "1mo"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/StockHistoryDto"
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/MetaDto"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "meta"
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Ticker not found or no history from Yahoo.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorDto"
+                }
+              }
+            }
+          }
+        },
+        "summary": "Stock price history (OHLCV)",
+        "tags": [
+          "companies"
+        ]
+      }
+    },
     "/api/v2/companies/{slug}": {
       "get": {
         "description": "Full profile: logo, website, stock data, mineral project portfolio (with timeline) and — for oil & gas operators — a production summary.",
@@ -5254,6 +5349,113 @@
           "price",
           "change_pct",
           "exchange"
+        ]
+      },
+      "StockHistoryPointDto": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "example": "2026-05-01"
+          },
+          "open": {
+            "type": "object",
+            "example": 41.1,
+            "nullable": true
+          },
+          "high": {
+            "type": "object",
+            "example": 41.8,
+            "nullable": true
+          },
+          "low": {
+            "type": "object",
+            "example": 40.9,
+            "nullable": true
+          },
+          "close": {
+            "type": "object",
+            "example": 41.2,
+            "nullable": true
+          },
+          "volume": {
+            "type": "object",
+            "example": 2500000,
+            "nullable": true
+          }
+        },
+        "required": [
+          "date",
+          "open",
+          "high",
+          "low",
+          "close",
+          "volume"
+        ]
+      },
+      "StockHistoryDto": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string",
+            "example": "YPF"
+          },
+          "currency": {
+            "type": "object",
+            "example": "USD",
+            "nullable": true
+          },
+          "exchange": {
+            "type": "object",
+            "example": "NYQ",
+            "nullable": true
+          },
+          "current_price": {
+            "type": "object",
+            "example": 42.15,
+            "nullable": true
+          },
+          "change_pct": {
+            "type": "object",
+            "example": 1.2,
+            "nullable": true
+          },
+          "high_52w": {
+            "type": "object",
+            "example": 53.4,
+            "nullable": true
+          },
+          "low_52w": {
+            "type": "object",
+            "example": 18.7,
+            "nullable": true
+          },
+          "range": {
+            "type": "string",
+            "example": "1mo"
+          },
+          "interval": {
+            "type": "string",
+            "example": "1d"
+          },
+          "history": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StockHistoryPointDto"
+            }
+          }
+        },
+        "required": [
+          "ticker",
+          "currency",
+          "exchange",
+          "current_price",
+          "change_pct",
+          "high_52w",
+          "low_52w",
+          "range",
+          "interval",
+          "history"
         ]
       },
       "CompanyCoordinatesDto": {

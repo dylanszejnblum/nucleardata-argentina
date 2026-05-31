@@ -9,9 +9,8 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { URANIUM } from './theme'
-import { fadeIn, staggerIn, useInView } from './anim'
+import { fadeIn, useInView } from './anim'
 import { getFuelCycle, type FuelCycleStep, type Locale } from './content'
-import { StepScene } from './StepScene'
 
 const AMBER = URANIUM.amber
 const TOTAL = 12
@@ -30,8 +29,8 @@ function Step({ step, total }: { step: FuelCycleStep; total: number }) {
     playedRef.current = true
     const root = ref.current
     if (!root) return
-    const sceneEls = root.querySelectorAll<SVGGElement>('.anim-el')
-    if (sceneEls.length) staggerIn(Array.from(sceneEls), { startDelay: 60, step: 80 })
+    const media = root.querySelector<HTMLElement>('.step-media')
+    if (media) fadeIn(media, { duration: 700 })
     const textEl = root.querySelector<HTMLElement>('.cycle-text')
     if (textEl) fadeIn(textEl, { delay: 120 })
   }, [inView, ref])
@@ -42,11 +41,18 @@ function Step({ step, total }: { step: FuelCycleStep; total: number }) {
       id={`cycle-step-${step.n}`}
       className="min-h-[80vh] grid md:grid-cols-2 gap-8 items-center container py-16 scroll-mt-28"
     >
-      {/* Scene (stacks above text on mobile). Framed panel; a strong currentColor
-          drives the illustration's base strokes. */}
+      {/* Illustration (stacks above text on mobile). Transparent PNG on a framed,
+          dot-grid panel so it reads on both themes. */}
       <div className="order-1">
-        <div className="dot-grid-subtle grid aspect-[6/5] place-items-center border border-nd-border bg-nd-surface-raised p-8 text-nd-text-primary md:p-12">
-          <StepScene id={step.id} className="w-full max-w-sm" />
+        <div className="dot-grid-subtle grid aspect-[6/5] place-items-center overflow-hidden border border-nd-border bg-background p-4 md:p-6">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`/images/${step.n}.png`}
+            alt={step.title}
+            loading="lazy"
+            className="step-media h-full w-full object-contain"
+            style={{ opacity: 0 }}
+          />
         </div>
       </div>
 

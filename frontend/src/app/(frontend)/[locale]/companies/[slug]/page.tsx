@@ -12,6 +12,7 @@ import { formatCompact } from '@/utilities/formatNumber'
 import { commodityColor } from '@/components/Petrodata/minerals/commodityColors'
 import { CompanyLogo } from '@/components/Petrodata/entities/CompanyLogo'
 import { StatCounters } from '@/components/Petrodata/entities/StatCounters'
+import { StockPriceChart } from '@/components/Petrodata/entities/StockPriceChart'
 import { EntityTimeline } from '@/components/Petrodata/entities/EntityTimeline'
 import { SortableProjectsTable } from '@/components/Petrodata/entities/SortableProjectsTable'
 import { slugify, type MapPoint, type StatItem, type TableCol, type TableRow } from '@/components/Petrodata/entities/types'
@@ -65,6 +66,7 @@ export default async function CompanyDetailPage({ params }: { params: Promise<{ 
   const og = company.oil_gas_production_summary
   const website = str(company.website)
   const country = str(company.country)
+  const ticker = company.stock?.ticker || str(company.stock_ticker)
   const sectorLabel =
     company.type === 'mining' ? t('typeMining') : company.type === 'oil_and_gas' ? t('typeOil') : t('typeBoth')
 
@@ -150,7 +152,7 @@ export default async function CompanyDetailPage({ params }: { params: Promise<{ 
   return (
     <>
       <NothingHeader />
-      <main className="flex-1 w-full">
+      <main className="flex-1 w-full overflow-x-clip">
         {/* Hero */}
         <section className="container pt-12 pb-8 md:pt-20">
           <Link
@@ -163,7 +165,7 @@ export default async function CompanyDetailPage({ params }: { params: Promise<{ 
           <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <CompanyLogo name={company.name} logoUrl={str(company.logo_url) || null} website={website || null} size="lg" />
-              <h1 className="text-balance text-4xl leading-none text-nd-text-display md:text-6xl font-display">
+              <h1 className="text-balance text-4xl leading-none text-nd-text-display md:text-6xl font-display break-words">
                 {company.name}
               </h1>
             </div>
@@ -189,6 +191,12 @@ export default async function CompanyDetailPage({ params }: { params: Promise<{ 
         <section className="container pb-12">
           <StatCounters items={stats} />
         </section>
+
+        {ticker && (
+          <section className="container pb-12">
+            <StockPriceChart ticker={ticker} />
+          </section>
+        )}
 
         {mapPoints.some((p) => p.lat !== 0 || p.lng !== 0) && (
           <section className="container pb-12">

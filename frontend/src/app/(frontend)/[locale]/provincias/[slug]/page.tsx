@@ -128,7 +128,7 @@ export default async function ProvinceDetailPage({ params }: { params: Promise<{
   return (
     <>
       <NothingHeader />
-      <main className="flex-1 w-full">
+      <main className="flex-1 w-full overflow-x-clip">
         <section className="container pt-12 pb-8 md:pt-20">
           <Link
             href="/provincias"
@@ -137,7 +137,7 @@ export default async function ProvinceDetailPage({ params }: { params: Promise<{
             <ArrowLeft size={13} />
             {t('backToList')}
           </Link>
-          <h1 className="mt-4 text-balance text-5xl leading-none text-nd-text-display md:text-7xl font-display">
+          <h1 className="mt-4 text-balance text-4xl sm:text-5xl leading-none text-nd-text-display md:text-7xl font-display break-words">
             {province.name}
           </h1>
           <p className="mt-4 text-sm text-nd-text-secondary font-mono">

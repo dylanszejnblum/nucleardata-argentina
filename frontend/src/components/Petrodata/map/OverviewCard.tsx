@@ -29,7 +29,7 @@ function OverviewCardImpl({
   }))
 
   return (
-    <OverlayCard className="w-[18rem] rounded-none">
+    <OverlayCard className="w-full rounded-none">
       <div className="border-b border-nd-border px-5 py-4">
         <OverlayLabel>
           {t('latestMonth', { month: formatMonth(latest.date_month as string | null | undefined) })}

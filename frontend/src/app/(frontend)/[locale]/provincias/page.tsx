@@ -53,12 +53,12 @@ export default async function ProvincesPage() {
   return (
     <>
       <NothingHeader />
-      <main className="flex-1 w-full">
+      <main className="flex-1 w-full overflow-x-clip">
         <section className="container pt-12 pb-8 md:pt-20">
           <span className="block text-[11px] uppercase tracking-[0.08em] text-nd-text-secondary font-mono">
             {t('listEyebrow')}
           </span>
-          <h1 className="mt-4 text-balance text-5xl leading-none text-nd-text-display md:text-7xl font-display">
+          <h1 className="mt-4 text-balance text-4xl sm:text-5xl leading-none text-nd-text-display md:text-7xl font-display break-words">
             {t('listTitle')}
           </h1>
           <p className="mt-5 max-w-2xl text-pretty text-base leading-relaxed text-nd-text-secondary font-sans">

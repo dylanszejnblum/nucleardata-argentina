@@ -85,7 +85,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           }}
         />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
-        <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+        <link href="/favicon.png" rel="icon" type="image/png" sizes="32x32" />
+        <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
         <link
           href="https://fonts.googleapis.com/css2?family=Doto:wght@400;700&display=swap"
           rel="stylesheet"

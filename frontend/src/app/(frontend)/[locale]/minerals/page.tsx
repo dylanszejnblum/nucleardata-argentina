@@ -160,7 +160,7 @@ export default async function MineralsOverviewPage() {
   return (
     <>
       <NothingHeader />
-      <main className="flex-1 w-full">
+      <main className="flex-1 w-full overflow-x-clip">
         {/* Hero */}
         <section className="container pt-12 pb-8 md:pt-20 md:pb-10">
           <span
@@ -169,7 +169,7 @@ export default async function MineralsOverviewPage() {
             {t('eyebrow')}
           </span>
           <h1
-            className="mt-3 max-w-3xl text-balance text-4xl leading-none md:text-6xl font-display"
+            className="mt-3 max-w-3xl text-balance text-4xl leading-none md:text-6xl font-display break-words"
             style={{
               color: 'var(--nd-text-display)',
             }}

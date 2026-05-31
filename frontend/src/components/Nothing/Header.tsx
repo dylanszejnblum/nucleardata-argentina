@@ -1,19 +1,19 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
 import { useTheme } from '../../providers/Theme'
 import { LanguageSwitcher } from './LanguageSwitcher'
 
 type NavItem = {
-  href: '/' | '/map' | '/minerals' | '/minerals/uranium' | '/minerals/comercio' | '/companies' | '/provincias'
+  href: '/' | '/map' | '/minerals' | '/minerals/uranium' | '/companies' | '/provincias'
   labelKey:
     | 'dashboard'
     | 'oilGas'
     | 'minerals'
     | 'uranium'
-    | 'trade'
     | 'companies'
     | 'provinces'
   shortLabelKey: NavItem['labelKey']
@@ -38,9 +38,7 @@ const NAV_ITEMS: NavItem[] = [
     labelKey: 'minerals',
     shortLabelKey: 'minerals',
     match: (p) =>
-      (p === '/minerals' || p.startsWith('/minerals/')) &&
-      !p.startsWith('/minerals/uranium') &&
-      !p.startsWith('/minerals/comercio'),
+      (p === '/minerals' || p.startsWith('/minerals/')) && !p.startsWith('/minerals/uranium'),
   },
   {
     href: '/minerals/uranium',
@@ -249,11 +247,13 @@ export function NothingHeader() {
         </nav>
       </div>
 
-      {mobileMenuOpen && (
-        <div
-          className="fixed inset-0 z-50 md:hidden"
-          style={{ animation: 'mobile-menu-overlay 250ms ease-out both' }}
-        >
+      {mounted &&
+        mobileMenuOpen &&
+        createPortal(
+          <div
+            className="fixed inset-0 z-[200] md:hidden"
+            style={{ animation: 'mobile-menu-overlay 250ms ease-out both' }}
+          >
           <button
             type="button"
             className="absolute inset-0 bg-black/40"
@@ -286,7 +286,6 @@ export function NothingHeader() {
                   | 'oilGasFull'
                   | 'mineralsFull'
                   | 'uraniumFull'
-                  | 'tradeFull'
                   | 'companiesFull'
                   | 'provincesFull'
                 const isActive = item.match(pathname)
@@ -305,8 +304,9 @@ export function NothingHeader() {
               })}
             </nav>
           </aside>
-        </div>
-      )}
+          </div>,
+          document.body,
+        )}
     </header>
   )
 }
