@@ -23,8 +23,8 @@ COPY src ./src/
 # Generate Prisma client
 RUN pnpm prisma generate
 
-# Build the NestJS app (use explicit nest binary)
-RUN ./node_modules/.bin/nest build && ls -la dist/ && ls -la dist/main.js 2>/dev/null || (echo "BUILD FAILED - dist/main.js not found" && exit 1)
+# Build the NestJS app - capture all output
+RUN pnpm run build 2>&1; exit_code=$?; echo "--- dist/ contents ---"; ls -la dist/ 2>/dev/null || echo "dist/ not found"; echo "--- check main.js ---"; ls -la dist/main.js 2>/dev/null || echo "dist/main.js not found"; if [ $exit_code -ne 0 ]; then echo "BUILD FAILED with exit code $exit_code"; exit $exit_code; fi
 
 # ===================== PRODUCTION STAGE =====================
 FROM node:22-alpine AS production
@@ -41,7 +41,7 @@ COPY --from=builder /app/node_modules ./node_modules
 # Prisma schema + migrations needed for prisma migrate deploy
 COPY --from=builder /app/prisma ./prisma
 
-RUN ls -la /app/dist/main.js 2>/dev/null || (echo "dist/main.js MISSING in production" && exit 1)
+RUN ls -la /app/dist/main.js 2>/dev/null && echo "dist/main.js OK" || (echo "dist/main.js MISSING in production" && exit 1)
 
 EXPOSE 3001
 
