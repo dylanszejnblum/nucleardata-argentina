@@ -3,8 +3,8 @@ FROM node:22-alpine AS builder
 
 WORKDIR /app
 
-# Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
+# Install pnpm (v10 for engines compatibility)
+RUN corepack enable && corepack prepare pnpm@10 --activate
 
 # Copy dependency manifests
 COPY package.json pnpm-lock.yaml ./
@@ -20,30 +20,28 @@ RUN pnpm rebuild @nestjs/core @prisma/client @prisma/engines @swc/core prisma
 COPY tsconfig.json tsconfig.build.json nest-cli.json ./
 COPY src ./src/
 
-# Generate Prisma client and build
-RUN npx prisma generate
-RUN pnpm run build
+# Generate Prisma client
+RUN pnpm prisma generate
 
-# Prune dev dependencies for production
-RUN pnpm prune --prod --ignore-scripts
+# Build the NestJS app
+RUN pnpm run build
 
 # ===================== PRODUCTION STAGE =====================
 FROM node:22-alpine AS production
 
 WORKDIR /app
 
-RUN corepack enable && corepack prepare pnpm@latest --activate
-
-# Copy built artifacts and production deps
+# Copy built artifacts
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./
-COPY --from=builder /app/pnpm-lock.yaml ./
 
-# Prisma schema + migrations needed at runtime for migrations
+# Copy node_modules (includes prisma CLI + generated client)
+COPY --from=builder /app/node_modules ./node_modules
+
+# Prisma schema + migrations needed for prisma migrate deploy
 COPY --from=builder /app/prisma ./prisma
 
 EXPOSE 3001
 
-# Run Prisma migrations then start the server
-CMD ["sh", "-c", "npx prisma migrate deploy && node dist/main"]
+# Use local prisma binary (not npx which downloads latest incompatible version)
+CMD ["sh", "-c", "./node_modules/.bin/prisma migrate deploy && node dist/main"]
