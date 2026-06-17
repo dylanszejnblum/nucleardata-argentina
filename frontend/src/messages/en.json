@@ -49,7 +49,7 @@
   "dashboard": {
     "eyebrow": "VACA MUERTA · {month}",
     "boeSuffix": "BOE",
-    "tagline": "Real-time intelligence for Argentina's oil & gas — sourced from Secretaría de Energía and refreshed monthly.",
+    "tagline": "Real-time intelligence for Argentina's oil & gas, refreshed monthly.",
     "kpi": {
       "oilLatest": "BBL/D OIL · LATEST",
       "gasLatest": "MMCF/D GAS · LATEST",
