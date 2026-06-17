@@ -370,7 +370,6 @@ export default async function DashboardPage() {
               <RefreshCw size={11} />
               {t('freshness.dataThrough', { month: monthLabel })}
             </span>
-            <span>{t('freshness.source')}</span>
           </div>
         </section>
 

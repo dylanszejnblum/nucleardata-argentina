@@ -49,7 +49,7 @@
   "dashboard": {
     "eyebrow": "VACA MUERTA · {month}",
     "boeSuffix": "BOE",
-    "tagline": "Inteligencia en tiempo real para el petróleo y el gas de Argentina — datos de la Secretaría de Energía, actualizados mensualmente.",
+    "tagline": "Inteligencia en tiempo real para el petróleo y el gas de Argentina, actualizada mensualmente.",
     "kpi": {
       "oilLatest": "BBL/D PETRÓLEO · ÚLTIMO",
       "gasLatest": "MMCF/D GAS · ÚLTIMO",
