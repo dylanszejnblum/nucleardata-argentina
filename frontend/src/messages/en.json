@@ -478,8 +478,8 @@
   },
   "provinces": {
     "listEyebrow": "PROVINCES",
-    "listTitle": "Mining provinces",
-    "listBlurb": "Mining activity by province in Argentina.",
+    "listTitle": "Argentina provinces",
+    "listBlurb": "Oil & gas activity by province in Argentina.",
     "all": "All",
     "filterCommodity": "Mineral",
     "projects": "projects",

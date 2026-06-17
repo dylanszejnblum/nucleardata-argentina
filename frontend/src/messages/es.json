@@ -478,8 +478,8 @@
   },
   "provinces": {
     "listEyebrow": "PROVINCIAS",
-    "listTitle": "Provincias mineras",
-    "listBlurb": "Actividad minera por provincia en Argentina.",
+    "listTitle": "Provincias de Argentina",
+    "listBlurb": "Actividad de petróleo y gas por provincia en Argentina.",
     "all": "Todas",
     "filterCommodity": "Mineral",
     "projects": "proyectos",
