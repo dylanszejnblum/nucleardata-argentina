@@ -264,6 +264,10 @@ export class InversionesService {
    * Activity momentum: new VM wells connected per month. A well's connection
    * month is its earliest month with boe > 0 (VM-flagged). One grouped pass —
    * no per-well N+1.
+   *
+   * The first month of the dataset window is excluded: every well already
+   * producing at/before the window start collapses into it, so it isn't a
+   * genuine "new wells" count (it would dwarf every real month).
    */
   private async actividad(asOf: string) {
     const rows = await this.prisma.$queryRaw<{ period: string; nuevos: number }[]>`
@@ -274,6 +278,9 @@ export class InversionesService {
         WHERE vm_combined = true AND boe > 0
         GROUP BY well_id
       ) c
+      WHERE conn_month > (
+        SELECT MIN(date_month) FROM fact_production_monthly WHERE vm_combined = true AND boe > 0
+      )
       GROUP BY conn_month
       ORDER BY conn_month ASC`;
 
