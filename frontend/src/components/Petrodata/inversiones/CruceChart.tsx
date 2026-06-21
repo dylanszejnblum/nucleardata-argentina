@@ -116,14 +116,9 @@ export function CruceChart({ cruce }: { cruce: InvCruce }) {
         <LegendDot color={AGRO_COLOR} label="Agro (primarios + MOA)" />
         <LegendDot color={ENERGY_COLOR} label="Energía" />
         {active === 'gdp' && cruce.gdpSource && (
-          <a
-            href={cruce.gdpSource.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-auto font-mono text-[10px] text-nd-text-disabled transition-colors hover:text-nd-text-secondary"
-          >
-            % {t('source')}: {cruce.gdpSource.label} ↗
-          </a>
+          <span className="ml-auto font-mono text-[10px] text-nd-text-disabled">
+            {t('computedBy', { source: cruce.gdpSource.label })}
+          </span>
         )}
       </div>
     </div>
