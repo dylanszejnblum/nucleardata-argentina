@@ -14,6 +14,8 @@
     "companiesFull": "Empresas",
     "provinces": "PROVINCIAS",
     "provincesFull": "Provincias",
+    "news": "NOTICIAS",
+    "newsFull": "Noticias",
     "investments": "INVERSIONES",
     "investmentsFull": "Inversiones",
     "comingSoon": "Próximamente",
@@ -540,5 +542,32 @@
   "metadata": {
     "homeTitle": "Vaca Muerta — inteligencia de petróleo y gas de Argentina",
     "homeDescription": "Inteligencia en tiempo real para el petróleo y gas de Argentina. Producción, reservas, operadores y geografía en un solo lugar."
+  },
+  "noticias": {
+    "eyebrow": "Monitor de noticias",
+    "title": "Noticias",
+    "blurb": "Seguimiento continuo de noticias, regulación y comunicados del sector de petróleo y gas de Vaca Muerta. Filtrá por fuente, tema, empresa y región.",
+    "searchPlaceholder": "Buscar por título…",
+    "sortLabel": "Ordenar",
+    "sortImportance": "Relevancia",
+    "sortRecent": "Reciente",
+    "filterFamily": "Fuente",
+    "filterTopic": "Tema",
+    "filterRegion": "Región",
+    "filterEntity": "Empresa",
+    "clearFilters": "Limpiar filtros",
+    "resultsCount": "{count, plural, =0 {Sin resultados} one {# documento} other {# documentos}}",
+    "noResults": "No se encontraron noticias con estos filtros.",
+    "pagination": "Paginación",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "pageOf": "Página {page} de {total}",
+    "backToFeed": "Volver a noticias",
+    "regulatory": "Regulatorio",
+    "readAtSource": "Leer en {source}",
+    "attachments": "Documentos adjuntos",
+    "topicsLabel": "Temas",
+    "entitiesLabel": "Entidades",
+    "relatedCoverage": "Cobertura relacionada"
   }
 }

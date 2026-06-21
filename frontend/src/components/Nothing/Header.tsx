@@ -8,12 +8,13 @@ import { useTheme } from '../../providers/Theme'
 import { LanguageSwitcher } from './LanguageSwitcher'
 
 type NavItem = {
-  href?: '/' | '/map' | '/companies' | '/provincias'
+  href?: '/' | '/map' | '/companies' | '/provincias' | '/noticias'
   labelKey:
     | 'dashboard'
     | 'oilGas'
     | 'companies'
     | 'provinces'
+    | 'news'
     | 'investments'
   shortLabelKey: NavItem['labelKey']
   match?: (pathname: string) => boolean
@@ -44,6 +45,12 @@ const NAV_ITEMS: NavItem[] = [
     labelKey: 'provinces',
     shortLabelKey: 'provinces',
     match: (p) => p === '/provincias' || p.startsWith('/provincias/'),
+  },
+  {
+    href: '/noticias',
+    labelKey: 'news',
+    shortLabelKey: 'news',
+    match: (p) => p === '/noticias' || p.startsWith('/noticias/'),
   },
   {
     labelKey: 'investments',
@@ -293,6 +300,7 @@ export function NothingHeader() {
                   | 'oilGasFull'
                   | 'companiesFull'
                   | 'provincesFull'
+                  | 'newsFull'
                   | 'investmentsFull'
                 if (item.comingSoon) {
                   return (
