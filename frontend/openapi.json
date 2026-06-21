@@ -2668,6 +2668,203 @@
           "provinces"
         ]
       }
+    },
+    "/api/v1/news/ingest": {
+      "post": {
+        "description": "The data pipeline POSTs batches here. Upserts by doc_id; never overwrites editor notes. Body: { documents: Document[] }.",
+        "operationId": "NewsController_ingest_v1",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/IngestNewsBodyDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "news-ingest-token": []
+          }
+        ],
+        "summary": "Ingest news documents (internal, token-guarded)",
+        "tags": [
+          "news"
+        ]
+      }
+    },
+    "/api/v1/news": {
+      "get": {
+        "description": "Paginated, filterable feed. Sort by importance (default) or recency. Filter by source_family, topic, entity (company/regulator), region, free-text q (title/deck) and a publishedAt from/to window. Returns a card-level projection (no body_text).",
+        "operationId": "NewsController_list_v1",
+        "parameters": [
+          {
+            "name": "take",
+            "required": false,
+            "in": "query",
+            "description": "Legacy alias for pageSize (max rows, ≤200).",
+            "schema": {
+              "default": 50,
+              "type": "number"
+            }
+          },
+          {
+            "name": "family",
+            "required": false,
+            "in": "query",
+            "description": "Filter by source_family, e.g. \"regulatoria\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "topic",
+            "required": false,
+            "in": "query",
+            "description": "Filter by topic tag, e.g. \"GNL\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "entity",
+            "required": false,
+            "in": "query",
+            "description": "Filter by entity (company or regulator), e.g. \"YPF\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "region",
+            "required": false,
+            "in": "query",
+            "description": "Filter by region, e.g. \"Neuquén\"",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "required": false,
+            "in": "query",
+            "description": "Free-text search over title + deck",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "from",
+            "required": false,
+            "in": "query",
+            "description": "Lower bound on publishedAt (ISO date/datetime, inclusive)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "to",
+            "required": false,
+            "in": "query",
+            "description": "Upper bound on publishedAt (ISO date/datetime, inclusive)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "required": false,
+            "in": "query",
+            "description": "Sort order",
+            "schema": {
+              "default": "importance",
+              "type": "string",
+              "enum": [
+                "importance",
+                "recent"
+              ]
+            }
+          },
+          {
+            "name": "page",
+            "required": false,
+            "in": "query",
+            "description": "1-based page number",
+            "schema": {
+              "default": 1,
+              "type": "number"
+            }
+          },
+          {
+            "name": "pageSize",
+            "required": false,
+            "in": "query",
+            "description": "Rows per page (≤200)",
+            "schema": {
+              "default": 24,
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "List news documents",
+        "tags": [
+          "news"
+        ]
+      }
+    },
+    "/api/v1/news/facets": {
+      "get": {
+        "description": "Distinct topics, source families and top entities with counts, for filter UIs.",
+        "operationId": "NewsController_facets_v1",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "News filter facets",
+        "tags": [
+          "news"
+        ]
+      }
+    },
+    "/api/v1/news/{docId}": {
+      "get": {
+        "description": "Returns the document and its cluster siblings (other docs sharing cluster_id).",
+        "operationId": "NewsController_getOne_v1",
+        "parameters": [
+          {
+            "name": "docId",
+            "required": true,
+            "in": "path",
+            "description": "Document id (sha1 of canonical source_url)",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "summary": "Single news document + cluster",
+        "tags": [
+          "news"
+        ]
+      }
     }
   },
   "info": {
@@ -6171,6 +6368,22 @@
           "gas_thousand_m3",
           "boe",
           "active_wells"
+        ]
+      },
+      "IngestNewsBodyDto": {
+        "type": "object",
+        "properties": {
+          "documents": {
+            "type": "array",
+            "description": "Array of pipeline Documents to upsert (keyed on doc_id).",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "documents"
         ]
       }
     }

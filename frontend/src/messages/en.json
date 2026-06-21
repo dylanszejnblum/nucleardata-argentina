@@ -14,6 +14,8 @@
     "companiesFull": "Companies",
     "provinces": "PROVINCES",
     "provincesFull": "Provinces",
+    "news": "NEWS",
+    "newsFull": "News",
     "investments": "INVESTMENTS",
     "investmentsFull": "Investments",
     "comingSoon": "Coming soon",
@@ -540,5 +542,32 @@
   "metadata": {
     "homeTitle": "Vaca Muerta — Argentina oil and gas intelligence",
     "homeDescription": "Real-time intelligence for Argentina's oil and gas. Production, reserves, operators, and geography in one place."
+  },
+  "noticias": {
+    "eyebrow": "News monitor",
+    "title": "News",
+    "blurb": "Continuous tracking of news, regulation and disclosures across Vaca Muerta's oil and gas sector. Filter by source, topic, company and region.",
+    "searchPlaceholder": "Search by title…",
+    "sortLabel": "Sort",
+    "sortImportance": "Relevance",
+    "sortRecent": "Recent",
+    "filterFamily": "Source",
+    "filterTopic": "Topic",
+    "filterRegion": "Region",
+    "filterEntity": "Company",
+    "clearFilters": "Clear filters",
+    "resultsCount": "{count, plural, =0 {No results} one {# document} other {# documents}}",
+    "noResults": "No news found with these filters.",
+    "pagination": "Pagination",
+    "prev": "Previous",
+    "next": "Next",
+    "pageOf": "Page {page} of {total}",
+    "backToFeed": "Back to news",
+    "regulatory": "Regulatory",
+    "readAtSource": "Read at {source}",
+    "attachments": "Attachments",
+    "topicsLabel": "Topics",
+    "entitiesLabel": "Entities",
+    "relatedCoverage": "Related coverage"
   }
 }

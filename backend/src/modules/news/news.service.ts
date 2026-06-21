@@ -1,17 +1,42 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import { PrismaService } from '../../prisma/prisma.service';
-import { NewsDocumentInput } from './news.dto';
+import { ListNewsQueryDto, NewsDocumentInput } from './news.dto';
 
 const REQUIRED = [
   'doc_id', 'source_name', 'source_family', 'source_type',
   'source_url', 'retrieved_at', 'title', 'legal_mode',
 ];
 
+/** Card-level projection — never ships `bodyText` in list responses (legal gating
+ *  is enforced at the doc level; the feed only needs metadata). */
+const LIST_SELECT = {
+  docId: true,
+  sourceName: true,
+  sourceFamily: true,
+  sourceType: true,
+  sourceUrl: true,
+  publishedAt: true,
+  eventDate: true,
+  title: true,
+  deck: true,
+  region: true,
+  entities: true,
+  topics: true,
+  clusterId: true,
+  importanceScore: true,
+  legalMode: true,
+} satisfies Prisma.NewsDocumentSelect;
+
 export interface IngestResult {
   upserted: number;
   skipped: number;
   errors: { doc_id?: unknown; error: string }[];
+}
+
+export interface Facet {
+  value: string;
+  count: number;
 }
 
 @Injectable()
@@ -51,13 +76,125 @@ export class NewsService {
     return { upserted, skipped: errors.length, errors };
   }
 
-  async list(params: { take?: number; family?: string }) {
-    const take = Math.min(params.take ?? 50, 200);
-    return this.prisma.newsDocument.findMany({
-      where: params.family ? { sourceFamily: params.family } : undefined,
-      orderBy: { publishedAt: { sort: 'desc', nulls: 'last' } },
-      take,
-    });
+  /** Filterable, paginated feed. Returns a `{ data, pagination }` envelope so the
+   *  response interceptor attaches `pagination` alongside `meta`. */
+  async list(q: ListNewsQueryDto) {
+    const limit = Math.min(q.pageSize ?? q.take ?? 24, 200);
+    const page = Math.max(q.page ?? 1, 1);
+    const skip = (page - 1) * limit;
+
+    const where = this.buildWhere(q);
+    const orderBy: Prisma.NewsDocumentOrderByWithRelationInput[] =
+      q.sort === 'recent'
+        ? [{ publishedAt: { sort: 'desc', nulls: 'last' } }]
+        : [
+            { importanceScore: { sort: 'desc', nulls: 'last' } },
+            { publishedAt: { sort: 'desc', nulls: 'last' } },
+          ];
+
+    const [rows, total] = await this.prisma.$transaction([
+      this.prisma.newsDocument.findMany({
+        where,
+        orderBy,
+        select: LIST_SELECT,
+        skip,
+        take: limit,
+      }),
+      this.prisma.newsDocument.count({ where }),
+    ]);
+
+    return { data: rows, pagination: { page, limit, total } };
+  }
+
+  /** Single document + its cluster siblings (other docs sharing `clusterId`). */
+  async getOne(docId: string) {
+    const document = await this.prisma.newsDocument.findUnique({ where: { docId } });
+    if (!document) throw new NotFoundException(`news document not found: ${docId}`);
+
+    const cluster = document.clusterId
+      ? await this.prisma.newsDocument.findMany({
+          where: { clusterId: document.clusterId, docId: { not: docId } },
+          orderBy: { publishedAt: { sort: 'desc', nulls: 'last' } },
+          select: LIST_SELECT,
+          take: 20,
+        })
+      : [];
+
+    return { document, cluster };
+  }
+
+  /** Distinct topics / source families / regions / top entities with counts, for filter UI. */
+  async getFacets() {
+    const [topics, families, regions, entities] = await Promise.all([
+      this.prisma.$queryRaw<Facet[]>`
+        SELECT t AS value, COUNT(*)::int AS count
+        FROM news_document, unnest(topics) AS t
+        WHERE t <> ''
+        GROUP BY t
+        ORDER BY count DESC, t ASC
+        LIMIT 60`,
+      this.prisma.$queryRaw<Facet[]>`
+        SELECT source_family AS value, COUNT(*)::int AS count
+        FROM news_document
+        GROUP BY source_family
+        ORDER BY count DESC, source_family ASC`,
+      this.prisma.$queryRaw<Facet[]>`
+        SELECT r AS value, COUNT(*)::int AS count
+        FROM news_document, unnest(region) AS r
+        WHERE r <> ''
+        GROUP BY r
+        ORDER BY count DESC, r ASC
+        LIMIT 40`,
+      this.prisma.$queryRaw<Facet[]>`
+        SELECT value, COUNT(*)::int AS count FROM (
+          SELECT jsonb_array_elements_text(COALESCE(entities->'companies', '[]'::jsonb)) AS value FROM news_document
+          UNION ALL
+          SELECT jsonb_array_elements_text(COALESCE(entities->'regulators', '[]'::jsonb)) AS value FROM news_document
+        ) s
+        WHERE value <> ''
+        GROUP BY value
+        ORDER BY count DESC, value ASC
+        LIMIT 40`,
+    ]);
+
+    return { topics, families, regions, entities };
+  }
+
+  private buildWhere(q: ListNewsQueryDto): Prisma.NewsDocumentWhereInput {
+    const and: Prisma.NewsDocumentWhereInput[] = [];
+
+    if (q.family) and.push({ sourceFamily: q.family });
+    if (q.topic) and.push({ topics: { has: q.topic } });
+    if (q.region) and.push({ region: { has: q.region } });
+
+    if (q.entity) {
+      and.push({
+        OR: [
+          { entities: { path: ['companies'], array_contains: q.entity } },
+          { entities: { path: ['regulators'], array_contains: q.entity } },
+        ],
+      });
+    }
+
+    if (q.q) {
+      and.push({
+        OR: [
+          { title: { contains: q.q, mode: 'insensitive' } },
+          { deck: { contains: q.q, mode: 'insensitive' } },
+        ],
+      });
+    }
+
+    if (q.from || q.to) {
+      and.push({
+        publishedAt: {
+          ...(q.from ? { gte: new Date(q.from) } : {}),
+          ...(q.to ? { lte: new Date(q.to) } : {}),
+        },
+      });
+    }
+
+    return and.length ? { AND: and } : {};
   }
 
   private toRow(d: NewsDocumentInput) {

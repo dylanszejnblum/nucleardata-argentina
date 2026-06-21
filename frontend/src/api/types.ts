@@ -912,6 +912,86 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/news/ingest": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Ingest news documents (internal, token-guarded)
+         * @description The data pipeline POSTs batches here. Upserts by doc_id; never overwrites editor notes. Body: { documents: Document[] }.
+         */
+        post: operations["NewsController_ingest_v1"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/news": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * List news documents
+         * @description Paginated, filterable feed. Sort by importance (default) or recency. Filter by source_family, topic, entity (company/regulator), region, free-text q (title/deck) and a publishedAt from/to window. Returns a card-level projection (no body_text).
+         */
+        get: operations["NewsController_list_v1"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/news/facets": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * News filter facets
+         * @description Distinct topics, source families and top entities with counts, for filter UIs.
+         */
+        get: operations["NewsController_facets_v1"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/news/{docId}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Single news document + cluster
+         * @description Returns the document and its cluster siblings (other docs sharing cluster_id).
+         */
+        get: operations["NewsController_getOne_v1"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -2250,6 +2330,12 @@ export interface components {
             /** @example 6714 */
             active_wells: number;
         };
+        IngestNewsBodyDto: {
+            /** @description Array of pipeline Documents to upsert (keyed on doc_id). */
+            documents: {
+                [key: string]: unknown;
+            }[];
+        };
     };
     responses: never;
     parameters: never;
@@ -3547,6 +3633,104 @@ export interface operations {
                 content: {
                     "application/json": components["schemas"]["ApiErrorDto"];
                 };
+            };
+        };
+    };
+    NewsController_ingest_v1: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["IngestNewsBodyDto"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    NewsController_list_v1: {
+        parameters: {
+            query?: {
+                /** @description Legacy alias for pageSize (max rows, ≤200). */
+                take?: number;
+                /** @description Filter by source_family, e.g. "regulatoria" */
+                family?: string;
+                /** @description Filter by topic tag, e.g. "GNL" */
+                topic?: string;
+                /** @description Filter by entity (company or regulator), e.g. "YPF" */
+                entity?: string;
+                /** @description Filter by region, e.g. "Neuquén" */
+                region?: string;
+                /** @description Free-text search over title + deck */
+                q?: string;
+                /** @description Lower bound on publishedAt (ISO date/datetime, inclusive) */
+                from?: string;
+                /** @description Upper bound on publishedAt (ISO date/datetime, inclusive) */
+                to?: string;
+                /** @description Sort order */
+                sort?: "importance" | "recent";
+                /** @description 1-based page number */
+                page?: number;
+                /** @description Rows per page (≤200) */
+                pageSize?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    NewsController_facets_v1: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    NewsController_getOne_v1: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Document id (sha1 of canonical source_url) */
+                docId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
             };
         };
     };
