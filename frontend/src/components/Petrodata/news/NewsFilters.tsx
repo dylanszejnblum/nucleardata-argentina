@@ -54,7 +54,8 @@ export function NewsFilters({ facets }: { facets: NewsFacets }) {
 
   const get = useCallback((k: string) => searchParams.get(k), [searchParams])
 
-  const sort = get('sort') === 'recent' ? 'recent' : 'importance'
+  // Recent is the default (no `sort` param); importance is the explicit opt-in.
+  const sort = get('sort') === 'importance' ? 'importance' : 'recent'
   const [qInput, setQInput] = useState(get('q') ?? '')
   const debouncedQ = useDebounce(qInput, 350)
 
@@ -93,7 +94,7 @@ export function NewsFilters({ facets }: { facets: NewsFacets }) {
   const setSort = useCallback(
     (value: 'importance' | 'recent') => {
       pushParams((p) => {
-        if (value === 'importance') p.delete('sort')
+        if (value === 'recent') p.delete('sort')
         else p.set('sort', value)
       })
     },
