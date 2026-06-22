@@ -4,10 +4,10 @@ import { useEffect, useId } from 'react'
 import { useMap } from '@/components/ui/map'
 import { AR_EXPLORATION_BASINS } from './arExplorationBasins'
 
-// Display-only overlay for Argentina's offshore frontier / exploration basins
-// (non-producing). Muted, dashed and non-interactive, so they read clearly as
-// "exploration acreage" — distinct from the producing basins (BasinAreasLayer),
-// which are green, filled and clickable.
+// Display-only overlay for Argentina's frontier / exploration basins
+// (non-producing, onshore + offshore). Muted, dashed and non-interactive, so
+// they read clearly as "exploration acreage" — distinct from the producing
+// basins (BasinAreasLayer), which are green, filled and clickable.
 export function ExplorationBasinsLayer() {
   const { map, isLoaded } = useMap()
   const uid = useId()
