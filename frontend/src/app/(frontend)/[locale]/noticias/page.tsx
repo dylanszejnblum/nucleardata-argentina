@@ -29,7 +29,8 @@ export default async function NoticiasPage({ searchParams }: { searchParams: Sea
   const params: NewsListParams = {
     page: first(sp.page) ? Number(first(sp.page)) : 1,
     pageSize: 24,
-    sort: first(sp.sort) === 'recent' ? 'recent' : 'importance',
+    // Default to newest-first; importance only when explicitly requested.
+    sort: first(sp.sort) === 'importance' ? 'importance' : 'recent',
     family: first(sp.family),
     topic: first(sp.topic),
     entity: first(sp.entity),
