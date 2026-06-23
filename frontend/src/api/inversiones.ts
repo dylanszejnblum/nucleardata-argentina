@@ -135,6 +135,48 @@ export interface InvMundoGrowth {
   source: InvSource
 }
 
+// Política → impacto — policy levers, each with a measurable indicator, plus the
+// computed GDP payoff of reaching the production target.
+export interface InvPolicyIndicator {
+  label: string
+  value: number
+  format: { prefix?: string; suffix?: string; decimals: number }
+  delta?: { pct: number; base: 'YoY' }
+  tier: string
+  source: InvSource
+}
+
+export interface InvPolicyLever {
+  tag: string
+  title: string
+  indicator: InvPolicyIndicator | null
+}
+
+export interface InvPoliticaImpacto {
+  headline: string
+  items: {
+    label: string
+    value: number
+    format: { prefix?: string; suffix?: string; decimals: number }
+    tier: string
+  }[]
+  assumptions: {
+    priceUsd: number
+    brentRefUsd: number | null
+    todayBblD: number | null
+    targetBblD: number | null
+    gdpUsd: number | null
+    gdpYear: number | null
+  }
+  source: InvSource
+}
+
+export interface InvPolitica {
+  intro: { title: string; text: string }
+  levers: InvPolicyLever[]
+  impacto?: InvPoliticaImpacto
+}
+
 export interface InvMundo {
   source: { label: string; url: string }
   rankings: InvMundoRanking[]
@@ -146,6 +188,7 @@ export interface InvMundo {
     tier: string
     source: { label: string; url: string }
   }
+  politica?: InvPolitica
 }
 
 export interface InversionesData {

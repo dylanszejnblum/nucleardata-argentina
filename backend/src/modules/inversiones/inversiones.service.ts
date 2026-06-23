@@ -44,6 +44,25 @@ const TARGET_YEAR = 2030;
 // producers with explosive % growth from drowning the real story.
 const GROWTH_BASE_MIN: Record<string, number> = { oil: 100, gas: 200 };
 const GROWTH_WINDOW_YEARS = 5;
+
+// --- Política → impacto -----------------------------------------------------
+// The abductive bridge: the current policy framework unlocks the investment that
+// turns Vaca Muerta's potential into realised production — and that production
+// converts into export earnings and GDP. The Cambiario/Exportación indicators
+// are COMPUTED from FactEnergyTrade. The RIGI/Fiscal indicators are CURATED
+// milestones (tier 'referencia') — confirm the figures before publishing.
+const EXPORT_PRICE_USD = 65; // conservative export-price assumption for the impact
+// projection (Brent spot is too volatile to anchor a headline on).
+const VMOS_CAPACITY_BBL_D = 550_000; // Vaca Muerta Sur export pipeline — RIGI flagship
+const VMOS_SOURCE = {
+  label: 'Oleoducto Vaca Muerta Sur (VMOS) — capacidad ~550 mil bbl/d [confirmar]',
+  url: 'https://www.ypf.com/',
+};
+const FISCAL_SURPLUS_PCT = 1.8; // 2024 primary fiscal surplus, % of GDP [confirmar]
+const FISCAL_SOURCE = {
+  label: 'Ministerio de Economía — resultado fiscal primario 2024 [confirmar]',
+  url: 'https://www.argentina.gob.ar/economia',
+};
 // Cited external reference — NOT computed from our data. The market price beside
 // it is computed live; the headroom (margin) between them is the story.
 const BREAKEVEN_REFERENCE_USD = 45;
@@ -108,7 +127,7 @@ export class InversionesService {
       }),
     ]);
 
-    const mundo = await this.mundo();
+    const mundo = await this.mundo(tradeAnnual, gdpRows, breakeven?.brentUsd ?? null);
 
     const shareOil = pct(now.vm.oilM3, now.nat.oilM3);
     const shareGas = pct(now.vm.gasThousandM3, now.nat.gasThousandM3);
@@ -362,7 +381,17 @@ export class InversionesService {
    * PROYECTADO targets and the cited shale-resource ranking (both flagged).
    * Returns null if the world table hasn't been seeded yet — never fabricated.
    */
-  private async mundo() {
+  private async mundo(
+    tradeAnnual: {
+      period: Date;
+      energyExportsUsd: number | null;
+      energySurplusUsd: number | null;
+      sourceLabel?: string;
+      sourceUrl?: string | null;
+    }[],
+    gdpRows: { date: Date; value: number }[],
+    brentUsd: number | null,
+  ) {
     const rows = await this.prisma.factWorldProduction.findMany({
       select: { product: true, iso3: true, country: true, period: true, value: true, unit: true },
     });
@@ -488,6 +517,128 @@ export class InversionesService {
       })
       .filter((x): x is NonNullable<typeof x> => x !== null);
 
+    // --- Política → impacto: policy levers + the GDP payoff -----------------
+    const oilRank = rankings.find((r) => r.product === 'oil');
+    // EIA reports crude in TBPD (thousand bbl/d); convert to bbl/d for USD math.
+    const todayBblD = oilRank?.argentina ? oilRank.argentina.value * 1000 : null;
+    const targetBblD = oilRank ? oilRank.projected.value * 1000 : null;
+    const incrementalBblD = todayBblD != null && targetBblD != null ? targetBblD - todayBblD : null;
+    const incrementalExportUsd = incrementalBblD != null ? incrementalBblD * 365 * EXPORT_PRICE_USD : null;
+
+    const latestGdpRow = gdpRows.length ? gdpRows.reduce((a, b) => (a.date > b.date ? a : b)) : null;
+    const gdpUsd = latestGdpRow?.value ?? null;
+    const gdpYear = latestGdpRow ? latestGdpRow.date.getUTCFullYear() : null;
+    const pctGdp = incrementalExportUsd != null && gdpUsd ? (incrementalExportUsd / gdpUsd) * 100 : null;
+
+    const latestTrade = tradeAnnual.length ? tradeAnnual[tradeAnnual.length - 1] : null;
+    const priorTrade = tradeAnnual.length > 1 ? tradeAnnual[tradeAnnual.length - 2] : null;
+    const tradeYear = latestTrade ? latestTrade.period.getUTCFullYear() : null;
+    const tradeSource = latestTrade
+      ? { label: latestTrade.sourceLabel ?? 'INDEC', url: latestTrade.sourceUrl ?? '', asOf: String(tradeYear) }
+      : { ...WORLD_SOURCE, asOf: '' };
+
+    const levers = [
+      {
+        tag: 'Cambiario',
+        title: 'Normalización del tipo de cambio y acceso a divisas para exportadores',
+        indicator:
+          latestTrade?.energyExportsUsd != null
+            ? {
+                label: 'Exportaciones de energía',
+                value: latestTrade.energyExportsUsd / 1e9,
+                format: { prefix: 'US$', suffix: ' B', decimals: 1 },
+                delta: delta(latestTrade.energyExportsUsd, priorTrade?.energyExportsUsd ?? null) ?? undefined,
+                tier: 'confirmado',
+                source: tradeSource,
+              }
+            : null,
+      },
+      {
+        tag: 'Exportación',
+        title: 'Fin de los cupos y retenciones a la exportación de crudo y gas',
+        indicator:
+          latestTrade?.energySurplusUsd != null
+            ? {
+                label: 'Superávit comercial energético',
+                value: latestTrade.energySurplusUsd / 1e9,
+                format: { prefix: 'US$', suffix: ' B', decimals: 1 },
+                delta: delta(latestTrade.energySurplusUsd, priorTrade?.energySurplusUsd ?? null) ?? undefined,
+                tier: 'confirmado',
+                source: tradeSource,
+              }
+            : null,
+      },
+      {
+        tag: 'RIGI',
+        title: 'Régimen de Incentivo a Grandes Inversiones: estabilidad fiscal a 30 años',
+        indicator: {
+          label: 'Capacidad de evacuación habilitada (VMOS)',
+          value: VMOS_CAPACITY_BBL_D / 1000,
+          format: { suffix: ' mil bbl/d', decimals: 0 },
+          tier: 'referencia',
+          source: { ...VMOS_SOURCE, asOf: '' },
+        },
+      },
+      {
+        tag: 'Fiscal',
+        title: 'Disciplina fiscal y desregulación que anclan la previsibilidad de inversión',
+        indicator: {
+          label: 'Superávit fiscal primario',
+          value: FISCAL_SURPLUS_PCT,
+          format: { suffix: '% del PBI', decimals: 1 },
+          tier: 'referencia',
+          source: { ...FISCAL_SOURCE, asOf: '2024' },
+        },
+      },
+    ];
+
+    const impacto =
+      incrementalExportUsd != null
+        ? {
+            headline:
+              pctGdp != null
+                ? `Si la producción de petróleo alcanza la meta, el valor exportable incremental equivale a ~${pctGdp.toLocaleString('es-AR', { maximumFractionDigits: 1 })}% del PBI.`
+                : 'Si la producción alcanza la meta, el salto exportador se acelera.',
+            items: [
+              {
+                label: 'Valor exportable incremental',
+                value: incrementalExportUsd / 1e9,
+                format: { prefix: 'US$', suffix: ' B/año', decimals: 1 },
+                tier: 'proyectado' as const,
+              },
+              ...(pctGdp != null
+                ? [
+                    {
+                      label: 'Equivalente en PBI',
+                      value: pctGdp,
+                      format: { suffix: '% del PBI', decimals: 1 },
+                      tier: 'proyectado' as const,
+                    },
+                  ]
+                : []),
+            ],
+            // Stated assumptions — the projection is illustrative, not a forecast.
+            assumptions: {
+              priceUsd: EXPORT_PRICE_USD,
+              brentRefUsd: brentUsd,
+              todayBblD,
+              targetBblD,
+              gdpUsd,
+              gdpYear,
+            },
+            source: { ...WORLD_SOURCE, asOf: oilRank ? String(oilRank.year) : '' },
+          }
+        : null;
+
+    const politica = {
+      intro: {
+        title: 'La política que convierte potencial en producción',
+        text: 'El recurso ya existe. Lo que cambió es el marco: las medidas actuales destraban la inversión necesaria para que la proyección se realice — y con ella, el salto en el ranking mundial.',
+      },
+      levers,
+      ...(impacto ? { impacto } : {}),
+    };
+
     return {
       source: WORLD_SOURCE,
       rankings,
@@ -500,6 +651,7 @@ export class InversionesService {
         tier: 'referencia' as const,
         source: SHALE_SOURCE,
       },
+      politica,
     };
   }
 }
