@@ -65,9 +65,10 @@ const MACRO_SOURCES: Record<string, { label: string; url: string }> = {
 // RIGI has no official time-series dataset — presented as a sourced milestone
 // (link to the official régimen), never a fabricated number.
 const RIGI_SOURCE = {
-  label: 'RIGI — Régimen de Incentivo para Grandes Inversiones (Ley 27.742)',
+  label: 'Ministerio de Economía — Registro RIGI (Ley 27.742)',
   url: 'https://www.argentina.gob.ar/economia/rigi',
 };
+const RIGI_AS_OF = '2026-06'; // as-of of the compiled approved-projects registry
 const BRENT_WINDOW = 12; // months for the trailing export-price average (real Brent)
 const POLICY_CHART_SINCE = Date.UTC(2023, 0, 1); // window that shows the inflection
 // Cited external reference — NOT computed from our data. The market price beside
@@ -545,6 +546,12 @@ export class InversionesService {
       select: { series: true, date: true, value: true, unit: true },
       orderBy: { date: 'asc' },
     });
+    // Approved RIGI oil & gas projects (sourced registry) for the RIGI chart.
+    const rigiRows = await this.prisma.rigiProject.findMany({
+      where: { sector: { in: ['petroleo', 'gas'] } },
+      orderBy: { investmentMusd: 'desc' },
+    });
+
     const bySeries = (s: string) => macroRows.filter((r) => r.series === s);
     const since = new Date(POLICY_CHART_SINCE);
     const chartPts = (s: string) =>
@@ -618,10 +625,18 @@ export class InversionesService {
       {
         tag: 'RIGI',
         title: 'Régimen de Incentivo a Grandes Inversiones: estabilidad fiscal a 30 años',
-        // No official RIGI time-series exists — sourced milestone, not a number.
         milestone: 'Régimen vigente (Ley 27.742): estabilidad fiscal, cambiaria y aduanera por 30 años.',
-        source: { ...RIGI_SOURCE, asOf: '' },
-        indicator: null,
+        source: { ...RIGI_SOURCE, asOf: RIGI_AS_OF },
+        // Real committed investment from the approved oil & gas RIGI projects.
+        indicator: rigiRows.length
+          ? {
+              label: 'Inversión comprometida (petróleo y gas)',
+              value: rigiRows.reduce((a, r) => a + (r.investmentMusd ?? 0), 0) / 1000,
+              format: { prefix: 'US$', suffix: ' B', decimals: 1 },
+              tier: 'referencia',
+              source: { ...RIGI_SOURCE, asOf: RIGI_AS_OF },
+            }
+          : null,
       },
       {
         tag: 'Fiscal',
@@ -717,6 +732,26 @@ export class InversionesService {
           }
         : null;
 
+    // RIGI oil & gas projects block (sourced registry) — committed investment.
+    const rigi = rigiRows.length
+      ? {
+          title: 'Proyectos RIGI de petróleo y gas',
+          subtitle: 'Inversión comprometida en proyectos aprobados',
+          count: rigiRows.length,
+          totalMusd: rigiRows.reduce((a, r) => a + (r.investmentMusd ?? 0), 0),
+          projects: rigiRows.map((r) => ({
+            name: r.name,
+            sector: r.sector,
+            operator: r.operator,
+            province: r.province,
+            investmentMusd: r.investmentMusd,
+            approvalDate: r.approvalDate ? r.approvalDate.toISOString().slice(0, 10) : null,
+            sourceUrl: r.sourceUrl,
+          })),
+          source: { ...RIGI_SOURCE, asOf: RIGI_AS_OF },
+        }
+      : null;
+
     const politica = {
       intro: {
         title: 'La política que convierte potencial en producción',
@@ -724,6 +759,7 @@ export class InversionesService {
       },
       levers,
       charts,
+      ...(rigi ? { rigi } : {}),
       ...(impacto ? { impacto } : {}),
     };
 

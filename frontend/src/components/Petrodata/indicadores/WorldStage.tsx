@@ -17,6 +17,7 @@ import type {
   InvMundoGrowth,
   InvPolitica,
   InvPolicyLever,
+  InvRigi,
 } from '@/api/inversiones'
 
 const nf = new Intl.NumberFormat('es-AR', { maximumFractionDigits: 0 })
@@ -339,6 +340,9 @@ function PolicyStrip({ politica }: { politica?: InvPolitica }) {
         </div>
       ) : null}
 
+      {/* RIGI oil & gas projects — committed investment */}
+      {p.rigi && p.rigi.projects.length ? <RigiBlock rigi={p.rigi} /> : null}
+
       {/* Levers, each with its measurable indicator */}
       <div className="grid grid-cols-1 gap-px overflow-hidden border border-nd-border bg-nd-border sm:grid-cols-2">
         {p.levers.map((lever) => (
@@ -385,6 +389,83 @@ function PolicyStrip({ politica }: { politica?: InvPolitica }) {
           </p>
         </div>
       ) : null}
+    </div>
+  )
+}
+
+function RigiBlock({ rigi }: { rigi: InvRigi }) {
+  const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.15 })
+  const barRefs = useRef<(HTMLDivElement | null)[]>([])
+  const projects = rigi.projects
+  const max = Math.max(...projects.map((p) => p.investmentMusd ?? 0), 1)
+  const totalB = rigi.totalMusd / 1000
+  const isOil = (s: string) => s === 'petroleo'
+  const color = (s: string) => (isOil(s) ? 'var(--nd-accent)' : 'var(--nd-interactive)')
+
+  useEffect(() => {
+    if (!inView || prefersReducedMotion()) return
+    const anims = barRefs.current.map((el, i) => {
+      if (!el) return undefined
+      const target = Number(el.dataset.pct ?? '0')
+      el.style.width = '0%'
+      return animate(el, { width: `${target}%`, duration: 800, delay: i * 70, ease: 'outCubic' })
+    })
+    return () => anims.forEach((a) => a?.pause?.())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inView])
+
+  return (
+    <div ref={ref} className="mb-10 border border-nd-border bg-nd-surface p-5 md:p-6">
+      <div className="mb-1 flex flex-wrap items-baseline justify-between gap-2">
+        <h4 className="text-base text-nd-text-display font-display">{rigi.title}</h4>
+        <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-nd-text-disabled">
+          {rigi.count} proyectos · US${totalB.toLocaleString('es-AR', { maximumFractionDigits: 1 })} B
+        </span>
+      </div>
+      <p className="mb-5 font-mono text-[10px] uppercase tracking-[0.06em] text-nd-text-disabled">{rigi.subtitle}</p>
+
+      <div className="flex flex-col">
+        {projects.map((pr, i) => {
+          const usd = pr.investmentMusd ?? 0
+          const pct = (usd / max) * 100
+          return (
+            <div key={pr.name} className="grid grid-cols-[1fr_auto] items-center gap-3 border-b border-nd-border py-2.5">
+              <div className="min-w-0">
+                <div className="flex items-baseline justify-between gap-3">
+                  <span className="truncate font-sans text-sm text-nd-text-display">{pr.name}</span>
+                  <span className="shrink-0 font-mono text-[11px] tabular-nums text-nd-text-secondary">
+                    US${(usd / 1000).toLocaleString('es-AR', { maximumFractionDigits: 1 })} B
+                  </span>
+                </div>
+                <div className="mt-1.5 h-1.5 w-full overflow-hidden bg-nd-border">
+                  <div
+                    ref={(el) => {
+                      barRefs.current[i] = el
+                    }}
+                    data-pct={pct}
+                    className="h-full"
+                    style={{ width: `${pct}%`, background: color(pr.sector) }}
+                  />
+                </div>
+                {pr.operator || pr.province ? (
+                  <span className="mt-1 block font-mono text-[10px] text-nd-text-disabled">
+                    {[pr.operator, pr.province].filter(Boolean).join(' · ')}
+                  </span>
+                ) : null}
+              </div>
+              <span
+                className="font-mono text-[9px] uppercase tracking-[0.06em]"
+                style={{ color: color(pr.sector) }}
+              >
+                {isOil(pr.sector) ? 'petróleo' : 'gas'}
+              </span>
+            </div>
+          )
+        })}
+      </div>
+      <span className="mt-3 inline-block font-mono text-[10px] text-nd-text-disabled">
+        {rigi.source.label} · {rigi.source.asOf}
+      </span>
     </div>
   )
 }

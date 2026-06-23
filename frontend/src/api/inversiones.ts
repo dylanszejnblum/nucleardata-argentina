@@ -183,10 +183,30 @@ export interface InvPoliticaImpacto {
   source: InvSource
 }
 
+export interface InvRigiProject {
+  name: string
+  sector: string // 'petroleo' | 'gas'
+  operator: string | null
+  province: string | null
+  investmentMusd: number | null
+  approvalDate: string | null
+  sourceUrl: string | null
+}
+
+export interface InvRigi {
+  title: string
+  subtitle: string
+  count: number
+  totalMusd: number
+  projects: InvRigiProject[]
+  source: InvSource
+}
+
 export interface InvPolitica {
   intro: { title: string; text: string }
   levers: InvPolicyLever[]
   charts: InvPolicyChart[]
+  rigi?: InvRigi
   impacto?: InvPoliticaImpacto
 }
 
