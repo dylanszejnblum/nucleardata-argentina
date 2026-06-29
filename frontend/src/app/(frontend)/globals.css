@@ -258,3 +258,129 @@ html[data-theme='light'] {
     animation: none;
   }
 }
+
+/* ============================================================
+   NUCLEAR ATLAS — "Schematic Modernist" design system
+   Atomic-age modernism meets brutalist science.
+   Scoped to `.nuclear-atlas` so existing Petrodata pages keep
+   their commodity-red accent. Neutrals tinted toward 148° hue
+   (uranium-glass); never pure black/white. Uranium-green accent.
+   ============================================================ */
+
+.nuclear-atlas {
+  /* Light = blueprint / drafting paper */
+  --nd-accent: oklch(55% 0.13 145deg);
+  --nd-accent-subtle: oklch(55% 0.13 145deg / 0.15);
+  --nd-success: oklch(58% 0.13 145deg);
+  --nd-warning: oklch(72% 0.13 70deg);
+  --nd-interactive: oklch(48% 0.13 200deg);
+
+  --nd-black: oklch(98% 0.008 148deg);
+  --nd-surface: oklch(99.5% 0.006 148deg);
+  --nd-surface-raised: oklch(96% 0.012 148deg);
+  --nd-border: oklch(91% 0.012 148deg);
+  --nd-border-visible: oklch(82% 0.018 148deg);
+  --nd-text-disabled: oklch(62% 0.015 148deg);
+  --nd-text-secondary: oklch(45% 0.018 148deg);
+  --nd-text-primary: oklch(24% 0.012 148deg);
+  --nd-text-display: oklch(13% 0.013 148deg);
+
+  font-family: var(--font-hanken-grotesk), system-ui, sans-serif;
+
+  --background: oklch(98% 0.008 148deg);
+  --foreground: oklch(24% 0.012 148deg);
+  --card: oklch(99.5% 0.006 148deg);
+  --card-foreground: oklch(13% 0.013 148deg);
+}
+
+.nuclear-atlas :where(h1, h2, h3, h4, .font-display) {
+  font-family: var(--font-big-shoulders), var(--font-hanken-grotesk), system-ui, sans-serif;
+}
+
+.nuclear-atlas :where(.font-mono) {
+  font-family: var(--font-martian-mono), var(--font-space-mono), monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.nuclear-atlas :where(.font-sans) {
+  font-family: var(--font-hanken-grotesk), system-ui, sans-serif;
+}
+
+/* Dark = control room / graticule */
+[data-theme='dark'] .nuclear-atlas {
+  --nd-accent: oklch(78% 0.14 148deg);
+  --nd-accent-subtle: oklch(78% 0.14 148deg / 0.18);
+  --nd-success: oklch(72% 0.14 148deg);
+  --nd-warning: oklch(80% 0.12 70deg);
+  --nd-interactive: oklch(70% 0.13 200deg);
+
+  --nd-black: oklch(8% 0.008 148deg);
+  --nd-surface: oklch(12% 0.008 148deg);
+  --nd-surface-raised: oklch(16% 0.012 148deg);
+  --nd-border: oklch(22% 0.012 148deg);
+  --nd-border-visible: oklch(32% 0.018 148deg);
+  --nd-text-disabled: oklch(45% 0.012 148deg);
+  --nd-text-secondary: oklch(68% 0.012 148deg);
+  --nd-text-primary: oklch(88% 0.012 148deg);
+  --nd-text-display: oklch(98% 0.006 148deg);
+
+  --background: oklch(8% 0.008 148deg);
+  --foreground: oklch(88% 0.012 148deg);
+  --card: oklch(11% 0.008 148deg);
+  --card-foreground: oklch(98% 0.006 148deg);
+}
+
+/* Control-room graticule background — fine blueprint grid + scanlines. */
+.graticule {
+  background-color: var(--nd-black);
+  background-image:
+    linear-gradient(var(--nd-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--nd-border) 1px, transparent 1px);
+  background-size: 32px 32px, 32px 32px;
+}
+
+.graticule-fine {
+  background-image:
+    linear-gradient(var(--nd-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--nd-border) 1px, transparent 1px),
+    radial-gradient(circle, var(--nd-border-visible) 0.5px, transparent 0.5px);
+  background-size: 80px 80px, 80px 80px, 12px 12px;
+}
+
+/* Uranium-glass scanline sweep for hero panels (reduced-motion safe). */
+@keyframes nd-scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.nd-scanline::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    oklch(78% 0.14 148deg / 0.06),
+    transparent
+  );
+  animation: nd-scan 6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nd-scanline::after {
+    animation: none;
+    display: none;
+  }
+}
+
+/* Tabular numerals everywhere data appears. */
+.nuclear-atlas .tabular-nums,
+.nuclear-atlas [data-numeric] {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}

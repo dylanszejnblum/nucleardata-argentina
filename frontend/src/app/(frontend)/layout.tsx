@@ -13,7 +13,7 @@ import { Providers } from '@/providers'
 import { defaultTheme, themeLocalStorageKey } from '@/providers/Theme/shared'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
-import { Plus_Jakarta_Sans, Space_Mono } from 'next/font/google'
+import { Plus_Jakarta_Sans, Space_Mono, Big_Shoulders, Hanken_Grotesk, Martian_Mono } from 'next/font/google'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
@@ -32,6 +32,27 @@ const spaceMono = Space_Mono({
   display: 'swap',
 })
 
+// Nuclear Atlas — "Schematic Modernist" type stack (atomic-age modernism).
+const bigShoulders = Big_Shoulders({
+  subsets: ['latin'],
+  variable: '--font-big-shoulders',
+  display: 'swap',
+})
+
+const hankenGrotesk = Hanken_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-hanken-grotesk',
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+})
+
+const martianMono = Martian_Mono({
+  subsets: ['latin'],
+  variable: '--font-martian-mono',
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+})
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
   const locale = await getLocale()
@@ -39,7 +60,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html
-      className={cn(plusJakarta.variable, spaceMono.variable)}
+      className={cn(
+        plusJakarta.variable,
+        spaceMono.variable,
+        bigShoulders.variable,
+        hankenGrotesk.variable,
+        martianMono.variable,
+      )}
       lang={locale}
       suppressHydrationWarning={true}
     >
