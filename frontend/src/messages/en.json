@@ -769,5 +769,25 @@
       "fuelCycle": "Fuel cycle",
       "freshness": "📡 Data updated: {date}"
     }
+  },
+  "history": {
+    "metaTitle": "Nuclear History — Argentina Nuclear",
+    "metaDescription": "Timeline of Argentina's nuclear program, from CNEA's founding (1950) to the global nuclear renaissance.",
+    "eyebrow": "Timeline · 1950 → today",
+    "title": "History",
+    "blurb": "Institutional, technical and legal milestones of Argentina's nuclear program ({span}). The timeline highlights the active milestone as you scroll.",
+    "filters": {
+      "all": "All",
+      "institutional": "Institutional",
+      "technical": "Technical",
+      "political": "Political",
+      "legal": "Legal",
+      "international": "International"
+    },
+    "method": {
+      "eyebrow": "Methodology",
+      "title": "Sources and criteria",
+      "body": "Curated selection of milestones with lasting impact on Argentina's nuclear capability and legal framework. Each entry references its normative or documentary source."
+    }
   }
 }

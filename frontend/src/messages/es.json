@@ -769,5 +769,25 @@
       "fuelCycle": "Ciclo de combustible",
       "freshness": "📡 Datos actualizados: {date}"
     }
+  },
+  "history": {
+    "metaTitle": "Historia Nuclear — Argentina Nuclear",
+    "metaDescription": "Cronología del programa nuclear argentino, de la creación de la CNEA (1950) a la renaissance nuclear global.",
+    "eyebrow": "Cronología · 1950 → hoy",
+    "title": "Historia",
+    "blurb": "Hitos institucionales, técnicos y legales del programa nuclear argentino ({span}). La línea de tiempo resalta el hito activo a medida que se desplaza.",
+    "filters": {
+      "all": "Todos",
+      "institutional": "Institucional",
+      "technical": "Técnico",
+      "political": "Político",
+      "legal": "Legal",
+      "international": "Internacional"
+    },
+    "method": {
+      "eyebrow": "Metodología",
+      "title": "Fuentes y criterios",
+      "body": "Selección curada de hitos con impacto duradero sobre la capacidad y el marco legal nuclear argentino. Cada entrada referencia su fuente normativa o documental."
+    }
   }
 }
