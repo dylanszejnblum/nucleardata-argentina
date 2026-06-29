@@ -66,7 +66,7 @@ export function TopOperatorsMini({ rows }: { rows: TopOperatorRow[] }) {
       </ul>
 
       <Link
-        href="/map"
+        href="/mapa"
         className="mt-4 inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.08em] text-nd-text-secondary hover:text-nd-text-display transition-colors font-mono"
       >
         {t('fullRanking')}

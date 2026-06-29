@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import type { Props } from './types'
 
@@ -9,17 +9,12 @@ export const Media: React.FC<Props> = (props) => {
   const { className, htmlElement = 'div', resource } = props
 
   const isVideo = typeof resource === 'object' && resource?.mimeType?.includes('video')
-  const Tag = htmlElement || Fragment
+  const content = isVideo ? <VideoMedia {...props} /> : <ImageMedia {...props} />
 
-  return (
-    <Tag
-      {...(htmlElement !== null
-        ? {
-            className,
-          }
-        : {})}
-    >
-      {isVideo ? <VideoMedia {...props} /> : <ImageMedia {...props} />}
-    </Tag>
-  )
+  if (!htmlElement) return <>{content}</>
+
+  // Dynamic intrinsic tag — React 19's stricter children inference can't narrow
+  // the ElementType union, so we cast locally (Payload media utility).
+  const Tag = htmlElement as unknown as 'div'
+  return <Tag className={className}>{content}</Tag>
 }

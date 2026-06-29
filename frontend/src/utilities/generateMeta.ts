@@ -17,8 +17,8 @@ export const generateMeta = async (args: {
     : getSocialImageURL()
 
   const metaTitle = title
-    ? `${title} | Vaca Muerta`
-    : 'Vaca Muerta — Argentina oil and gas intelligence'
+    ? `${title} | Argentina Nuclear`
+    : 'Argentina Nuclear — atlas de la industria nuclear argentina'
 
   return {
     description: description as string | undefined,

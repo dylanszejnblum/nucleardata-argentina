@@ -13,22 +13,30 @@ import { Providers } from '@/providers'
 import { defaultTheme, themeLocalStorageKey } from '@/providers/Theme/shared'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import { draftMode } from 'next/headers'
-import { Plus_Jakarta_Sans, Space_Mono } from 'next/font/google'
+import { Big_Shoulders, Hanken_Grotesk, Martian_Mono } from 'next/font/google'
 
 import './globals.css'
 import { getServerSideURL } from '@/utilities/getURL'
 import { getSocialImageURL } from '@/utilities/getSocialImageURL'
 
-const plusJakarta = Plus_Jakarta_Sans({
+const bigShoulders = Big_Shoulders({
   subsets: ['latin'],
-  variable: '--font-plus-jakarta',
+  variable: '--font-big-shoulders',
+  weight: ['500', '600', '700', '800', '900'],
   display: 'swap',
 })
 
-const spaceMono = Space_Mono({
+const hankenGrotesk = Hanken_Grotesk({
   subsets: ['latin'],
-  variable: '--font-space-mono',
-  weight: ['400', '700'],
+  variable: '--font-hanken-grotesk',
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+})
+
+const martianMono = Martian_Mono({
+  subsets: ['latin'],
+  variable: '--font-martian-mono',
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
 })
 
@@ -39,7 +47,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html
-      className={cn(plusJakarta.variable, spaceMono.variable)}
+      className={cn(bigShoulders.variable, hankenGrotesk.variable, martianMono.variable)}
       lang={locale}
       suppressHydrationWarning={true}
     >
@@ -119,32 +127,35 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 export const metadata: Metadata = {
   metadataBase: new URL(getServerSideURL()),
   title: {
-    default: 'Vaca Muerta — Argentina oil and gas intelligence',
-    template: '%s | Vaca Muerta',
+    default: 'Argentina Nuclear — el atlas de la industria nuclear argentina',
+    template: '%s | Argentina Nuclear',
   },
   description:
-    'Vaca Muerta — Argentina oil and gas intelligence. Production, reserves, operators, and geography in one place.',
+    'Argentina Nuclear — el atlas definitivo de la industria nuclear argentina: uranio, ciclo de combustible, reactores e isótopos médicos. Por Zirconio.',
   keywords: [
     'Argentina',
-    'Vaca Muerta',
-    'oil and gas',
-    'petróleo',
-    'gas',
-    'shale',
+    'nuclear',
+    'uranio',
+    'CNEA',
+    'NA-SA',
+    'Atucha',
+    'Embalse',
+    'CAREM',
+    'isótopos',
+    'ciclo de combustible',
     'energy',
-    'production',
-    'operators',
+    'energía nuclear',
   ],
-  authors: [{ name: 'Vaca Muerta', url: getServerSideURL() }],
-  creator: 'Vaca Muerta',
+  authors: [{ name: 'Zirconio', url: getServerSideURL() }],
+  creator: 'Zirconio',
   openGraph: mergeOpenGraph(),
   twitter: {
     card: 'summary_large_image',
-    title: 'Vaca Muerta — Argentina oil and gas intelligence',
+    title: 'Argentina Nuclear — atlas de la industria nuclear argentina',
     description:
-      'Production, reserves, operators, and geography for Argentina’s oil and gas projects.',
+      'Uranio, ciclo de combustible, reactores e isótopos: el atlas de la industria nuclear argentina. Por Zirconio.',
     images: [
-      { url: getSocialImageURL(), width: 1200, height: 630, alt: 'Vaca Muerta homepage' },
+      { url: getSocialImageURL(), width: 1200, height: 630, alt: 'Argentina Nuclear' },
     ],
   },
   robots: {

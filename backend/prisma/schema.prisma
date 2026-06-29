@@ -421,3 +421,114 @@ model NewsletterSubscriber {
 
   @@map("newsletter_subscriber")
 }
+
+// ──────────────────────────────────────────────
+// Argentina Nuclear — atlas models
+// ──────────────────────────────────────────────
+
+/// Nuclear power reactors and research reactors in Argentina.
+model Reactor {
+  id                String    @id // "atucha-i", "embalse", "carem-25", "ra-1", etc.
+  name              String
+  type              String    // "PHWR" | "CANDU" | "CAREM" | "pool" | "tanque"
+  status            String    // "operational" | "construction" | "shutdown" | "decommissioned"
+  category          String    @default("power") // "power" | "research" | "prototype"
+  latitude          Float?
+  longitude         Float?
+  province          String?
+  city              String?
+  capacityMwe       Float?    @map("capacity_mwe")
+  capacityMwt       Float?    @map("capacity_mwt")
+  firstCriticality  DateTime? @map("first_criticality")
+  gridConnection    DateTime? @map("grid_connection")
+  operator          String?
+  owner             String?
+  supplier          String?
+  fuelType          String?   @map("fuel_type")
+  coolant           String?
+  moderator         String?
+  lifetimeFactor    Float?    @map("lifetime_factor")
+  statusDetail      String?   @map("status_detail")
+  sourceUrl         String?   @map("source_url")
+  ingestedAt        DateTime  @default(now()) @map("ingested_at")
+
+  @@index([status])
+  @@index([province])
+  @@index([type])
+  @@map("reactor")
+}
+
+/// Atomic centers, research institutes, and technological complexes.
+model AtomicCenter {
+  id          String   @id // "cab", "cae", "cac", "pilcaniyeu", "ib", "is", "iben"
+  name        String
+  type        String   // "atomic_center" | "institute" | "complex"
+  latitude    Float?
+  longitude   Float?
+  province    String?
+  city        String?
+  founded     Int?
+  operator    String   @default("CNEA")
+  focusAreas  Json?    @map("focus_areas")
+  facilities  Json?
+  website     String?
+  ingestedAt  DateTime @default(now()) @map("ingested_at")
+
+  @@index([type])
+  @@index([province])
+  @@map("atomic_center")
+}
+
+/// Medical and industrial radioisotopes produced in Argentina.
+model Isotope {
+  id                  String   @id // "mo-99", "co-60", "i-131"
+  name                String
+  type                String   // "medical" | "industrial"
+  producer            String   @default("CNEA")
+  productionCapacity  String?  @map("production_capacity")
+  exportDestinations  Json?    @map("export_destinations")
+  domesticConsumption Float?   @map("domestic_consumption")
+  globalMarketShare   Float?   @map("global_market_share")
+  status              String   @default("active") // "active" | "expanding" | "planned"
+  description         String?
+  sourceUrl           String?  @map("source_url")
+  ingestedAt          DateTime @default(now()) @map("ingested_at")
+
+  @@index([type])
+  @@index([status])
+  @@map("isotope")
+}
+
+/// Historical milestones for the timeline / scrollytelling page.
+model HistoryMilestone {
+  id              Int      @id @default(autoincrement())
+  year            Int
+  month           Int?
+  title           String
+  description     String
+  significance    String   // "milestone" | "crisis" | "turning_point" | "context"
+  category        String   // "institutional" | "technical" | "political" | "international" | "legal"
+  relatedEntities Json?    @map("related_entities")
+  sources         Json?
+  mediaUrl        String?  @map("media_url")
+  ingestedAt      DateTime @default(now()) @map("ingested_at")
+
+  @@index([year])
+  @@index([category])
+  @@index([significance])
+  @@map("history_milestone")
+}
+
+/// Per-province nuclear / uranium legislation status (for the "No Nuclear" heatmap).
+model ProvinceNuclearStatus {
+  province        String   @id
+  provinceCode    String   @map("province_code")
+  nuclearAllowed  Boolean  @map("nuclear_allowed")
+  uraniumAllowed  Boolean? @map("uranium_allowed")
+  restrictionType String?  @map("restriction_type") // "constitutional" | "legal" | "ordinance" | "none"
+  legislationRef  String?  @map("legislation_ref")
+  notes           String?
+  ingestedAt      DateTime @default(now()) @map("ingested_at")
+
+  @@map("province_nuclear_status")
+}

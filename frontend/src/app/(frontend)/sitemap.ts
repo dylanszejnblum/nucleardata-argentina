@@ -5,22 +5,18 @@ import { getServerSideURL } from '@/utilities/getURL'
 // i18n routing `localePrefix: 'as-needed'`). Each entry advertises both locale
 // variants via hreflang alternates so crawlers index the right one per language.
 //
-// `/minerals` and `/minerals/uranium` are intentionally listed here even though
-// they are NOT in the navbar — they are indexable orphan pages, and the sitemap
-// is how search engines discover them.
-//
-// Dynamic detail pages (companies/[slug], provincias/[slug], noticias/[docId],
-// minerals/[commodity], projects/[name]) are not enumerated here yet.
+// Dynamic detail pages (actores/[slug], novedades/[docId]) are not enumerated
+// here yet.
 const PATHS = [
   '',
-  '/map',
-  '/companies',
-  '/provincias',
-  '/noticias',
-  '/indicadores',
-  '/exportaciones',
-  '/minerals',
-  '/minerals/uranium',
+  '/uranio',
+  '/reactores',
+  '/isotopos',
+  '/ciclo-combustible',
+  '/mapa',
+  '/actores',
+  '/novedades',
+  '/metodologia',
 ] as const
 
 export default function sitemap(): MetadataRoute.Sitemap {

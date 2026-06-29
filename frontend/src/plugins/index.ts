@@ -15,8 +15,8 @@ import { getServerSideURL } from '@/utilities/getURL'
 
 const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
   return doc?.title
-    ? `${doc.title} | Vaca Muerta`
-    : 'Vaca Muerta — Argentina oil and gas intelligence'
+    ? `${doc.title} | Argentina Nuclear`
+    : 'Argentina Nuclear — atlas de la industria nuclear argentina'
 }
 
 const generateURL: GenerateURL<Post | Page> = ({ doc }) => {

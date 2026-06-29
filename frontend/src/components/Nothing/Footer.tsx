@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import { FooterNewsletterForm } from './FooterNewsletterForm'
+import { Logo } from '@/components/Logo/Logo'
 
 export function NothingFooter() {
   const t = useTranslations('footer')
@@ -13,11 +14,7 @@ export function NothingFooter() {
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div className="flex flex-col gap-3">
             <Link href="/" className="flex items-center gap-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/favicon.png" alt="Vaca Muerta" className="size-6 rounded-sm" />
-              <span className="text-nd-text-display text-sm tracking-tight font-sans">
-                vacamuerta<span style={{ color: 'var(--nd-success)' }}>.io</span>
-              </span>
+              <Logo />
             </Link>
             <p className="text-nd-text-disabled text-xs max-w-xs font-sans">
               {t('tagline')}
@@ -30,28 +27,46 @@ export function NothingFooter() {
                 {t('resources')}
               </span>
               <Link
-                href="/"
+                href="/uranio"
                 className="text-nd-text-secondary hover:text-nd-text-display text-sm transition-colors font-sans"
               >
-                {tNav('dashboardFull')}
+                {tNav('uraniumFull')}
               </Link>
               <Link
-                href="/map"
+                href="/reactores"
                 className="text-nd-text-secondary hover:text-nd-text-display text-sm transition-colors font-sans"
               >
-                {tNav('oilGasFull')}
+                {tNav('reactorsFull')}
               </Link>
               <Link
-                href="/companies"
+                href="/ciclo-combustible"
                 className="text-nd-text-secondary hover:text-nd-text-display text-sm transition-colors font-sans"
               >
-                {tNav('companiesFull')}
+                {tNav('cycleFull')}
               </Link>
               <Link
-                href="/provincias"
+                href="/isotopos"
                 className="text-nd-text-secondary hover:text-nd-text-display text-sm transition-colors font-sans"
               >
-                {tNav('provincesFull')}
+                {tNav('isotopesFull')}
+              </Link>
+              <Link
+                href="/mapa"
+                className="text-nd-text-secondary hover:text-nd-text-display text-sm transition-colors font-sans"
+              >
+                {tNav('mapFull')}
+              </Link>
+              <Link
+                href="/actores"
+                className="text-nd-text-secondary hover:text-nd-text-display text-sm transition-colors font-sans"
+              >
+                {tNav('actorsFull')}
+              </Link>
+              <Link
+                href="/novedades"
+                className="text-nd-text-secondary hover:text-nd-text-display text-sm transition-colors font-sans"
+              >
+                {tNav('newsFull')}
               </Link>
             </div>
 
@@ -84,7 +99,7 @@ export function NothingFooter() {
         <div className="mt-12 pt-6 border-t border-nd-border flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <span className="text-nd-text-disabled text-[11px] tracking-[0.08em] uppercase font-mono">
-              &copy; {new Date().getFullYear()} vacamuerta.io
+              &copy; {new Date().getFullYear()} Argentina Nuclear · Zirconio
             </span>
             <span className="text-nd-text-disabled text-[11px] tracking-[0.04em] font-mono">
               Made by{' '}
@@ -110,10 +125,10 @@ export function NothingFooter() {
           <span className="text-nd-text-disabled text-[11px] font-sans">
             {t('contactTagline')}{' '}
             <a
-              href="mailto:info@vacamuerta.io"
+              href="mailto:contacto@argentinanuclear.com"
               className="text-nd-text-secondary hover:text-nd-text-display transition-colors"
             >
-              info@vacamuerta.io
+              contacto@argentinanuclear.com
             </a>
           </span>
         </div>

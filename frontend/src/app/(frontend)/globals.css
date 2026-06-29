@@ -49,9 +49,9 @@
   --breakpoint-lg: 64rem;
   --breakpoint-xl: 80rem;
   --breakpoint-2xl: 86rem;
-  --font-mono: var(--font-space-mono), monospace;
-  --font-sans: var(--font-plus-jakarta), system-ui, sans-serif;
-  --font-display: var(--font-plus-jakarta), system-ui, sans-serif;
+  --font-mono: var(--font-martian-mono), ui-monospace, monospace;
+  --font-sans: var(--font-hanken-grotesk), system-ui, sans-serif;
+  --font-display: var(--font-big-shoulders), var(--font-hanken-grotesk), system-ui, sans-serif;
 }
 
 @layer utilities {
@@ -93,79 +93,101 @@
   }
 }
 
+/* ─────────────────────────────────────────────────────────────
+   Argentina Nuclear — design tokens
+   Aesthetic: "Schematic Modernist" (atomic-age × brutalist-science)
+   Light = blueprint / drafting paper. Dark = control room / graticule.
+   Neutrals are tinted toward the uranium-green hue (~148°) at low chroma
+   for subconscious cohesion. Never pure black/white.
+   Signature accent = uranium-glass green, used sparingly (60-30-10).
+   ───────────────────────────────────────────────────────────── */
 :root {
-  --nd-black: #f5f5f5;
-  --nd-surface: #ffffff;
-  --nd-surface-raised: #f0f0f0;
-  --nd-border: #e8e8e8;
-  --nd-border-visible: #cccccc;
-  --nd-text-disabled: #999999;
-  --nd-text-secondary: #666666;
-  --nd-text-primary: #1a1a1a;
-  --nd-text-display: #000000;
-  --nd-accent: #d71921;
-  --nd-accent-subtle: rgba(215, 25, 33, 0.15);
-  --nd-success: #4a9e5c;
-  --nd-warning: #d4a843;
-  --nd-interactive: #007aff;
-  --background: oklch(97% 0 0deg);
-  --foreground: oklch(14.5% 0 0deg);
-  --card: oklch(100% 0 0deg);
-  --card-foreground: oklch(14.5% 0 0deg);
-  --popover: oklch(100% 0 0deg);
-  --popover-foreground: oklch(14.5% 0 0deg);
-  --primary: oklch(20.5% 0 0deg);
-  --primary-foreground: oklch(98.5% 0 0deg);
-  --secondary: oklch(94% 0 0deg);
-  --secondary-foreground: oklch(20.5% 0 0deg);
-  --muted: oklch(94% 0 0deg);
-  --muted-foreground: oklch(55.6% 0 0deg);
-  --accent: oklch(94% 0 0deg);
-  --accent-foreground: oklch(20.5% 0 0deg);
-  --destructive: oklch(57.7% 0.245 27.325deg);
-  --destructive-foreground: oklch(57.7% 0.245 27.325deg);
-  --border: oklch(88% 0 0deg);
-  --input: oklch(88% 0 0deg);
-  --ring: oklch(70.8% 0 0deg);
-  --radius: 0.5rem;
-  --success: oklch(78% 0.08 200deg);
-  --warning: oklch(89% 0.1 75deg);
-  --error: oklch(75% 0.15 25deg);
+  /* Legacy font aliases so existing chart components keep rendering with the
+     new type stack until they are rebuilt for nuclear data. */
+  --font-plus-jakarta: var(--font-hanken-grotesk), system-ui, sans-serif;
+  --font-space-mono: var(--font-martian-mono), ui-monospace, monospace;
+  --font-space-grotesk: var(--font-hanken-grotesk), system-ui, sans-serif;
+  /* nd-* tokens — used across components. hue 148 = uranium green tint. */
+  --nd-black: oklch(98.5% 0.004 148deg);
+  --nd-surface: oklch(100% 0.003 148deg);
+  --nd-surface-raised: oklch(96.5% 0.006 148deg);
+  --nd-border: oklch(92% 0.006 148deg);
+  --nd-border-visible: oklch(80% 0.01 148deg);
+  --nd-text-disabled: oklch(60% 0.01 148deg);
+  --nd-text-secondary: oklch(44% 0.012 148deg);
+  --nd-text-primary: oklch(24% 0.01 148deg);
+  --nd-text-display: oklch(16% 0.012 148deg);
+  --nd-accent: oklch(55% 0.13 145deg);
+  --nd-accent-bright: oklch(62% 0.15 145deg);
+  --nd-accent-subtle: oklch(55% 0.13 145deg / 0.12);
+  --nd-success: oklch(52% 0.09 185deg);
+  --nd-warning: oklch(72% 0.13 75deg);
+  --nd-interactive: oklch(55% 0.13 145deg);
+  /* shadcn-compatible tokens, retinted toward hue 148 */
+  --background: oklch(98.5% 0.004 148deg);
+  --foreground: oklch(20% 0.01 148deg);
+  --card: oklch(100% 0.003 148deg);
+  --card-foreground: oklch(20% 0.01 148deg);
+  --popover: oklch(100% 0.003 148deg);
+  --popover-foreground: oklch(20% 0.01 148deg);
+  --primary: oklch(20% 0.01 148deg);
+  --primary-foreground: oklch(98.5% 0.004 148deg);
+  --secondary: oklch(94% 0.006 148deg);
+  --secondary-foreground: oklch(24% 0.01 148deg);
+  --muted: oklch(94% 0.006 148deg);
+  --muted-foreground: oklch(48% 0.012 148deg);
+  --accent: oklch(94% 0.01 148deg);
+  --accent-foreground: oklch(24% 0.01 148deg);
+  --destructive: oklch(58% 0.17 25deg);
+  --destructive-foreground: oklch(58% 0.17 25deg);
+  --border: oklch(90% 0.006 148deg);
+  --input: oklch(90% 0.006 148deg);
+  --ring: oklch(55% 0.13 145deg);
+  --radius: 0.125rem;
+  --success: oklch(52% 0.09 185deg);
+  --warning: oklch(72% 0.13 75deg);
+  --error: oklch(60% 0.16 25deg);
 }
 
 [data-theme='dark'] {
-  --nd-black: #000000;
-  --nd-surface: #111111;
-  --nd-surface-raised: #1a1a1a;
-  --nd-border: #222222;
-  --nd-border-visible: #333333;
-  --nd-text-disabled: #666666;
-  --nd-text-secondary: #999999;
-  --nd-text-primary: #e8e8e8;
-  --nd-text-display: #ffffff;
-  --nd-interactive: #5b9bf6;
-  --background: oklch(0% 0 0deg);
-  --foreground: oklch(98.5% 0 0deg);
-  --card: oklch(8% 0 0deg);
-  --card-foreground: oklch(98.5% 0 0deg);
-  --popover: oklch(8% 0 0deg);
-  --popover-foreground: oklch(98.5% 0 0deg);
-  --primary: oklch(98.5% 0 0deg);
-  --primary-foreground: oklch(20.5% 0 0deg);
-  --secondary: oklch(16% 0 0deg);
-  --secondary-foreground: oklch(98.5% 0 0deg);
-  --muted: oklch(16% 0 0deg);
-  --muted-foreground: oklch(70.8% 0 0deg);
-  --accent: oklch(16% 0 0deg);
-  --accent-foreground: oklch(98.5% 0 0deg);
-  --destructive: oklch(39.6% 0.141 25.723deg);
-  --destructive-foreground: oklch(63.7% 0.237 25.331deg);
-  --border: oklch(20% 0 0deg);
-  --input: oklch(20% 0 0deg);
-  --ring: oklch(43.9% 0 0deg);
-  --success: oklch(28% 0.1 200deg);
-  --warning: oklch(35% 0.08 70deg);
-  --error: oklch(45% 0.1 25deg);
+  /* Control-room dark. Deeper green-tinted graphite, glowing uranium accent. */
+  --nd-black: oklch(13% 0.006 148deg);
+  --nd-surface: oklch(15.5% 0.007 148deg);
+  --nd-surface-raised: oklch(19% 0.008 148deg);
+  --nd-border: oklch(24% 0.008 148deg);
+  --nd-border-visible: oklch(34% 0.01 148deg);
+  --nd-text-disabled: oklch(48% 0.01 148deg);
+  --nd-text-secondary: oklch(68% 0.012 148deg);
+  --nd-text-primary: oklch(86% 0.008 148deg);
+  --nd-text-display: oklch(95% 0.006 148deg);
+  --nd-accent: oklch(78% 0.14 148deg);
+  --nd-accent-bright: oklch(85% 0.12 150deg);
+  --nd-accent-subtle: oklch(78% 0.14 148deg / 0.14);
+  --nd-success: oklch(70% 0.1 185deg);
+  --nd-warning: oklch(80% 0.12 75deg);
+  --nd-interactive: oklch(78% 0.14 148deg);
+  --background: oklch(13% 0.006 148deg);
+  --foreground: oklch(94% 0.008 148deg);
+  --card: oklch(16% 0.007 148deg);
+  --card-foreground: oklch(94% 0.008 148deg);
+  --popover: oklch(16% 0.007 148deg);
+  --popover-foreground: oklch(94% 0.008 148deg);
+  --primary: oklch(95% 0.006 148deg);
+  --primary-foreground: oklch(16% 0.012 148deg);
+  --secondary: oklch(22% 0.008 148deg);
+  --secondary-foreground: oklch(94% 0.008 148deg);
+  --muted: oklch(20% 0.008 148deg);
+  --muted-foreground: oklch(64% 0.012 148deg);
+  --accent: oklch(22% 0.012 148deg);
+  --accent-foreground: oklch(94% 0.008 148deg);
+  --destructive: oklch(64% 0.15 25deg);
+  --destructive-foreground: oklch(64% 0.15 25deg);
+  --border: oklch(26% 0.008 148deg);
+  --input: oklch(26% 0.008 148deg);
+  --ring: oklch(78% 0.14 148deg);
+  --success: oklch(70% 0.1 185deg);
+  --warning: oklch(80% 0.12 75deg);
+  --error: oklch(66% 0.14 25deg);
 }
 
 @theme inline {
@@ -216,7 +238,8 @@
   }
   body {
     @apply bg-background text-foreground min-h-dvh flex flex-col;
-    font-family: var(--font-plus-jakarta), system-ui, sans-serif;
+    font-family: var(--font-hanken-grotesk), system-ui, sans-serif;
+    font-feature-settings: 'ss01', 'cv01';
   }
 }
 

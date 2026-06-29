@@ -4,17 +4,17 @@ import { getSocialImageURL } from './getSocialImageURL'
 const defaultOpenGraph: Metadata['openGraph'] = {
   type: 'website',
   description:
-    'Vaca Muerta — Argentina oil and gas intelligence. Production, reserves, operators, and geography in one place.',
+    'Argentina Nuclear — el atlas de la industria nuclear argentina: uranio, ciclo de combustible, reactores e isótopos médicos. Por Zirconio.',
   images: [
     {
       url: getSocialImageURL(),
       width: 1200,
       height: 630,
-      alt: 'Vaca Muerta — Argentina oil and gas intelligence',
+      alt: 'Argentina Nuclear — atlas de la industria nuclear argentina',
     },
   ],
-  siteName: 'Vaca Muerta',
-  title: 'Vaca Muerta — Argentina oil and gas intelligence',
+  siteName: 'Argentina Nuclear',
+  title: 'Argentina Nuclear — atlas de la industria nuclear argentina',
 }
 
 export const mergeOpenGraph = (og?: Metadata['openGraph']): Metadata['openGraph'] => {

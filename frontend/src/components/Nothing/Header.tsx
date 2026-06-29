@@ -6,16 +6,18 @@ import { useTranslations } from 'next-intl'
 import { Link, usePathname } from '@/i18n/navigation'
 import { useTheme } from '../../providers/Theme'
 import { LanguageSwitcher } from './LanguageSwitcher'
+import { Logo } from '@/components/Logo/Logo'
+import { cn } from '@/utilities/ui'
 
 type NavItem = {
-  href?: '/' | '/map' | '/companies' | '/provincias' | '/noticias' | '/indicadores'
+  href?: '/' | '/uranio' | '/reactores' | '/isotopos' | '/mapa' | '/actores' | '/novedades'
   labelKey:
-    | 'dashboard'
-    | 'oilGas'
-    | 'companies'
-    | 'provinces'
+    | 'uranium'
+    | 'reactors'
+    | 'isotopes'
+    | 'map'
+    | 'actors'
     | 'news'
-    | 'indicators'
   shortLabelKey: NavItem['labelKey']
   match?: (pathname: string) => boolean
   comingSoon?: boolean
@@ -23,40 +25,40 @@ type NavItem = {
 
 const NAV_ITEMS: NavItem[] = [
   {
-    href: '/',
-    labelKey: 'dashboard',
-    shortLabelKey: 'dashboard',
-    match: (p) => p === '/',
+    href: '/uranio',
+    labelKey: 'uranium',
+    shortLabelKey: 'uranium',
+    match: (p) => p === '/uranio' || p.startsWith('/uranio/'),
   },
   {
-    href: '/map',
-    labelKey: 'oilGas',
-    shortLabelKey: 'oilGas',
-    match: (p) => p === '/map' || p.startsWith('/map/'),
+    href: '/reactores',
+    labelKey: 'reactors',
+    shortLabelKey: 'reactors',
+    match: (p) => p === '/reactores' || p.startsWith('/reactores/'),
   },
   {
-    href: '/companies',
-    labelKey: 'companies',
-    shortLabelKey: 'companies',
-    match: (p) => p === '/companies' || p.startsWith('/companies/'),
+    href: '/isotopos',
+    labelKey: 'isotopes',
+    shortLabelKey: 'isotopes',
+    match: (p) => p === '/isotopos' || p.startsWith('/isotopos/'),
   },
   {
-    href: '/provincias',
-    labelKey: 'provinces',
-    shortLabelKey: 'provinces',
-    match: (p) => p === '/provincias' || p.startsWith('/provincias/'),
+    href: '/mapa',
+    labelKey: 'map',
+    shortLabelKey: 'map',
+    match: (p) => p === '/mapa' || p.startsWith('/mapa/'),
   },
   {
-    href: '/noticias',
+    href: '/actores',
+    labelKey: 'actors',
+    shortLabelKey: 'actors',
+    match: (p) => p === '/actores' || p.startsWith('/actores/'),
+  },
+  {
+    href: '/novedades',
     labelKey: 'news',
     shortLabelKey: 'news',
-    match: (p) => p === '/noticias' || p.startsWith('/noticias/'),
-  },
-  {
-    href: '/indicadores',
-    labelKey: 'indicators',
-    shortLabelKey: 'indicators',
-    match: (p) => p === '/indicadores' || p.startsWith('/indicadores/'),
+    match: (p) => p === '/novedades' || p.startsWith('/novedades/'),
   },
 ]
 
@@ -139,15 +141,24 @@ function CloseIcon() {
   )
 }
 
-export function NothingHeader() {
+export function NothingHeader({ floating = false }: { floating?: boolean } = {}) {
   const pathname = usePathname()
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  useEffect(() => {
+    if (!floating) return
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [floating])
 
   useEffect(() => {
     setMobileMenuOpen(false)
@@ -168,9 +179,18 @@ export function NothingHeader() {
 
   return (
     <header
-      className="w-full border-b border-nd-border"
+      className={cn(
+        'w-full z-50',
+        floating ? 'fixed top-0 left-0' : 'relative border-b border-nd-border',
+        floating && scrolled && 'border-b border-nd-border backdrop-blur-xl',
+      )}
       style={{
-        animation: 'header-slide 500ms cubic-bezier(0.16, 1, 0.3, 1) both',
+        backgroundColor: floating
+          ? scrolled
+            ? 'color-mix(in oklch, var(--nd-black) 80%, transparent)'
+            : 'transparent'
+          : 'var(--nd-surface)',
+        animation: floating ? 'none' : 'header-slide 500ms cubic-bezier(0.16, 1, 0.3, 1) both',
       }}
     >
       <style>{`
@@ -198,9 +218,7 @@ export function NothingHeader() {
       <div className="container py-4">
         <div className="flex items-center justify-between gap-4">
           <Link href="/" className="flex items-center">
-            <span className="text-nd-text-display font-sans text-lg tracking-tight">
-              vacamuerta<span style={{ color: 'var(--nd-success)' }}>.io</span>
-            </span>
+            <Logo loading="eager" priority="high" />
           </Link>
 
           <div className="flex items-center gap-2">
@@ -297,12 +315,12 @@ export function NothingHeader() {
             <nav className="flex flex-1 flex-col px-5 py-5">
               {NAV_ITEMS.map((item) => {
                 const labelKey = `${item.labelKey}Full` as
-                  | 'dashboardFull'
-                  | 'oilGasFull'
-                  | 'companiesFull'
-                  | 'provincesFull'
+                  | 'uraniumFull'
+                  | 'reactorsFull'
+                  | 'isotopesFull'
+                  | 'mapFull'
+                  | 'actorsFull'
                   | 'newsFull'
-                  | 'indicatorsFull'
                 if (item.comingSoon) {
                   return (
                     <span

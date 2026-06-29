@@ -110,7 +110,7 @@ export function MapPreview({ wells, totalWells }: { wells: WellFC; totalWells: n
           {totalWells != null ? formatCompact(totalWells) : '—'}
         </span>
         <Link
-          href="/map"
+          href="/mapa"
           className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.08em] text-nd-text-secondary hover:text-nd-text-display transition-colors font-mono"
         >
           {t('openFullMap')}

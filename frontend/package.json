@@ -1,7 +1,7 @@
 {
-  "name": "vacamuerta",
+  "name": "argentina-nuclear",
   "version": "0.1.0",
-  "description": "Vaca Muerta — Argentina oil and gas intelligence",
+  "description": "Argentina Nuclear — el atlas de la industria nuclear argentina. Por Zirconio.",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -39,6 +39,9 @@
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.6.1",
+    "@react-three/postprocessing": "^3.0.4",
     "animejs": "^4.4.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -60,7 +63,8 @@
     "react-hook-form": "7.71.1",
     "recharts": "^3.8.1",
     "sharp": "0.34.2",
-    "tailwind-merge": "^3.4.0"
+    "tailwind-merge": "^3.4.0",
+    "three": "^0.184.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
@@ -72,6 +76,7 @@
     "@types/node": "22.19.9",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
+    "@types/three": "^0.184.1",
     "@vitejs/plugin-react": "4.5.2",
     "autoprefixer": "^10.4.19",
     "eslint": "^9.16.0",

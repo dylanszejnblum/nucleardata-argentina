@@ -9,7 +9,7 @@ function buildHref(base: Record<string, string | undefined>, page: number): stri
   }
   if (page > 1) params.set('page', String(page))
   const qs = params.toString()
-  return qs ? `/noticias?${qs}` : '/noticias'
+  return qs ? `/novedades?${qs}` : '/novedades'
 }
 
 export async function NewsPager({
