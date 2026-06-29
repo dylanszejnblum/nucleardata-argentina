@@ -6,6 +6,10 @@ const config = {
         sans: ['var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
         mono: ['var(--font-space-mono)', 'monospace'],
         display: ['var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
+        // Nuclear Atlas — "Schematic Modernist"
+        displayNuclear: ['var(--font-big-shoulders)', 'system-ui', 'sans-serif'],
+        sansNuclear: ['var(--font-hanken-grotesk)', 'system-ui', 'sans-serif'],
+        monoNuclear: ['var(--font-martian-mono)', 'var(--font-space-mono)', 'monospace'],
       },
       typography: {
         DEFAULT: {

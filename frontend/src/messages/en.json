@@ -673,5 +673,201 @@
     "topicsLabel": "Topics",
     "entitiesLabel": "Entities",
     "relatedCoverage": "Related coverage"
+  },
+  "reactors": {
+    "metaTitle": "Nuclear Reactors — Argentina Nuclear",
+    "metaDescription": "Three nuclear power plants, a domestic SMR (CAREM) and CNEA's research fleet.",
+    "eyebrow": "Nuclear fleet · Argentina",
+    "heroTitle": "Reactors",
+    "heroTagline": "Three nuclear power plants, a domestic SMR and CNEA's research fleet.",
+    "kpi": {
+      "totalMwe": "MWe on grid",
+      "operationalPower": "Operating plants",
+      "underConstruction": "under construction",
+      "avgAge": "Fleet average age",
+      "years": "years",
+      "avgFactor": "Mean lifetime factor"
+    },
+    "fleet": {
+      "eyebrow": "Power · prototype plants",
+      "title": "Power and prototype",
+      "blurb": "Atucha I (1974), Atucha II (2014) and Embalse (1983) supply ~7% of national electricity. CAREM-25 is Argentina's first domestically designed SMR."
+    },
+    "card": {
+      "firstCrit": "Criticality",
+      "factor": "Factor",
+      "expand": "View spec sheet",
+      "close": "Close"
+    },
+    "spec": {
+      "eyebrow": "Technical spec sheet",
+      "type": "Type",
+      "capacity": "Capacity",
+      "coolant": "Coolant",
+      "moderator": "Moderator",
+      "fuel": "Fuel",
+      "supplier": "Supplier",
+      "operator": "Operator",
+      "owner": "Owner",
+      "lifetimeFactor": "Lifetime factor"
+    },
+    "timeline": {
+      "eyebrow": "Timeline",
+      "firstCriticality": "First criticality",
+      "gridConnection": "Grid connection",
+      "status": "Current status"
+    },
+    "research": {
+      "eyebrow": "Research fleet",
+      "title": "Research reactors",
+      "blurb": "Five research and radioisotope-production reactors, operated by CNEA and partner centres.",
+      "blurbShort": "RA-1 through RA-10 · CNEA",
+      "col": {
+        "name": "Reactor",
+        "type": "Type",
+        "mwt": "MWt",
+        "year": "Year",
+        "location": "Location",
+        "status": "Status",
+        "purpose": "Purpose"
+      }
+    },
+    "map": {
+      "eyebrow": "Geography · reactors",
+      "title": "National distribution",
+      "legend": {
+        "operational": "Operational",
+        "construction": "Under construction",
+        "research": "Research"
+      }
+    }
+  },
+  "controlRoom": {
+    "metaTitle": "Control Room — Argentina Nuclear",
+    "metaDescription": "Instrument panel for Argentina's nuclear program: capacity, fuel cycle and global standing.",
+    "eyebrow": "Panel · Argentina Nuclear",
+    "title": "CONTROL ROOM",
+    "subtitle": "Instrument panel · Argentina Nuclear",
+    "kpi": {
+      "totalMwe": "MWe on grid",
+      "gridPct": "% nuclear grid",
+      "carem": "MWe CAREM",
+      "u3o8": "$/lb U₃O₈",
+      "uraniumProjects": "uranium projects",
+      "historicalMines": "historical mines"
+    },
+    "fuelCycle": {
+      "eyebrow": "Fuel cycle",
+      "title": "10 stages · national capability"
+    },
+    "sidebar": {
+      "eyebrow": "Sections",
+      "history": "History",
+      "global": "Global Context",
+      "map": "Map",
+      "reactors": "Reactors",
+      "fuelCycle": "Fuel cycle",
+      "freshness": "📡 Data updated: {date}"
+    }
+  },
+  "history": {
+    "metaTitle": "Nuclear History — Argentina Nuclear",
+    "metaDescription": "Timeline of Argentina's nuclear program, from CNEA's founding (1950) to the global nuclear renaissance.",
+    "eyebrow": "Timeline · 1950 → today",
+    "title": "History",
+    "blurb": "Institutional, technical and legal milestones of Argentina's nuclear program ({span}). The timeline highlights the active milestone as you scroll.",
+    "filters": {
+      "all": "All",
+      "institutional": "Institutional",
+      "technical": "Technical",
+      "political": "Political",
+      "legal": "Legal",
+      "international": "International"
+    },
+    "method": {
+      "eyebrow": "Methodology",
+      "title": "Sources and criteria",
+      "body": "Curated selection of milestones with lasting impact on Argentina's nuclear capability and legal framework. Each entry references its normative or documentary source."
+    }
+  },
+  "fuelCycle": {
+    "metaTitle": "Nuclear Fuel Cycle — Argentina Nuclear",
+    "metaDescription": "The 10 stages of the nuclear fuel cycle and Argentina's capability at each one.",
+    "eyebrow": "Fuel cycle · 10 stages",
+    "title": "Fuel cycle",
+    "blurb": "From uranium exploration to final disposal: where Argentina holds active, partial, or no capability at each stage of the cycle.",
+    "stepOf": "Stage {n} of {total}",
+    "actors": "Related actors",
+    "noActors": "No active national actors",
+    "related": "View related section"
+  },
+  "globalContext": {
+    "metaTitle": "Global Nuclear Context — Argentina Nuclear",
+    "metaDescription": "The global nuclear renaissance, data centres and Argentina's position vis-à-vis the opportunity.",
+    "eyebrow": "Global context · opportunity",
+    "title": "GLOBAL CONTEXT",
+    "tagline": "The nuclear renaissance: rising uranium demand, power-hungry data centres and a world financing atoms again.",
+    "hero": {
+      "demand": "Uranium demand",
+      "reactors": "Reactors building",
+      "countries": "Countries committed",
+      "worldbank": "World Bank ban"
+    },
+    "s1": {
+      "eyebrow": "01 · Nuclear renaissance",
+      "title": "The world goes nuclear again",
+      "blurb": "Converging signals: rising demand, curbs on suppliers and reactivated financing."
+    },
+    "s2": {
+      "eyebrow": "02 · Data centres + AI",
+      "title": "AI drives demand",
+      "blurb": "Hyperscalers want firm, low-carbon power: nuclear and SMRs are the answer."
+    },
+    "s3": {
+      "eyebrow": "03 · Argentina's position",
+      "title": "The Argentine opportunity",
+      "blurb": "Proven reserves, a complete fuel cycle and a geopolitical edge: a unique supply position."
+    },
+    "s4": {
+      "eyebrow": "04 · Recommendations",
+      "title": "How to capture it",
+      "blurb": "Public-policy recommendations from the Viscovich-Aranda analysis to unlock nuclear potential."
+    },
+    "source": "Source: Viscovich-Aranda · NEA · WNA · Goldman Sachs"
+  },
+  "mapNuclear": {
+    "metaTitle": "Nuclear Map — Argentina Nuclear",
+    "metaDescription": "Schematic map of provinces: where nuclear activity is allowed or banned, and where reactors operate.",
+    "eyebrow": "Map · provinces and reactors",
+    "title": "Nuclear map",
+    "blurb": "Provinces that allow or ban nuclear activity, plus reactors and atomic centres. Drag the time slider to watch bans spread.",
+    "mapAria": "Schematic map of Argentine provinces with nuclear restrictions",
+    "layers": {
+      "reactors": "Reactors",
+      "centers": "Centers",
+      "mines": "Mines",
+      "zones": "No-Nuclear Zones"
+    },
+    "legend": {
+      "allowed": "Allows nuclear activity",
+      "mining": "Restricts mining",
+      "legal": "Banned (law)",
+      "constitutional": "Banned (constitution)",
+      "disclaimer": "Schematic map · not cartographic"
+    },
+    "slider": {
+      "eyebrow": "Timeline · restrictions"
+    },
+    "detail": {
+      "eyebrow": "Province",
+      "allowed": "Allows",
+      "restricted": "Restricts",
+      "since": "Since {year}",
+      "empty": "Select a province"
+    },
+    "paradox": {
+      "title": "Paradox",
+      "body": "Río Negro hosts CAB, INVAP, Instituto Balseiro and Pilcaniyeu, yet bans nuclear power plants since {year} (Law {law})."
+    }
   }
 }
