@@ -741,5 +741,33 @@
         "research": "Research"
       }
     }
+  },
+  "controlRoom": {
+    "metaTitle": "Control Room — Argentina Nuclear",
+    "metaDescription": "Instrument panel for Argentina's nuclear program: capacity, fuel cycle and global standing.",
+    "eyebrow": "Panel · Argentina Nuclear",
+    "title": "CONTROL ROOM",
+    "subtitle": "Instrument panel · Argentina Nuclear",
+    "kpi": {
+      "totalMwe": "MWe on grid",
+      "gridPct": "% nuclear grid",
+      "carem": "MWe CAREM",
+      "u3o8": "$/lb U₃O₈",
+      "uraniumProjects": "uranium projects",
+      "historicalMines": "historical mines"
+    },
+    "fuelCycle": {
+      "eyebrow": "Fuel cycle",
+      "title": "10 stages · national capability"
+    },
+    "sidebar": {
+      "eyebrow": "Sections",
+      "history": "History",
+      "global": "Global Context",
+      "map": "Map",
+      "reactors": "Reactors",
+      "fuelCycle": "Fuel cycle",
+      "freshness": "📡 Data updated: {date}"
+    }
   }
 }

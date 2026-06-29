@@ -741,5 +741,33 @@
         "research": "Investigación"
       }
     }
+  },
+  "controlRoom": {
+    "metaTitle": "Control Room — Argentina Nuclear",
+    "metaDescription": "Panel de instrumentos del programa nuclear argentino: capacidad, ciclo de combustible y posición global.",
+    "eyebrow": "Panel · Argentina Nuclear",
+    "title": "CONTROL ROOM",
+    "subtitle": "Panel de instrumentos · Argentina Nuclear",
+    "kpi": {
+      "totalMwe": "MWe en red",
+      "gridPct": "% red nuclear",
+      "carem": "MWe CAREM",
+      "u3o8": "$/lb U₃O₈",
+      "uraniumProjects": "proyectos uranio",
+      "historicalMines": "minas históricas"
+    },
+    "fuelCycle": {
+      "eyebrow": "Ciclo de combustible",
+      "title": "10 etapas · capacidad nacional"
+    },
+    "sidebar": {
+      "eyebrow": "Secciones",
+      "history": "Historia",
+      "global": "Contexto Global",
+      "map": "Mapa",
+      "reactors": "Reactores",
+      "fuelCycle": "Ciclo de combustible",
+      "freshness": "📡 Datos actualizados: {date}"
+    }
   }
 }
