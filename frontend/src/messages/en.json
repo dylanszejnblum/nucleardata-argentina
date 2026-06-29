@@ -834,5 +834,40 @@
       "blurb": "Public-policy recommendations from the Viscovich-Aranda analysis to unlock nuclear potential."
     },
     "source": "Source: Viscovich-Aranda · NEA · WNA · Goldman Sachs"
+  },
+  "mapNuclear": {
+    "metaTitle": "Nuclear Map — Argentina Nuclear",
+    "metaDescription": "Schematic map of provinces: where nuclear activity is allowed or banned, and where reactors operate.",
+    "eyebrow": "Map · provinces and reactors",
+    "title": "Nuclear map",
+    "blurb": "Provinces that allow or ban nuclear activity, plus reactors and atomic centres. Drag the time slider to watch bans spread.",
+    "mapAria": "Schematic map of Argentine provinces with nuclear restrictions",
+    "layers": {
+      "reactors": "Reactors",
+      "centers": "Centers",
+      "mines": "Mines",
+      "zones": "No-Nuclear Zones"
+    },
+    "legend": {
+      "allowed": "Allows nuclear activity",
+      "mining": "Restricts mining",
+      "legal": "Banned (law)",
+      "constitutional": "Banned (constitution)",
+      "disclaimer": "Schematic map · not cartographic"
+    },
+    "slider": {
+      "eyebrow": "Timeline · restrictions"
+    },
+    "detail": {
+      "eyebrow": "Province",
+      "allowed": "Allows",
+      "restricted": "Restricts",
+      "since": "Since {year}",
+      "empty": "Select a province"
+    },
+    "paradox": {
+      "title": "Paradox",
+      "body": "Río Negro hosts CAB, INVAP, Instituto Balseiro and Pilcaniyeu, yet bans nuclear power plants since {year} (Law {law})."
+    }
   }
 }

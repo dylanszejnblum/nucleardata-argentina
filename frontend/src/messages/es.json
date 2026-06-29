@@ -834,5 +834,40 @@
       "blurb": "Recomendaciones de política pública del análisis Viscovich-Aranda para destrabar el potencial nuclear."
     },
     "source": "Fuente: Viscovich-Aranda · NEA · WNA · Goldman Sachs"
+  },
+  "mapNuclear": {
+    "metaTitle": "Mapa Nuclear — Argentina Nuclear",
+    "metaDescription": "Mapa esquemático de provincias: dónde se permite o prohíbe la actividad nuclear y dónde operan los reactores.",
+    "eyebrow": "Mapa · provincias y reactores",
+    "title": "Mapa nuclear",
+    "blurb": "Provincias que permiten o prohíben actividad nuclear, reactores y centros atómicos. Mové el slider temporal para ver cómo se extendieron las prohibiciones.",
+    "mapAria": "Mapa esquemático de provincias argentinas con restricciones nucleares",
+    "layers": {
+      "reactors": "Reactores",
+      "centers": "Centros",
+      "mines": "Minas",
+      "zones": "Zonas No Nuclear"
+    },
+    "legend": {
+      "allowed": "Permite actividad nuclear",
+      "mining": "Restringe minería",
+      "legal": "Prohíbe (ley)",
+      "constitutional": "Prohíbe (constitución)",
+      "disclaimer": "Mapa esquemático · no cartográfico"
+    },
+    "slider": {
+      "eyebrow": "Línea de tiempo · restricciones"
+    },
+    "detail": {
+      "eyebrow": "Provincia",
+      "allowed": "Permite",
+      "restricted": "Restringe",
+      "since": "Desde {year}",
+      "empty": "Seleccioná una provincia"
+    },
+    "paradox": {
+      "title": "Paradoja",
+      "body": "Río Negro alberga CAB, INVAP, Instituto Balseiro y Pilcaniyeu, pero prohíbe centrales nucleares desde {year} (Ley {law})."
+    }
   }
 }
