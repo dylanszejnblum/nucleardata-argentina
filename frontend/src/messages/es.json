@@ -673,5 +673,73 @@
     "topicsLabel": "Temas",
     "entitiesLabel": "Entidades",
     "relatedCoverage": "Cobertura relacionada"
+  },
+  "reactors": {
+    "metaTitle": "Reactores Nucleares — Argentina Nuclear",
+    "metaDescription": "Tres centrales nucleoeléctricas, un SMR propio (CAREM) y la flota de investigación del CNEA.",
+    "eyebrow": "Flota nuclear · Argentina",
+    "heroTitle": "Reactores",
+    "heroTagline": "Tres centrales nucleoeléctricas, un SMR propio y la flota de investigación del CNEA.",
+    "kpi": {
+      "totalMwe": "MWe en red",
+      "operationalPower": "Centrales operativas",
+      "underConstruction": "en construcción",
+      "avgAge": "Edad media de la flota",
+      "years": "años",
+      "avgFactor": "Factor de vida útil medio"
+    },
+    "fleet": {
+      "eyebrow": "Centrales de potencia · prototipo",
+      "title": "Potencia y prototipo",
+      "blurb": "Atucha I (1974), Atucha II (2014) y Embalse (1983) entregan ~7% de la electricidad nacional. CAREM-25 es el primer SMR de diseño argentino."
+    },
+    "card": {
+      "firstCrit": "Criticidad",
+      "factor": "Factor",
+      "expand": "Ver ficha",
+      "close": "Cerrar"
+    },
+    "spec": {
+      "eyebrow": "Ficha técnica",
+      "type": "Tipo",
+      "capacity": "Capacidad",
+      "coolant": "Refrigerante",
+      "moderator": "Moderador",
+      "fuel": "Combustible",
+      "supplier": "Proveedor",
+      "operator": "Operador",
+      "owner": "Propietario",
+      "lifetimeFactor": "Factor de vida útil"
+    },
+    "timeline": {
+      "eyebrow": "Cronología",
+      "firstCriticality": "Primera criticidad",
+      "gridConnection": "Conexión a red",
+      "status": "Estado actual"
+    },
+    "research": {
+      "eyebrow": "Flota de investigación",
+      "title": "Reactores de investigación",
+      "blurb": "Cinco reactores de investigación y producción de radioisótopos, operados por CNEA y centros asociados.",
+      "blurbShort": "RA-1 al RA-10 · CNEA",
+      "col": {
+        "name": "Reactor",
+        "type": "Tipo",
+        "mwt": "MWt",
+        "year": "Año",
+        "location": "Ubicación",
+        "status": "Estado",
+        "purpose": "Función"
+      }
+    },
+    "map": {
+      "eyebrow": "Geografía · reactores",
+      "title": "Distribución nacional",
+      "legend": {
+        "operational": "Operativo",
+        "construction": "En construcción",
+        "research": "Investigación"
+      }
+    }
   }
 }
