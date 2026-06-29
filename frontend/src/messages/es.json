@@ -789,5 +789,16 @@
       "title": "Fuentes y criterios",
       "body": "Selección curada de hitos con impacto duradero sobre la capacidad y el marco legal nuclear argentino. Cada entrada referencia su fuente normativa o documental."
     }
+  },
+  "fuelCycle": {
+    "metaTitle": "Ciclo de Combustible Nuclear — Argentina Nuclear",
+    "metaDescription": "Las 10 etapas del ciclo de combustible nuclear y la capacidad nacional en cada una.",
+    "eyebrow": "Ciclo de combustible · 10 etapas",
+    "title": "Ciclo de combustible",
+    "blurb": "Desde la exploración del uranio hasta la disposición final: dónde tiene Argentina capacidad activa, parcial o nula en cada etapa del ciclo.",
+    "stepOf": "Etapa {n} de {total}",
+    "actors": "Actores relacionados",
+    "noActors": "Sin actores nacionales activos",
+    "related": "Ver sección relacionada"
   }
 }

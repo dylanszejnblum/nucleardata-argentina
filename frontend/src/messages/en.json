@@ -789,5 +789,16 @@
       "title": "Sources and criteria",
       "body": "Curated selection of milestones with lasting impact on Argentina's nuclear capability and legal framework. Each entry references its normative or documentary source."
     }
+  },
+  "fuelCycle": {
+    "metaTitle": "Nuclear Fuel Cycle — Argentina Nuclear",
+    "metaDescription": "The 10 stages of the nuclear fuel cycle and Argentina's capability at each one.",
+    "eyebrow": "Fuel cycle · 10 stages",
+    "title": "Fuel cycle",
+    "blurb": "From uranium exploration to final disposal: where Argentina holds active, partial, or no capability at each stage of the cycle.",
+    "stepOf": "Stage {n} of {total}",
+    "actors": "Related actors",
+    "noActors": "No active national actors",
+    "related": "View related section"
   }
 }
