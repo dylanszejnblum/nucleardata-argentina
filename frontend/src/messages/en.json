@@ -800,5 +800,39 @@
     "actors": "Related actors",
     "noActors": "No active national actors",
     "related": "View related section"
+  },
+  "globalContext": {
+    "metaTitle": "Global Nuclear Context — Argentina Nuclear",
+    "metaDescription": "The global nuclear renaissance, data centres and Argentina's position vis-à-vis the opportunity.",
+    "eyebrow": "Global context · opportunity",
+    "title": "GLOBAL CONTEXT",
+    "tagline": "The nuclear renaissance: rising uranium demand, power-hungry data centres and a world financing atoms again.",
+    "hero": {
+      "demand": "Uranium demand",
+      "reactors": "Reactors building",
+      "countries": "Countries committed",
+      "worldbank": "World Bank ban"
+    },
+    "s1": {
+      "eyebrow": "01 · Nuclear renaissance",
+      "title": "The world goes nuclear again",
+      "blurb": "Converging signals: rising demand, curbs on suppliers and reactivated financing."
+    },
+    "s2": {
+      "eyebrow": "02 · Data centres + AI",
+      "title": "AI drives demand",
+      "blurb": "Hyperscalers want firm, low-carbon power: nuclear and SMRs are the answer."
+    },
+    "s3": {
+      "eyebrow": "03 · Argentina's position",
+      "title": "The Argentine opportunity",
+      "blurb": "Proven reserves, a complete fuel cycle and a geopolitical edge: a unique supply position."
+    },
+    "s4": {
+      "eyebrow": "04 · Recommendations",
+      "title": "How to capture it",
+      "blurb": "Public-policy recommendations from the Viscovich-Aranda analysis to unlock nuclear potential."
+    },
+    "source": "Source: Viscovich-Aranda · NEA · WNA · Goldman Sachs"
   }
 }

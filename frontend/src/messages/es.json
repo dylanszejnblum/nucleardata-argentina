@@ -800,5 +800,39 @@
     "actors": "Actores relacionados",
     "noActors": "Sin actores nacionales activos",
     "related": "Ver sección relacionada"
+  },
+  "globalContext": {
+    "metaTitle": "Contexto Global Nuclear — Argentina Nuclear",
+    "metaDescription": "La renaissance nuclear global, los data centers y la posición de Argentina frente a la oportunidad.",
+    "eyebrow": "Contexto global · oportunidad",
+    "title": "CONTEXTO GLOBAL",
+    "tagline": "La renaissance nuclear: demanda de uranio al alza, data centers hambrientos de potencia firme y un mundo que vuelve a financiar lo atómico.",
+    "hero": {
+      "demand": "Demanda de uranio",
+      "reactors": "Reactores en construcción",
+      "countries": "Países comprometidos",
+      "worldbank": "Veto Banco Mundial"
+    },
+    "s1": {
+      "eyebrow": "01 · Renaissance nuclear",
+      "title": "El mundo vuelve a lo nuclear",
+      "blurb": "Señales convergentes: demanda en alza, restricciones a proveedores y financiamiento reactivado."
+    },
+    "s2": {
+      "eyebrow": "02 · Data centers + IA",
+      "title": "La IA impulsa la demanda",
+      "blurb": "Los hiperescala buscan potencia firme y baja en carbono: nuclear y SMRs son la respuesta."
+    },
+    "s3": {
+      "eyebrow": "03 · Posición Argentina",
+      "title": "La oportunidad argentina",
+      "blurb": "Reservas probadas, ciclo de combustible completo y ventaja geopolítica: una posición de oferta única."
+    },
+    "s4": {
+      "eyebrow": "04 · Recomendaciones",
+      "title": "Cómo capitalizarla",
+      "blurb": "Recomendaciones de política pública del análisis Viscovich-Aranda para destrabar el potencial nuclear."
+    },
+    "source": "Fuente: Viscovich-Aranda · NEA · WNA · Goldman Sachs"
   }
 }
